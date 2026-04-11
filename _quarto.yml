@@ -20,7 +20,6 @@ website:
       - section: "The Toolbox"
         contents:
           - content/version_control.qmd
-          - content/codestyle.qmd
       - section: "Data & Ethics"
         contents:
           - content/fair.qmd

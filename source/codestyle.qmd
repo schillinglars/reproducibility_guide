@@ -6,14 +6,13 @@ date: today
 ```{r, include = FALSE}
 required_packages <- c("ggplot2")
 
-install_if_missing <- function(p) {
+load_if_missing <- function(p) {
   if (!require(p, character.only = TRUE)) {
-    install.packages(p, dependencies = TRUE)
     library(p, character.only = TRUE)
   }
 }
 
-sapply(required_packages, install_if_missing)
+sapply(required_packages, load_if_missing)
 ```
 
 # Grundlage
