@@ -2,17 +2,35 @@ project:
   type: website
   output-dir: docs
 
+lang: en
+
 website:
-  title: "Dein Website Name"
-  navbar:
-    left:
-      - href: index.qmd
-        text: Home
-      - href: source/fair.qmd
-        text: FAIR
+  title: "Reproducibility Guide"
+  
+  sidebar:
+    style: "docked"
+    search: true
+    contents:
+      - text: "Welcome"
+        href: index.qmd
+      - section: "Getting Started"
+        contents:
+          - content/reproducibility.qmd
+          - content/workflow.qmd
+      - section: "The Toolbox"
+        contents:
+          - content/version_control.qmd
+          - content/codestyle.qmd
+      - section: "Data & Ethics"
+        contents:
+          - content/fair.qmd
+
+  page-footer:
+    left: "© 2026 Lars Schilling"
+    right: "Licensed under [CC BY-NC 4.0](https://creativecommons.org/licenses/by-nc/4.0/)"
 
 format:
   html:
-    theme: cosmo
-    css: styles.css
     toc: true
+    code-copy: true
+    code-fold: show
