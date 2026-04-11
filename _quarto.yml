@@ -34,3 +34,4 @@ format:
     toc: true
     code-copy: true
     code-fold: show
+    css: styles.css
