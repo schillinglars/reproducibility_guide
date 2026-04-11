@@ -1,0 +1,18 @@
+project:
+  type: website
+  output-dir: docs
+
+website:
+  title: "Dein Website Name"
+  navbar:
+    left:
+      - href: index.qmd
+        text: Home
+      - href: content/fair.qmd
+        text: FAIR
+
+format:
+  html:
+    theme: cosmo
+    css: styles.css
+    toc: true
