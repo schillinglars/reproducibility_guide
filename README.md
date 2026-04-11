@@ -7,7 +7,7 @@ The live version of this guide can be found here:
 [https://schillinglars.github.io/reproducibility_guide/](https://schillinglars.github.io/reproducibility_guide/)
 
 ## Project Structure
-- `content/`: The Quarto source files for the different chapters.
+- `source/`: The Quarto source files for the different chapters.
 - `docs/`: The rendered HTML files for the different chapters (hosted via GitHub pages).
 - `data/`: Sample datasets used on the website.
 - `images/`: Images used on the website
