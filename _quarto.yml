@@ -8,7 +8,7 @@ website:
     left:
       - href: index.qmd
         text: Home
-      - href: content/fair.qmd
+      - href: source/fair.qmd
         text: FAIR
 
 format:

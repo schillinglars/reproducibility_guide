@@ -6,8 +6,9 @@
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
+<meta name="dcterms.date" content="2026-04-11">
 
-<title>notes – Dein Website Name</title>
+<title>Reproduzierbarkeit – Dein Website Name</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -19,6 +20,40 @@ ul.task-list li input[type="checkbox"] {
   width: 0.8em;
   margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
   vertical-align: middle;
+}
+/* CSS for syntax highlighting */
+pre > code.sourceCode { white-space: pre; position: relative; }
+pre > code.sourceCode > span { line-height: 1.25; }
+pre > code.sourceCode > span:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
+div.sourceCode { margin: 1em 0; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+pre > code.sourceCode { white-space: pre-wrap; }
+pre > code.sourceCode > span { display: inline-block; text-indent: -5em; padding-left: 5em; }
+}
+pre.numberSource code
+  { counter-reset: source-line 0; }
+pre.numberSource code > span
+  { position: relative; left: -4em; counter-increment: source-line; }
+pre.numberSource code > span > a:first-child::before
+  { content: counter(source-line);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+  }
+pre.numberSource { margin-left: 3em;  padding-left: 4px; }
+div.sourceCode
+  {   }
+@media screen {
+pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
 }
 </style>
 
@@ -93,7 +128,7 @@ ul.task-list li input[type="checkbox"] {
 <span class="menu-text">Home</span></a>
   </li>  
   <li class="nav-item">
-    <a class="nav-link" href="../content/fair.html"> 
+    <a class="nav-link active" href="../source/fair.html" aria-current="page"> 
 <span class="menu-text">FAIR</span></a>
   </li>  
 </ul>
@@ -112,22 +147,57 @@ ul.task-list li input[type="checkbox"] {
     <h2 id="toc-title">On this page</h2>
    
   <ul>
-  <li><a href="#ideen-zur-erweiterung" id="toc-ideen-zur-erweiterung" class="nav-link active" data-scroll-target="#ideen-zur-erweiterung">Ideen zur Erweiterung:</a></li>
+  <li><a href="#fair" id="toc-fair" class="nav-link active" data-scroll-target="#fair">FAIR</a></li>
   </ul>
 </nav>
     </div>
 <!-- main -->
-<main class="content" id="quarto-document-content"><header id="title-block-header" class="quarto-title-block"></header>
+<main class="content" id="quarto-document-content">
+
+<header id="title-block-header" class="quarto-title-block default">
+<div class="quarto-title">
+<h1 class="title">Reproduzierbarkeit</h1>
+</div>
 
 
 
+<div class="quarto-title-meta">
 
-<section id="ideen-zur-erweiterung" class="level3">
-<h3 class="anchored" data-anchor-id="ideen-zur-erweiterung">Ideen zur Erweiterung:</h3>
-<p>Codestyle: - seeds - Modularisierung von Skripten oder im Skript durch Funktionen - Parallelisierungen (asyncio, purr etc.) - Generierung von Plots und Tabellen direkt in R (bzw. anderen Sprachen) - Erläuterung von inline-Code für Resultatinterpretation</p>
-<p>Sonstiges: - Containerumgebung</p>
-<p>version_control: - Erläuterung von .gitignore - renv</p>
-<p>Absprache mit Jamie/Ian/Lukas: - Erweiterung auf andere Programmiersprachen wie Python oder Julia§</p>
+    
+    <div>
+    <div class="quarto-title-meta-heading">Published</div>
+    <div class="quarto-title-meta-contents">
+      <p class="date">April 11, 2026</p>
+    </div>
+  </div>
+  
+    
+  </div>
+  
+
+
+</header>
+
+
+<section id="fair" class="level1">
+<h1>FAIR</h1>
+<p>Um Forschungsergebnisse transparenter und nachvollziehbarer zu machen, gibt es die sogenannten FAIR-Prinzipien (Findable, Accessible, Interoperable, Reusable). Hier ist erklärt, was diese bedeuten und wie wir sie durch RStudio besser umsetzen können:</p>
+<ol type="1">
+<li><p><strong>Findable</strong>: Software sollte für Mensch und Maschiene leicht auffindbar sein. Ausserdem sollte Software einen klar zuordbaren Identifer besitzen</p>
+<p>Die verwendete Version von R und RStudio kann über die Funktion <code>sessionInfo()</code> abgefragt werden. So können dritte genau nachvollziehen, welche Versionen der Software verwendet wurden. Über die offiziellen Stellen von CRAN (für R) und Posit (für RStudio) können diese dann recherchiert werden.</p></li>
+</ol>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb1"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="fu">sessionInfo</span>()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<ol start="2" type="1">
+<li><p><strong>Accessible</strong>: Software sollte für Menschen und Maschinen zugänglich sein, idealerweise über eine öffentliche Lizenz.</p>
+<p>R und RStudion sind beide <em>Open source</em> Software. Der Quellcode hinter der Programmiersprache R und hinter der Enwicklungsumbegung von RStudio ist einsehbar, darf verändert und weiter verbreitet werden.</p></li>
+<li><p><strong>Interoperable</strong>: Software sollte mit anderen Softwareprodukten und Daten kompatibel sein, um die Zusammenarbeit und den Austausch von Informationen zu erleichtern. Dies kann durch die Verwendung von offenen Standards und Schnittstellen erreicht werden.</p>
+<p>R und RStudio unterstützen eine Vielzahl von Paketen, die von der Community entwickelt wurden. Diese Pakete ermöglichen es beispielsweise Daten aus verschiedenen Quellen zu importieren (Excel-Dateien, JSON-Dateien, Dateien direkt von Websiten etc.) und diese auch wieder in unterschiedliche Formate zu exportieren.</p></li>
+<li><p><strong>Reusable</strong>: Software sollte so gestaltet sein, dass sie von anderen Forschern leicht wiederverwendet werden kann. Hierzu gehört, dass sie verständlich dokumentiert ist, auf ihr aufbauend Modifizierungen vorgenommen werden können oder sie in eine andere Software integrierbar ist.</p>
+<p>In Quarto geschriebene Dateien enden auf .qmd und sind somit auch von anderen Programmen lessbar. Packages in R haben, sofern sie auf der offiziellen Website von <a href="https://cran.rstudio.com/">CRAN</a> gelistet sind, immer auch eine ausführliche Dokumentation.</p></li>
+</ol>
+<p>Achte unabhängig von der Software, die du verwendest, darauf, dass du die FAIR-Prinzipien so gut wie möglich umsetzt. So kannst du sicherstellen, dass deine Forschungsergebnisse transparent und nachvollziehbar sind und von dritten leicht wiederverwendet werden können.</p>
 
 
 </section>

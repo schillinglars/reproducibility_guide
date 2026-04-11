@@ -8,7 +8,7 @@
 
 <meta name="dcterms.date" content="2026-04-11">
 
-<title>Reproduzierbarkeit – Dein Website Name</title>
+<title>Workflow – Dein Website Name</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -128,7 +128,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <span class="menu-text">Home</span></a>
   </li>  
   <li class="nav-item">
-    <a class="nav-link active" href="../content/fair.html" aria-current="page"> 
+    <a class="nav-link" href="../source/fair.html"> 
 <span class="menu-text">FAIR</span></a>
   </li>  
 </ul>
@@ -147,7 +147,16 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
     <h2 id="toc-title">On this page</h2>
    
   <ul>
-  <li><a href="#fair" id="toc-fair" class="nav-link active" data-scroll-target="#fair">FAIR</a></li>
+  <li><a href="#grundlage" id="toc-grundlage" class="nav-link active" data-scroll-target="#grundlage">Grundlage</a>
+  <ul class="collapse">
+  <li><a href="#projekte" id="toc-projekte" class="nav-link" data-scroll-target="#projekte">Projekte</a></li>
+  <li><a href="#rohdaten" id="toc-rohdaten" class="nav-link" data-scroll-target="#rohdaten">Rohdaten</a></li>
+  <li><a href="#skripte" id="toc-skripte" class="nav-link" data-scroll-target="#skripte">Skripte</a></li>
+  <li><a href="#outputs" id="toc-outputs" class="nav-link" data-scroll-target="#outputs">Outputs</a></li>
+  <li><a href="#readme" id="toc-readme" class="nav-link" data-scroll-target="#readme">README</a></li>
+  <li><a href="#zitation" id="toc-zitation" class="nav-link" data-scroll-target="#zitation">Zitation</a></li>
+  <li><a href="#lizenz" id="toc-lizenz" class="nav-link" data-scroll-target="#lizenz">Lizenz</a></li>
+  </ul></li>
   </ul>
 </nav>
     </div>
@@ -156,7 +165,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 
 <header id="title-block-header" class="quarto-title-block default">
 <div class="quarto-title">
-<h1 class="title">Reproduzierbarkeit</h1>
+<h1 class="title">Workflow</h1>
 </div>
 
 
@@ -179,27 +188,100 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </header>
 
 
-<section id="fair" class="level1">
-<h1>FAIR</h1>
-<p>Um Forschungsergebnisse transparenter und nachvollziehbarer zu machen, gibt es die sogenannten FAIR-Prinzipien (Findable, Accessible, Interoperable, Reusable). Hier ist erklärt, was diese bedeuten und wie wir sie durch RStudio besser umsetzen können:</p>
-<ol type="1">
-<li><p><strong>Findable</strong>: Software sollte für Mensch und Maschiene leicht auffindbar sein. Ausserdem sollte Software einen klar zuordbaren Identifer besitzen</p>
-<p>Die verwendete Version von R und RStudio kann über die Funktion <code>sessionInfo()</code> abgefragt werden. So können dritte genau nachvollziehen, welche Versionen der Software verwendet wurden. Über die offiziellen Stellen von CRAN (für R) und Posit (für RStudio) können diese dann recherchiert werden.</p></li>
-</ol>
+<section id="grundlage" class="level1">
+<h1>Grundlage</h1>
+<p>Die Grundidee einer robusten, reproduzierbaren Analyse ist ein sauberer, wiederholbarer und <strong>skriptbasierter Workflow</strong>. Hierunter versteht sich, dass jegliche Schritte der Datenanalyse in einem Skript dokumentiert sind und mit einem einzigen Befehl ausgeführt werden können. Dies ermöglicht es, die Analyse jederzeit zu reproduzieren und zu überprüfen, ob die Ergebnisse konsistent sind. Die folgenden Abschnitte gehen tiefer in die einzelnen Aspekte des skriptbasierten Workflows ein:</p>
+<pre class="text"><code>Überordner/
+├── projekt.Rproj         # Projekt-File
+├── data/                 # Alle Analyse-Inputs
+│   └── raw/              # Rohdaten
+├── scripts/              # Alle Analyse-Skripte
+│   └── analyses.qmd      # Hauptskript
+├── outputs/              # Alle Analyse-Outputs
+│   ├── figs/             # Grafiken und Plots
+│   └── tables/           # Tabellen
+├── README.md             # Kurze Projekterklärung
+├── references.bib        # BibTex-Datei
+└── licence.txt           # Lizenzinformationen</code></pre>
+<section id="projekte" class="level2">
+<h2 class="anchored" data-anchor-id="projekte">Projekte</h2>
+<p>Ein RStudio Projekt (Dateiendung <code>.Rproj</code>) ist das Fundament für einen skriptbasierten Workflow. Man kann sich die Koordinationsstelle des gesamten Projektes vorstellen. Alle zum gleichen Projekt gehörigen Dateien sollten im selben Ordner oder einem der Unterordner liegen. Daten können relativ zum Projektfile geladen und gespeichert werden. Damit ist es möglich den gesamten Projektordner weiterzugeben und anderweitig auf Reproduzierbarkeit zu prüfen.</p>
+<p>Um die relativen Pfade zum laden und speichern der Dateien einfach zu gestalten kann die Funktion <code>here::here()</code> genutzt werden.</p>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb1"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="fu">sessionInfo</span>()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb2"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="fu">install.packages</span>(<span class="st">"here"</span>)</span>
+<span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-3"><a href="#cb2-3" aria-hidden="true" tabindex="-1"></a>here<span class="sc">::</span><span class="fu">here</span>(<span class="st">"data"</span>, <span class="st">"raw"</span>, <span class="st">"meine_rohdaten.csv"</span>) <span class="co"># Beispiel für den Pfad zu einer Rohdatendatei</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
-<ol start="2" type="1">
-<li><p><strong>Accessible</strong>: Software sollte für Menschen und Maschinen zugänglich sein, idealerweise über eine öffentliche Lizenz.</p>
-<p>R und RStudion sind beide <em>Open source</em> Software. Der Quellcode hinter der Programmiersprache R und hinter der Enwicklungsumbegung von RStudio ist einsehbar, darf verändert und weiter verbreitet werden.</p></li>
-<li><p><strong>Interoperable</strong>: Software sollte mit anderen Softwareprodukten und Daten kompatibel sein, um die Zusammenarbeit und den Austausch von Informationen zu erleichtern. Dies kann durch die Verwendung von offenen Standards und Schnittstellen erreicht werden.</p>
-<p>R und RStudio unterstützen eine Vielzahl von Paketen, die von der Community entwickelt wurden. Diese Pakete ermöglichen es beispielsweise Daten aus verschiedenen Quellen zu importieren (Excel-Dateien, JSON-Dateien, Dateien direkt von Websiten etc.) und diese auch wieder in unterschiedliche Formate zu exportieren.</p></li>
-<li><p><strong>Reusable</strong>: Software sollte so gestaltet sein, dass sie von anderen Forschern leicht wiederverwendet werden kann. Hierzu gehört, dass sie verständlich dokumentiert ist, auf ihr aufbauend Modifizierungen vorgenommen werden können oder sie in eine andere Software integrierbar ist.</p>
-<p>In Quarto geschriebene Dateien enden auf .qmd und sind somit auch von anderen Programmen lessbar. Packages in R haben, sofern sie auf der offiziellen Website von <a href="https://cran.rstudio.com/">CRAN</a> gelistet sind, immer auch eine ausführliche Dokumentation.</p></li>
+<div class="callout callout-style-default callout-note callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Note
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>Projektfiles sind ausserdem notwendig um die Versionierung über Git und GitHub zu ermöglichen. Auf den folgenden Seiten findest du mehr Informationen hierzu.</p>
+</div>
+</div>
+</section>
+<section id="rohdaten" class="level2">
+<h2 class="anchored" data-anchor-id="rohdaten">Rohdaten</h2>
+<p>Wichtig für einen reproduzierbaren und skriptbasierten Workflow sind <strong>Rohdaten</strong>. Rohdaten beziehen sich auf Materialien, die nach einem Verlust nicht wiederhergestellt werden könnten (beispielsweise ausgefüllte Fragebögen). Deshalb ist der erste Schritt im skriptbasierten Workflow ausnahmslos eine Kopie der Rohdaten zu erstellen, diese unter <code>data/raw</code> abzulegen und ausschliesslich mit diesen Kopien zu arbeiten. So kann notfalls immer auf eine unveränderte Version der Rohdaten zurückgegriffen werden.</p>
+</section>
+<section id="skripte" class="level2">
+<h2 class="anchored" data-anchor-id="skripte">Skripte</h2>
+<p>Wie der Name des skriptbasierten Workflows schon erahnen lässst, das Skript ist das Herzstück eines solchen Workflows. Alle Schritte der Datenanalyse, von der Datenbereinigung über die Transformation bis hin zur Visualisierung, sollten in einem Skript dokumentiert werden. Manuelle Bearbeitungen werden hierdurch automatisch unterbunden und es ist sichergestellt nachvollziehbare und reproduzierbare Resultate zu erhalten. Das Skript verbindet die (kopierten) Rohdaten aus <code>data/raw</code> und erstellt entsprechende Plots und Tabellen für <code>outputs</code>.</p>
+<div class="callout callout-style-default callout-note callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Note
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>In das Skript kann auch noch die Zitierung eingebunden werden. Ausserdem kann aus dem Skript heraus die Version control vorgenommen werden. Hierzu findest du weiter unten unter “zitation” und auf den folgenden Seiten noch mehr Informationen. Informationen, was innerhalb der Skripte zu beachten ist, findest du ebenfalls auf einer der folgenden Seiten.</p>
+</div>
+</div>
+</section>
+<section id="outputs" class="level2">
+<h2 class="anchored" data-anchor-id="outputs">Outputs</h2>
+<p>Die resultierenden Daten sollten separat von den Rohdaten gespeichert werden, um Verwechslungen zu vermeiden und notfalls mit unveränderten Rohdaten neu starten zu können. Outputs können beispielsweise Plots oder Tabellen sein. Es ist wichtig, dass die Skripte so gestaltet sind, dass sie die Outputs automatisch generieren, wenn sie ausgeführt werden. So werden auch hier manuelle Bearbeitungen automatisch unterbunden und es ist sichergestellt nachvollziehbare und reproduzierbare Plots oder Tabellen zu erhalten.</p>
+</section>
+<section id="readme" class="level2">
+<h2 class="anchored" data-anchor-id="readme">README</h2>
+<p>Wie der Name der README-Datei (Dateiendung <code>.md</code>) verät ist diese Datei dazu gedacht als erstes gelesen zu werden, wenn eine fremde Person das Projekt öffnet. Man kann sich ein README wie ein Handbuch für das Projekt vorstellen, anhand welchem dritte das Projekt nachvollziehen und auf ihm aufbauen können. Üblicherweise enthält das README folgende Stellen:</p>
+<ol type="1">
+<li><p><strong>Projektname &amp; Kurzbeschreibung</strong>: Hier wird kurz der Rahmen des Projektes beschrieben.</p></li>
+<li><p><strong>Inhalt des Projektes</strong>: Hier wird kurz beschrieben, was sich in den verschiedenen Ordnern befindet und wie die Dateien strukturiert sind.</p></li>
+<li><p><strong>Anleitung zur Reproduktion</strong>: Hier wird beschrieben, welche Schritte zur Reproduzierbarkeit nachzubilden sind. Die Reproduzierbarkeit kann vor allem daran bemessen werden wie umfangreich diese Anleitung ist und wie viel Vorwissen eine dritte Preson benötigt.</p></li>
+<li><p><strong>Lizenzierung</strong>: Sofern keine getrennte Lizenz vorliegt, kann hier die Lizenzierung des Projektes beschrieben werden.</p></li>
 </ol>
-<p>Achte unabhängig von der Software, die du verwendest, darauf, dass du die FAIR-Prinzipien so gut wie möglich umsetzt. So kannst du sicherstellen, dass deine Forschungsergebnisse transparent und nachvollziehbar sind und von dritten leicht wiederverwendet werden können.</p>
+</section>
+<section id="zitation" class="level2">
+<h2 class="anchored" data-anchor-id="zitation">Zitation</h2>
+<p>Arbeitet man im Rahmen einer Projektdatei, so ist es möglich die Zitation direkt in das Skript einzubinden. Hierfür braucht es lediglich eine BibTeX-Datei (Dateiendung <code>.bib</code>) mit den entsprechenden Literaturangaben. Diese kann über ein Literaturverwaltungsprogramm wie beispielsweise <a href="https://www.zotero.org/">Zotero</a> oder manuell erstellt werden. Hier ein Beispiel wie eine solche Datei strukturiert ist:</p>
+<p><span class="citation" data-cites="book">@book</span>{Grinschgl et al.&nbsp;2026, title={R you Ready}, author={Grinschgl, Sandra, Hirt, Laura and Schilling, Lars}, year={2026}, publisher={R you Ready Publishing} }</p>
+<p>Wenn man die Zitation sogar im APA7-Style erstellt haben möchte, so muss erst noch eine entsprechende Citation Style Language (CSL) <a href="https://www.zotero.org/styles">heruntergeladen</a> und im Projektordner gespeichert werden.</p>
+<p>Die Einbindung der BibTex-Datei und der CSL-Datei erfolgt dann innerhalb von Quarto über die YAML-Header des Skriptes:</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb3"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="sc">---</span></span>
+<span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a>title<span class="sc">:</span> <span class="st">"R you ready"</span></span>
+<span id="cb3-3"><a href="#cb3-3" aria-hidden="true" tabindex="-1"></a>bibliography<span class="sc">:</span> references.bib</span>
+<span id="cb3-4"><a href="#cb3-4" aria-hidden="true" tabindex="-1"></a>csl<span class="sc">:</span> apa.csl</span>
+<span id="cb3-5"><a href="#cb3-5" aria-hidden="true" tabindex="-1"></a><span class="sc">---</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<p>Im Skript ist dann entweder die Einbindung im Text über <code>@Grinschgl et al. 2026</code> oder über eckige Klammern am Satzende möglich.</p>
+</section>
+<section id="lizenz" class="level2">
+<h2 class="anchored" data-anchor-id="lizenz">Lizenz</h2>
+<p>Die Lizenzierung von Code und Daten ist ein wichtiger Schritt, um die Wiederverwendbarkeit und den Schutz der eigenen Arbeit zu gewährleisten. Es gibt <a href="https://choosealicense.com">verschiedene Arten von Lizenzen</a>, die regeln, ob und in welcher Form die eigene Arbeit vervielfältigt werden darf und welche Vorgaben dabei zu beachten sind. Entsprechend der Lizenz kann auch noch ein Vorschlag eingebaut werden, wie die eigene Arbeit zitiert werden soll.</p>
 
 
+</section>
 </section>
 
 </main> <!-- /main -->
