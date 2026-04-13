@@ -2,6 +2,8 @@
 title: "Version control"
 ---
 
+{{< include ../_hardcoded_values.qmd >}}
+
 # Fundamentals
 
 To further improve the reproducibility of an analysis, it is useful to use version control. This refers to documenting any changes to the scripts, data, or outputs. This way, it can be traced when and by whom which changes were made. It is also possible to restore previous versions of the scripts, data, or outputs.

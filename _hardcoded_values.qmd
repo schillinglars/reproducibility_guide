@@ -1,0 +1,7 @@
+---
+title: "Hardcoded values"
+---
+
+[repo-url]: https://github.com/schillinglars/reproducibility_guide
+
+[contact]: mailto:Lars.Schilling@unibe.ch?subject=Reproducibility%20Guide

@@ -2,6 +2,8 @@
 title: "The FAIR Principles"
 ---
 
+{{< include ../_hardcoded_values.qmd >}}
+
 # FAIR
 
 To make research results more transparent and traceable, there are the so-called FAIR principles (Findable, Accessible, Interoperable, Reusable). Here is an explanation of what these mean and how we can better implement them through RStudio:

@@ -8,8 +8,6 @@ website:
   title: "Reproducibility Guide"
   
 metadata:
-  repo-url: "https://github.com/schillinglars/reproducibility_guide"
-  
   sidebar:
     style: "docked"
     search: true
@@ -38,6 +36,7 @@ format:
   html:
     theme: flatly
     primary: "#7a1f1f" #ToDo: Adjust to departments official color scheme
+    email-obfuscation: javascript # Hide clear mail addresses from bots
     toc: true
     code-copy: true
     code-fold: show

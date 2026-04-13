@@ -2,6 +2,8 @@
 title: "Workflow"
 ---
 
+{{< include ../_hardcoded_values.qmd >}}
+
 # Fundamentals
 
 The core idea of a robust, reproducible analysis is a clean, repeatable, and **script-based workflow**. This means that every step of the data analysis is documented in a script and can be executed with a single command. This makes it possible to reproduce the analysis at any time and verify that the results are consistent. The following sections delve deeper into the individual aspects of the script-based workflow:

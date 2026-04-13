@@ -2,12 +2,14 @@
 title: "Welcome"
 ---
 
+{{< include _hardcoded_values.qmd >}}
+
 This is the landing page of the reproducibility guide of the Department *Psychology of Digitalisation* at the University of Bern. This guide aims to guide and support students in their Bachelor or Master thesis to write reproducible and clean code.
 
 ::: {.callout-important appearance="simple"}
 Whatever the content of this guide, please note that any guidelines from your supervsior are always superior to the guidelines provided here. This guide is intended to be a helpful resource, but it cannot replace the specific requirements and expectations of your supervisor. Always prioritize the instructions and feedback from your supervisor when working on your thesis.
 :::
 
-This guide is hosted on GitHub and is open for contributions. If you have suggestions for improvement, please let us know by creating an issue on the [GitHub repository]({{< meta repo-url >}}) or by contacting us directly.
+This guide is hosted on GitHub and is open for contributions. If you have suggestions for improvement, please let us know by creating an issue on the [GitHub repository]({{<  repo-url >}}) or by [contacting us]({{< contact >}}).
 
 The guide is inspired by the [Guide to Reproducible Code](https://bes-guide.github.io/reproducible-code/) from the British Ecological Society (BES).
