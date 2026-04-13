@@ -16,17 +16,17 @@ website:
       - section: "Getting Started"
         contents:
           - text: "Reproducibility"
-            href: content/reproducibility.qmd
+            href: source/reproducibility.qmd
           - text: "Workflow"
-            href: content/workflow.qmd
+            href: source/workflow.qmd
       - section: "The Toolbox"
         contents:
           - text: "Version Control"
-            href: content/version_control.qmd
+            href: source/version_control.qmd
       - section: "Data & Ethics"
         contents:
           - text: "FAIR Principles"
-            href: content/fair.qmd
+            href: source/fair.qmd
 
   page-footer:
     left: "© 2026 Department Psychology of Digitalisation"
