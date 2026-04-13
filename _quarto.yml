@@ -6,8 +6,6 @@ lang: en
 
 website:
   title: "Reproducibility Guide"
-  
-metadata:
   sidebar:
     style: "docked"
     search: true
