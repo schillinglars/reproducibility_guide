@@ -1,31 +1,17 @@
 ---
-title: "The FAIR Principles"
+title: "FAIR"
 ---
 
 {{< include ../_hardcoded_values.qmd >}}
 
-# FAIR
+To make research results more transparent and traceable, there are the so-called **FAIR principles (Findable, Accessible, Interoperable, Reusable)**. Research practices, including the thesis, should follow these principles wherever possible. In particular for code and software, these principles can be applied as follows:
 
-To make research results more transparent and traceable, there are the so-called FAIR principles (Findable, Accessible, Interoperable, Reusable). Here is an explanation of what these mean and how we can better implement them through RStudio:
+1.  **Findable**: The whole content should be easily findable. This can be achieved through the use of unique identifiers, metadata, naming conventions, and folder structures which follow guidelines and contain descriptive information about the content.
+    
+2.  **Accessible**: All the material should be accessible to everyone. This can be achieved by using open access repositories, providing clear instructions for accessing the material, and ensuring that the material is available in a format that can be easily used by others.
 
-1.  **Findable**: Software should be easy to find for both humans and machines. Furthermore, software should possess a clearly assignable identifier.
-
-    The version of R and RStudio used can be queried using the function sessionInfo(). This allows third parties to understand exactly which versions of the software were utilized. These can then be researched via the official sources of CRAN (for R) and Posit (for RStudio).
-
-```{r, eval = FALSE}
-sessionInfo()
-```
-
-2.  **Accessible**: Software should be accessible to humans and machines, ideally via a public license.
-
-    R and RStudio are both **open source **software. The source code behind the R programming language and behind the RStudio development environment is accessible, and it may be modified and redistributed.
-
-3.  **Interoperable**: Software should be compatible with other software products and data to facilitate collaboration and the exchange of information. This can be achieved through the use of open standards and interfaces.
-
-    R and RStudio support a wide range of packages developed by the community. These packages make it possible, for example, to import data from various sources (Excel files, JSON files, files directly from websites, etc.) and to export them again into different formats.
+3.  **Interoperable**: Software and code should be compatible with other software products and data to facilitate collaboration and the exchange of information. This can be achieved through the use of open standards and interfaces.
 
 4.  **Reusable**: Software should be designed so that it can be easily reused by other researchers. This includes ensuring that it is clearly documented, allowing for modifications to be built upon it, or making it integratable into other software.
 
-    Files written in Quarto end in .qmd and are therefore also readable by other programs. Packages in R, provided they are listed on the official [CRAN](https://cran.rstudio.com/) website, always include extensive documentation.
-
-Regardless of the software you use, ensure that you implement the FAIR principles as effectively as possible. This way, you can ensure that your research results are transparent and traceable and can be easily reused by third parties.
+The following pages provide practical guidance on implementing the FAIR principles in your work. While this is not an exhaustive list of all possible methods, it serves as a robust starting point for making your research more transparent and reproducible. As you write your thesis, keep these principles in mind and look for opportunities to align your workflow more closely with them.

@@ -1,10 +1,13 @@
 <!DOCTYPE html>
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
-<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+
 <meta charset="utf-8">
 <meta name="generator" content="quarto-1.6.42">
+
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
-<title>The FAIR Principles – Reproducibility Guide</title>
+
+
+<title>FAIR – Reproducibility Guide</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -53,6 +56,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 }
 </style>
 
+
 <script src="../site_libs/quarto-nav/quarto-nav.js"></script>
 <script src="../site_libs/quarto-nav/headroom.min.js"></script>
 <script src="../site_libs/clipboard/clipboard.min.js"></script>
@@ -68,7 +72,8 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <link href="../site_libs/quarto-html/quarto-syntax-highlighting-2f5df379a58b258e96c21c0638c20c03.css" rel="stylesheet" id="quarto-text-highlighting-styles">
 <script src="../site_libs/bootstrap/bootstrap.min.js"></script>
 <link href="../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
-<link href="../site_libs/bootstrap/bootstrap-83087996f3e492be11c716f2c1776363.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light"><script id="quarto-search-options" type="application/json">{
+<link href="../site_libs/bootstrap/bootstrap-83087996f3e492be11c716f2c1776363.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
+<script id="quarto-search-options" type="application/json">{
   "location": "sidebar",
   "copy-button": false,
   "collapse-after": 3,
@@ -94,12 +99,18 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
     "search-submit-button-title": "Submit",
     "search-label": "Search"
   }
-}</script><link rel="stylesheet" href="../styles.css">
+}</script>
+
+
+<link rel="stylesheet" href="../styles.css">
 </head>
+
 <body class="nav-sidebar docked">
 
 <div id="quarto-search-results"></div>
-  <header id="quarto-header" class="headroom fixed-top"><nav class="quarto-secondary-nav"><div class="container-fluid d-flex">
+  <header id="quarto-header" class="headroom fixed-top">
+  <nav class="quarto-secondary-nav">
+    <div class="container-fluid d-flex">
       <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" role="button" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
         <i class="bi bi-layout-text-sidebar-reverse"></i>
       </button>
@@ -110,9 +121,13 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
         <i class="bi bi-search"></i>
       </button>
     </div>
-  </nav></header><!-- content --><div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article">
+  </nav>
+</header>
+<!-- content -->
+<div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article">
 <!-- sidebar -->
-  <nav id="quarto-sidebar" class="sidebar collapse collapse-horizontal quarto-sidebar-collapse-item sidebar-navigation docked overflow-auto"><div class="pt-lg-2 mt-2 text-left sidebar-header">
+  <nav id="quarto-sidebar" class="sidebar collapse collapse-horizontal quarto-sidebar-collapse-item sidebar-navigation docked overflow-auto">
+    <div class="pt-lg-2 mt-2 text-left sidebar-header">
     <div class="sidebar-title mb-0 py-0">
       <a href="../">Reproducibility Guide</a> 
     </div>
@@ -124,7 +139,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
         </div>
     <div class="sidebar-menu-container"> 
     <ul class="list-unstyled mt-1">
-<li class="sidebar-item">
+        <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="../index.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">0. Welcome</span></a>
@@ -161,19 +176,19 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   </div>
 </li>
     </ul>
-</div>
-</nav><div id="quarto-sidebar-glass" class="quarto-sidebar-collapse-item" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item"></div>
+    </div>
+</nav>
+<div id="quarto-sidebar-glass" class="quarto-sidebar-collapse-item" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item"></div>
 <!-- margin-sidebar -->
-    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
-        <nav id="TOC" role="doc-toc" class="toc-active"><h2 id="toc-title">On this page</h2>
-   
-  <ul>
-<li><a href="#fair" id="toc-fair" class="nav-link active" data-scroll-target="#fair">FAIR</a></li>
-  </ul></nav>
+    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar zindex-bottom">
+        
     </div>
 <!-- main -->
-<main class="content" id="quarto-document-content"><header id="title-block-header" class="quarto-title-block default"><div class="quarto-title">
-<div class="quarto-title-block"><div><h1 class="title">The FAIR Principles</h1><button type="button" class="btn code-tools-button dropdown-toggle" id="quarto-code-tools-menu" data-bs-toggle="dropdown" aria-expanded="false"><i class="bi"></i> Code</button><ul class="dropdown-menu dropdown-menu-end" aria-labelelledby="quarto-code-tools-menu"><li><a id="quarto-show-all-code" class="dropdown-item" href="javascript:void(0)" role="button">Show All Code</a></li><li><a id="quarto-hide-all-code" class="dropdown-item" href="javascript:void(0)" role="button">Hide All Code</a></li><li><hr class="dropdown-divider"></li><li><a id="quarto-view-source" class="dropdown-item" href="javascript:void(0)" role="button">View Source</a></li></ul></div></div>
+<main class="content" id="quarto-document-content">
+
+<header id="title-block-header" class="quarto-title-block default">
+<div class="quarto-title">
+<div class="quarto-title-block"><div><h1 class="title">FAIR</h1><button type="button" class="btn code-tools-button" id="quarto-code-tools-source"><i class="bi"></i> Code</button></div></div>
 </div>
 
 
@@ -187,38 +202,24 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   
 
 
-</header><section id="fair" class="level1"><h1>FAIR</h1>
-<p>To make research results more transparent and traceable, there are the so-called FAIR principles (Findable, Accessible, Interoperable, Reusable). Here is an explanation of what these mean and how we can better implement them through RStudio:</p>
+</header>
+
+
+<p>To make research results more transparent and traceable, there are the so-called <strong>FAIR principles (Findable, Accessible, Interoperable, Reusable)</strong>. Research practices, including the thesis, should follow these principles wherever possible. In particular for code and software, these principles can be applied as follows:</p>
 <ol type="1">
-<li>
-<p><strong>Findable</strong>: Software should be easy to find for both humans and machines. Furthermore, software should possess a clearly assignable identifier.</p>
-<p>The version of R and RStudio used can be queried using the function sessionInfo(). This allows third parties to understand exactly which versions of the software were utilized. These can then be researched via the official sources of CRAN (for R) and Posit (for RStudio).</p>
-</li>
+<li><p><strong>Findable</strong>: The whole content should be easily findable. This can be achieved through the use of unique identifiers, metadata, naming conventions, and folder structures which follow guidelines and contain descriptive information about the content.</p></li>
+<li><p><strong>Accessible</strong>: All the material should be accessible to everyone. This can be achieved by using open access repositories, providing clear instructions for accessing the material, and ensuring that the material is available in a format that can be easily used by others.</p></li>
+<li><p><strong>Interoperable</strong>: Software and code should be compatible with other software products and data to facilitate collaboration and the exchange of information. This can be achieved through the use of open standards and interfaces.</p></li>
+<li><p><strong>Reusable</strong>: Software should be designed so that it can be easily reused by other researchers. This includes ensuring that it is clearly documented, allowing for modifications to be built upon it, or making it integratable into other software.</p></li>
 </ol>
-<div class="cell">
-<details class="code-fold"><summary>Code</summary><div class="sourceCode" id="cb1"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="fu"><a href="https://rdrr.io/r/utils/sessionInfo.html">sessionInfo</a></span><span class="op">(</span><span class="op">)</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-</details>
-</div>
-<ol start="2" type="1">
-<li>
-<p><strong>Accessible</strong>: Software should be accessible to humans and machines, ideally via a public license.</p>
-<p>R and RStudio are both <strong>open source </strong>software. The source code behind the R programming language and behind the RStudio development environment is accessible, and it may be modified and redistributed.</p>
-</li>
-<li>
-<p><strong>Interoperable</strong>: Software should be compatible with other software products and data to facilitate collaboration and the exchange of information. This can be achieved through the use of open standards and interfaces.</p>
-<p>R and RStudio support a wide range of packages developed by the community. These packages make it possible, for example, to import data from various sources (Excel files, JSON files, files directly from websites, etc.) and to export them again into different formats.</p>
-</li>
-<li>
-<p><strong>Reusable</strong>: Software should be designed so that it can be easily reused by other researchers. This includes ensuring that it is clearly documented, allowing for modifications to be built upon it, or making it integratable into other software.</p>
-<p>Files written in Quarto end in .qmd and are therefore also readable by other programs. Packages in R, provided they are listed on the official <a href="https://cran.rstudio.com/">CRAN</a> website, always include extensive documentation.</p>
-</li>
-</ol>
-<p>Regardless of the software you use, ensure that you implement the FAIR principles as effectively as possible. This way, you can ensure that your research results are transparent and traceable and can be easily reused by third parties.</p>
+<p>The following pages provide practical guidance on implementing the FAIR principles in your work. While this is not an exhaustive list of all possible methods, it serves as a robust starting point for making your research more transparent and reproducible. As you write your thesis, keep these principles in mind and look for opportunities to align your workflow more closely with them.</p>
 
 
 <!-- -->
 
-</section></main><!-- /main --><script id="quarto-html-after-body" type="application/javascript">
+
+</main> <!-- /main -->
+<script id="quarto-html-after-body" type="application/javascript">
 window.document.addEventListener("DOMContentLoaded", function (event) {
   const toggleBodyColorMode = (bsSheetEl) => {
     const mode = bsSheetEl.getAttribute("data-mode");
@@ -686,46 +687,33 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
   }
 });
 </script><div class="modal fade" id="quarto-embedded-source-code-modal" tabindex="-1" aria-labelledby="quarto-embedded-source-code-modal-label" aria-hidden="true"><div class="modal-dialog modal-dialog-scrollable"><div class="modal-content"><div class="modal-header"><h5 class="modal-title" id="quarto-embedded-source-code-modal-label">Source Code</h5><button class="btn-close" data-bs-dismiss="modal"></button></div><div class="modal-body"><div class="">
-<div class="sourceCode" id="cb2" data-shortcodes="false"><pre class="sourceCode markdown code-with-copy"><code class="sourceCode markdown"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="co">---</span></span>
-<span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a><span class="an">title:</span><span class="co"> "The FAIR Principles"</span></span>
-<span id="cb2-3"><a href="#cb2-3" aria-hidden="true" tabindex="-1"></a><span class="co">---</span></span>
-<span id="cb2-4"><a href="#cb2-4" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb2-5"><a href="#cb2-5" aria-hidden="true" tabindex="-1"></a>{{&lt; include ../_hardcoded_values.qmd &gt;}}</span>
-<span id="cb2-6"><a href="#cb2-6" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb2-7"><a href="#cb2-7" aria-hidden="true" tabindex="-1"></a><span class="fu"># FAIR</span></span>
-<span id="cb2-8"><a href="#cb2-8" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb2-9"><a href="#cb2-9" aria-hidden="true" tabindex="-1"></a>To make research results more transparent and traceable, there are the so-called FAIR principles (Findable, Accessible, Interoperable, Reusable). Here is an explanation of what these mean and how we can better implement them through RStudio:</span>
-<span id="cb2-10"><a href="#cb2-10" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb2-11"><a href="#cb2-11" aria-hidden="true" tabindex="-1"></a><span class="ss">1.  </span>**Findable**: Software should be easy to find for both humans and machines. Furthermore, software should possess a clearly assignable identifier.</span>
-<span id="cb2-12"><a href="#cb2-12" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb2-13"><a href="#cb2-13" aria-hidden="true" tabindex="-1"></a>    The version of R and RStudio used can be queried using the function sessionInfo(). This allows third parties to understand exactly which versions of the software were utilized. These can then be researched via the official sources of CRAN (for R) and Posit (for RStudio).</span>
-<span id="cb2-14"><a href="#cb2-14" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb2-15"><a href="#cb2-15" aria-hidden="true" tabindex="-1"></a><span class="in">```{r, eval = FALSE}</span></span>
-<span id="cb2-16"><a href="#cb2-16" aria-hidden="true" tabindex="-1"></a><span class="in">sessionInfo()</span></span>
-<span id="cb2-17"><a href="#cb2-17" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
-<span id="cb2-18"><a href="#cb2-18" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb2-19"><a href="#cb2-19" aria-hidden="true" tabindex="-1"></a><span class="ss">2.  </span>**Accessible**: Software should be accessible to humans and machines, ideally via a public license.</span>
-<span id="cb2-20"><a href="#cb2-20" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb2-21"><a href="#cb2-21" aria-hidden="true" tabindex="-1"></a>    R and RStudio are both **open source **software. The source code behind the R programming language and behind the RStudio development environment is accessible, and it may be modified and redistributed.</span>
-<span id="cb2-22"><a href="#cb2-22" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb2-23"><a href="#cb2-23" aria-hidden="true" tabindex="-1"></a><span class="ss">3.  </span>**Interoperable**: Software should be compatible with other software products and data to facilitate collaboration and the exchange of information. This can be achieved through the use of open standards and interfaces.</span>
-<span id="cb2-24"><a href="#cb2-24" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb2-25"><a href="#cb2-25" aria-hidden="true" tabindex="-1"></a>    R and RStudio support a wide range of packages developed by the community. These packages make it possible, for example, to import data from various sources (Excel files, JSON files, files directly from websites, etc.) and to export them again into different formats.</span>
-<span id="cb2-26"><a href="#cb2-26" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb2-27"><a href="#cb2-27" aria-hidden="true" tabindex="-1"></a><span class="ss">4.  </span>**Reusable**: Software should be designed so that it can be easily reused by other researchers. This includes ensuring that it is clearly documented, allowing for modifications to be built upon it, or making it integratable into other software.</span>
-<span id="cb2-28"><a href="#cb2-28" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb2-29"><a href="#cb2-29" aria-hidden="true" tabindex="-1"></a>    Files written in Quarto end in .qmd and are therefore also readable by other programs. Packages in R, provided they are listed on the official <span class="co">[</span><span class="ot">CRAN</span><span class="co">](https://cran.rstudio.com/)</span> website, always include extensive documentation.</span>
-<span id="cb2-30"><a href="#cb2-30" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb2-31"><a href="#cb2-31" aria-hidden="true" tabindex="-1"></a>Regardless of the software you use, ensure that you implement the FAIR principles as effectively as possible. This way, you can ensure that your research results are transparent and traceable and can be easily reused by third parties.</span></code><button title="Copy to Clipboard" class="code-copy-button" data-in-quarto-modal=""><i class="bi"></i></button></pre></div>
+<div class="sourceCode" id="cb1" data-shortcodes="false"><pre class="sourceCode markdown code-with-copy"><code class="sourceCode markdown"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="co">---</span></span>
+<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a><span class="an">title:</span><span class="co"> "FAIR"</span></span>
+<span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a><span class="co">---</span></span>
+<span id="cb1-4"><a href="#cb1-4" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-5"><a href="#cb1-5" aria-hidden="true" tabindex="-1"></a>{{&lt; include ../_hardcoded_values.qmd &gt;}}</span>
+<span id="cb1-6"><a href="#cb1-6" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-7"><a href="#cb1-7" aria-hidden="true" tabindex="-1"></a>To make research results more transparent and traceable, there are the so-called **FAIR principles (Findable, Accessible, Interoperable, Reusable)**. Research practices, including the thesis, should follow these principles wherever possible. In particular for code and software, these principles can be applied as follows:</span>
+<span id="cb1-8"><a href="#cb1-8" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-9"><a href="#cb1-9" aria-hidden="true" tabindex="-1"></a><span class="ss">1.  </span>**Findable**: The whole content should be easily findable. This can be achieved through the use of unique identifiers, metadata, naming conventions, and folder structures which follow guidelines and contain descriptive information about the content.</span>
+<span id="cb1-10"><a href="#cb1-10" aria-hidden="true" tabindex="-1"></a>    </span>
+<span id="cb1-11"><a href="#cb1-11" aria-hidden="true" tabindex="-1"></a><span class="ss">2.  </span>**Accessible**: All the material should be accessible to everyone. This can be achieved by using open access repositories, providing clear instructions for accessing the material, and ensuring that the material is available in a format that can be easily used by others.</span>
+<span id="cb1-12"><a href="#cb1-12" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-13"><a href="#cb1-13" aria-hidden="true" tabindex="-1"></a><span class="ss">3.  </span>**Interoperable**: Software and code should be compatible with other software products and data to facilitate collaboration and the exchange of information. This can be achieved through the use of open standards and interfaces.</span>
+<span id="cb1-14"><a href="#cb1-14" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-15"><a href="#cb1-15" aria-hidden="true" tabindex="-1"></a><span class="ss">4.  </span>**Reusable**: Software should be designed so that it can be easily reused by other researchers. This includes ensuring that it is clearly documented, allowing for modifications to be built upon it, or making it integratable into other software.</span>
+<span id="cb1-16"><a href="#cb1-16" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-17"><a href="#cb1-17" aria-hidden="true" tabindex="-1"></a>The following pages provide practical guidance on implementing the FAIR principles in your work. While this is not an exhaustive list of all possible methods, it serves as a robust starting point for making your research more transparent and reproducible. As you write your thesis, keep these principles in mind and look for opportunities to align your workflow more closely with them.</span></code><button title="Copy to Clipboard" class="code-copy-button" data-in-quarto-modal=""><i class="bi"></i></button></pre></div>
 </div></div></div></div></div>
 </div> <!-- /content -->
-<footer class="footer"><div class="nav-footer">
+<footer class="footer">
+  <div class="nav-footer">
     <div class="nav-footer-left">
 <p>© 2026 Department Psychology of Digitalisation</p>
 </div>   
     <div class="nav-footer-center">
       <ul class="footer-items list-unstyled">
-<li class="nav-item">
+    <li class="nav-item">
     <a class="nav-link" href="https://github.com/schillinglars/reproducibility_guide">
 <p><i class="bi bi-github"></i> GitHub</p>
 </a>
@@ -736,12 +724,14 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
 </a>
   </li>  
 </ul>
-</div>
+    </div>
     <div class="nav-footer-right">
 <p>Licensed under <a href="https://creativecommons.org/licenses/by-nc/4.0/">CC BY-NC 4.0</a></p>
 </div>
   </div>
 </footer>
+
+
 
 
 </body></html>

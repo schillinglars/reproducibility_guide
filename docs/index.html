@@ -6,6 +6,7 @@
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
+<meta name="dcterms.date" content="2026-04-13">
 
 <title>Welcome – Reproducibility Guide</title>
 <style>
@@ -196,6 +197,12 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <div class="quarto-title-meta">
 
     
+    <div>
+    <div class="quarto-title-meta-heading">Published</div>
+    <div class="quarto-title-meta-contents">
+      <p class="date">April 13, 2026</p>
+    </div>
+  </div>
   
     
   </div>
@@ -219,8 +226,12 @@ Important
 <p>Whatever the content of this guide, please note that any guidelines from your supervsior are always superior to the guidelines provided here. This guide is intended to be a helpful resource, but it cannot replace the specific requirements and expectations of your supervisor. Always prioritize the instructions and feedback from your supervisor when working on your thesis.</p>
 </div>
 </div>
-<p>This guide is hosted on GitHub and is open for contributions. If you have suggestions for improvement, please let us know by creating an issue on the <a href="{{< repo-url >}}">GitHub repository</a> or by <a href="{{< contact >}}">contacting us</a>.</p>
+<p>This guide is hosted on GitHub and is open for contributions. If you have suggestions for improvement, please let us know by creating an issue on the <a href="{{< repo-url >}}">GitHub repository</a> or by <a href="{< contact >}}">contacting us directly</a>.</p>
 <p>The guide is inspired by the <a href="https://bes-guide.github.io/reproducible-code/">Guide to Reproducible Code</a> from the British Ecological Society (BES).</p>
+<p>For your orientation: The content of this guide is mostly written such that the guidelines can be followed independently for any programming language. However, the examples provided are mostly in R, as this is the most commonly used programming language for data analysis in psychology. If a particular guideline applies differently, this will be marked explicitly in the text via the following information box:</p>
+<div class="box-python">
+<p>Content related in particular to Python will be placed in these information boxes.</p>
+</div>
 
 
 <!-- -->
@@ -697,19 +708,26 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
 </script><div class="modal fade" id="quarto-embedded-source-code-modal" tabindex="-1" aria-labelledby="quarto-embedded-source-code-modal-label" aria-hidden="true"><div class="modal-dialog modal-dialog-scrollable"><div class="modal-content"><div class="modal-header"><h5 class="modal-title" id="quarto-embedded-source-code-modal-label">Source Code</h5><button class="btn-close" data-bs-dismiss="modal"></button></div><div class="modal-body"><div class="">
 <div class="sourceCode" id="cb1" data-shortcodes="false"><pre class="sourceCode markdown code-with-copy"><code class="sourceCode markdown"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="co">---</span></span>
 <span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a><span class="an">title:</span><span class="co"> "Welcome"</span></span>
-<span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a><span class="co">---</span></span>
-<span id="cb1-4"><a href="#cb1-4" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-5"><a href="#cb1-5" aria-hidden="true" tabindex="-1"></a>{{&lt; include _hardcoded_values.qmd &gt;}}</span>
-<span id="cb1-6"><a href="#cb1-6" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-7"><a href="#cb1-7" aria-hidden="true" tabindex="-1"></a>This is the landing page of the reproducibility guide of the Department *Psychology of Digitalisation* at the University of Bern. This guide aims to give students an introduction to reproducible and clean code for their thesis projects.</span>
-<span id="cb1-8"><a href="#cb1-8" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-9"><a href="#cb1-9" aria-hidden="true" tabindex="-1"></a>::: {.callout-important}</span>
-<span id="cb1-10"><a href="#cb1-10" aria-hidden="true" tabindex="-1"></a>Whatever the content of this guide, please note that any guidelines from your supervsior are always superior to the guidelines provided here. This guide is intended to be a helpful resource, but it cannot replace the specific requirements and expectations of your supervisor. Always prioritize the instructions and feedback from your supervisor when working on your thesis.</span>
-<span id="cb1-11"><a href="#cb1-11" aria-hidden="true" tabindex="-1"></a>:::</span>
-<span id="cb1-12"><a href="#cb1-12" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-13"><a href="#cb1-13" aria-hidden="true" tabindex="-1"></a>This guide is hosted on GitHub and is open for contributions. If you have suggestions for improvement, please let us know by creating an issue on the <span class="co">[</span><span class="ot">GitHub repository</span><span class="co">]({{&lt;  repo-url &gt;}})</span> or by <span class="co">[</span><span class="ot">contacting us</span><span class="co">]({{&lt; contact &gt;}})</span>.</span>
-<span id="cb1-14"><a href="#cb1-14" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-15"><a href="#cb1-15" aria-hidden="true" tabindex="-1"></a>The guide is inspired by the <span class="co">[</span><span class="ot">Guide to Reproducible Code</span><span class="co">](https://bes-guide.github.io/reproducible-code/)</span> from the British Ecological Society (BES).</span></code><button title="Copy to Clipboard" class="code-copy-button" data-in-quarto-modal=""><i class="bi"></i></button></pre></div>
+<span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a><span class="an">date:</span><span class="co"> last-modified</span></span>
+<span id="cb1-4"><a href="#cb1-4" aria-hidden="true" tabindex="-1"></a><span class="co">---</span></span>
+<span id="cb1-5"><a href="#cb1-5" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-6"><a href="#cb1-6" aria-hidden="true" tabindex="-1"></a>{{&lt; include _hardcoded_values.qmd &gt;}}</span>
+<span id="cb1-7"><a href="#cb1-7" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-8"><a href="#cb1-8" aria-hidden="true" tabindex="-1"></a>This is the landing page of the reproducibility guide of the Department *Psychology of Digitalisation* at the University of Bern. This guide aims to give students an introduction to reproducible and clean code for their thesis projects.</span>
+<span id="cb1-9"><a href="#cb1-9" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-10"><a href="#cb1-10" aria-hidden="true" tabindex="-1"></a>::: {.callout-important}</span>
+<span id="cb1-11"><a href="#cb1-11" aria-hidden="true" tabindex="-1"></a>Whatever the content of this guide, please note that any guidelines from your supervsior are always superior to the guidelines provided here. This guide is intended to be a helpful resource, but it cannot replace the specific requirements and expectations of your supervisor. Always prioritize the instructions and feedback from your supervisor when working on your thesis.</span>
+<span id="cb1-12"><a href="#cb1-12" aria-hidden="true" tabindex="-1"></a>:::</span>
+<span id="cb1-13"><a href="#cb1-13" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-14"><a href="#cb1-14" aria-hidden="true" tabindex="-1"></a>This guide is hosted on GitHub and is open for contributions. If you have suggestions for improvement, please let us know by creating an issue on the <span class="co">[</span><span class="ot">GitHub repository</span><span class="co">]({{&lt;  repo-url &gt;}})</span> or by <span class="co">[</span><span class="ot">contacting us directly</span><span class="co">]({&lt;  contact &gt;}})</span>.</span>
+<span id="cb1-15"><a href="#cb1-15" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-16"><a href="#cb1-16" aria-hidden="true" tabindex="-1"></a>The guide is inspired by the <span class="co">[</span><span class="ot">Guide to Reproducible Code</span><span class="co">](https://bes-guide.github.io/reproducible-code/)</span> from the British Ecological Society (BES).</span>
+<span id="cb1-17"><a href="#cb1-17" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-18"><a href="#cb1-18" aria-hidden="true" tabindex="-1"></a>For your orientation: The content of this guide is mostly written such that the guidelines can be followed independently for any programming language. However, the examples provided are mostly in R, as this is the most commonly used programming language for data analysis in psychology. If a particular guideline applies differently, this will be marked explicitly in the text via the following information box:</span>
+<span id="cb1-19"><a href="#cb1-19" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-20"><a href="#cb1-20" aria-hidden="true" tabindex="-1"></a>::: box-python</span>
+<span id="cb1-21"><a href="#cb1-21" aria-hidden="true" tabindex="-1"></a>Content related in particular to Python will be placed in these information boxes.</span>
+<span id="cb1-22"><a href="#cb1-22" aria-hidden="true" tabindex="-1"></a>:::</span></code><button title="Copy to Clipboard" class="code-copy-button" data-in-quarto-modal=""><i class="bi"></i></button></pre></div>
 </div></div></div></div></div>
 </div> <!-- /content -->
 <footer class="footer">
