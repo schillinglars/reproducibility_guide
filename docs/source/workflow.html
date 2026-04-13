@@ -1,12 +1,9 @@
 <!DOCTYPE html>
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
-
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <meta charset="utf-8">
 <meta name="generator" content="quarto-1.6.42">
-
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
-
-
 <title>Workflow – Reproducibility Guide</title>
 <style>
 code{white-space: pre-wrap;}
@@ -56,7 +53,6 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 }
 </style>
 
-
 <script src="../site_libs/quarto-nav/quarto-nav.js"></script>
 <script src="../site_libs/quarto-nav/headroom.min.js"></script>
 <script src="../site_libs/clipboard/clipboard.min.js"></script>
@@ -72,8 +68,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <link href="../site_libs/quarto-html/quarto-syntax-highlighting-2f5df379a58b258e96c21c0638c20c03.css" rel="stylesheet" id="quarto-text-highlighting-styles">
 <script src="../site_libs/bootstrap/bootstrap.min.js"></script>
 <link href="../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
-<link href="../site_libs/bootstrap/bootstrap-83087996f3e492be11c716f2c1776363.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
-<script id="quarto-search-options" type="application/json">{
+<link href="../site_libs/bootstrap/bootstrap-83087996f3e492be11c716f2c1776363.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light"><script id="quarto-search-options" type="application/json">{
   "location": "sidebar",
   "copy-button": false,
   "collapse-after": 3,
@@ -99,18 +94,12 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
     "search-submit-button-title": "Submit",
     "search-label": "Search"
   }
-}</script>
-
-
-<link rel="stylesheet" href="../styles.css">
+}</script><link rel="stylesheet" href="../styles.css">
 </head>
-
 <body class="nav-sidebar docked">
 
 <div id="quarto-search-results"></div>
-  <header id="quarto-header" class="headroom fixed-top">
-  <nav class="quarto-secondary-nav">
-    <div class="container-fluid d-flex">
+  <header id="quarto-header" class="headroom fixed-top"><nav class="quarto-secondary-nav"><div class="container-fluid d-flex">
       <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" role="button" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
         <i class="bi bi-layout-text-sidebar-reverse"></i>
       </button>
@@ -121,13 +110,9 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
         <i class="bi bi-search"></i>
       </button>
     </div>
-  </nav>
-</header>
-<!-- content -->
-<div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article">
+  </nav></header><!-- content --><div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article">
 <!-- sidebar -->
-  <nav id="quarto-sidebar" class="sidebar collapse collapse-horizontal quarto-sidebar-collapse-item sidebar-navigation docked overflow-auto">
-    <div class="pt-lg-2 mt-2 text-left sidebar-header">
+  <nav id="quarto-sidebar" class="sidebar collapse collapse-horizontal quarto-sidebar-collapse-item sidebar-navigation docked overflow-auto"><div class="pt-lg-2 mt-2 text-left sidebar-header">
     <div class="sidebar-title mb-0 py-0">
       <a href="../">Reproducibility Guide</a> 
     </div>
@@ -139,7 +124,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
         </div>
     <div class="sidebar-menu-container"> 
     <ul class="list-unstyled mt-1">
-        <li class="sidebar-item">
+<li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="../index.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">0. Welcome</span></a>
@@ -169,35 +154,37 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
  <span class="menu-text">4. Codestyle</span></a>
   </div>
 </li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../source/template.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">5. Template</span></a>
+  </div>
+</li>
     </ul>
-    </div>
-</nav>
-<div id="quarto-sidebar-glass" class="quarto-sidebar-collapse-item" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item"></div>
+</div>
+</nav><div id="quarto-sidebar-glass" class="quarto-sidebar-collapse-item" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item"></div>
 <!-- margin-sidebar -->
     <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
-        <nav id="TOC" role="doc-toc" class="toc-active">
-    <h2 id="toc-title">On this page</h2>
+        <nav id="TOC" role="doc-toc" class="toc-active"><h2 id="toc-title">On this page</h2>
    
   <ul>
-  <li><a href="#fundamentals" id="toc-fundamentals" class="nav-link active" data-scroll-target="#fundamentals">Fundamentals</a>
+<li>
+<a href="#fundamentals" id="toc-fundamentals" class="nav-link active" data-scroll-target="#fundamentals">Fundamentals</a>
   <ul class="collapse">
-  <li><a href="#project" id="toc-project" class="nav-link" data-scroll-target="#project">Project</a></li>
+<li><a href="#project" id="toc-project" class="nav-link" data-scroll-target="#project">Project</a></li>
   <li><a href="#raw-data" id="toc-raw-data" class="nav-link" data-scroll-target="#raw-data">Raw data</a></li>
   <li><a href="#scripts" id="toc-scripts" class="nav-link" data-scroll-target="#scripts">Scripts</a></li>
   <li><a href="#outputs" id="toc-outputs" class="nav-link" data-scroll-target="#outputs">Outputs</a></li>
   <li><a href="#readme" id="toc-readme" class="nav-link" data-scroll-target="#readme">README</a></li>
   <li><a href="#citation" id="toc-citation" class="nav-link" data-scroll-target="#citation">Citation</a></li>
   <li><a href="#license" id="toc-license" class="nav-link" data-scroll-target="#license">License</a></li>
-  </ul></li>
   </ul>
-</nav>
+</li>
+  </ul></nav>
     </div>
 <!-- main -->
-<main class="content" id="quarto-document-content">
-
-<header id="title-block-header" class="quarto-title-block default">
-<div class="quarto-title">
-<h1 class="title">Workflow</h1>
+<main class="content" id="quarto-document-content"><header id="title-block-header" class="quarto-title-block default"><div class="quarto-title">
+<div class="quarto-title-block"><div><h1 class="title">Workflow</h1><button type="button" class="btn code-tools-button dropdown-toggle" id="quarto-code-tools-menu" data-bs-toggle="dropdown" aria-expanded="false"><i class="bi"></i> Code</button><ul class="dropdown-menu dropdown-menu-end" aria-labelelledby="quarto-code-tools-menu"><li><a id="quarto-show-all-code" class="dropdown-item" href="javascript:void(0)" role="button">Show All Code</a></li><li><a id="quarto-hide-all-code" class="dropdown-item" href="javascript:void(0)" role="button">Hide All Code</a></li><li><hr class="dropdown-divider"></li><li><a id="quarto-view-source" class="dropdown-item" href="javascript:void(0)" role="button">View Source</a></li></ul></div></div>
 </div>
 
 
@@ -211,11 +198,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   
 
 
-</header>
-
-
-<section id="fundamentals" class="level1">
-<h1>Fundamentals</h1>
+</header><section id="fundamentals" class="level1"><h1>Fundamentals</h1>
 <p>The core idea of a robust, reproducible analysis is a clean, repeatable, and <strong>script-based workflow</strong>. This means that every step of the data analysis is documented in a script and can be executed with a single command. This makes it possible to reproduce the analysis at any time and verify that the results are consistent. The following sections delve deeper into the individual aspects of the script-based workflow:</p>
 <pre class="text"><code>Parent_Folder/
 ├── project.Rproj         # Project file
@@ -229,16 +212,13 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 ├── README.md             # Brief project explanation
 ├── references.bib        # BibTex file
 └── licence.txt           # License information</code></pre>
-<section id="project" class="level2">
-<h2 class="anchored" data-anchor-id="project">Project</h2>
+<section id="project" class="level2"><h2 class="anchored" data-anchor-id="project">Project</h2>
 <p>An RStudio Project (file extension <em>.Rproj</em>) is the foundation for a script-based workflow. It can be thought of as the coordination center for the entire project. All files belonging to the same project should be located in the same folder or one of its subfolders. Data can be loaded and saved relative to the project file. This makes it possible to share the entire project folder and verify its reproducibility elsewhere.</p>
 <p>To simplify the use of relative paths for loading and saving files, the function <code>here::here()</code> can be used.</p>
 <div class="cell">
-<details open="" class="code-fold">
-<summary>Code</summary>
-<div class="sourceCode cell-code" id="cb2"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="co"># install.packages("here")</span></span>
-<span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb2-3"><a href="#cb2-3" aria-hidden="true" tabindex="-1"></a>here<span class="sc">::</span><span class="fu">here</span>(<span class="st">"data"</span>, <span class="st">"raw"</span>, <span class="st">"my_raw_data.csv"</span>) <span class="co"># Example path</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<details class="code-fold"><summary>Code</summary><div class="sourceCode" id="cb2"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="co"># install.packages("here")</span></span>
+<span></span>
+<span><span class="fu">here</span><span class="fu">::</span><span class="fu">here</span><span class="op">(</span><span class="st">"data"</span>, <span class="st">"raw"</span>, <span class="st">"my_raw_data.csv"</span><span class="op">)</span> <span class="co"># Example path</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </details>
 </div>
 <div class="callout callout-style-default callout-note callout-titled">
@@ -254,13 +234,9 @@ Note
 <p>Project files are also necessary to enable version control via Git and GitHub. You will find more information on this in the following pages.</p>
 </div>
 </div>
-</section>
-<section id="raw-data" class="level2">
-<h2 class="anchored" data-anchor-id="raw-data">Raw data</h2>
+</section><section id="raw-data" class="level2"><h2 class="anchored" data-anchor-id="raw-data">Raw data</h2>
 <p>Raw data is essential for a reproducible and script-based workflow. Raw data refers to materials that could not be recovered if lost (for example, completed questionnaires). Therefore, the first step in a script-based workflow is invariably to create a copy of the raw data, store it under data/raw, and work exclusively with these copies. This ensures that an unaltered version of the raw data can always be accessed if necessary.</p>
-</section>
-<section id="scripts" class="level2">
-<h2 class="anchored" data-anchor-id="scripts">Scripts</h2>
+</section><section id="scripts" class="level2"><h2 class="anchored" data-anchor-id="scripts">Scripts</h2>
 <p>As the name of the script-based workflow suggests, the script is the heart of such a workflow. All steps of the data analysis—from data cleaning and transformation to visualization—should be documented in a script. This automatically prevents manual edits and ensures that traceable and reproducible results are obtained. The script connects the (copied) raw data from data/raw and creates the corresponding plots and tables for outputs.</p>
 <div class="callout callout-style-default callout-note callout-titled">
 <div class="callout-header d-flex align-content-center">
@@ -275,31 +251,22 @@ Note
 <p>Citations can also be integrated into the script. Furthermore, version control can be managed directly from within the script. You can find more information about this below under “Citations” and on the following pages. Information regarding what to keep in mind within the scripts can also be found on one of the following pages.</p>
 </div>
 </div>
-</section>
-<section id="outputs" class="level2">
-<h2 class="anchored" data-anchor-id="outputs">Outputs</h2>
+</section><section id="outputs" class="level2"><h2 class="anchored" data-anchor-id="outputs">Outputs</h2>
 <p>The resulting data should be stored separately from the raw data to avoid confusion and to allow for a fresh start with unaltered raw data if necessary. Outputs may include, for example, plots or tables. It is important that scripts are designed to generate these outputs automatically when executed. This ensures that manual edits are prevented and that traceable, reproducible plots and tables are obtained.</p>
-</section>
-<section id="readme" class="level2">
-<h2 class="anchored" data-anchor-id="readme">README</h2>
+</section><section id="readme" class="level2"><h2 class="anchored" data-anchor-id="readme">README</h2>
 <p>As the name of the README file (file extension <em>.md</em>) suggests, this file is intended to be read first when an outside person opens the project. You can think of a README as a manual for the project, which allows third parties to understand the work and build upon it. A README typically includes the following sections:</p>
 <ul>
 <li><p><em>Project Name &amp; Brief Description</em>: A short overview describing the scope and purpose of the project.</p></li>
 <li><p><em>Project Content</em>: A brief description of what is contained in the various folders and how the files are structured.</p></li>
 <li><p><em>Instructions for Reproduction</em>: This describes the steps necessary to replicate the results. Reproducibility is often measured by how comprehensive these instructions are and how much prior knowledge a third party requires.</p></li>
 <li><p><em>Licensing</em>: If there is no separate license file, the project’s licensing terms can be described here.</p></li>
-</ul>
-</section>
-<section id="citation" class="level2">
-<h2 class="anchored" data-anchor-id="citation">Citation</h2>
+</ul></section><section id="citation" class="level2"><h2 class="anchored" data-anchor-id="citation">Citation</h2>
 <p>When working within a project file, it is possible to integrate citations directly into the script. All you need is a BibTeX file (file extension <em>.bib</em>) containing the corresponding bibliographic entries. This can be created using reference management software like <a href="https://www.zotero.org/">Zotero</a> or manually.</p>
 <p><span class="citation" data-cites="book">@book</span>{Grinschgl et al.&nbsp;2026, title={R you Ready}, author={Grinschgl, Sandra, Hirt, Laura and Schilling, Lars}, year={2026}, publisher={R you Ready Publishing} }</p>
 <p>If you want your citations formatted specifically in APA 7th edition style, you must first download the corresponding <a href="https://www.zotero.org/styles">Citation Style Language (CSL)</a> file and save it in your project folder.</p>
 <p>The integration of the BibTeX and CSL files is handled within the YAML header of your Quarto script:</p>
 <div class="cell">
-<details open="" class="code-fold">
-<summary>Code</summary>
-<div class="sourceCode cell-code" id="cb3"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="sc">---</span></span>
+<details class="code-fold"><summary>Code</summary><div class="sourceCode cell-code" id="cb3"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="sc">---</span></span>
 <span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a>title<span class="sc">:</span> <span class="st">"My analysis"</span></span>
 <span id="cb3-3"><a href="#cb3-3" aria-hidden="true" tabindex="-1"></a>bibliography<span class="sc">:</span> references.bib</span>
 <span id="cb3-4"><a href="#cb3-4" aria-hidden="true" tabindex="-1"></a>csl<span class="sc">:</span> apa.csl</span>
@@ -307,17 +274,13 @@ Note
 </details>
 </div>
 <p>In your script, you can then include the citation either directly in the text using <code>@Grinschgl2026</code> or in square brackets at the end of a sentence.</p>
-</section>
-<section id="license" class="level2">
-<h2 class="anchored" data-anchor-id="license">License</h2>
+</section><section id="license" class="level2"><h2 class="anchored" data-anchor-id="license">License</h2>
 <p>Licensing of code and data is an important step to ensure the reusability and protection of one’s own work. There are <a href="https://choosealicense.com/">various types of licenses</a> that regulate whether and in what form one’s own work may be reproduced and which requirements must be observed. Depending on the license, a suggestion can also be included on how one’s own work should be cited.</p>
 
 
-</section>
-</section>
+<!-- -->
 
-</main> <!-- /main -->
-<script id="quarto-html-after-body" type="application/javascript">
+</section></section></main><!-- /main --><script id="quarto-html-after-body" type="application/javascript">
 window.document.addEventListener("DOMContentLoaded", function (event) {
   const toggleBodyColorMode = (bsSheetEl) => {
     const mode = bsSheetEl.getAttribute("data-mode");
@@ -404,6 +367,57 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
       container: window.document.getElementById('quarto-embedded-source-code-modal')
     });
     clipboardModal.on('success', onCopySuccess);
+  }
+  const viewSource = window.document.getElementById('quarto-view-source') ||
+                     window.document.getElementById('quarto-code-tools-source');
+  if (viewSource) {
+    const sourceUrl = viewSource.getAttribute("data-quarto-source-url");
+    viewSource.addEventListener("click", function(e) {
+      if (sourceUrl) {
+        // rstudio viewer pane
+        if (/\bcapabilities=\b/.test(window.location)) {
+          window.open(sourceUrl);
+        } else {
+          window.location.href = sourceUrl;
+        }
+      } else {
+        const modal = new bootstrap.Modal(document.getElementById('quarto-embedded-source-code-modal'));
+        modal.show();
+      }
+      return false;
+    });
+  }
+  function toggleCodeHandler(show) {
+    return function(e) {
+      const detailsSrc = window.document.querySelectorAll(".cell > details > .sourceCode");
+      for (let i=0; i<detailsSrc.length; i++) {
+        const details = detailsSrc[i].parentElement;
+        if (show) {
+          details.open = true;
+        } else {
+          details.removeAttribute("open");
+        }
+      }
+      const cellCodeDivs = window.document.querySelectorAll(".cell > .sourceCode");
+      const fromCls = show ? "hidden" : "unhidden";
+      const toCls = show ? "unhidden" : "hidden";
+      for (let i=0; i<cellCodeDivs.length; i++) {
+        const codeDiv = cellCodeDivs[i];
+        if (codeDiv.classList.contains(fromCls)) {
+          codeDiv.classList.remove(fromCls);
+          codeDiv.classList.add(toCls);
+        } 
+      }
+      return false;
+    }
+  }
+  const hideAllCode = window.document.getElementById("quarto-hide-all-code");
+  if (hideAllCode) {
+    hideAllCode.addEventListener("click", toggleCodeHandler(false));
+  }
+  const showAllCode = window.document.getElementById("quarto-show-all-code");
+  if (showAllCode) {
+    showAllCode.addEventListener("click", toggleCodeHandler(true));
   }
     var localhostRegex = new RegExp(/^(?:http|https):\/\/localhost\:?[0-9]*\//);
     var mailtoRegex = new RegExp(/^mailto:/);
@@ -733,16 +747,108 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
     }
   }
 });
-</script>
+</script><div class="modal fade" id="quarto-embedded-source-code-modal" tabindex="-1" aria-labelledby="quarto-embedded-source-code-modal-label" aria-hidden="true"><div class="modal-dialog modal-dialog-scrollable"><div class="modal-content"><div class="modal-header"><h5 class="modal-title" id="quarto-embedded-source-code-modal-label">Source Code</h5><button class="btn-close" data-bs-dismiss="modal"></button></div><div class="modal-body"><div class="">
+<div class="sourceCode" id="cb4" data-shortcodes="false"><pre class="sourceCode markdown code-with-copy"><code class="sourceCode markdown"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a><span class="co">---</span></span>
+<span id="cb4-2"><a href="#cb4-2" aria-hidden="true" tabindex="-1"></a><span class="an">title:</span><span class="co"> "Workflow"</span></span>
+<span id="cb4-3"><a href="#cb4-3" aria-hidden="true" tabindex="-1"></a><span class="co">---</span></span>
+<span id="cb4-4"><a href="#cb4-4" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb4-5"><a href="#cb4-5" aria-hidden="true" tabindex="-1"></a>{{&lt; include ../_hardcoded_values.qmd &gt;}}</span>
+<span id="cb4-6"><a href="#cb4-6" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb4-7"><a href="#cb4-7" aria-hidden="true" tabindex="-1"></a><span class="fu"># Fundamentals</span></span>
+<span id="cb4-8"><a href="#cb4-8" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb4-9"><a href="#cb4-9" aria-hidden="true" tabindex="-1"></a>The core idea of a robust, reproducible analysis is a clean, repeatable, and **script-based workflow**. This means that every step of the data analysis is documented in a script and can be executed with a single command. This makes it possible to reproduce the analysis at any time and verify that the results are consistent. The following sections delve deeper into the individual aspects of the script-based workflow:</span>
+<span id="cb4-10"><a href="#cb4-10" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb4-11"><a href="#cb4-11" aria-hidden="true" tabindex="-1"></a><span class="in">``` text</span></span>
+<span id="cb4-12"><a href="#cb4-12" aria-hidden="true" tabindex="-1"></a><span class="in">Parent_Folder/</span></span>
+<span id="cb4-13"><a href="#cb4-13" aria-hidden="true" tabindex="-1"></a><span class="in">├── project.Rproj         # Project file</span></span>
+<span id="cb4-14"><a href="#cb4-14" aria-hidden="true" tabindex="-1"></a><span class="in">├── data/                 # All analysis inputs</span></span>
+<span id="cb4-15"><a href="#cb4-15" aria-hidden="true" tabindex="-1"></a><span class="in">│   └── raw/              # Raw data</span></span>
+<span id="cb4-16"><a href="#cb4-16" aria-hidden="true" tabindex="-1"></a><span class="in">├── scripts/              # All analysis scripts</span></span>
+<span id="cb4-17"><a href="#cb4-17" aria-hidden="true" tabindex="-1"></a><span class="in">│   └── analyses.qmd      # Main script</span></span>
+<span id="cb4-18"><a href="#cb4-18" aria-hidden="true" tabindex="-1"></a><span class="in">├── outputs/              # All analysis outputs</span></span>
+<span id="cb4-19"><a href="#cb4-19" aria-hidden="true" tabindex="-1"></a><span class="in">│   ├── figs/             # Graphics and plots</span></span>
+<span id="cb4-20"><a href="#cb4-20" aria-hidden="true" tabindex="-1"></a><span class="in">│   └── tables/           # Tables</span></span>
+<span id="cb4-21"><a href="#cb4-21" aria-hidden="true" tabindex="-1"></a><span class="in">├── README.md             # Brief project explanation</span></span>
+<span id="cb4-22"><a href="#cb4-22" aria-hidden="true" tabindex="-1"></a><span class="in">├── references.bib        # BibTex file</span></span>
+<span id="cb4-23"><a href="#cb4-23" aria-hidden="true" tabindex="-1"></a><span class="in">└── licence.txt           # License information</span></span>
+<span id="cb4-24"><a href="#cb4-24" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
+<span id="cb4-25"><a href="#cb4-25" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb4-26"><a href="#cb4-26" aria-hidden="true" tabindex="-1"></a><span class="fu">## Project</span></span>
+<span id="cb4-27"><a href="#cb4-27" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb4-28"><a href="#cb4-28" aria-hidden="true" tabindex="-1"></a>An RStudio Project (file extension *.Rproj*) is the foundation for a script-based workflow. It can be thought of as the coordination center for the entire project. All files belonging to the same project should be located in the same folder or one of its subfolders. Data can be loaded and saved relative to the project file. This makes it possible to share the entire project folder and verify its reproducibility elsewhere.</span>
+<span id="cb4-29"><a href="#cb4-29" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb4-30"><a href="#cb4-30" aria-hidden="true" tabindex="-1"></a>To simplify the use of relative paths for loading and saving files, the function <span class="in">`here::here()`</span> can be used.</span>
+<span id="cb4-31"><a href="#cb4-31" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb4-32"><a href="#cb4-32" aria-hidden="true" tabindex="-1"></a><span class="in">```{r, eval = FALSE}</span></span>
+<span id="cb4-33"><a href="#cb4-33" aria-hidden="true" tabindex="-1"></a><span class="in"># install.packages("here")</span></span>
+<span id="cb4-34"><a href="#cb4-34" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb4-35"><a href="#cb4-35" aria-hidden="true" tabindex="-1"></a><span class="in">here::here("data", "raw", "my_raw_data.csv") # Example path</span></span>
+<span id="cb4-36"><a href="#cb4-36" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
+<span id="cb4-37"><a href="#cb4-37" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb4-38"><a href="#cb4-38" aria-hidden="true" tabindex="-1"></a>::: callout-note</span>
+<span id="cb4-39"><a href="#cb4-39" aria-hidden="true" tabindex="-1"></a>Project files are also necessary to enable version control via Git and GitHub. You will find more information on this in the following pages.</span>
+<span id="cb4-40"><a href="#cb4-40" aria-hidden="true" tabindex="-1"></a>:::</span>
+<span id="cb4-41"><a href="#cb4-41" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb4-42"><a href="#cb4-42" aria-hidden="true" tabindex="-1"></a><span class="fu">## Raw data</span></span>
+<span id="cb4-43"><a href="#cb4-43" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb4-44"><a href="#cb4-44" aria-hidden="true" tabindex="-1"></a>Raw data is essential for a reproducible and script-based workflow. Raw data refers to materials that could not be recovered if lost (for example, completed questionnaires). Therefore, the first step in a script-based workflow is invariably to create a copy of the raw data, store it under data/raw, and work exclusively with these copies. This ensures that an unaltered version of the raw data can always be accessed if necessary.</span>
+<span id="cb4-45"><a href="#cb4-45" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb4-46"><a href="#cb4-46" aria-hidden="true" tabindex="-1"></a><span class="fu">## Scripts</span></span>
+<span id="cb4-47"><a href="#cb4-47" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb4-48"><a href="#cb4-48" aria-hidden="true" tabindex="-1"></a>As the name of the script-based workflow suggests, the script is the heart of such a workflow. All steps of the data analysis—from data cleaning and transformation to visualization—should be documented in a script. This automatically prevents manual edits and ensures that traceable and reproducible results are obtained. The script connects the (copied) raw data from data/raw and creates the corresponding plots and tables for outputs.</span>
+<span id="cb4-49"><a href="#cb4-49" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb4-50"><a href="#cb4-50" aria-hidden="true" tabindex="-1"></a>::: callout-note</span>
+<span id="cb4-51"><a href="#cb4-51" aria-hidden="true" tabindex="-1"></a>Citations can also be integrated into the script. Furthermore, version control can be managed directly from within the script. You can find more information about this below under "Citations" and on the following pages. Information regarding what to keep in mind within the scripts can also be found on one of the following pages.</span>
+<span id="cb4-52"><a href="#cb4-52" aria-hidden="true" tabindex="-1"></a>:::</span>
+<span id="cb4-53"><a href="#cb4-53" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb4-54"><a href="#cb4-54" aria-hidden="true" tabindex="-1"></a><span class="fu">## Outputs</span></span>
+<span id="cb4-55"><a href="#cb4-55" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb4-56"><a href="#cb4-56" aria-hidden="true" tabindex="-1"></a>The resulting data should be stored separately from the raw data to avoid confusion and to allow for a fresh start with unaltered raw data if necessary. Outputs may include, for example, plots or tables. It is important that scripts are designed to generate these outputs automatically when executed. This ensures that manual edits are prevented and that traceable, reproducible plots and tables are obtained.</span>
+<span id="cb4-57"><a href="#cb4-57" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb4-58"><a href="#cb4-58" aria-hidden="true" tabindex="-1"></a><span class="fu">## README</span></span>
+<span id="cb4-59"><a href="#cb4-59" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb4-60"><a href="#cb4-60" aria-hidden="true" tabindex="-1"></a>As the name of the README file (file extension *.md*) suggests, this file is intended to be read first when an outside person opens the project. You can think of a README as a manual for the project, which allows third parties to understand the work and build upon it. A README typically includes the following sections:</span>
+<span id="cb4-61"><a href="#cb4-61" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb4-62"><a href="#cb4-62" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span>*Project Name &amp; Brief Description*: A short overview describing the scope and purpose of the project.</span>
+<span id="cb4-63"><a href="#cb4-63" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb4-64"><a href="#cb4-64" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span>*Project Content*: A brief description of what is contained in the various folders and how the files are structured.</span>
+<span id="cb4-65"><a href="#cb4-65" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb4-66"><a href="#cb4-66" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span>*Instructions for Reproduction*: This describes the steps necessary to replicate the results. Reproducibility is often measured by how comprehensive these instructions are and how much prior knowledge a third party requires.</span>
+<span id="cb4-67"><a href="#cb4-67" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb4-68"><a href="#cb4-68" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span>*Licensing*: If there is no separate license file, the project's licensing terms can be described here.</span>
+<span id="cb4-69"><a href="#cb4-69" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb4-70"><a href="#cb4-70" aria-hidden="true" tabindex="-1"></a><span class="fu">## Citation</span></span>
+<span id="cb4-71"><a href="#cb4-71" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb4-72"><a href="#cb4-72" aria-hidden="true" tabindex="-1"></a>When working within a project file, it is possible to integrate citations directly into the script. All you need is a BibTeX file (file extension *.bib*) containing the corresponding bibliographic entries. This can be created using reference management software like <span class="co">[</span><span class="ot">Zotero</span><span class="co">](https://www.zotero.org/)</span> or manually.</span>
+<span id="cb4-73"><a href="#cb4-73" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb4-74"><a href="#cb4-74" aria-hidden="true" tabindex="-1"></a>@book{Grinschgl et al. 2026, title={R you Ready}, author={Grinschgl, Sandra, Hirt, Laura and Schilling, Lars}, year={2026}, publisher={R you Ready Publishing} }</span>
+<span id="cb4-75"><a href="#cb4-75" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb4-76"><a href="#cb4-76" aria-hidden="true" tabindex="-1"></a>If you want your citations formatted specifically in APA 7th edition style, you must first download the corresponding <span class="co">[</span><span class="ot">Citation Style Language (CSL)</span><span class="co">](https://www.zotero.org/styles)</span> file and save it in your project folder.</span>
+<span id="cb4-77"><a href="#cb4-77" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb4-78"><a href="#cb4-78" aria-hidden="true" tabindex="-1"></a>The integration of the BibTeX and CSL files is handled within the YAML header of your Quarto script:</span>
+<span id="cb4-79"><a href="#cb4-79" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb4-80"><a href="#cb4-80" aria-hidden="true" tabindex="-1"></a><span class="in">```{r, eval = FALSE}</span></span>
+<span id="cb4-81"><a href="#cb4-81" aria-hidden="true" tabindex="-1"></a><span class="in">---</span></span>
+<span id="cb4-82"><a href="#cb4-82" aria-hidden="true" tabindex="-1"></a><span class="in">title: "My analysis"</span></span>
+<span id="cb4-83"><a href="#cb4-83" aria-hidden="true" tabindex="-1"></a><span class="in">bibliography: references.bib</span></span>
+<span id="cb4-84"><a href="#cb4-84" aria-hidden="true" tabindex="-1"></a><span class="in">csl: apa.csl</span></span>
+<span id="cb4-85"><a href="#cb4-85" aria-hidden="true" tabindex="-1"></a><span class="in">---</span></span>
+<span id="cb4-86"><a href="#cb4-86" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
+<span id="cb4-87"><a href="#cb4-87" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb4-88"><a href="#cb4-88" aria-hidden="true" tabindex="-1"></a>In your script, you can then include the citation either directly in the text using <span class="in">`@Grinschgl2026`</span> or in square brackets at the end of a sentence.</span>
+<span id="cb4-89"><a href="#cb4-89" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb4-90"><a href="#cb4-90" aria-hidden="true" tabindex="-1"></a><span class="fu">## License</span></span>
+<span id="cb4-91"><a href="#cb4-91" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb4-92"><a href="#cb4-92" aria-hidden="true" tabindex="-1"></a>Licensing of code and data is an important step to ensure the reusability and protection of one's own work. There are <span class="co">[</span><span class="ot">various types of licenses</span><span class="co">](https://choosealicense.com/)</span> that regulate whether and in what form one's own work may be reproduced and which requirements must be observed. Depending on the license, a suggestion can also be included on how one's own work should be cited.</span></code><button title="Copy to Clipboard" class="code-copy-button" data-in-quarto-modal=""><i class="bi"></i></button></pre></div>
+</div></div></div></div></div>
 </div> <!-- /content -->
-<footer class="footer">
-  <div class="nav-footer">
+<footer class="footer"><div class="nav-footer">
     <div class="nav-footer-left">
 <p>© 2026 Department Psychology of Digitalisation</p>
 </div>   
     <div class="nav-footer-center">
       <ul class="footer-items list-unstyled">
-    <li class="nav-item">
+<li class="nav-item">
     <a class="nav-link" href="https://github.com/schillinglars/reproducibility_guide">
 <p><i class="bi bi-github"></i> GitHub</p>
 </a>
@@ -753,14 +859,12 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
 </a>
   </li>  
 </ul>
-    </div>
+</div>
     <div class="nav-footer-right">
 <p>Licensed under <a href="https://creativecommons.org/licenses/by-nc/4.0/">CC BY-NC 4.0</a></p>
 </div>
   </div>
 </footer>
-
-
 
 
 </body></html>

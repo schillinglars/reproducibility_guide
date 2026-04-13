@@ -20,6 +20,8 @@ website:
         href: source/workflow.qmd
       - text: "4. Codestyle"
         href: source/codestyle.qmd
+      - text: "5. Template"
+        href: source/template.qmd
 
   page-footer:
     left: "© 2026 Department Psychology of Digitalisation"
@@ -36,6 +38,8 @@ format:
     primary: "#7a1f1f" #ToDo: Adjust to departments official color scheme
     email-obfuscation: javascript # Hide clear mail addresses from bots
     toc: true
-    code-copy: true
-    code-fold: show
-    css: styles.css
+    css: styles.css # Custom CSS for styling
+    code-fold: true # Hide code by default
+    code-tools: true # Add the "Code" menu at the top right
+    code-copy: true # Allow easy copying of snippets
+    code-link: true # Hyperlinks functions to their documentation
