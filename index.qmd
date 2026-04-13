@@ -2,4 +2,4 @@
 title: "Welcome"
 ---
 
-This is the landing page of the reproducibility guide of the Department "Psychology of Digitalisation" at the University of Bern. This guide aims to guide and support students to write reproducible code in their Bacehlor or Master thesis.
+This is the landing page of the reproducibility guide of the Department *Psychology of Digitalisation* at the University of Bern. This guide aims to guide and support students to write reproducible code in their Bacheor or Master thesis.
