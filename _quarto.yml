@@ -5,7 +5,7 @@ project:
 lang: en
 
 website:
-  title: "Reproducibility Guide for Bachelor and Master thesis"
+  title: "Reproducibility Guide"
   
   sidebar:
     style: "docked"
@@ -31,11 +31,9 @@ website:
   page-footer:
     left: "© 2026 Department Psychology of Digitalisation"
     center:
-      - icon: github
-        text: "GitHub"
+      - text: "<i class='bi bi-github'></i> GitHub"
         href: https://github.com/schillinglars/reproducibility_guide
-      - icon: globe
-        text: "Department website"
+      - text: "<i class='bi bi-globe'></i> Department website"
         href: https://www.dig.psy.unibe.ch/index_eng.html
     right: "Licensed under [CC BY-NC 4.0](https://creativecommons.org/licenses/by-nc/4.0/)"
 

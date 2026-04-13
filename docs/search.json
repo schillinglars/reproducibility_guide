@@ -114,7 +114,7 @@
     "href": "index.html",
     "title": "Welcome",
     "section": "",
-    "text": "This is the landing page of the reproducibility guide of the Department “Psychology of Digitalisation” at the University of Bern. This guide aims to guide and support students to write reproducible code in their Bacehlor or Master thesis.",
+    "text": "This is the landing page of the reproducibility guide of the Department Psychology of Digitalisation at the University of Bern. This guide aims to guide and support students to write reproducible code in their Bacheor or Master thesis.",
     "crumbs": [
       "Welcome"
     ]
@@ -178,7 +178,7 @@
   {
     "objectID": "source/notes.html",
     "href": "source/notes.html",
-    "title": "Reproducibility Guide for Bachelor and Master thesis",
+    "title": "Reproducibility Guide",
     "section": "",
     "text": "Ideen zur Erweiterung:\nCodestyle: - seeds - Modularisierung von Skripten oder im Skript durch Funktionen - Parallelisierungen (asyncio, purr etc.) - Generierung von Plots und Tabellen direkt in R (bzw. anderen Sprachen) - Erläuterung von inline-Code für Resultatinterpretation\nSonstiges: - Containerumgebung\nversion_control: - Erläuterung von .gitignore - renv\nAbsprache mit Jamie/Ian/Lukas: - Erweiterung auf andere Programmiersprachen wie Python oder Julia§"
   },
