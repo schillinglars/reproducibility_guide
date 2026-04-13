@@ -6,9 +6,8 @@
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
-<meta name="dcterms.date" content="2026-04-13">
 
-<title>Versionskontrolle – Reproducibility Guide</title>
+<title>Version control – Reproducibility Guide</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -81,7 +80,7 @@ ul.task-list li input[type="checkbox"] {
       <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" role="button" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
         <i class="bi bi-layout-text-sidebar-reverse"></i>
       </button>
-        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../source/version_control.html">The Toolbox</a></li><li class="breadcrumb-item"><a href="../source/version_control.html">Version Control</a></li></ol></nav>
+        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../source/version_control.html">Version control</a></li></ol></nav>
         <a class="flex-grow-1" role="navigation" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
         </a>
       <button type="button" class="btn quarto-search-button" aria-label="Search" onclick="window.quartoOpenSearch();">
@@ -112,63 +111,30 @@ ul.task-list li input[type="checkbox"] {
  <span class="menu-text">Welcome</span></a>
   </div>
 </li>
-        <li class="sidebar-item sidebar-item-section">
-      <div class="sidebar-item-container"> 
-            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-1" role="navigation" aria-expanded="true">
- <span class="menu-text">Getting Started</span></a>
-          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-1" role="navigation" aria-expanded="true" aria-label="Toggle section">
-            <i class="bi bi-chevron-right ms-2"></i>
-          </a> 
-      </div>
-      <ul id="quarto-sidebar-section-1" class="collapse list-unstyled sidebar-section depth1 show">  
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="../source/reproducibility.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Reproducibility</span></a>
-  </div>
-</li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="../source/workflow.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Workflow</span></a>
-  </div>
-</li>
-      </ul>
-  </li>
-        <li class="sidebar-item sidebar-item-section">
-      <div class="sidebar-item-container"> 
-            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-2" role="navigation" aria-expanded="true">
- <span class="menu-text">The Toolbox</span></a>
-          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-2" role="navigation" aria-expanded="true" aria-label="Toggle section">
-            <i class="bi bi-chevron-right ms-2"></i>
-          </a> 
-      </div>
-      <ul id="quarto-sidebar-section-2" class="collapse list-unstyled sidebar-section depth1 show">  
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="../source/version_control.html" class="sidebar-item-text sidebar-link active">
- <span class="menu-text">Version Control</span></a>
-  </div>
-</li>
-      </ul>
-  </li>
-        <li class="sidebar-item sidebar-item-section">
-      <div class="sidebar-item-container"> 
-            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-3" role="navigation" aria-expanded="true">
- <span class="menu-text">Data &amp; Ethics</span></a>
-          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-3" role="navigation" aria-expanded="true" aria-label="Toggle section">
-            <i class="bi bi-chevron-right ms-2"></i>
-          </a> 
-      </div>
-      <ul id="quarto-sidebar-section-3" class="collapse list-unstyled sidebar-section depth1 show">  
-          <li class="sidebar-item">
+        <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="../source/fair.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">FAIR Principles</span></a>
   </div>
 </li>
-      </ul>
-  </li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../source/version_control.html" class="sidebar-item-text sidebar-link active">
+ <span class="menu-text">Version control</span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../source/workflow.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Workflow</span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../source/codestyle.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Codestyle</span></a>
+  </div>
+</li>
     </ul>
     </div>
 </nav>
@@ -179,7 +145,7 @@ ul.task-list li input[type="checkbox"] {
     <h2 id="toc-title">On this page</h2>
    
   <ul>
-  <li><a href="#grundlage" id="toc-grundlage" class="nav-link active" data-scroll-target="#grundlage">Grundlage</a></li>
+  <li><a href="#fundamentals" id="toc-fundamentals" class="nav-link active" data-scroll-target="#fundamentals">Fundamentals</a></li>
   <li><a href="#github" id="toc-github" class="nav-link" data-scroll-target="#github">GitHub</a></li>
   <li><a href="#git" id="toc-git" class="nav-link" data-scroll-target="#git">Git</a></li>
   </ul>
@@ -188,9 +154,9 @@ ul.task-list li input[type="checkbox"] {
 <!-- main -->
 <main class="content" id="quarto-document-content">
 
-<header id="title-block-header" class="quarto-title-block default"><nav class="quarto-page-breadcrumbs quarto-title-breadcrumbs d-none d-lg-block" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../source/version_control.html">The Toolbox</a></li><li class="breadcrumb-item"><a href="../source/version_control.html">Version Control</a></li></ol></nav>
+<header id="title-block-header" class="quarto-title-block default">
 <div class="quarto-title">
-<h1 class="title">Versionskontrolle</h1>
+<h1 class="title">Version control</h1>
 </div>
 
 
@@ -198,12 +164,6 @@ ul.task-list li input[type="checkbox"] {
 <div class="quarto-title-meta">
 
     
-    <div>
-    <div class="quarto-title-meta-heading">Published</div>
-    <div class="quarto-title-meta-contents">
-      <p class="date">April 13, 2026</p>
-    </div>
-  </div>
   
     
   </div>
@@ -213,17 +173,17 @@ ul.task-list li input[type="checkbox"] {
 </header>
 
 
-<section id="grundlage" class="level1">
-<h1>Grundlage</h1>
-<p>Um die Reproduzierbarkeit einer Analyse weiter zu verbessern, ist es sinnvoll die Versionskontrolle zu nutzen. Hierunter versteht sich, jegliche Änderungen an den Skripten, den Daten oder den Outputs zu dokumentieren. So kann nachvollzogen werden, wann welche Änderungen vorgenommen von wem vorgenommen wurden. Es ist auch möglich, frühere Versionen der Skripte, Daten oder Outputs wiederherzustellen.</p>
+<section id="fundamentals" class="level1">
+<h1>Fundamentals</h1>
+<p>To further improve the reproducibility of an analysis, it is useful to use version control. This refers to documenting any changes to the scripts, data, or outputs. This way, it can be traced when and by whom which changes were made. It is also possible to restore previous versions of the scripts, data, or outputs.</p>
 </section>
 <section id="github" class="level1">
 <h1>GitHub</h1>
-<p><a href="https://github.com/">GitHub</a> ist einfach ausgedrückt ein Cloudanbieter wie auch GDrive, OneDrive oder ICloud, allerdings spezialisiert auf Code und Versionskontrolle. In GitHub lassen sich sogenannte Repositories, Projekte, anlegen. Diese sind dann praktisch der Projektordner inklusive aller Unterordner und Dateien, welcher im workflow eingeführt worden sind. Anhand der Anwendung <a href="https://desktop.github.com/download/">GitHub Desktop</a> kann ein Ordnersystem auf dem eigenen Gerät mit einem Repository auf GitHub verbunden werden. Jegliche Änderungen an den Dateien werden durch sogenannte <em>commits</em> (!= abspeichern des Skripts) versioniert. Die alten Dateien werden nicht einfach überschrieben, sondern es wird festgehalten, welche Änderungen es gegenüber der alten Datei gibt. Nach einem commit kann die Änderung dann per <em>push</em> auf das repository übertragen werden. Ebenfalls möglich ist es, den aktuellen Stand des Repositories auf das eigene Gerät zu laden. Dies wird <em>pull</em> genannt.</p>
+<p><a href="https://github.com/">GitHub</a> is, simply put, a cloud provider like GDrive, OneDrive, or iCloud, but specialized for code and version control. In GitHub, so-called repositories—projects can be created. These are practically the project folder, including all subfolders and files, that were introduced within the workflow. Using the application <a href="https://desktop.github.com/download/">GitHub Desktop</a>, a folder system on your own device can be connected to a repository on GitHub. Any changes to the files are versioned through so-called <em>commits</em> (!= saving the script). The old files are not simply overwritten; instead, it is recorded which changes exist compared to the old file. After a commit, the change can then be transferred to the repository via <em>push</em>. It is also possible to download the current state of the repository to your own device. This is called a <em>pull</em>.</p>
 </section>
 <section id="git" class="level1">
 <h1>Git</h1>
-<p>Besonders mächtig ist die Verbindung von einem <strong>skriptbasierten Workflow</strong> mit der Versionskontrolle von GitHub über Git. <a href="https://git-scm.com/">Git</a> ermöglicht nach einmaliger Einrichtung und Verbindung zum entsprechenden GitHub repository direkt aus der Projketdatei hinaus commits, pushs und pulls zu vollziehen. Somit fällt eine zusätzliche Installation von GitHub Desktop und eine weitere Benutzeroberfläche aus.</p>
+<p>The combination of a <strong>script-based workflow</strong> with the version control of GitHub via Git is particularly powerful. <a href="https://git-scm.com/">Git</a> allows, after a one-time setup and connection to the corresponding GitHub repository, to perform commits, pushes, and pulls directly from within the project file. This eliminates the need for an additional installation of GitHub Desktop and another user interface.</p>
 <div class="callout callout-style-default callout-note callout-titled">
 <div class="callout-header d-flex align-content-center">
 <div class="callout-icon-container">
@@ -234,7 +194,7 @@ Note
 </div>
 </div>
 <div class="callout-body-container callout-body">
-<p>Eine Anleitung zur einmaligen Einrichtung von Git, GitHub und der Verbindung zwischen beiden findest du <a href="https://happygitwithr.com/">hier</a>. Bei Fragen zur Einrichtung oder zur Nutzung von Git und GitHub kannst du dich auch gerne an uns wenden!</p>
+<p>You can find instructions for the one-time setup of Git, GitHub, and the connection between the two <a href="https://happygitwithr.com/">here</a>.</p>
 </div>
 </div>
 

@@ -1,6 +1,11 @@
+# Notes
+notes.Rmd
+
+# R specific files
 .Rproj.user
 .Rhistory
 .RData
 .Ruserdata
 
+# Quarto output
 /.quarto/

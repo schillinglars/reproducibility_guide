@@ -1,91 +1,90 @@
 ---
 title: "Workflow"
-date: today
 ---
 
-# Grundlage
+# Fundamentals
 
-Die Grundidee einer robusten, reproduzierbaren Analyse ist ein sauberer, wiederholbarer und **skriptbasierter Workflow**. Hierunter versteht sich, dass jegliche Schritte der Datenanalyse in einem Skript dokumentiert sind und mit einem einzigen Befehl ausgeführt werden können. Dies ermöglicht es, die Analyse jederzeit zu reproduzieren und zu überprüfen, ob die Ergebnisse konsistent sind. Die folgenden Abschnitte gehen tiefer in die einzelnen Aspekte des skriptbasierten Workflows ein:
+The core idea of a robust, reproducible analysis is a clean, repeatable, and **script-based workflow**. This means that every step of the data analysis is documented in a script and can be executed with a single command. This makes it possible to reproduce the analysis at any time and verify that the results are consistent. The following sections delve deeper into the individual aspects of the script-based workflow:
 
 ``` text
-Überordner/
-├── projekt.Rproj         # Projekt-File
-├── data/                 # Alle Analyse-Inputs
-│   └── raw/              # Rohdaten
-├── scripts/              # Alle Analyse-Skripte
-│   └── analyses.qmd      # Hauptskript
-├── outputs/              # Alle Analyse-Outputs
-│   ├── figs/             # Grafiken und Plots
-│   └── tables/           # Tabellen
-├── README.md             # Kurze Projekterklärung
-├── references.bib        # BibTex-Datei
-└── licence.txt           # Lizenzinformationen
+Parent_Folder/
+├── project.Rproj         # Project file
+├── data/                 # All analysis inputs
+│   └── raw/              # Raw data
+├── scripts/              # All analysis scripts
+│   └── analyses.qmd      # Main script
+├── outputs/              # All analysis outputs
+│   ├── figs/             # Graphics and plots
+│   └── tables/           # Tables
+├── README.md             # Brief project explanation
+├── references.bib        # BibTex file
+└── licence.txt           # License information
 ```
 
-## Projekte
+## Project
 
-Ein RStudio Projekt (Dateiendung `.Rproj`) ist das Fundament für einen skriptbasierten Workflow. Man kann sich die Koordinationsstelle des gesamten Projektes vorstellen. Alle zum gleichen Projekt gehörigen Dateien sollten im selben Ordner oder einem der Unterordner liegen. Daten können relativ zum Projektfile geladen und gespeichert werden. Damit ist es möglich den gesamten Projektordner weiterzugeben und anderweitig auf Reproduzierbarkeit zu prüfen.
+An RStudio Project (file extension *.Rproj*) is the foundation for a script-based workflow. It can be thought of as the coordination center for the entire project. All files belonging to the same project should be located in the same folder or one of its subfolders. Data can be loaded and saved relative to the project file. This makes it possible to share the entire project folder and verify its reproducibility elsewhere.
 
-Um die relativen Pfade zum laden und speichern der Dateien einfach zu gestalten kann die Funktion `here::here()` genutzt werden.
+To simplify the use of relative paths for loading and saving files, the function `here::here()` can be used.
 
 ```{r, eval = FALSE}
-install.packages("here")
+# install.packages("here")
 
-here::here("data", "raw", "meine_rohdaten.csv") # Beispiel für den Pfad zu einer Rohdatendatei
+here::here("data", "raw", "my_raw_data.csv") # Example path
 ```
 
 ::: callout-note
-Projektfiles sind ausserdem notwendig um die Versionierung über Git und GitHub zu ermöglichen. Auf den folgenden Seiten findest du mehr Informationen hierzu.
+Project files are also necessary to enable version control via Git and GitHub. You will find more information on this in the following pages.
 :::
 
-## Rohdaten
+## Raw data
 
-Wichtig für einen reproduzierbaren und skriptbasierten Workflow sind **Rohdaten**. Rohdaten beziehen sich auf Materialien, die nach einem Verlust nicht wiederhergestellt werden könnten (beispielsweise ausgefüllte Fragebögen). Deshalb ist der erste Schritt im skriptbasierten Workflow ausnahmslos eine Kopie der Rohdaten zu erstellen, diese unter `data/raw` abzulegen und ausschliesslich mit diesen Kopien zu arbeiten. So kann notfalls immer auf eine unveränderte Version der Rohdaten zurückgegriffen werden.
+Raw data is essential for a reproducible and script-based workflow. Raw data refers to materials that could not be recovered if lost (for example, completed questionnaires). Therefore, the first step in a script-based workflow is invariably to create a copy of the raw data, store it under data/raw, and work exclusively with these copies. This ensures that an unaltered version of the raw data can always be accessed if necessary.
 
-## Skripte
+## Scripts
 
-Wie der Name des skriptbasierten Workflows schon erahnen lässst, das Skript ist das Herzstück eines solchen Workflows. Alle Schritte der Datenanalyse, von der Datenbereinigung über die Transformation bis hin zur Visualisierung, sollten in einem Skript dokumentiert werden. Manuelle Bearbeitungen werden hierdurch automatisch unterbunden und es ist sichergestellt nachvollziehbare und reproduzierbare Resultate zu erhalten. Das Skript verbindet die (kopierten) Rohdaten aus `data/raw` und erstellt entsprechende Plots und Tabellen für `outputs`.
+As the name of the script-based workflow suggests, the script is the heart of such a workflow. All steps of the data analysis—from data cleaning and transformation to visualization—should be documented in a script. This automatically prevents manual edits and ensures that traceable and reproducible results are obtained. The script connects the (copied) raw data from data/raw and creates the corresponding plots and tables for outputs.
 
 ::: callout-note
-In das Skript kann auch noch die Zitierung eingebunden werden. Ausserdem kann aus dem Skript heraus die Version control vorgenommen werden. Hierzu findest du weiter unten unter "zitation" und auf den folgenden Seiten noch mehr Informationen. Informationen, was innerhalb der Skripte zu beachten ist, findest du ebenfalls auf einer der folgenden Seiten.
+Citations can also be integrated into the script. Furthermore, version control can be managed directly from within the script. You can find more information about this below under "Citations" and on the following pages. Information regarding what to keep in mind within the scripts can also be found on one of the following pages.
 :::
 
 ## Outputs
 
-Die resultierenden Daten sollten separat von den Rohdaten gespeichert werden, um Verwechslungen zu vermeiden und notfalls mit unveränderten Rohdaten neu starten zu können. Outputs können beispielsweise Plots oder Tabellen sein. Es ist wichtig, dass die Skripte so gestaltet sind, dass sie die Outputs automatisch generieren, wenn sie ausgeführt werden. So werden auch hier manuelle Bearbeitungen automatisch unterbunden und es ist sichergestellt nachvollziehbare und reproduzierbare Plots oder Tabellen zu erhalten.
+The resulting data should be stored separately from the raw data to avoid confusion and to allow for a fresh start with unaltered raw data if necessary. Outputs may include, for example, plots or tables. It is important that scripts are designed to generate these outputs automatically when executed. This ensures that manual edits are prevented and that traceable, reproducible plots and tables are obtained.
 
 ## README
 
-Wie der Name der README-Datei (Dateiendung `.md`) verät ist diese Datei dazu gedacht als erstes gelesen zu werden, wenn eine fremde Person das Projekt öffnet. Man kann sich ein README wie ein Handbuch für das Projekt vorstellen, anhand welchem dritte das Projekt nachvollziehen und auf ihm aufbauen können. Üblicherweise enthält das README folgende Stellen:
+As the name of the README file (file extension *.md*) suggests, this file is intended to be read first when an outside person opens the project. You can think of a README as a manual for the project, which allows third parties to understand the work and build upon it. A README typically includes the following sections:
 
-1.  **Projektname & Kurzbeschreibung**: Hier wird kurz der Rahmen des Projektes beschrieben.
+- *Project Name & Brief Description*: A short overview describing the scope and purpose of the project.
 
-2.  **Inhalt des Projektes**: Hier wird kurz beschrieben, was sich in den verschiedenen Ordnern befindet und wie die Dateien strukturiert sind.
+- *Project Content*: A brief description of what is contained in the various folders and how the files are structured.
 
-3.  **Anleitung zur Reproduktion**: Hier wird beschrieben, welche Schritte zur Reproduzierbarkeit nachzubilden sind. Die Reproduzierbarkeit kann vor allem daran bemessen werden wie umfangreich diese Anleitung ist und wie viel Vorwissen eine dritte Preson benötigt.
+- *Instructions for Reproduction*: This describes the steps necessary to replicate the results. Reproducibility is often measured by how comprehensive these instructions are and how much prior knowledge a third party requires.
 
-4.  **Lizenzierung**: Sofern keine getrennte Lizenz vorliegt, kann hier die Lizenzierung des Projektes beschrieben werden.
+- *Licensing*: If there is no separate license file, the project's licensing terms can be described here.
 
-## Zitation
+## Citation
 
-Arbeitet man im Rahmen einer Projektdatei, so ist es möglich die Zitation direkt in das Skript einzubinden. Hierfür braucht es lediglich eine BibTeX-Datei (Dateiendung `.bib`) mit den entsprechenden Literaturangaben. Diese kann über ein Literaturverwaltungsprogramm wie beispielsweise [Zotero](https://www.zotero.org/) oder manuell erstellt werden. Hier ein Beispiel wie eine solche Datei strukturiert ist:
+When working within a project file, it is possible to integrate citations directly into the script. All you need is a BibTeX file (file extension *.bib*) containing the corresponding bibliographic entries. This can be created using reference management software like [Zotero](https://www.zotero.org/) or manually.
 
 @book{Grinschgl et al. 2026, title={R you Ready}, author={Grinschgl, Sandra, Hirt, Laura and Schilling, Lars}, year={2026}, publisher={R you Ready Publishing} }
 
-Wenn man die Zitation sogar im APA7-Style erstellt haben möchte, so muss erst noch eine entsprechende Citation Style Language (CSL) [heruntergeladen](https://www.zotero.org/styles) und im Projektordner gespeichert werden.
+If you want your citations formatted specifically in APA 7th edition style, you must first download the corresponding [Citation Style Language (CSL)](https://www.zotero.org/styles) file and save it in your project folder.
 
-Die Einbindung der BibTex-Datei und der CSL-Datei erfolgt dann innerhalb von Quarto über die YAML-Header des Skriptes:
+The integration of the BibTeX and CSL files is handled within the YAML header of your Quarto script:
 
 ```{r, eval = FALSE}
 ---
-title: "R you ready"
+title: "My analysis"
 bibliography: references.bib
 csl: apa.csl
 ---
 ```
 
-Im Skript ist dann entweder die Einbindung im Text über `@Grinschgl et al. 2026` oder über eckige Klammern am Satzende möglich.
+In your script, you can then include the citation either directly in the text using `@Grinschgl2026` or in square brackets at the end of a sentence.
 
-## Lizenz
+## License
 
-Die Lizenzierung von Code und Daten ist ein wichtiger Schritt, um die Wiederverwendbarkeit und den Schutz der eigenen Arbeit zu gewährleisten. Es gibt [verschiedene Arten von Lizenzen](https://choosealicense.com), die regeln, ob und in welcher Form die eigene Arbeit vervielfältigt werden darf und welche Vorgaben dabei zu beachten sind. Entsprechend der Lizenz kann auch noch ein Vorschlag eingebaut werden, wie die eigene Arbeit zitiert werden soll.
+Licensing of code and data is an important step to ensure the reusability and protection of one's own work. There are [various types of licenses](https://choosealicense.com/) that regulate whether and in what form one's own work may be reproduced and which requirements must be observed. Depending on the license, a suggestion can also be included on how one's own work should be cited.

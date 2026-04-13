@@ -6,7 +6,6 @@
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
-<meta name="dcterms.date" content="2026-04-13">
 
 <title>Codestyle – Reproducibility Guide</title>
 <style>
@@ -115,9 +114,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
       <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" role="button" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
         <i class="bi bi-layout-text-sidebar-reverse"></i>
       </button>
-        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item">
-      Reproducibility Guide
-      </li></ol></nav>
+        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../source/codestyle.html">Codestyle</a></li></ol></nav>
         <a class="flex-grow-1" role="navigation" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
         </a>
       <button type="button" class="btn quarto-search-button" aria-label="Search" onclick="window.quartoOpenSearch();">
@@ -148,63 +145,30 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
  <span class="menu-text">Welcome</span></a>
   </div>
 </li>
-        <li class="sidebar-item sidebar-item-section">
-      <div class="sidebar-item-container"> 
-            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-1" role="navigation" aria-expanded="true">
- <span class="menu-text">Getting Started</span></a>
-          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-1" role="navigation" aria-expanded="true" aria-label="Toggle section">
-            <i class="bi bi-chevron-right ms-2"></i>
-          </a> 
-      </div>
-      <ul id="quarto-sidebar-section-1" class="collapse list-unstyled sidebar-section depth1 show">  
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="../source/reproducibility.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Reproducibility</span></a>
-  </div>
-</li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="../source/workflow.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Workflow</span></a>
-  </div>
-</li>
-      </ul>
-  </li>
-        <li class="sidebar-item sidebar-item-section">
-      <div class="sidebar-item-container"> 
-            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-2" role="navigation" aria-expanded="true">
- <span class="menu-text">The Toolbox</span></a>
-          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-2" role="navigation" aria-expanded="true" aria-label="Toggle section">
-            <i class="bi bi-chevron-right ms-2"></i>
-          </a> 
-      </div>
-      <ul id="quarto-sidebar-section-2" class="collapse list-unstyled sidebar-section depth1 show">  
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="../source/version_control.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Version Control</span></a>
-  </div>
-</li>
-      </ul>
-  </li>
-        <li class="sidebar-item sidebar-item-section">
-      <div class="sidebar-item-container"> 
-            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-3" role="navigation" aria-expanded="true">
- <span class="menu-text">Data &amp; Ethics</span></a>
-          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-3" role="navigation" aria-expanded="true" aria-label="Toggle section">
-            <i class="bi bi-chevron-right ms-2"></i>
-          </a> 
-      </div>
-      <ul id="quarto-sidebar-section-3" class="collapse list-unstyled sidebar-section depth1 show">  
-          <li class="sidebar-item">
+        <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="../source/fair.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">FAIR Principles</span></a>
   </div>
 </li>
-      </ul>
-  </li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../source/version_control.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Version control</span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../source/workflow.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Workflow</span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../source/codestyle.html" class="sidebar-item-text sidebar-link active">
+ <span class="menu-text">Codestyle</span></a>
+  </div>
+</li>
     </ul>
     </div>
 </nav>
@@ -215,14 +179,14 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
     <h2 id="toc-title">On this page</h2>
    
   <ul>
-  <li><a href="#grundlage" id="toc-grundlage" class="nav-link active" data-scroll-target="#grundlage">Grundlage</a>
+  <li><a href="#fundamentals" id="toc-fundamentals" class="nav-link active" data-scroll-target="#fundamentals">Fundamentals</a>
   <ul class="collapse">
-  <li><a href="#übertragbarkeit" id="toc-übertragbarkeit" class="nav-link" data-scroll-target="#übertragbarkeit">Übertragbarkeit</a></li>
-  <li><a href="#namen" id="toc-namen" class="nav-link" data-scroll-target="#namen">Namen</a></li>
-  <li><a href="#kommentare" id="toc-kommentare" class="nav-link" data-scroll-target="#kommentare">Kommentare</a></li>
-  <li><a href="#struktur" id="toc-struktur" class="nav-link" data-scroll-target="#struktur">Struktur</a></li>
-  <li><a href="#funktionen" id="toc-funktionen" class="nav-link" data-scroll-target="#funktionen">Funktionen</a></li>
-  <li><a href="#abhängigkeiten" id="toc-abhängigkeiten" class="nav-link" data-scroll-target="#abhängigkeiten">Abhängigkeiten</a></li>
+  <li><a href="#portability" id="toc-portability" class="nav-link" data-scroll-target="#portability">Portability</a></li>
+  <li><a href="#naming" id="toc-naming" class="nav-link" data-scroll-target="#naming">Naming</a></li>
+  <li><a href="#comments" id="toc-comments" class="nav-link" data-scroll-target="#comments">Comments</a></li>
+  <li><a href="#structure" id="toc-structure" class="nav-link" data-scroll-target="#structure">Structure</a></li>
+  <li><a href="#functions" id="toc-functions" class="nav-link" data-scroll-target="#functions">Functions</a></li>
+  <li><a href="#dependencies" id="toc-dependencies" class="nav-link" data-scroll-target="#dependencies">Dependencies</a></li>
   </ul></li>
   </ul>
 </nav>
@@ -240,12 +204,6 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <div class="quarto-title-meta">
 
     
-    <div>
-    <div class="quarto-title-meta-heading">Published</div>
-    <div class="quarto-title-meta-contents">
-      <p class="date">April 13, 2026</p>
-    </div>
-  </div>
   
     
   </div>
@@ -255,9 +213,9 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </header>
 
 
-<section id="grundlage" class="level1">
-<h1>Grundlage</h1>
-<p>Um die Reproduzierbarkeit und Nachvollziehbarkeit von Analysen zu verbessern, ist es wichtig, einen einheitlichen Codestyle zu verwenden. Ein Codestyle umfasst die Konventionen und Regeln, die bei der Erstellung von Code beachtet werden sollten. Dies erleichtert nicht nur die Zusammenarbeit mit anderen, sondern auch die Wartung und Erweiterung des Codes in der Zukunft. Im Folgenden werden einige wichtige Aspekte eines guten Codestyles beschrieben</p>
+<section id="fundamentals" class="level1">
+<h1>Fundamentals</h1>
+<p>To improve the reproducibility and traceability of analyses, it is important to use a consistent codestyle. A codestyle encompasses the conventions and rules that should be followed when creating code. This not only facilitates collaboration with others but also the maintenance and expansion of the code in the future. In the following, some important aspects of a good codestyle are described.</p>
 <div class="callout callout-style-default callout-note callout-titled">
 <div class="callout-header d-flex align-content-center">
 <div class="callout-icon-container">
@@ -268,27 +226,27 @@ Note
 </div>
 </div>
 <div class="callout-body-container callout-body">
-<p>RStudio bietet einen automatischen Formatierer, der dabei helfen kann, einen einheitlichen Codestyle zu gewährleisten. Dieser kann über die Tastenkombination <code>Strg + Shift + P</code> (Windows) oder <code>Cmd + Shift + P</code> (Mac) und die Auswahl “Reformat current document” aktiviert werden.</p>
+<p>RStudio provides an automatic formatter that can help ensure a consistent codestyle. This can be activated via the keyboard shortcut <code>Ctrl + Shift + P</code> (Windows) or <code>Cmd + Shift + P</code> (Mac) and selecting “Reformat current document”.</p>
 </div>
 </div>
-<section id="übertragbarkeit" class="level2">
-<h2 class="anchored" data-anchor-id="übertragbarkeit">Übertragbarkeit</h2>
-<p>Ziel eines reproduzierbaren Codestyles ist es, dass dieser unabhängig vom eingesetzen Endgerät und der ausführenden Person zum gleichen Ergebnis gelangt. Hierfür sind vor allem relative Pfade gegenüber absoluten Pfaden hilfreich. Absolute Pfade geben immer den gesamten Pfad im Dateiensystem aus. Relative Pfade geben nur die relative Position zum working directory des Skriptes aus. Wird die Funktion <code>here::here</code> verwendet, dann werden automatisch relative Pfade, abhängig zum Ort des Projektfiles verwendet.</p>
+<section id="portability" class="level2">
+<h2 class="anchored" data-anchor-id="portability">Portability</h2>
+<p>The goal of a reproducible codestyle is to ensure that it leads to the same result regardless of the device used or the person executing it. For this purpose, relative paths are particularly helpful compared to absolute paths. Absolute paths always display the entire path within the file system. Relative paths only show the position relative to the script’s working directory. If the function <code>here::here</code> is used, relative paths are automatically generated based on the location of the project file.</p>
 <div class="cell">
 <details open="" class="code-fold">
 <summary>Code</summary>
-<div class="sourceCode cell-code" id="cb1"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Beispiel für einen absoluten Pfad</span></span>
+<div class="sourceCode cell-code" id="cb1"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Example of an absolute path</span></span>
 <span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a>data <span class="ot">&lt;-</span> <span class="fu">read.csv</span>(<span class="st">"C:/Users/Username/Documents/Project/data/raw/my_data.csv"</span>)</span>
 <span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-4"><a href="#cb1-4" aria-hidden="true" tabindex="-1"></a><span class="co"># Beispiel für einen relativen Pfad, bei welcher sich die Rohdatei in zuvor erwähnter Ordnerstruktur befindet</span></span>
+<span id="cb1-4"><a href="#cb1-4" aria-hidden="true" tabindex="-1"></a><span class="co"># Example of a relative path where the data is stored within the expected data folder</span></span>
 <span id="cb1-5"><a href="#cb1-5" aria-hidden="true" tabindex="-1"></a>data <span class="ot">&lt;-</span> <span class="fu">read.csv</span>(here<span class="sc">::</span><span class="fu">here</span>(<span class="st">"data"</span>, <span class="st">"raw"</span>, <span class="st">"my_data.csv"</span>))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </details>
 </div>
 </section>
-<section id="namen" class="level2">
-<h2 class="anchored" data-anchor-id="namen">Namen</h2>
-<p>Variablen sollten immer aussagekräftige Namen haben, welcher den Inhalt wiedergeben. Funktionen sollten verben beinhalten, welche die Arbeitsweise widergeben. Sofern nicht beabsichtigt, sollte eine Variable oder eine Funktion nicht nach einer bereits vorhanden Variable oder einer vorhandenen Funktion benannt werden.</p>
-<p>Für R und Rstudio wird die Schreibweise snake_case verwendet. Bei snake_case werden Leerzeichen mit einem Unterstrich ersetzt, Grossbuchstaben werden zu Kleinbuchstaben.</p>
+<section id="naming" class="level2">
+<h2 class="anchored" data-anchor-id="naming">Naming</h2>
+<p>Variables should always have descriptive names that reflect their content. Functions should include verbs that reflect their functionality. Unless intended, a variable or function should not be named after an existing variable or function.</p>
+<p>For R and RStudio, snake_case is used. In snake_case, spaces are replaced with underscores, and uppercase letters are converted to lowercase.</p>
 <div class="callout callout-style-default callout-note callout-titled">
 <div class="callout-header d-flex align-content-center">
 <div class="callout-icon-container">
@@ -299,18 +257,18 @@ Note
 </div>
 </div>
 <div class="callout-body-container callout-body">
-<p>Beispielsweise <code>Temp</code>, <code>Data1</code> oder <code>myFunction</code> sind keine aussagekräftigen Namen und folgen zudem nicht snake_case, während <code>temperature</code>, <code>raw_data</code> oder <code>calculate_mean</code> aussagekräftige und snake_case folgende Namen sind.</p>
+<p>For example, <code>Temp</code>, <code>Data1</code>, or <code>myFunction</code> are not descriptive names and do not follow snake_case, whereas <code>temperature</code>, <code>raw_data</code>, or <code>calculate_mean</code> are descriptive and follow snake_case conventions.</p>
 </div>
 </div>
-<p>Idealerweise werden auch Dateien und Ordner einheitlich nach snake_case benannt und es werden Umlaute vermieden. Dies gewährt die Lesbarkeit für sowohl Mensch als auch Maschiene.</p>
+<p>Ideally, files and folders should also be named consistently according to snake_case, and special characters should be avoided. This ensures readability, for both humans and machines, and across different systems.</p>
 </section>
-<section id="kommentare" class="level2">
-<h2 class="anchored" data-anchor-id="kommentare">Kommentare</h2>
-<p>Kommentare sollten verwendet werden, um den Code zu erklären. Hierbei geht es nicht um die genaue Logik einer bereits vorhandenen Funktionen. Diese kann anhand der Dokumentationen auf CRAN nachvollzogen werden. Kommentare sollten bestenfalls Kontext geben, warum Input, Funktionsweise und entsprechender Outout in denn Code eingebunden wurden.</p>
+<section id="comments" class="level2">
+<h2 class="anchored" data-anchor-id="comments">Comments</h2>
+<p>Comments should be used to explain the code. This is not about the exact logic of already existing functions, which can be traced via the documentation on CRAN. Ideally, comments should provide context as to why specific inputs, functionalities, and corresponding outputs were integrated into the code.</p>
 <div class="cell">
 <details open="" class="code-fold">
 <summary>Code</summary>
-<div class="sourceCode cell-code" id="cb2"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Keine Kommentare</span></span>
+<div class="sourceCode cell-code" id="cb2"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="co"># No comments</span></span>
 <span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a>data <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="dv">10</span>, <span class="dv">20</span>, <span class="dv">30</span>, <span class="dv">40</span>, <span class="dv">50</span>)</span>
 <span id="cb2-3"><a href="#cb2-3" aria-hidden="true" tabindex="-1"></a>m <span class="ot">&lt;-</span> <span class="fu">mean</span>(data)</span>
 <span id="cb2-4"><a href="#cb2-4" aria-hidden="true" tabindex="-1"></a><span class="fu">print</span>(m)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
@@ -320,175 +278,160 @@ Note
 </div>
 <details open="" class="code-fold">
 <summary>Code</summary>
-<div class="sourceCode cell-code" id="cb4"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Mit passendem Umfang an Kommentaren</span></span>
-<span id="cb4-2"><a href="#cb4-2" aria-hidden="true" tabindex="-1"></a><span class="do">## Beispiel-Vektor mit Messwerten erstellen</span></span>
-<span id="cb4-3"><a href="#cb4-3" aria-hidden="true" tabindex="-1"></a>messwerte <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="dv">10</span>, <span class="dv">20</span>, <span class="dv">30</span>, <span class="dv">40</span>, <span class="dv">50</span>)</span>
+<div class="sourceCode cell-code" id="cb4"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a><span class="co"># With an appropriate amount of comments</span></span>
+<span id="cb4-2"><a href="#cb4-2" aria-hidden="true" tabindex="-1"></a><span class="do">## Create example vector with measurements</span></span>
+<span id="cb4-3"><a href="#cb4-3" aria-hidden="true" tabindex="-1"></a>measurements <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="dv">10</span>, <span class="dv">20</span>, <span class="dv">30</span>, <span class="dv">40</span>, <span class="dv">50</span>)</span>
 <span id="cb4-4"><a href="#cb4-4" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb4-5"><a href="#cb4-5" aria-hidden="true" tabindex="-1"></a><span class="do">## Durchschnittsberechnung für den Abschlussbericht</span></span>
-<span id="cb4-6"><a href="#cb4-6" aria-hidden="true" tabindex="-1"></a>durchschnitt <span class="ot">&lt;-</span> <span class="fu">mean</span>(messwerte)</span>
-<span id="cb4-7"><a href="#cb4-7" aria-hidden="true" tabindex="-1"></a><span class="fu">print</span>(durchschnitt)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span id="cb4-5"><a href="#cb4-5" aria-hidden="true" tabindex="-1"></a><span class="do">## Average calculation</span></span>
+<span id="cb4-6"><a href="#cb4-6" aria-hidden="true" tabindex="-1"></a>average <span class="ot">&lt;-</span> <span class="fu">mean</span>(measurements)</span>
+<span id="cb4-7"><a href="#cb4-7" aria-hidden="true" tabindex="-1"></a><span class="fu">print</span>(average)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </details>
 <div class="cell-output cell-output-stdout">
 <pre><code>[1] 30</code></pre>
 </div>
 <details open="" class="code-fold">
 <summary>Code</summary>
-<div class="sourceCode cell-code" id="cb6"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Definieren einer Variable namens 'werte'</span></span>
-<span id="cb6-2"><a href="#cb6-2" aria-hidden="true" tabindex="-1"></a><span class="co"># Die c() Funktion, um Zahlen zu kombinieren</span></span>
-<span id="cb6-3"><a href="#cb6-3" aria-hidden="true" tabindex="-1"></a>werte <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="dv">10</span>, <span class="dv">20</span>, <span class="dv">30</span>, <span class="dv">40</span>, <span class="dv">50</span>) <span class="co"># Zahlen von 10 bis 50</span></span>
-<span id="cb6-4"><a href="#cb6-4" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb6-5"><a href="#cb6-5" aria-hidden="true" tabindex="-1"></a><span class="co"># Aufrufen der Funktion `mean()` nit dem Argument werte</span></span>
-<span id="cb6-6"><a href="#cb6-6" aria-hidden="true" tabindex="-1"></a><span class="co"># mean berechnet das arithmetische Mittel</span></span>
-<span id="cb6-7"><a href="#cb6-7" aria-hidden="true" tabindex="-1"></a>ergebnis <span class="ot">&lt;-</span> <span class="fu">mean</span>(werte) <span class="co"># Das Ergebnis wird gespeichert</span></span>
-<span id="cb6-8"><a href="#cb6-8" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb6-9"><a href="#cb6-9" aria-hidden="true" tabindex="-1"></a><span class="co"># print(), um das Ergebnis in der Konsole auszugeben</span></span>
-<span id="cb6-10"><a href="#cb6-10" aria-hidden="true" tabindex="-1"></a><span class="fu">print</span>(ergebnis) <span class="co"># Die Ausgabe erfolgt hier</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb6"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Wit an overload of comments</span></span>
+<span id="cb6-2"><a href="#cb6-2" aria-hidden="true" tabindex="-1"></a><span class="do">## Defining a variable named 'values'</span></span>
+<span id="cb6-3"><a href="#cb6-3" aria-hidden="true" tabindex="-1"></a><span class="do">## The c() function to combine numbers</span></span>
+<span id="cb6-4"><a href="#cb6-4" aria-hidden="true" tabindex="-1"></a>values <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="dv">10</span>, <span class="dv">20</span>, <span class="dv">30</span>, <span class="dv">40</span>, <span class="dv">50</span>) <span class="do">## Numbers from 10 to 50</span></span>
+<span id="cb6-5"><a href="#cb6-5" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb6-6"><a href="#cb6-6" aria-hidden="true" tabindex="-1"></a><span class="do">## Calling the function `mean()` with the argument 'values'</span></span>
+<span id="cb6-7"><a href="#cb6-7" aria-hidden="true" tabindex="-1"></a><span class="do">## mean calculates the arithmetic mean</span></span>
+<span id="cb6-8"><a href="#cb6-8" aria-hidden="true" tabindex="-1"></a>result <span class="ot">&lt;-</span> <span class="fu">mean</span>(values) <span class="do">## The result is saved</span></span>
+<span id="cb6-9"><a href="#cb6-9" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb6-10"><a href="#cb6-10" aria-hidden="true" tabindex="-1"></a><span class="do">## print() to output the result in the console</span></span>
+<span id="cb6-11"><a href="#cb6-11" aria-hidden="true" tabindex="-1"></a><span class="fu">print</span>(result) <span class="do">## The output occurs here</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </details>
 <div class="cell-output cell-output-stdout">
 <pre><code>[1] 30</code></pre>
 </div>
 </div>
-<p>Wird eine eigene Funktion definiert (s.u.), so sollte diese mit einem kurzen Kommentar versehen werden, welcher die Funktionalität der Funktion erklärt. Es sollte klar sein, welche Argumente die Funktion erwartet und was sie zurückgibt.</p>
-<p>In RStudio können Kommentare oder Funktionsweisen auch ausserhalb eines Chunk platziert werden. Hierfür dient inline code: <code>r</code>:</p>
-<p>Der Mittelwert der Messwerte beträgt 30.</p>
+<p>If a custom function is defined (see below), it should be provided with a short comment explaining the functionality of the function. It should be clear which arguments the function expects and what it returns.</p>
+<p>In RStudio, comments or functional descriptions can also be placed outside of a chunk. Inline code is used for this: <code>r</code>:</p>
+<p>“The mean of the measurements is 30”.</p>
 </section>
-<section id="struktur" class="level2">
-<h2 class="anchored" data-anchor-id="struktur">Struktur</h2>
-<p>Lange Skripte können in mehere kleinere unterteilt werden. Beispielsweise gibt es ein Skript für die Bereinigung der Daten, ein weiteres für die Analyse der Daten und ein letztes für die Visulisierung und inferenzstatistischen Tests.</p>
-<div class="callout callout-style-default callout-note callout-titled">
-<div class="callout-header d-flex align-content-center">
-<div class="callout-icon-container">
-<i class="callout-icon"></i>
-</div>
-<div class="callout-title-container flex-fill">
-Note
-</div>
-</div>
-<div class="callout-body-container callout-body">
-<p>Beachte, dass wir im Rahmen des Seminars bei der Endabgabe nur ein einzelnes Skript erwarten!</p>
-</div>
-</div>
-<p>Innerhalb eines Skripts können mit dem YAML-Header wichtige Metainformationen bereitgestellt werden. Hierzu gehören nicht nur der Autor, das Datum oder auch die Einbindung von Zitationen, sondern auch Formatoptionen zum gerenderten Dokument.</p>
-<p>Abhängigkeiten in Form von Paketen sollten direkt zu Beginn des Skriptes geladen bzw. notfalls auch erst noch geladen werden.</p>
-<p>Über die Anzahl an # zu Beginn einer Zeile können verschiedene Ebenen von Überschriften erstellt werden. So kann beispielsweise mit <code>#</code> eine Hauptüberschrift erstellt werden, mit <code>##</code> eine Unterüberschrift und mit <code>###</code> eine weitere Unterüberschrift. So können die verschiedenen Abschnitte des Skriptes klar strukturiert und voneinander abgegrenzt werden.</p>
-<p>In RStudio können global oder für einzelne Chunks Einstellungen vorgenommen werden, welche die Ausgabe des Skriptes beeinflussen. Sollen diese Einstellungen global gelten, werden sie im YAML-Header ergänzt. Gelten sie nur für den spezifischen Chunk, werden die Einstellungen direkt bei diesem übergeben. Hier eine Übersicht zu den häufigsten Optionen:</p>
+<section id="structure" class="level2">
+<h2 class="anchored" data-anchor-id="structure">Structure</h2>
+<p>Long scripts can be divided into several smaller ones. For example, there could be one script for data cleaning, another for data analysis, and a final one for visualization and inferential statistical tests.</p>
+<p>Within a script, important meta-information can be provided using the YAML header. This includes not only the author, the date, or the integration of citations, but also formatting options for the rendered document.</p>
+<p>Dependencies in the form of packages should be loaded directly at the beginning of the script or, if necessary, installed before loading.</p>
+<p>By using the amount of <code>#</code> at the beginning of a line, different levels of headings can be created. For example, a heading of level 1 can be created with #, a subheading at level 2 with <code>##</code>, and a further subheading at level 3 with <code>###</code>. This allows the different sections of the script to be clearly structured and demarcated from one another.</p>
+<p>In RStudio, settings can be made globally or for individual chunks that influence the output of the script. If these settings are to apply globally, they are added to the YAML header. If they apply only to a specific chunk, the settings are passed directly within it. Here is an overview of the most common options:</p>
+<ul>
+<li><strong>eval: true</strong>: The chunk is actually executed/calculated.</li>
+<li><strong>echo: true</strong>: The code of the chunk is visible in the rendered document.</li>
+<li><strong>output: true</strong>: The results of the chunk (e.g., a table) are shown.</li>
+<li><strong>warning: true</strong>: R warnings appear in the document. error: false: If the code within the chunk has an error, rendering stops immediately (safe mode).</li>
+<li><strong>include: false</strong>: The chunk, including code, output, and potential warnings or errors, is completely ignored.</li>
+</ul>
+<p>At the end of the script, information about the software used should be provided. The following code can be used for this:</p>
 <div class="cell">
 <details open="" class="code-fold">
 <summary>Code</summary>
-<div class="sourceCode cell-code" id="cb8"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb8-1"><a href="#cb8-1" aria-hidden="true" tabindex="-1"></a><span class="co"># **`eval: true`**: Der Chunk wird tatsächlich berechnet.</span></span>
-<span id="cb8-2"><a href="#cb8-2" aria-hidden="true" tabindex="-1"></a><span class="co"># **`echo: true`**: Der  Code des Chunks ist im gerenderten Dokument sichtbar.</span></span>
-<span id="cb8-3"><a href="#cb8-3" aria-hidden="true" tabindex="-1"></a><span class="co"># **`output: true`**: Die Ergebnisse des Chunks (z. B. eine Tabelle) werden gezeigt.</span></span>
-<span id="cb8-4"><a href="#cb8-4" aria-hidden="true" tabindex="-1"></a><span class="co"># **`warning: true`**: R-Warnungen erscheinen im Dokument.</span></span>
-<span id="cb8-5"><a href="#cb8-5" aria-hidden="true" tabindex="-1"></a><span class="co"># **`error: false`**: Wenn der Code des Chunks einen Fehler hat, bricht das Rendern sofort ab (sicherer Modus).</span></span>
-<span id="cb8-6"><a href="#cb8-6" aria-hidden="true" tabindex="-1"></a><span class="co"># **`include: false`**: Der Chunk inkl. Code, Output und möglicher Warnungen oder Fehler wird komplett ignoriert.</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-</details>
-</div>
-<p>Am Ende des Skripts sollten Informationen über die verwendete Software gegeben werden. Hierfür kann folgender Code verwendet werden:</p>
-<div class="cell">
-<details open="" class="code-fold">
-<summary>Code</summary>
-<div class="sourceCode cell-code" id="cb9"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb9-1"><a href="#cb9-1" aria-hidden="true" tabindex="-1"></a><span class="fu">sessionInfo</span>()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb8"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb8-1"><a href="#cb8-1" aria-hidden="true" tabindex="-1"></a><span class="fu">sessionInfo</span>()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </details>
 </div>
 <p>Ausserdem kann bei verwendeter Zitation auch noch ein Literaturverzeichnis ergänzt werden:</p>
 <div class="cell">
 <details open="" class="code-fold">
 <summary>Code</summary>
-<div class="sourceCode cell-code" id="cb10"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb10-1"><a href="#cb10-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Dieser Code wird üblicherweise ausserhalb eines Chunks platziert. Hier wurde der Code nur innerhalb eines Chunks festgelegt, da kein Literaturverzeichnis existiert und es sonst zu einer Fehlermeldung kommen würde.</span></span>
-<span id="cb10-2"><a href="#cb10-2" aria-hidden="true" tabindex="-1"></a><span class="sc">:::</span> {<span class="co">#refs}</span></span>
-<span id="cb10-3"><a href="#cb10-3" aria-hidden="true" tabindex="-1"></a><span class="sc">:::</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb9"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb9-1"><a href="#cb9-1" aria-hidden="true" tabindex="-1"></a><span class="co"># This code is usually placed outside of a chunk. Here, the code was only placed inside a chunk because no bibliography exists yet, which would otherwise result in an error message.</span></span>
+<span id="cb9-2"><a href="#cb9-2" aria-hidden="true" tabindex="-1"></a><span class="sc">:::</span> {<span class="co">#refs}</span></span>
+<span id="cb9-3"><a href="#cb9-3" aria-hidden="true" tabindex="-1"></a><span class="sc">:::</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </details>
 </div>
 </section>
-<section id="funktionen" class="level2">
-<h2 class="anchored" data-anchor-id="funktionen">Funktionen</h2>
-<p>Eine der Grundregeln guten Codestyles ist es, sich nicht zu wiederholen (Don`t Repeat Yourself, DRY). Hierfür kann es schnell hilfreich sein, seine eigene kleine Funktion zu schreiben. Die grundlegende Syntax um eine eigene Funktion zu schreiben sieht folgendermassen aus:</p>
+<section id="functions" class="level2">
+<h2 class="anchored" data-anchor-id="functions">Functions</h2>
+<p>One of the fundamental rules of good codestyle is not to repeat yourself (Don’t Repeat Yourself, DRY). For this, it can quickly become helpful to write your own small function. The basic syntax for writing your own function is as follows:</p>
 <div class="cell">
 <details open="" class="code-fold">
 <summary>Code</summary>
-<div class="sourceCode cell-code" id="cb11"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb11-1"><a href="#cb11-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Hier wird die Funktion definiert. Die erwarteten Argumente werden in Klammern angegeben. Die Funktion muss zugewiesen werden, damit sie anschliessend auch aufgerufen und genutzt werden kann.</span></span>
-<span id="cb11-2"><a href="#cb11-2" aria-hidden="true" tabindex="-1"></a>my_function <span class="ot">&lt;-</span> <span class="cf">function</span>(argument1, argument2) {</span>
-<span id="cb11-3"><a href="#cb11-3" aria-hidden="true" tabindex="-1"></a>  </span>
-<span id="cb11-4"><a href="#cb11-4" aria-hidden="true" tabindex="-1"></a>  <span class="co"># Hier wird die Funktion definiert</span></span>
-<span id="cb11-5"><a href="#cb11-5" aria-hidden="true" tabindex="-1"></a>  result <span class="ot">&lt;-</span> argument1 <span class="sc">+</span> argument2</span>
-<span id="cb11-6"><a href="#cb11-6" aria-hidden="true" tabindex="-1"></a>  </span>
-<span id="cb11-7"><a href="#cb11-7" aria-hidden="true" tabindex="-1"></a>  <span class="co"># Hier wird das Ergebnis zurückgegeben</span></span>
-<span id="cb11-8"><a href="#cb11-8" aria-hidden="true" tabindex="-1"></a>  <span class="fu">return</span>(result)</span>
-<span id="cb11-9"><a href="#cb11-9" aria-hidden="true" tabindex="-1"></a>}</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb10"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb10-1"><a href="#cb10-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Here the function is defined. The expected arguments are specified in parentheses. </span></span>
+<span id="cb10-2"><a href="#cb10-2" aria-hidden="true" tabindex="-1"></a><span class="co"># The function must be assigned to a name so it can subsequently be called and used.</span></span>
+<span id="cb10-3"><a href="#cb10-3" aria-hidden="true" tabindex="-1"></a>my_function <span class="ot">&lt;-</span> <span class="cf">function</span>(argument1, argument2) {</span>
+<span id="cb10-4"><a href="#cb10-4" aria-hidden="true" tabindex="-1"></a>  </span>
+<span id="cb10-5"><a href="#cb10-5" aria-hidden="true" tabindex="-1"></a>  <span class="co"># The function logic is defined here</span></span>
+<span id="cb10-6"><a href="#cb10-6" aria-hidden="true" tabindex="-1"></a>  result <span class="ot">&lt;-</span> argument1 <span class="sc">+</span> argument2</span>
+<span id="cb10-7"><a href="#cb10-7" aria-hidden="true" tabindex="-1"></a>  </span>
+<span id="cb10-8"><a href="#cb10-8" aria-hidden="true" tabindex="-1"></a>  <span class="co"># The result is returned here</span></span>
+<span id="cb10-9"><a href="#cb10-9" aria-hidden="true" tabindex="-1"></a>  <span class="fu">return</span>(result)</span>
+<span id="cb10-10"><a href="#cb10-10" aria-hidden="true" tabindex="-1"></a>}</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </details>
 </div>
-<p>Hier ein Beispiel für redundanten Code, bei welcher der gleiche Plot nur mit einer anderen Rahmenfarbe definiert wird.</p>
+<p>Here is an example of redundant code, where the same plot is defined multiple times with only a different border color:</p>
 <div class="cell">
 <details open="" class="code-fold">
 <summary>Code</summary>
-<div class="sourceCode cell-code" id="cb12"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb12-1"><a href="#cb12-1" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>(data, <span class="fu">aes</span>(<span class="at">x =</span> {{ column }})) <span class="sc">+</span></span>
-<span id="cb12-2"><a href="#cb12-2" aria-hidden="true" tabindex="-1"></a>    <span class="fu">geom_histogram</span>(<span class="at">fill =</span> color, <span class="at">bins =</span> <span class="dv">20</span>, <span class="at">color =</span> <span class="st">"white"</span>) <span class="sc">+</span></span>
-<span id="cb12-3"><a href="#cb12-3" aria-hidden="true" tabindex="-1"></a>    <span class="fu">theme_minimal</span>() <span class="sc">+</span></span>
-<span id="cb12-4"><a href="#cb12-4" aria-hidden="true" tabindex="-1"></a>    <span class="fu">labs</span>(</span>
-<span id="cb12-5"><a href="#cb12-5" aria-hidden="true" tabindex="-1"></a>      <span class="at">title =</span> <span class="fu">paste</span>(<span class="st">"Verteilung von"</span>, <span class="fu">deparse</span>(<span class="fu">substitute</span>(column))),</span>
-<span id="cb12-6"><a href="#cb12-6" aria-hidden="true" tabindex="-1"></a>      <span class="at">x =</span> <span class="fu">deparse</span>(<span class="fu">substitute</span>(column)),</span>
-<span id="cb12-7"><a href="#cb12-7" aria-hidden="true" tabindex="-1"></a>      <span class="at">y =</span> <span class="st">"Häufigkeit"</span></span>
-<span id="cb12-8"><a href="#cb12-8" aria-hidden="true" tabindex="-1"></a>    )</span>
-<span id="cb12-9"><a href="#cb12-9" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb12-10"><a href="#cb12-10" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>(data, <span class="fu">aes</span>(<span class="at">x =</span> {{ column }})) <span class="sc">+</span></span>
-<span id="cb12-11"><a href="#cb12-11" aria-hidden="true" tabindex="-1"></a>    <span class="fu">geom_histogram</span>(<span class="at">fill =</span> color, <span class="at">bins =</span> <span class="dv">20</span>, <span class="at">color =</span> <span class="st">"black"</span>) <span class="sc">+</span></span>
-<span id="cb12-12"><a href="#cb12-12" aria-hidden="true" tabindex="-1"></a>    <span class="fu">theme_minimal</span>() <span class="sc">+</span></span>
-<span id="cb12-13"><a href="#cb12-13" aria-hidden="true" tabindex="-1"></a>    <span class="fu">labs</span>(</span>
-<span id="cb12-14"><a href="#cb12-14" aria-hidden="true" tabindex="-1"></a>      <span class="at">title =</span> <span class="fu">paste</span>(<span class="st">"Verteilung von"</span>, <span class="fu">deparse</span>(<span class="fu">substitute</span>(column))),</span>
-<span id="cb12-15"><a href="#cb12-15" aria-hidden="true" tabindex="-1"></a>      <span class="at">x =</span> <span class="fu">deparse</span>(<span class="fu">substitute</span>(column)),</span>
-<span id="cb12-16"><a href="#cb12-16" aria-hidden="true" tabindex="-1"></a>      <span class="at">y =</span> <span class="st">"Häufigkeit"</span></span>
-<span id="cb12-17"><a href="#cb12-17" aria-hidden="true" tabindex="-1"></a>    )</span>
-<span id="cb12-18"><a href="#cb12-18" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb12-19"><a href="#cb12-19" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>(data, <span class="fu">aes</span>(<span class="at">x =</span> {{ column }})) <span class="sc">+</span></span>
-<span id="cb12-20"><a href="#cb12-20" aria-hidden="true" tabindex="-1"></a>    <span class="fu">geom_histogram</span>(<span class="at">fill =</span> color, <span class="at">bins =</span> <span class="dv">20</span>, <span class="at">color =</span> <span class="st">"blue"</span>) <span class="sc">+</span></span>
-<span id="cb12-21"><a href="#cb12-21" aria-hidden="true" tabindex="-1"></a>    <span class="fu">theme_minimal</span>() <span class="sc">+</span></span>
-<span id="cb12-22"><a href="#cb12-22" aria-hidden="true" tabindex="-1"></a>    <span class="fu">labs</span>(</span>
-<span id="cb12-23"><a href="#cb12-23" aria-hidden="true" tabindex="-1"></a>      <span class="at">title =</span> <span class="fu">paste</span>(<span class="st">"Verteilung von"</span>, <span class="fu">deparse</span>(<span class="fu">substitute</span>(column))),</span>
-<span id="cb12-24"><a href="#cb12-24" aria-hidden="true" tabindex="-1"></a>      <span class="at">x =</span> <span class="fu">deparse</span>(<span class="fu">substitute</span>(column)),</span>
-<span id="cb12-25"><a href="#cb12-25" aria-hidden="true" tabindex="-1"></a>      <span class="at">y =</span> <span class="st">"Häufigkeit"</span></span>
-<span id="cb12-26"><a href="#cb12-26" aria-hidden="true" tabindex="-1"></a>    )</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb11"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb11-1"><a href="#cb11-1" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>(data, <span class="fu">aes</span>(<span class="at">x =</span> {{ column }})) <span class="sc">+</span></span>
+<span id="cb11-2"><a href="#cb11-2" aria-hidden="true" tabindex="-1"></a>    <span class="fu">geom_histogram</span>(<span class="at">fill =</span> color, <span class="at">bins =</span> <span class="dv">20</span>, <span class="at">color =</span> <span class="st">"white"</span>) <span class="sc">+</span></span>
+<span id="cb11-3"><a href="#cb11-3" aria-hidden="true" tabindex="-1"></a>    <span class="fu">theme_minimal</span>() <span class="sc">+</span></span>
+<span id="cb11-4"><a href="#cb11-4" aria-hidden="true" tabindex="-1"></a>    <span class="fu">labs</span>(</span>
+<span id="cb11-5"><a href="#cb11-5" aria-hidden="true" tabindex="-1"></a>      <span class="at">title =</span> <span class="fu">paste</span>(<span class="st">"Distribution of"</span>, <span class="fu">deparse</span>(<span class="fu">substitute</span>(column))),</span>
+<span id="cb11-6"><a href="#cb11-6" aria-hidden="true" tabindex="-1"></a>      <span class="at">x =</span> <span class="fu">deparse</span>(<span class="fu">substitute</span>(column)),</span>
+<span id="cb11-7"><a href="#cb11-7" aria-hidden="true" tabindex="-1"></a>      <span class="at">y =</span> <span class="st">"Frequency"</span></span>
+<span id="cb11-8"><a href="#cb11-8" aria-hidden="true" tabindex="-1"></a>    )</span>
+<span id="cb11-9"><a href="#cb11-9" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb11-10"><a href="#cb11-10" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>(data, <span class="fu">aes</span>(<span class="at">x =</span> {{ column }})) <span class="sc">+</span></span>
+<span id="cb11-11"><a href="#cb11-11" aria-hidden="true" tabindex="-1"></a>    <span class="fu">geom_histogram</span>(<span class="at">fill =</span> color, <span class="at">bins =</span> <span class="dv">20</span>, <span class="at">color =</span> <span class="st">"black"</span>) <span class="sc">+</span></span>
+<span id="cb11-12"><a href="#cb11-12" aria-hidden="true" tabindex="-1"></a>    <span class="fu">theme_minimal</span>() <span class="sc">+</span></span>
+<span id="cb11-13"><a href="#cb11-13" aria-hidden="true" tabindex="-1"></a>    <span class="fu">labs</span>(</span>
+<span id="cb11-14"><a href="#cb11-14" aria-hidden="true" tabindex="-1"></a>      <span class="at">title =</span> <span class="fu">paste</span>(<span class="st">"Distribution of"</span>, <span class="fu">deparse</span>(<span class="fu">substitute</span>(column))),</span>
+<span id="cb11-15"><a href="#cb11-15" aria-hidden="true" tabindex="-1"></a>      <span class="at">x =</span> <span class="fu">deparse</span>(<span class="fu">substitute</span>(column)),</span>
+<span id="cb11-16"><a href="#cb11-16" aria-hidden="true" tabindex="-1"></a>      <span class="at">y =</span> <span class="st">"Frequency"</span></span>
+<span id="cb11-17"><a href="#cb11-17" aria-hidden="true" tabindex="-1"></a>    )</span>
+<span id="cb11-18"><a href="#cb11-18" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb11-19"><a href="#cb11-19" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>(data, <span class="fu">aes</span>(<span class="at">x =</span> {{ column }})) <span class="sc">+</span></span>
+<span id="cb11-20"><a href="#cb11-20" aria-hidden="true" tabindex="-1"></a>    <span class="fu">geom_histogram</span>(<span class="at">fill =</span> color, <span class="at">bins =</span> <span class="dv">20</span>, <span class="at">color =</span> <span class="st">"blue"</span>) <span class="sc">+</span></span>
+<span id="cb11-21"><a href="#cb11-21" aria-hidden="true" tabindex="-1"></a>    <span class="fu">theme_minimal</span>() <span class="sc">+</span></span>
+<span id="cb11-22"><a href="#cb11-22" aria-hidden="true" tabindex="-1"></a>    <span class="fu">labs</span>(</span>
+<span id="cb11-23"><a href="#cb11-23" aria-hidden="true" tabindex="-1"></a>      <span class="at">title =</span> <span class="fu">paste</span>(<span class="st">"Distribution of"</span>, <span class="fu">deparse</span>(<span class="fu">substitute</span>(column))),</span>
+<span id="cb11-24"><a href="#cb11-24" aria-hidden="true" tabindex="-1"></a>      <span class="at">x =</span> <span class="fu">deparse</span>(<span class="fu">substitute</span>(column)),</span>
+<span id="cb11-25"><a href="#cb11-25" aria-hidden="true" tabindex="-1"></a>      <span class="at">y =</span> <span class="st">"Frequency"</span></span>
+<span id="cb11-26"><a href="#cb11-26" aria-hidden="true" tabindex="-1"></a>    )</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </details>
 </div>
-<p>Hier eine Funktion um diese drei Plots mit einem einziegen Codeblock zu erstellen:</p>
+<p>Here is a function to create all these three plots in a single code block</p>
 <div class="cell">
 <details open="" class="code-fold">
 <summary>Code</summary>
-<div class="sourceCode cell-code" id="cb13"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb13-1"><a href="#cb13-1" aria-hidden="true" tabindex="-1"></a><span class="st">"""</span></span>
-<span id="cb13-2"><a href="#cb13-2" aria-hidden="true" tabindex="-1"></a><span class="st">Die Funktion `create_histogram` erstellt ein Histogramm für eine gegebene Spalte in einem Dgegebenen atensatz.  Die Farbe des Rahmens kann über das Argument `color_name` angepasst werden.</span></span>
-<span id="cb13-3"><a href="#cb13-3" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb13-4"><a href="#cb13-4" aria-hidden="true" tabindex="-1"></a><span class="st">Argumente:</span></span>
-<span id="cb13-5"><a href="#cb13-5" aria-hidden="true" tabindex="-1"></a><span class="st">@param data: Ein Dataframe, der die Daten enthält.</span></span>
-<span id="cb13-6"><a href="#cb13-6" aria-hidden="true" tabindex="-1"></a><span class="st">@param column: Die Spalte, für die das Histogramm erstellt werden soll.</span></span>
-<span id="cb13-7"><a href="#cb13-7" aria-hidden="true" tabindex="-1"></a><span class="st">@param color_name: Der Name der Farbe für den Rahmen des Histogramms.</span></span>
-<span id="cb13-8"><a href="#cb13-8" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb13-9"><a href="#cb13-9" aria-hidden="true" tabindex="-1"></a><span class="st">Rückgabewert: Ein ggplot-Objekt, das das Histogramm mit gewünschter Rahmenfarbe darstellt.</span></span>
-<span id="cb13-10"><a href="#cb13-10" aria-hidden="true" tabindex="-1"></a><span class="st">"""</span></span>
-<span id="cb13-11"><a href="#cb13-11" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb13-12"><a href="#cb13-12" aria-hidden="true" tabindex="-1"></a>create_histogram <span class="ot">&lt;-</span> <span class="cf">function</span>(data, column, color_name) {</span>
-<span id="cb13-13"><a href="#cb13-13" aria-hidden="true" tabindex="-1"></a>  <span class="fu">ggplot</span>(data, <span class="fu">aes</span>(<span class="at">x =</span> {{ column }})) <span class="sc">+</span></span>
-<span id="cb13-14"><a href="#cb13-14" aria-hidden="true" tabindex="-1"></a>    <span class="fu">geom_histogram</span>(<span class="at">fill =</span> color, <span class="at">bins =</span> <span class="dv">20</span>, <span class="at">color =</span> color_name) <span class="sc">+</span></span>
-<span id="cb13-15"><a href="#cb13-15" aria-hidden="true" tabindex="-1"></a>    <span class="fu">theme_minimal</span>() <span class="sc">+</span></span>
-<span id="cb13-16"><a href="#cb13-16" aria-hidden="true" tabindex="-1"></a>    <span class="fu">labs</span>(</span>
-<span id="cb13-17"><a href="#cb13-17" aria-hidden="true" tabindex="-1"></a>      <span class="at">title =</span> <span class="fu">paste</span>(<span class="st">"Verteilung von"</span>, <span class="fu">deparse</span>(<span class="fu">substitute</span>(column))),</span>
-<span id="cb13-18"><a href="#cb13-18" aria-hidden="true" tabindex="-1"></a>      <span class="at">x =</span> <span class="fu">deparse</span>(<span class="fu">substitute</span>(column)),</span>
-<span id="cb13-19"><a href="#cb13-19" aria-hidden="true" tabindex="-1"></a>      <span class="at">y =</span> <span class="st">"Häufigkeit"</span></span>
-<span id="cb13-20"><a href="#cb13-20" aria-hidden="true" tabindex="-1"></a>    )</span>
-<span id="cb13-21"><a href="#cb13-21" aria-hidden="true" tabindex="-1"></a>}</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb12"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb12-1"><a href="#cb12-1" aria-hidden="true" tabindex="-1"></a><span class="st">"""</span></span>
+<span id="cb12-2"><a href="#cb12-2" aria-hidden="true" tabindex="-1"></a><span class="st">The function `create_histogram` creates a histogram for a specified column in a given dataset. The color of the border can be adjusted using the `color_name` argument.</span></span>
+<span id="cb12-3"><a href="#cb12-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb12-4"><a href="#cb12-4" aria-hidden="true" tabindex="-1"></a><span class="st">Arguments:</span></span>
+<span id="cb12-5"><a href="#cb12-5" aria-hidden="true" tabindex="-1"></a><span class="st">@param data: A dataframe containing the data.</span></span>
+<span id="cb12-6"><a href="#cb12-6" aria-hidden="true" tabindex="-1"></a><span class="st">@param column: The column for which the histogram is to be created.</span></span>
+<span id="cb12-7"><a href="#cb12-7" aria-hidden="true" tabindex="-1"></a><span class="st">@param color_name: The name of the color for the border of the histogram.</span></span>
+<span id="cb12-8"><a href="#cb12-8" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb12-9"><a href="#cb12-9" aria-hidden="true" tabindex="-1"></a><span class="st">Return value: A ggplot object representing the histogram with the desired border color.</span></span>
+<span id="cb12-10"><a href="#cb12-10" aria-hidden="true" tabindex="-1"></a><span class="st">"""</span></span>
+<span id="cb12-11"><a href="#cb12-11" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb12-12"><a href="#cb12-12" aria-hidden="true" tabindex="-1"></a>create_histogram <span class="ot">&lt;-</span> <span class="cf">function</span>(data, column, color_name) {</span>
+<span id="cb12-13"><a href="#cb12-13" aria-hidden="true" tabindex="-1"></a>  <span class="fu">ggplot</span>(data, <span class="fu">aes</span>(<span class="at">x =</span> {{ column }})) <span class="sc">+</span></span>
+<span id="cb12-14"><a href="#cb12-14" aria-hidden="true" tabindex="-1"></a>    <span class="fu">geom_histogram</span>(<span class="at">fill =</span> color, <span class="at">bins =</span> <span class="dv">20</span>, <span class="at">color =</span> color_name) <span class="sc">+</span></span>
+<span id="cb12-15"><a href="#cb12-15" aria-hidden="true" tabindex="-1"></a>    <span class="fu">theme_minimal</span>() <span class="sc">+</span></span>
+<span id="cb12-16"><a href="#cb12-16" aria-hidden="true" tabindex="-1"></a>    <span class="fu">labs</span>(</span>
+<span id="cb12-17"><a href="#cb12-17" aria-hidden="true" tabindex="-1"></a>      <span class="at">title =</span> <span class="fu">paste</span>(<span class="st">"Distribution of"</span>, <span class="fu">deparse</span>(<span class="fu">substitute</span>(column))),</span>
+<span id="cb12-18"><a href="#cb12-18" aria-hidden="true" tabindex="-1"></a>      <span class="at">x =</span> <span class="fu">deparse</span>(<span class="fu">substitute</span>(column)),</span>
+<span id="cb12-19"><a href="#cb12-19" aria-hidden="true" tabindex="-1"></a>      <span class="at">y =</span> <span class="st">"Frequency"</span></span>
+<span id="cb12-20"><a href="#cb12-20" aria-hidden="true" tabindex="-1"></a>    )</span>
+<span id="cb12-21"><a href="#cb12-21" aria-hidden="true" tabindex="-1"></a>}</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </details>
 </div>
-<p>Zuletzt der Aufruf der Funktion für die drei Farben:</p>
+<p>Lastly the function call with the different colors:</p>
 <div class="cell">
 <details open="" class="code-fold">
 <summary>Code</summary>
-<div class="sourceCode cell-code" id="cb14"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb14-1"><a href="#cb14-1" aria-hidden="true" tabindex="-1"></a><span class="fu">create_histogram</span>(data, column, <span class="st">"white"</span>)</span>
-<span id="cb14-2"><a href="#cb14-2" aria-hidden="true" tabindex="-1"></a><span class="fu">create_histogram</span>(data, column, <span class="st">"black"</span>)</span>
-<span id="cb14-3"><a href="#cb14-3" aria-hidden="true" tabindex="-1"></a><span class="fu">create_histogram</span>(data, column, <span class="st">"blue"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb13"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb13-1"><a href="#cb13-1" aria-hidden="true" tabindex="-1"></a><span class="fu">create_histogram</span>(data, column, <span class="st">"white"</span>)</span>
+<span id="cb13-2"><a href="#cb13-2" aria-hidden="true" tabindex="-1"></a><span class="fu">create_histogram</span>(data, column, <span class="st">"black"</span>)</span>
+<span id="cb13-3"><a href="#cb13-3" aria-hidden="true" tabindex="-1"></a><span class="fu">create_histogram</span>(data, column, <span class="st">"blue"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </details>
 </div>
 </section>
-<section id="abhängigkeiten" class="level2">
-<h2 class="anchored" data-anchor-id="abhängigkeiten">Abhängigkeiten</h2>
-<p>Ein weiterer wichtiger Aspekt eines guten Codestyles ist es, die Abhängigkeiten des Codes klar zu definieren. Hierfür sollten alle benötigten Pakete direkt zu Beginn des Skriptes geladen werden. So ist sofort ersichtlich, welche Pakete für die Ausführung des Skriptes notwendig sind. Es kann auch Code geschrieben werden, welcher auf notwendige Pakete prüft, diese ggf. installiert, und dann erst die Pakete lädt:</p>
+<section id="dependencies" class="level2">
+<h2 class="anchored" data-anchor-id="dependencies">Dependencies</h2>
+<p>Another important aspect of good codestyle is clearly defining the code’s dependencies. For this purpose, all required packages should be loaded right at the beginning of the script. This makes it immediately obvious which packages are necessary for the execution of the script. Code can also be written that checks for necessary packages, installs them if necessary, and only then loads the packages:</p>
 <div class="callout callout-style-default callout-important callout-titled">
 <div class="callout-header d-flex align-content-center">
 <div class="callout-icon-container">
@@ -499,27 +442,8 @@ Important
 </div>
 </div>
 <div class="callout-body-container callout-body">
-<p>Dieser Codevorschlag kombiniert die Logik einer selbstgeschriebenen Funktion und einer Schleife, um diese auf mehere Objekte gleichzeitig anzuwenden. Bitte mache dich vor dem Einsatz dieses Codes mit der Logik vertraut und übernimm den Code erst, wenn du diesen komplett verstanden hast!</p>
+<p>This code suggestion combines the logic of a custom function and a loop to apply it to multiple objects simultaneously. Please familiarize yourself with the logic before using this code and only adopt the code once you have completely understood it!</p>
 </div>
-</div>
-<div class="cell">
-<details open="" class="code-fold">
-<summary>Code</summary>
-<div class="sourceCode cell-code" id="cb15"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb15-1"><a href="#cb15-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Liste der benötigten Pakete</span></span>
-<span id="cb15-2"><a href="#cb15-2" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb15-3"><a href="#cb15-3" aria-hidden="true" tabindex="-1"></a>required_packages <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="st">"ggplot2"</span>, <span class="st">"dplyr"</span>, <span class="st">"here"</span>)</span>
-<span id="cb15-4"><a href="#cb15-4" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb15-5"><a href="#cb15-5" aria-hidden="true" tabindex="-1"></a><span class="co"># Funktion zum Prüfen, Installieren und Laden</span></span>
-<span id="cb15-6"><a href="#cb15-6" aria-hidden="true" tabindex="-1"></a>install_if_missing <span class="ot">&lt;-</span> <span class="cf">function</span>(p) {</span>
-<span id="cb15-7"><a href="#cb15-7" aria-hidden="true" tabindex="-1"></a>  <span class="cf">if</span> (<span class="sc">!</span><span class="fu">require</span>(p, <span class="at">character.only =</span> <span class="cn">TRUE</span>)) {</span>
-<span id="cb15-8"><a href="#cb15-8" aria-hidden="true" tabindex="-1"></a>    <span class="fu">install.packages</span>(p, <span class="at">dependencies =</span> <span class="cn">TRUE</span>)</span>
-<span id="cb15-9"><a href="#cb15-9" aria-hidden="true" tabindex="-1"></a>    <span class="fu">library</span>(p, <span class="at">character.only =</span> <span class="cn">TRUE</span>)</span>
-<span id="cb15-10"><a href="#cb15-10" aria-hidden="true" tabindex="-1"></a>  }</span>
-<span id="cb15-11"><a href="#cb15-11" aria-hidden="true" tabindex="-1"></a>}</span>
-<span id="cb15-12"><a href="#cb15-12" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb15-13"><a href="#cb15-13" aria-hidden="true" tabindex="-1"></a><span class="co"># Auf alle Pakete anwenden</span></span>
-<span id="cb15-14"><a href="#cb15-14" aria-hidden="true" tabindex="-1"></a><span class="fu">sapply</span>(packages, install_if_missing)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-</details>
 </div>
 
 

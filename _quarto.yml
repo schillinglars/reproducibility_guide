@@ -13,20 +13,14 @@ website:
     contents:
       - text: "Welcome"
         href: index.qmd
-      - section: "Getting Started"
-        contents:
-          - text: "Reproducibility"
-            href: source/reproducibility.qmd
-          - text: "Workflow"
-            href: source/workflow.qmd
-      - section: "The Toolbox"
-        contents:
-          - text: "Version Control"
-            href: source/version_control.qmd
-      - section: "Data & Ethics"
-        contents:
-          - text: "FAIR Principles"
-            href: source/fair.qmd
+      - text: "FAIR Principles"
+        href: source/fair.qmd
+      - text: "Version control"
+        href: source/version_control.qmd
+      - text: "Workflow"
+        href: source/workflow.qmd
+      - text: "Codestyle"
+        href: source/codestyle.qmd
 
   page-footer:
     left: "© 2026 Department Psychology of Digitalisation"
@@ -40,7 +34,7 @@ website:
 format:
   html:
     theme: flatly
-    primary: "#7a1f1f" #ToDo: find out department color scheme
+    primary: "#7a1f1f" #ToDo: Adjust to departments official color scheme
     toc: true
     code-copy: true
     code-fold: show
