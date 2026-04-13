@@ -1,21 +1,58 @@
-.clean-list ul {
-  list-style-type: none;
-  margin: 0;
-  padding-left: 0;
+/* --- Global Variables (Central control for colors and spacing) --- */
+:root {
+  /* Colors */
+  --r-blue: #276DC3;
+  --r-bg: #f0f4f8;
+  
+  --python-yellow: #FFD43B;
+  --python-text: #b59500;
+  --python-bg: #fffcf0;
+  
+  --border-gray: #ccc;
+  
+  /* Spacing & Borders */
+  --box-padding: 1em;
+  --box-border-width: 5px;
+  --box-radius: 3px;
 }
 
-.clean-list li {
-  margin-bottom: 0.3em;
-  line-height: 1.4;
-}
-
-.clean-list {
-  margin-bottom: 2em;
-  margin-top: 2em;
-}
-
+/* --- Global Heading 2 (h2) Styling --- */
 h2 {
-  border-bottom: 1px solid #ccc;  /* Graue Linie unten */
-  padding-bottom: 0.3em;           /* Abstand unter der Überschrift */
-  margin-bottom: 0.8em;            /* Abstand zum folgenden Text */
+  border-bottom: 1px solid var(--border-gray);
+  padding-bottom: 0.3em;
+  margin-bottom: 0.8em;
+}
+
+/* --- Global settings for all language boxes --- */
+.code-box, .box-r, .box-python {
+  padding: var(--box-padding);
+  margin: 1em 0;
+  border-left: var(--box-border-width) solid;
+  border-radius: var(--box-radius);
+}
+
+/* --- R-specific styling --- */
+.box-r {
+  background-color: var(--r-bg);
+  border-color: var(--r-blue);
+}
+
+.box-r::before {
+  content: "R ℹ️";
+  font-weight: bold;
+  color: var(--r-blue);
+  display: block;
+}
+
+/* --- Python-specific styling --- */
+.box-python {
+  background-color: var(--python-bg);
+  border-color: var(--python-yellow);
+}
+
+.box-python::before {
+  content: "Python 🐍";
+  font-weight: bold;
+  color: var(--python-text);
+  display: block;
 }

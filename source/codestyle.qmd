@@ -213,7 +213,7 @@ create_histogram(data, column, "blue")
 
 Another important aspect of good codestyle is clearly defining the code's dependencies. For this purpose, all required packages should be loaded right at the beginning of the script. This makes it immediately obvious which packages are necessary for the execution of the script. Code can also be written that checks for necessary packages, installs them if necessary, and only then loads the packages:
 
-::: callout-important
+::: callout-note
 This code suggestion combines the logic of a custom function and a loop to apply it to multiple objects simultaneously. Please familiarize yourself with the logic before using this code and only adopt the code once you have completely understood it!
 :::
 

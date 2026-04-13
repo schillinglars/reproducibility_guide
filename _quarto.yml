@@ -10,15 +10,15 @@ website:
     style: "docked"
     search: true
     contents:
-      - text: "Welcome"
+      - text: "0. Welcome"
         href: index.qmd
-      - text: "FAIR Principles"
+      - text: "1. FAIR Principles"
         href: source/fair.qmd
-      - text: "Version control"
+      - text: "2. Version control"
         href: source/version_control.qmd
-      - text: "Workflow"
+      - text: "3. Workflow"
         href: source/workflow.qmd
-      - text: "Codestyle"
+      - text: "4. Codestyle"
         href: source/codestyle.qmd
 
   page-footer:
