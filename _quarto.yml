@@ -5,7 +5,14 @@ project:
 lang: en
 
 website:
-  title: "Reproducibility Guide"
+  title: "Reproducibility Guide for Bachelor and Master thesis"
+  theme:
+    light: 
+      - flatly
+      - primary: "#2c3e50" # ToDo: Set default department colour
+    dark: 
+      - slate
+      - primary: "#18bc9c" # ToDo: Set default department colour
   
   sidebar:
     style: "docked"
@@ -30,6 +37,12 @@ website:
 
   page-footer:
     left: "© 2026 Department Psychology of Digitalisation"
+      - icon: github
+        text: "GitHub"
+        href: https://github.com/schillinglars/reproducibility_guide
+      - icon: globe
+        text: "Department website"
+        href: https://www.dig.psy.unibe.ch/index_eng.html
     right: "Licensed under [CC BY-NC 4.0](https://creativecommons.org/licenses/by-nc/4.0/)"
 
 format:
