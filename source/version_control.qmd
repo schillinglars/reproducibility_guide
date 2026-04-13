@@ -6,16 +6,32 @@ title: "Version control"
 
 # Fundamentals
 
-To further improve the reproducibility of an analysis, it is useful to use version control. This refers to documenting any changes to the scripts, data, or outputs. This way, it can be traced when and by whom which changes were made. It is also possible to restore previous versions of the scripts, data, or outputs.
+**Version control** is the systematic process of documenting every change made to your scripts, data, or outputs. It allows you to trace **when**, **why**, and **by whom** specific changes were made. Most importantly, it acts as a safety net, allowing you to restore previous versions of your work if something goes wrong.
 
 # GitHub
 
-[GitHub](https://github.com/) is, simply put, a cloud provider like GDrive, OneDrive, or iCloud, but specialized for code and version control. In GitHub, so-called repositories—projects can be created. These are practically the project folder, including all subfolders and files, that were introduced within the workflow. Using the application [GitHub Desktop](https://desktop.github.com/download/), a folder system on your own device can be connected to a repository on GitHub. Any changes to the files are versioned through so-called *commits* (!= saving the script). The old files are not simply overwritten; instead, it is recorded which changes exist compared to the old file. After a commit, the change can then be transferred to the repository via *push*. It is also possible to download the current state of the repository to your own device. This is called a *pull*.
+[**GitHub**](https://github.com/) is essentially a specialized cloud provider—similar to Google Drive or OneDrive—but designed specifically for code and version control. In GitHub, projects are organized into **repositories**, which function as project folders containing all your files and their history.
+
+By using the [**GitHub Desktop application**](https://desktop.github.com/download/), you can sync a folder on your local device with a repository on GitHub. Your progress is tracked through commits. Unlike a standard 'save,' a commit creates a permanent snapshot of your project at a specific point in time. Instead of overwriting files, Git records the precise differences between versions.
+
+Once you have committed your changes locally, you can 'upload' them to the cloud using a **push**. Conversely, if the repository has been updated (e.g., by a collaborator or your supervisor), you can download those updates using a **pull**. Always pull before you start working and push once you finish a task to keep everyone in sync.
 
 # Git
 
-The combination of a **script-based workflow** with the version control of GitHub via Git is particularly powerful. [Git](https://git-scm.com/) allows, after a one-time setup and connection to the corresponding GitHub repository, to perform commits, pushes, and pulls directly from within the project file. This eliminates the need for an additional installation of GitHub Desktop and another user interface.
+While GitHub Desktop is a great starting point, the true power lies in the underlying software called [Git](https://git-scm.com/). Git is the 'engine' that powers both GitHub and the Desktop app. After a one-time setup, you can connect Git directly to your programming environment (like RStudio). This allows you to perform commits, pushes, and pulls directly within the same window where you write your code, removing the need to switch back and forth between different applications. This integration streamlines your workflow and makes versioning a seamless part of your coding habit.
 
 ::: callout-note
-You can find instructions for the one-time setup of Git, GitHub, and the connection between the two [here](https://happygitwithr.com/).
+You can find instructions for the one-time setup of Git, GitHub, R, and the connection between these [here](https://happygitwithr.com/).
 :::
+
+::: callout-note
+This website itself was build with the open source programming language of R, the IDE of RStudio, Git and GitHub for version control. You can find the corresponding repository [here]({{< repo-url >}}).
+:::
+
+# .gitignore
+
+ToDo
+
+# renv
+
+ToDo

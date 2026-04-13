@@ -1,0 +1,33 @@
+---
+title: "Simulation for examplary raw data"
+format: html
+eval: false 
+---
+
+```{r}
+#| label: generate-and-save
+#| include: false
+
+# 1. Load library for paths
+if (!require("here")) install.packages("here")
+library(here)
+
+# 2. Create directory if it doesn't exist
+dir.create(here("data", "raw"), recursive = TRUE, showWarnings = FALSE)
+
+# 3. Generate synthetic research data
+set.seed(42)
+n <- 100
+my_data <- data.frame(
+  id = 1:n,
+  age = round(runif(n, 18, 65)),
+  condition = sample(c("Control", "Treatment"), n, replace = TRUE),
+  reaction_time = rlnorm(n, meanlog = 0.5, sdlog = 0.3),
+  attention_check = sample(c("passed", "failed"), n, replace = TRUE, prob = c(0.9, 0.1))
+)
+
+# 4. Save to CSV
+write.csv(my_data, here("data", "raw", "my_data.csv"), row.names = FALSE)
+
+message("Success: data/raw/my_data.csv has been created!")
+```

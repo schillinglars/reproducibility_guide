@@ -4,98 +4,65 @@ title: "Codestyle"
 
 {{< include ../_hardcoded_values.qmd >}}
 
-```{r, include = FALSE}
-required_packages <- c("ggplot2")
-
-load_if_missing <- function(p) {
-  if (!require(p, character.only = TRUE)) {
-    library(p, character.only = TRUE)
-  }
-}
-
-sapply(required_packages, load_if_missing)
+```{r, eval = TRUE, include = FALSE}
+library(furrr)
+library(here)
+library(ggplot2)
 ```
 
-# Fundamentals
+```{python, eval = TRUE, include = FALSE}
+import pandas as pd
+import os
+import random
+import session_info
+import matplotlib.pyplot as plt
+```
 
-To improve the reproducibility and traceability of analyses, it is important to use a consistent codestyle. A codestyle encompasses the conventions and rules that should be followed when creating code. This not only facilitates collaboration with others but also the maintenance and expansion of the code in the future. In the following, some important aspects of a good codestyle are described.
+# Codestyle
 
-::: callout-note
-RStudio provides an automatic formatter that can help ensure a consistent codestyle. This can be activated via the keyboard shortcut `Ctrl + Shift + P` (Windows) or `Cmd + Shift + P` (Mac) and selecting "Reformat current document".
+A **codestyle** is a set of conventions and rules for building script and writing the code within it. Adhering to the following rules is partly mandatory for it to run successfully or simply makes your scripts easier to read for others (and for your "future self") and ensures that your analysis can be maintained over time.
+
+## Meta settings
+
+Within a script, important meta-information can be provided using the YAML header. This includes not only the author, the date, or the integration of citations, but also formatting options for the rendered document. Here is examplary content of a YAML header:
+
+---
+title: "Analysis of Psychological Well-being"
+author: "Your Name"
+date: last-modified
+
+bibliography: references.bib # Path to your bibliography file (see section "Citation" in the workflow chapter)
+csl: apa.csl # Path to your citation style file (see section "Citation" in the workflow chapter)
+
+format:
+  html:
+    toc: true              # Adds a Table of Contents
+    number-sections: true  # Numbers your headings
+    code-fold: true        # Allows readers to click to show/hide code
+execute:
+  echo: true               # Shows the code in the output by default (global setting)
+  warning: false           # Hides R/Python warnings in the final report (global setting)
+---
+
+## Dependencies
+
+Always load your libraries/packages at the very top of your script. This acts as a "list of ingredients" so others know what needs to be installed before running your code. Make sure you do not include any unnecessary packages, as this can lead to confusion and potential issues with package conflicts. Please also make sure to not include the installation of the package (e.g., `install.packages("ggplot2")`) in the script, as this can lead to issues when running the script on different devices. Instead install necessary packages directly via the Console. The loading of packages can take place within the script:
+
+```{r, eval = TRUE, echo = TRUE}
+library(ggplot2)
+```
+
+::: python-box
+Python and R do not share the same packages. For data visualization, a commonly used package in Python is `matplotlib`. To load it, you can use the following code:
+
+```{python, eval = TRUE, echo = TRUE}
+import matplotlib.pyplot as plt
+```
 :::
 
-## Portability
+## Chunk options
 
-The goal of a reproducible codestyle is to ensure that it leads to the same result regardless of the device used or the person executing it. For this purpose, relative paths are particularly helpful compared to absolute paths. Absolute paths always display the entire path within the file system. Relative paths only show the position relative to the script's working directory. If the function `here::here` is used, relative paths are automatically generated based on the location of the project file.
-
-```{r, eval = FALSE}
-# Example of an absolute path
-data <- read.csv("C:/Users/Username/Documents/Project/data/raw/my_data.csv")
-
-# Example of a relative path where the data is stored within the expected data folder
-data <- read.csv(here::here("data", "raw", "my_data.csv"))
-```
-
-## Naming
-
-Variables should always have descriptive names that reflect their content. Functions should include verbs that reflect their functionality. Unless intended, a variable or function should not be named after an existing variable or function.
-
-For R and RStudio, snake_case is used. In snake_case, spaces are replaced with underscores, and uppercase letters are converted to lowercase.
-
-::: callout-note
-For example, `Temp`, `Data1`, or `myFunction` are not descriptive names and do not follow snake_case, whereas `temperature`, `raw_data`, or `calculate_mean` are descriptive and follow snake_case conventions.
-:::
-
-Ideally, files and folders should also be named consistently according to snake_case, and special characters should be avoided. This ensures readability, for both humans and machines, and across different systems.
-
-## Comments
-
-Comments should be used to explain the code. This is not about the exact logic of already existing functions, which can be traced via the documentation on CRAN. Ideally, comments should provide context as to why specific inputs, functionalities, and corresponding outputs were integrated into the code.
-
-```{r}
-# No comments
-data <- c(10, 20, 30, 40, 50)
-m <- mean(data)
-print(m)
-
-# With an appropriate amount of comments
-## Create example vector with measurements
-measurements <- c(10, 20, 30, 40, 50)
-
-## Average calculation
-average <- mean(measurements)
-print(average)
-
-# Wit an overload of comments
-## Defining a variable named 'values'
-## The c() function to combine numbers
-values <- c(10, 20, 30, 40, 50) ## Numbers from 10 to 50
-
-## Calling the function `mean()` with the argument 'values'
-## mean calculates the arithmetic mean
-result <- mean(values) ## The result is saved
-
-## print() to output the result in the console
-print(result) ## The output occurs here
-```
-
-If a custom function is defined (see below), it should be provided with a short comment explaining the functionality of the function. It should be clear which arguments the function expects and what it returns.
-
-In RStudio, comments or functional descriptions can also be placed outside of a chunk. Inline code is used for this: `r `:
-
-"The mean of the measurements is `r result`".
-
-## Structure
-
-Long scripts can be divided into several smaller ones. For example, there could be one script for data cleaning, another for data analysis, and a final one for visualization and inferential statistical tests.
-
-Within a script, important meta-information can be provided using the YAML header. This includes not only the author, the date, or the integration of citations, but also formatting options for the rendered document.
-
-Dependencies in the form of packages should be loaded directly at the beginning of the script or, if necessary, installed before loading.
-
-By using the amount of `#` at the beginning of a line, different levels of headings can be created. For example, a heading of level 1 can be created with #, a subheading at level 2 with `##`, and a further subheading at level 3 with `###`. This allows the different sections of the script to be clearly structured and demarcated from one another.
-
-In RStudio, settings can be made globally or for individual chunks that influence the output of the script. If these settings are to apply globally, they are added to the YAML header. If they apply only to a specific chunk, the settings are passed directly within it. Here is an overview of the most common options:
+In the IDE of RStudio, settings how chunks should behave globaly can be set within the YAML header. However, these settings can be overwritten for each chunk individually by adding the following options at the beginning of a chunk:
 
 ```{r}
 #| eval: true
@@ -106,6 +73,13 @@ In RStudio, settings can be made globally or for individual chunks that influenc
 #| include: true
 ```
 
+The settings of a given chunk can also be set directly within the curly brackets at the beginning of a chunk, for example:
+
+```{r, eval = TRUE, echo = TRUE, output = TRUE, warning = TRUE, error = FALSE, include = FALSE}
+
+```
+
+Here are the explanations of the different options:
 - **eval: true**: The chunk is actually executed/calculated.
 - **echo: true**: The code of the chunk is visible in the rendered document.
 - **output: true**: The results of the chunk (e.g., a table) are shown.
@@ -113,120 +87,192 @@ In RStudio, settings can be made globally or for individual chunks that influenc
 error: false: If the code within the chunk has an error, rendering stops immediately (safe mode).
 - **include: false**: The chunk, including code, output, and potential warnings or errors, is completely ignored.
 
-At the end of the script, information about the software used should be provided. The following code can be used for this:
+Please note that this is not an extensive list of all available chunk options. For more, see for example the [quarto documentation about code cells and knitr chunk options](https://quarto.org/docs/reference/cells/cells-knitr.html).
 
-```{r, eval = FALSE}
-sessionInfo()
+## Visual structure
+
+Headings are the basis for the table of content (toc) in the rendered html-file when such is enabled in the YAML header. They also help to structure the code and make it easier to navigate for others (and for your "future self"). It is recommended to use at least three levels of headings (e.g., `#`, `##`, and `###`) to create a clear structure.
+
+## Portability
+
+A reproducible script should work regardless of which computer it is running on. Absolute paths (e.g., `C:/Users/Username/Documents/...`) are the "enemy" of reproducibility because they only exist on your specific device.
+
+Relative paths point to a location relative to your project's root folder.
+
+```{r, eval = FALSE, echo = TRUE}
+# Bad: Absolute path
+data <- read.csv("C:/Users/Username/Documents/Project/data/raw/my_data.csv")
 ```
 
-Ausserdem kann bei verwendeter Zitation auch noch ein Literaturverzeichnis ergänzt werden:
+```{r, eval = TRUE, echo = TRUE}
+# Good: Relative path using 'here'
+data <- read.csv(here::here("data", "raw", "my_data.csv"))
+head(data)
+```
 
-```{r, eval = FALSE}
-# This code is usually placed outside of a chunk. Here, the code was only placed inside a chunk because no bibliography exists yet, which would otherwise result in an error message.
-::: {#refs}
+::: box-python
+In Python, you can achieve the same using the `os` module to construct relative paths:
+
+```{python, eval = TRUE echo = TRUE}}
+# Good: Relative path using 'os'
+path = os.path.join("data", "raw", "my_data.csv")
+data = pd.read_csv(path)
+```
 :::
+
+## Naming Conventions
+
+Clear naming is the first step toward "self-documenting code."
+
+- **Variables**: Use nouns (e.g., `participant_scores`).
+
+- **Functions**: Use verbs (e.g., `calculate_mean`).
+
+- **Style**: Use snake_case (lowercase letters with underscores) for both R and Python.
+
+Avoid generic names like `data1`, `temp`, or `foo`. Instead, be descriptive: `raw_survey_data` is much more helpful than just `df`.
+
+## Comments
+
+Comments should explain why you are doing something, rather than describing the code itself. Anyone can look up what e.g. the `mean()` function does, but only you know why you chose to exclude certain outliers before calculating it.
+
+```{r, eval = FALSE, echo = TRUE}
+# OVERLOAD: Describing the syntax (Avoid this)
+# Defining a variable and using the subset function
+cleaned_data <- subset(my_data, attention_check == "passed") # Result is saved
 ```
+
+```{r, eval = TRUE, echo = TRUE}
+# GOOD: Explaining the context
+# Removing participants who failed the attention check
+cleaned_data <- subset(my_data, attention_check == "passed")
+```
+
+## Seed
+
+If your analysis involves random processes (like creating random groups or running a bootstrap), you **must** set a seed. This ensures that the "random" numbers are the same every time the script is run. this ensures reproducibility across devices and over time.
+
+```{r, eval = TRUE, echo = TRUE}
+set.seed(123)
+
+sample(1:10, 5)
+```
+
+::: python-box
+```{r, eval = TRUE, echo = TRUE}
+random.seed(123)
+
+random.sample(range(1, 10), 5)
+```
+:::
 
 ## Functions
 
-One of the fundamental rules of good codestyle is not to repeat yourself (Don't Repeat Yourself, DRY). For this, it can quickly become helpful to write your own small function. The basic syntax for writing your own function is as follows:
+**Don`t repeat yourself (DRY)**: If you find yourself writing the same code multiple times, it's a sign that you should create a function. This reduces errors—if you need to change a parameter, you only have to change it in one place.
 
-```{r, eval = FALSE}
-# Here the function is defined. The expected arguments are specified in parentheses. 
-# The function must be assigned to a name so it can subsequently be called and used.
-my_function <- function(argument1, argument2) {
+```{r, eval = TRUE, echo = TRUE}
+#' Convert Celsius to Fahrenheit
+#' 
+#' The function converts a temperature value from Celsius to Fahrenheit.
+#' @param celsius A numeric value representing degrees Celsius.
+#' @return A numeric value representing degrees Fahrenheit.
+# Define the conversion function
+convert_celsius_to_fahrenheit <- function(celsius) {
+  # Calculate fahrenheit using the standard formula
+  fahrenheit <- (celsius * 9/5) + 32
   
-  # The function logic is defined here
-  result <- argument1 + argument2
-  
-  # The result is returned here
-  return(result)
+  # Return the final result
+  return(fahrenheit)
 }
+
+# Apply the function to different values
+convert_celsius_to_fahrenheit(0)   # Freezing point
+convert_celsius_to_fahrenheit(20)  # Room temperature
+convert_celsius_to_fahrenheit(37)  # Body temperature
 ```
 
-Here is an example of redundant code, where the same plot is defined multiple times with only a different border color:
+::: box-python
+```{python, eval = TRUE, echo = TRUE}
+# Define the conversion function
+def convert_celsius_to_fahrenheit(celsius):
+    """
+The function convert_celsius_to_fahrenheit converts a temperature value from Celsius to Fahrenheit using the standard formula F = (C × 9/5) + 32.
+Arguments: @param celsius: A numeric value (or vector/series) representing the temperature in degrees Celsius.
+Return value: A numeric value (or vector/series) representing the corresponding temperature in degrees Fahrenheit
+    """
+    # Calculate fahrenheit using the standard formula
+    fahrenheit = (celsius * 9/5) + 32
+    
+    # Return the final result
+    return fahrenheit
 
-```{r, eval = FALSE}
-ggplot(data, aes(x = {{ column }})) +
-    geom_histogram(fill = color, bins = 20, color = "white") +
-    theme_minimal() +
-    labs(
-      title = paste("Distribution of", deparse(substitute(column))),
-      x = deparse(substitute(column)),
-      y = "Frequency"
-    )
-
-ggplot(data, aes(x = {{ column }})) +
-    geom_histogram(fill = color, bins = 20, color = "black") +
-    theme_minimal() +
-    labs(
-      title = paste("Distribution of", deparse(substitute(column))),
-      x = deparse(substitute(column)),
-      y = "Frequency"
-    )
-
-ggplot(data, aes(x = {{ column }})) +
-    geom_histogram(fill = color, bins = 20, color = "blue") +
-    theme_minimal() +
-    labs(
-      title = paste("Distribution of", deparse(substitute(column))),
-      x = deparse(substitute(column)),
-      y = "Frequency"
-    )
+# Apply the function to different values
+print(convert_celsius_to_fahrenheit(0))   # Freezing point
+print(convert_celsius_to_fahrenheit(20))  # Room temperature
+print(convert_celsius_to_fahrenheit(37))  # Body temperature
 ```
-
-Here is a function to create all these three plots in a single code block
-
-```{r, eval = FALSE}
-"""
-The function `create_histogram` creates a histogram for a specified column in a given dataset. The color of the border can be adjusted using the `color_name` argument.
-
-Arguments:
-@param data: A dataframe containing the data.
-@param column: The column for which the histogram is to be created.
-@param color_name: The name of the color for the border of the histogram.
-
-Return value: A ggplot object representing the histogram with the desired border color.
-"""
-
-create_histogram <- function(data, column, color_name) {
-  ggplot(data, aes(x = {{ column }})) +
-    geom_histogram(fill = color, bins = 20, color = color_name) +
-    theme_minimal() +
-    labs(
-      title = paste("Distribution of", deparse(substitute(column))),
-      x = deparse(substitute(column)),
-      y = "Frequency"
-    )
-}
-```
-
-Lastly the function call with the different colors:
-
-```{r, eval = FALSE}
-create_histogram(data, column, "white")
-create_histogram(data, column, "black")
-create_histogram(data, column, "blue")
-```
-
-## Dependencies
-
-Another important aspect of good codestyle is clearly defining the code's dependencies. For this purpose, all required packages should be loaded right at the beginning of the script. This makes it immediately obvious which packages are necessary for the execution of the script. Code can also be written that checks for necessary packages, installs them if necessary, and only then loads the packages:
-
-::: callout-note
-This code suggestion combines the logic of a custom function and a loop to apply it to multiple objects simultaneously. Please familiarize yourself with the logic before using this code and only adopt the code once you have completely understood it!
 :::
 
-```{r, eval = FALSE}
-```{r, include = FALSE}
-required_packages <- c("ggplot2")
+## Parallelization
 
-load_if_missing <- function(p) {
-  if (!require(p, character.only = TRUE)) {
-    library(p, character.only = TRUE)
-  }
-}
+Normally, your code runs **sequentially** (one task after another). If you have a computer with multiple CPU cores, **parallelization** allows you to run multiple independent tasks at the same time, significantly reducing execution time for "embarrassingly parallel" tasks.
 
-# Apply on all neseccary packages
-sapply(required_packages, load_if_missing)
+You can use it, for example, in R (Simulations) if you need to run a lot of independent iterations of the same model or in Python if you want to make many requests to APIs or networks in general.
+
+Consult your supervisor for more information on how to implement parallelization in your specific project, as it can be complex and may not be necessary for all analyses. # ToDo
+
+## Plots and figures
+
+Plots and figures of your final thesis should never be edited manually but always within the script only. This ensures they are fully reproducible. You can save your plots and figures directly from your script using the `ggsave()` function in R or the `savefig()` function in Python. 
+
+```{r, eval = TRUE, echo = TRUE}
+# Create a simple plot
+plot <- ggplot(mtcars, aes(x = wt, y = mpg)) +
+  geom_point() +
+  theme_minimal()
+
+# Show plot
+plot
+
+# Save the plot
+ggsave("outputs/figs/mtcars_plot.png", plot = plot, width = 6, height = 4)
 ```
+
+```{python, eval = TRUE, echo = TRUE}
+# Create a simple plot
+plt.scatter(mtcars['wt'], mtcars['mpg'])
+
+# Show plot
+plt.show()
+
+# Save the plot
+plt.savefig("outputs/figs/mtcars_plot.png", dpi=300, bbox_inches
+```
+
+## In-line Code
+
+In-line code allows you to include the results of code directly within your text. This is particularly useful for reporting specific values, such as means, standard deviations, or p-values, without having to create a separate code chunk for it. In R, you can use the `r` syntax to include in-line code.
+
+This document was last rendered on `r Sys.Date()`.
+
+::: callout-information
+To better understand the source code behind the in-line code and other style related code syntax it is recommended to click on the `</>Code`-button in the top right corner of this page.
+:::
+
+## Session
+
+At the end of your report, always include a summary of your system and software versions. This is vital for troubleshooting if a package update or software update breaks your code in the future.
+
+```{r, eval = TRUE, echo = TRUE}
+sessionInfo()
+```
+
+::: box-python
+```{python, eval = TRUE, echo = TRUE}
+session_info.show()
+```
+:::
+
+::: callout-note
+The IDE RStudio offers an automatic formatter. Use `Ctrl + Shift + A` (Windows) or `Cmd + Shift + A` (Mac) to reformat a highlighted code block.
+:::

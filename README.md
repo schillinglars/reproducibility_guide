@@ -1,6 +1,6 @@
 # Reproducibility Guide
 
-Welcome to the **Reproducibility Guide**! This project is designed to help researchers and students (especially in Psychology) implement open science practices and reproducible workflows.
+Welcome to the **Reproducibility Guide**! This project is designed to help students writing their thesis at the Department Psychology of Digitalisation implement open science practices and reproducible workflows especially regarding code.
 
 ## View the Website
 The live version of this guide can be found here: 

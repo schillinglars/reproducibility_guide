@@ -1,5 +1,8 @@
 project:
   type: website
+  render:
+    - "*.qmd"
+    - "!scripts/data_simulation.qmd"
   output-dir: docs
 
 lang: en

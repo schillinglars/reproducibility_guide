@@ -10,4 +10,4 @@ format:
     embed-resources: true
 ---
 
-This will be a template .qmd-file which gives students the basic structure of a document to be used for their thesis. It includes the necessary metadata at the top, as well as some example content and code chunks. Students can then modify this template according to their needs and fill in their own content and code.
+This will be a template .qmd-file which gives students the basic structure of a document to be used for their thesis. It might include exemplary code to illustrate the overall workflow for mentioned reproducibility practices. It includes the necessary metadata at the top, as well as some example content and code chunks. Students can then modify this template according to their needs and fill in their own content and code.

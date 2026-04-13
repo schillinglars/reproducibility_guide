@@ -4,14 +4,14 @@ title: "FAIR"
 
 {{< include ../_hardcoded_values.qmd >}}
 
-To make research results more transparent and traceable, there are the so-called **FAIR principles (Findable, Accessible, Interoperable, Reusable)**. Research practices, including the thesis, should follow these principles wherever possible. In particular for code and software, these principles can be applied as follows:
+To make research results more reproducible, there are the so-called **FAIR principles (Findable, Accessible, Interoperable, Reusable)**. Research projects, including your thesis, should follow these principles wherever possible. In particular for code and software, these principles can be applied as follows:
 
 1.  **Findable**: The whole content should be easily findable. This can be achieved through the use of unique identifiers, metadata, naming conventions, and folder structures which follow guidelines and contain descriptive information about the content.
     
-2.  **Accessible**: All the material should be accessible to everyone. This can be achieved by using open access repositories, providing clear instructions for accessing the material, and ensuring that the material is available in a format that can be easily used by others.
+2.  **Accessible**: All the material should be accessible to everyone. This can be achieved by using open access repositories, providing clear instructions for accessing the material, and ensuring that the material is available in a format that can be easily used by others. Further, all applied software should be open source and freely available to everyone.
 
 3.  **Interoperable**: Software and code should be compatible with other software products and data to facilitate collaboration and the exchange of information. This can be achieved through the use of open standards and interfaces.
 
 4.  **Reusable**: Software should be designed so that it can be easily reused by other researchers. This includes ensuring that it is clearly documented, allowing for modifications to be built upon it, or making it integratable into other software.
 
-The following pages provide practical guidance on implementing the FAIR principles in your work. While this is not an exhaustive list of all possible methods, it serves as a robust starting point for making your research more transparent and reproducible. As you write your thesis, keep these principles in mind and look for opportunities to align your workflow more closely with them.
+The following pages provide practical guidance on implementing the FAIR principles in your work. While this is not an exhaustive list, it serves as a robust starting point for making your research more transparent and reproducible. As you write your thesis, keep the FAIR principles in mind and look for opportunities to align your workflow even more closely with them.
