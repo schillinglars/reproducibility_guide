@@ -1,11 +1,13 @@
 ---
 title: "Template"
+author: "Your Name"
+date: last-modified
 format:
   html:
-    code-tools:
-      source: true
-      toggle: false
-      caption: "Download Template"
+    toc: true
+    code-fold: show
+    code-tools: true
+    embed-resources: true
 ---
 
 This will be a template .qmd-file which gives students the basic structure of a document to be used for their thesis. It includes the necessary metadata at the top, as well as some example content and code chunks. Students can then modify this template according to their needs and fill in their own content and code.

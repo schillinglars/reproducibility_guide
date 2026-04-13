@@ -42,4 +42,4 @@ format:
     code-fold: true # Hide code by default
     code-tools: true # Add the "Code" menu at the top right
     code-copy: true # Allow easy copying of snippets
-    code-link: true # Hyperlinks functions to their documentation
+    code-link: true # Hyperlinks to functions documentations
