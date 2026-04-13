@@ -15,17 +15,21 @@ website:
         href: index.qmd
       - section: "Getting Started"
         contents:
-          - content/reproducibility.qmd
-          - content/workflow.qmd
+          - text: "Reproducibility"
+            href: content/reproducibility.qmd
+          - text: "Workflow"
+            href: content/workflow.qmd
       - section: "The Toolbox"
         contents:
-          - content/version_control.qmd
+          - text: "Version Control"
+            href: content/version_control.qmd
       - section: "Data & Ethics"
         contents:
-          - content/fair.qmd
+          - text: "FAIR Principles"
+            href: content/fair.qmd
 
   page-footer:
-    left: "© 2026 Lars Schilling"
+    left: "© 2026 Department Psychology of Digitalisation"
     right: "Licensed under [CC BY-NC 4.0](https://creativecommons.org/licenses/by-nc/4.0/)"
 
 format:
