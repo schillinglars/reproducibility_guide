@@ -40,7 +40,7 @@ website:
 format:
   html:
     theme: flatly
-    primary: "#2c3e50"
+    primary: "#7a1f1f" #ToDo: find out department color scheme
     toc: true
     code-copy: true
     code-fold: show
