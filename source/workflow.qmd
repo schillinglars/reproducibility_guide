@@ -85,7 +85,7 @@ The YAML header of the Quarto document should include the following lines to lin
 
 You can cite the work by using the key defined in your `.bib` file, which is usually the surname of the first author followed by the year of publication. For example, if you want to cite the above book, you would use `@wickham2023` in your text. But you can also cite the work parathetically by using `[@wickham2023]` in your text. The citation will then be automatically formatted according to the specified style (e.g., APA, MLA, Chicago) and included in the bibliography section of your document.
 
-To include a bibliography section in your document, you can add the following line at the end of your Quarto document:
+To include a bibliography section in your document, simply add the citation as described above and the Reference section will be automatically generated at the end of your document.
 
 @wickham2023
 

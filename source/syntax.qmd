@@ -253,9 +253,9 @@ plt.savefig(os.path.join("..", "outputs", "figs", "own_example_plot.png"))
 ```
 :::
 
-## Formulas
+## Equations
 
-If you want to write mathematical formulas in your report (e.g., to explain a statistical model), you can use LaTeX syntax directly within your Quarto document: `$y = \beta_0 + \beta_1 x + \epsilon$.`
+If you want to write mathematical formulas or just simple equations in your report (e.g., to explain a statistical model), you can use LaTeX syntax directly within your Quarto document: `$y = \beta_0 + \beta_1 x + \epsilon$.`
 
 For standalone formulas on a new line, use double dollar signs:
 

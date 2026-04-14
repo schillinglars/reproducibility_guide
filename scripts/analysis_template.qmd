@@ -1,0 +1,202 @@
+---
+title: "Analysis Template"
+author: "Your Name"
+date: last-modified
+bibliography: ../source/references.bib
+csl: ../source/apa.csl
+format:
+  html:
+    toc: true
+    number-sections: true
+    code-fold: true
+execute:
+  echo: true
+  warning: false
+---
+
+Download this template from the [GitHub repository]({{<  repo-url >}}) or via the `</>Code`-button in the top right corner. This template is designed to be a starting point for your analyses, following many of the best practices for reproducibility and clarity.
+
+# Dependencies
+
+We load all necessary libraries at the beginning to ensure portability and clarity.
+
+```{r}
+#| label: setup-r
+#| include: true
+library(here)    # For relative paths
+library(ggplot2) # For visualization
+```
+
+```{python}
+#| label: setup-python
+import os
+import pandas as pd
+import matplotlib.pyplot as plt
+import random
+import session_info
+```
+
+# Hardcoded Values
+
+We define constants here to avoid "magic numbers" later in the script.
+
+```{r}
+#| label: hardcoded-values-r
+ATTENTION_THRESHOLD <- 2
+PLOT_COLOUR <- "steelblue"
+```
+
+::: python-box
+```{python}
+#| label: hardcoded-values-python
+ATTENTION_THRESHOLD = 2
+PLOT_COLOUR = "steelblue"
+```
+:::
+
+# Data Management
+
+## Loading Data
+
+Using relative paths ensures that the script runs on any device.
+
+```{r}
+#| label: load-data-r
+# Example for a real file: 
+my_data <- read.csv(here("data", "raw", "my_data.csv"))
+```
+
+::: python-box
+```{python}
+#| label: load-data-python
+# In Python, we go one level up to reach the project root from 'scripts/'
+path = os.path.join("..", "data", "raw", "my_data.csv")
+df = pd.read_csv(path)
+```
+:::
+
+## Processing
+
+We follow naming conventions (snake_case) and explain *why* we filter data.
+
+```{r}
+#| label: processing-r
+# Removing cases that don't meet the attention threshold
+cleaned_data <- subset(my_data, reaction_time < ATTENTION_THRESHOLD)
+```
+
+::: python-box
+```{python}
+#| label: processing-python
+# Removing cases that don't meet the attention threshold
+df_cleaned = df[df['reaction_time'] < ATTENTION_THRESHOLD].copy()
+```
+:::
+
+# Analysis & Visualization
+
+## Statistical Analysis
+
+Here we would perform our statistical tests, ensuring to report all relevant details for reproducibility.
+
+```{r}
+#| label: stats-r
+mean_reaction_time <- mean(cleaned_data$reaction_time)
+```
+
+::: python-box
+```{python}
+#| label: stats-python
+mean_reaction_time = df_cleaned['reaction_time'].mean()
+```
+:::
+
+To report the result I can simply use inline code. The mean reaction time is `r round(mean_reaction_time, 2)` seconds.
+
+## Plotting
+
+According to our workflow, we create all figures within the code and save all figures into the `outputs/figs/` directory.
+
+```{r}
+#| label: plot-r
+# Create the plot
+p <- ggplot(cleaned_data, aes(x = condition, y = reaction_time)) +
+  geom_point(color = PLOT_COLOUR) +
+  theme_minimal() +
+  labs(title = "Reaction time in dependence of condition",
+       caption = "Data source: Reaction test XY")
+
+# Display
+p
+
+# Save using 'here' to target the project root
+ggsave(here("outputs", "figs", "analysis_plot_r.png"), plot = p, width = 6, height = 4)
+```
+
+::: python-box
+```{python}
+#| label: plot-python
+# Create the plot
+plt.figure(figsize=(6, 4))
+plt.scatter(df['condition'], df['reaction_time'], color=PLOT_COLOUR, alpha=0.7)
+plt.title('Reaction time in dependence of condition')
+plt.xlabel('Condition')
+plt.ylabel('Reaction Time')
+
+# Display
+plt.show()
+
+# Save using os.path to target the project root
+save_path = os.path.join("..", "outputs", "figs", "analysis_plot_py.png")
+plt.savefig(save_path, dpi=300, bbox_inches='tight')
+```
+:::
+
+# Reproducibility Extras
+
+## Seeds & Randomness
+
+To ensure results remain the same across devices, we set a seed.
+
+```{r}
+#| label: seed-r
+set.seed(123)
+sample_values <- sample(1:100, 3)
+sample_values
+```
+
+::: python-box
+```{python}
+#| label: seed-python
+random.seed(123)
+sample_values = random.sample(range(1, 101), 3)
+sample_values
+```
+:::
+
+## Citations
+
+As discussed by @wickham2023...
+
+## Equations
+
+$$y = \beta_0 + \beta_1 x + \epsilon$$
+
+## References
+
+::: {#refs}
+:::
+
+## Session Information
+
+This section is vital for long-term maintenance and troubleshooting.
+
+```{r}
+sessionInfo()
+```
+
+::: python-box
+```{python}
+session_info.show()
+```
+:::

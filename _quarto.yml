@@ -24,7 +24,7 @@ website:
       - text: "4. Syntax"
         href: source/syntax.qmd
       - text: "5. Template"
-        href: source/template.qmd
+        href: scripts/analysis_template.qmd
 
   page-footer:
     left: "© 2026 Department Psychology of Digitalisation"

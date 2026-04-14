@@ -181,7 +181,7 @@ window.Quarto = {
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../source/template.html" class="sidebar-item-text sidebar-link">
+  <a href="../scripts/analysis_template.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">5. Template</span></a>
   </div>
 </li>
@@ -208,7 +208,7 @@ window.Quarto = {
   <li><a href="#functions" id="toc-functions" class="nav-link" data-scroll-target="#functions">Functions</a></li>
   <li><a href="#parallelization" id="toc-parallelization" class="nav-link" data-scroll-target="#parallelization">Parallelization</a></li>
   <li><a href="#plots-and-figures" id="toc-plots-and-figures" class="nav-link" data-scroll-target="#plots-and-figures">Plots and figures</a></li>
-  <li><a href="#formulas" id="toc-formulas" class="nav-link" data-scroll-target="#formulas">Formulas</a></li>
+  <li><a href="#equations" id="toc-equations" class="nav-link" data-scroll-target="#equations">Equations</a></li>
   <li><a href="#in-line-code" id="toc-in-line-code" class="nav-link" data-scroll-target="#in-line-code">In-line Code</a></li>
   <li><a href="#session" id="toc-session" class="nav-link" data-scroll-target="#session">Session</a></li>
   </ul>
@@ -449,8 +449,8 @@ window.Quarto = {
 </div>
 </div>
 </div>
-</section><section id="formulas" class="level2"><h2 class="anchored" data-anchor-id="formulas">Formulas</h2>
-<p>If you want to write mathematical formulas in your report (e.g., to explain a statistical model), you can use LaTeX syntax directly within your Quarto document: <code>$y = \beta_0 + \beta_1 x + \epsilon$.</code></p>
+</section><section id="equations" class="level2"><h2 class="anchored" data-anchor-id="equations">Equations</h2>
+<p>If you want to write mathematical formulas or just simple equations in your report (e.g., to explain a statistical model), you can use LaTeX syntax directly within your Quarto document: <code>$y = \beta_0 + \beta_1 x + \epsilon$.</code></p>
 <p>For standalone formulas on a new line, use double dollar signs:</p>
 <p><code>$$y = \beta_0 + \beta_1 x + \epsilon$$</code></p>
 <p>When rendered, this will display the formula in a professional mathematical format like <span class="math inline">\(y = \beta_0 + \beta_1 x + \epsilon\)</span>.</p>
@@ -503,10 +503,11 @@ loaded via a namespace (and not attached):
 [13] reticulate_1.46.0  lattice_0.22-9     R6_2.6.1           labeling_0.4.3    
 [17] knitr_1.50         rprojroot_2.1.1    RColorBrewer_1.1-3 rlang_1.2.0       
 [21] xfun_0.54          S7_0.2.1           cli_3.6.6          withr_3.0.2       
-[25] magrittr_2.0.5     digest_0.6.39      grid_4.5.2         lifecycle_1.0.5   
-[29] vctrs_0.7.3        evaluate_1.0.5     glue_1.8.0         farver_2.1.2      
-[33] listenv_0.10.1     codetools_0.2-20   parallelly_1.46.1  rmarkdown_2.30    
-[37] purrr_1.2.2        tools_4.5.2        htmltools_0.5.9   </code></pre>
+[25] magrittr_2.0.5     digest_0.6.39      grid_4.5.2         rstudioapi_0.18.0 
+[29] rappdirs_0.3.4     lifecycle_1.0.5    vctrs_0.7.3        evaluate_1.0.5    
+[33] glue_1.8.0         farver_2.1.2       listenv_0.10.1     codetools_0.2-20  
+[37] parallelly_1.46.1  rmarkdown_2.30     purrr_1.2.2        tools_4.5.2       
+[41] htmltools_0.5.9   </code></pre>
 </div>
 </div>
 <div class="box-python">
@@ -516,12 +517,12 @@ loaded via a namespace (and not attached):
 <pre><code>-----
 matplotlib          3.10.8
 pandas              3.0.2
-session_info        v1.0.1
+session_info        1.0.0
 -----
-Python 3.12.13 (main, Apr  7 2026, 20:53:22) [MSC v.1944 64 bit (AMD64)]
+Python 3.12.13 | packaged by conda-forge | (main, Mar  5 2026, 16:36:12) [MSC v.1944 64 bit (AMD64)]
 Windows-11-10.0.22631-SP0
 -----
-Session information updated at 2026-04-14 14:46</code></pre>
+Session information updated at 2026-04-14 16:04</code></pre>
 </div>
 </div>
 </div>
@@ -1265,9 +1266,9 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
 <span id="cb35-253"><a href="#cb35-253" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
 <span id="cb35-254"><a href="#cb35-254" aria-hidden="true" tabindex="-1"></a>:::</span>
 <span id="cb35-255"><a href="#cb35-255" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb35-256"><a href="#cb35-256" aria-hidden="true" tabindex="-1"></a><span class="fu">## Formulas</span></span>
+<span id="cb35-256"><a href="#cb35-256" aria-hidden="true" tabindex="-1"></a><span class="fu">## Equations</span></span>
 <span id="cb35-257"><a href="#cb35-257" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb35-258"><a href="#cb35-258" aria-hidden="true" tabindex="-1"></a>If you want to write mathematical formulas in your report (e.g., to explain a statistical model), you can use LaTeX syntax directly within your Quarto document: <span class="in">`$y = \beta_0 + \beta_1 x + \epsilon$.`</span></span>
+<span id="cb35-258"><a href="#cb35-258" aria-hidden="true" tabindex="-1"></a>If you want to write mathematical formulas or just simple equations in your report (e.g., to explain a statistical model), you can use LaTeX syntax directly within your Quarto document: <span class="in">`$y = \beta_0 + \beta_1 x + \epsilon$.`</span></span>
 <span id="cb35-259"><a href="#cb35-259" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb35-260"><a href="#cb35-260" aria-hidden="true" tabindex="-1"></a>For standalone formulas on a new line, use double dollar signs:</span>
 <span id="cb35-261"><a href="#cb35-261" aria-hidden="true" tabindex="-1"></a></span>
