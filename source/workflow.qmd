@@ -61,7 +61,7 @@ Note that the licensing can be stated elsewhere and is not obligatory in a READM
 
 ## License
 
-Make sure your work is credited accordingly so that third parties know what they are allowed to do with and what not. As stated earlier, the license can be stated within the README or in a separate file (e.g., `license.txt`). If you are unsure what license to use, consult your supervisor.
+Make sure your work is credited accordingly so that third parties know what they are allowed to do with and what not. As stated earlier, the license can be stated within the README or in a separate file (e.g., *license.txt*). If you are unsure what license to use, consult your supervisor.
 
 ## Citation
 
@@ -83,9 +83,11 @@ The YAML header of the Quarto document should include the following lines to lin
 
 `csl: apa.csl`
 
-You can cite the work by using the key defined in your `.bib` file, which is usually the surname of the first author followed by the year of publication. For example, if you want to cite the above book, you would use @wickham2023 in your text. But you can also cite the work parathetically by using [@wickham2023] in your text. The citation will then be automatically formatted according to the specified style (e.g., APA, MLA, Chicago) and included in the bibliography section of your document.
+You can cite the work by using the key defined in your `.bib` file, which is usually the surname of the first author followed by the year of publication. For example, if you want to cite the above book, you would use `@wickham2023` in your text. But you can also cite the work parathetically by using `[@wickham2023]` in your text. The citation will then be automatically formatted according to the specified style (e.g., APA, MLA, Chicago) and included in the bibliography section of your document.
 
 To include a bibliography section in your document, you can add the following line at the end of your Quarto document:
+
+@wickham2023
 
 # References
 
@@ -93,5 +95,5 @@ To include a bibliography section in your document, you can add the following li
 :::
 
 ::: callout-note
-To see a real-life example of a script based workflow check out the repository of this website [here]({{< repo-url >}}) and additionally the code of each page via the `</>Code`-button in the top right corner. Note that the citation has been included in the `.yml` file of the project and is automatically included in the bibliography section of each page.
+To see a real-life example of a script based workflow check out the repository of this website [here]({{< repo-url >}}) and additionally the code of each page via the `</>Code`-button in the top right corner.
 :::

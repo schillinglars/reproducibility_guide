@@ -1,5 +1,5 @@
 ---
-title: "Codestyle"
+title: "Syntax"
 ---
 
 {{< include ../_hardcoded_values.qmd >}}
@@ -26,7 +26,6 @@ A **codestyle** is a set of conventions and rules for building script and writin
 
 Within a script, important meta-information can be provided using the YAML header. This includes not only the author, the date, or the integration of citations, but also formatting options for the rendered document. Here is examplary content of a YAML header:
 
----
 title: "Analysis of Psychological Well-being"
 author: "Your Name"
 date: last-modified
@@ -42,20 +41,19 @@ format:
 execute:
   echo: true               # Shows the code in the output by default (global setting)
   warning: false           # Hides R/Python warnings in the final report (global setting)
----
 
 ## Dependencies
 
 Always load your libraries/packages at the very top of your script. This acts as a "list of ingredients" so others know what needs to be installed before running your code. Make sure you do not include any unnecessary packages, as this can lead to confusion and potential issues with package conflicts. Please also make sure to not include the installation of the package (e.g., `install.packages("ggplot2")`) in the script, as this can lead to issues when running the script on different devices. Instead install necessary packages directly in the Console. The loading of packages can take place within the script:
 
-```{r, eval = TRUE, echo = FALSE}
+```{r, eval = TRUE, echo = TRUE}
 library(ggplot2)
 ```
 
 ::: python-box
 Python and R do not share the same packages. For data visualization, a commonly used package in Python is `matplotlib`. To load it, you can use the following code:
 
-```{python, eval = TRUE, echo = FALSE}
+```{python, eval = TRUE, echo =  TRUE}
 import matplotlib.pyplot as plt
 ```
 :::
@@ -64,7 +62,7 @@ import matplotlib.pyplot as plt
 
 In the IDE of RStudio, settings how chunks should behave globaly can be set within the YAML header. However, these settings can be overwritten for each chunk individually by adding the following options at the beginning of a chunk:
 
-```{r}
+```text
 #| eval: true
 #| echo: true
 #| output: true
@@ -75,8 +73,8 @@ In the IDE of RStudio, settings how chunks should behave globaly can be set with
 
 The settings of a given chunk can also be set directly within the curly brackets at the beginning of a chunk, for example:
 
-```{r, eval = TRUE, echo = TRUE, output = TRUE, warning = TRUE, error = FALSE, include = FALSE}
-1 + 1
+```text
+{r, eval = TRUE, echo = TRUE, output = TRUE, warning = TRUE, error = FALSE, include = FALSE}
 ```
 
 Here are the explanations of the different options:
@@ -89,13 +87,13 @@ error: false: If the code within the chunk has an error, rendering stops immedia
 
 Please note that this is not an extensive list of all available chunk options. For more, see for example the [quarto documentation about code cells and knitr chunk options](https://quarto.org/docs/reference/cells/cells-knitr.html).
 
-## Visual structure
-
-Headings are the basis for the table of content (toc) in the rendered html-file when such is enabled in the YAML header. They also help to structure the code and make it easier to navigate for others (and for your "future self"). It is recommended to use at least three levels of headings (e.g., `#`, `##`, and `###`) to create a clear structure.
-
 ## Hardcoded values
 
 Avoid hardcoded values within your code. Instead, define them as variables within a single chunk at the beginning of your script. This makes it easier to update values in one place and ensures consistency throughout your code. To make it easier to identify hardcoded values in the script, you can use a specific naming convention (e.g., all uppercase letters with underscores) for these variables.
+
+## Visual structure
+
+Headings are the basis for the table of content (toc) in the rendered html-file when such is enabled in the YAML header. They also help to structure the code and make it easier to navigate for others (and for your "future self"). It is recommended to use at least three levels of headings (e.g., `#`, `##`, and `###`) to create a clear structure.
 
 ## Portability
 
@@ -162,7 +160,7 @@ set.seed(123)
 sample(1:10, 5)
 ```
 
-::: python-box
+::: box-python
 ```{python, eval = TRUE, echo = TRUE}
 random.seed(123)
 
@@ -242,6 +240,7 @@ plot
 ggsave(here("outputs", "figs", "mtcars_plot.png"), plot = plot, width = 6, height = 4)
 ```
 
+::: box-python
 ```{python, eval = TRUE, echo = TRUE}
 # Create a simple plot
 plt.plot([1, 2, 3], [10, 20, 15], marker='o')
@@ -252,6 +251,7 @@ plt.show()
 # Save the plot (Python`s root is in the respective file directory, not the project directory)
 plt.savefig(os.path.join("..", "outputs", "figs", "own_example_plot.png"))
 ```
+:::
 
 ## Formulas
 
@@ -265,12 +265,12 @@ When rendered, this will display the formula in a professional mathematical form
 
 ## In-line Code
 
-In-line code allows you to include the results of code directly within your text. This is particularly useful for reporting specific values, such as means, standard deviations, or p-values, without having to create a separate code chunk for it. In R, you can use the `r` syntax to include in-line code.
+In-line code allows you to include the results of code directly within your text. This is particularly useful for reporting specific values, such as means, standard deviations, or p-values, without having to create a separate code chunk for it. In R, you can use the ``r `` syntax to include in-line code.
 
-This document was last rendered on `r Sys.Date()`.
+This document was last rendered on the `r Sys.Date()`.
 
-::: callout-information
-To better understand the source code behind the in-line code and other style related code syntax it is recommended to click on the `</>Code`-button in the top right corner of this page.
+::: callout-note
+To better understand the source code behind the in-line code and other style related code syntax it is recommended to click on the `</>Code`-button in the top right corner of this page and select "Show source code". This will show you the source code of this the respective page.
 :::
 
 ## Session

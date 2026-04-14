@@ -185,8 +185,8 @@ div.csl-indent {
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../source/codestyle.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">4. Codestyle</span></a>
+  <a href="../source/syntax.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">4. Syntax</span></a>
   </div>
 </li>
         <li class="sidebar-item">
@@ -288,7 +288,7 @@ div.csl-indent {
 </section>
 <section id="license" class="level2">
 <h2 class="anchored" data-anchor-id="license">License</h2>
-<p>Make sure your work is credited accordingly so that third parties know what they are allowed to do with and what not. As stated earlier, the license can be stated within the README or in a separate file (e.g., <code>license.txt</code>). If you are unsure what license to use, consult your supervisor.</p>
+<p>Make sure your work is credited accordingly so that third parties know what they are allowed to do with and what not. As stated earlier, the license can be stated within the README or in a separate file (e.g., <em>license.txt</em>). If you are unsure what license to use, consult your supervisor.</p>
 </section>
 <section id="citation" class="level2">
 <h2 class="anchored" data-anchor-id="citation">Citation</h2>
@@ -298,8 +298,9 @@ div.csl-indent {
 <p>The YAML header of the Quarto document should include the following lines to link the BibTeX file and the citation style file (e.g.&nbsp;APA 7 Style; can be found and downloaded from <a href="https://www.zotero.org/styles">Zotero Style Repository</a>):</p>
 <p><code>bibliography: references.bib</code></p>
 <p><code>csl: apa.csl</code></p>
-<p>You can cite the work by using the key defined in your <code>.bib</code> file, which is usually the surname of the first author followed by the year of publication. For example, if you want to cite the above book, you would use <span class="citation" data-cites="wickham2023">Wickham &amp; Mineault (<a href="#ref-wickham2023" role="doc-biblioref">2023</a>)</span> in your text. But you can also cite the work parathetically by using <span class="citation" data-cites="wickham2023">(<a href="#ref-wickham2023" role="doc-biblioref">Wickham &amp; Mineault, 2023</a>)</span> in your text. The citation will then be automatically formatted according to the specified style (e.g., APA, MLA, Chicago) and included in the bibliography section of your document.</p>
+<p>You can cite the work by using the key defined in your <code>.bib</code> file, which is usually the surname of the first author followed by the year of publication. For example, if you want to cite the above book, you would use <code>@wickham2023</code> in your text. But you can also cite the work parathetically by using <code>[@wickham2023]</code> in your text. The citation will then be automatically formatted according to the specified style (e.g., APA, MLA, Chicago) and included in the bibliography section of your document.</p>
 <p>To include a bibliography section in your document, you can add the following line at the end of your Quarto document:</p>
+<p><span class="citation" data-cites="wickham2023">Wickham &amp; Mineault (<a href="#ref-wickham2023" role="doc-biblioref">2023</a>)</span></p>
 </section>
 </section>
 <section id="references" class="level1">
@@ -319,7 +320,7 @@ Note
 </div>
 </div>
 <div class="callout-body-container callout-body">
-<p>To see a real-life example of a script based workflow check out the repository of this website <a href="{{< repo-url >}}">here</a> and additionally the code of each page via the <code>&lt;/&gt;Code</code>-button in the top right corner. Note that the citation has been included in the <code>.yml</code> file of the project and is automatically included in the bibliography section of each page.</p>
+<p>To see a real-life example of a script based workflow check out the repository of this website <a href="{{< repo-url >}}">here</a> and additionally the code of each page via the <code>&lt;/&gt;Code</code>-button in the top right corner.</p>
 </div>
 </div>
 
@@ -860,7 +861,7 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
 <span id="cb2-61"><a href="#cb2-61" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb2-62"><a href="#cb2-62" aria-hidden="true" tabindex="-1"></a><span class="fu">## License</span></span>
 <span id="cb2-63"><a href="#cb2-63" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb2-64"><a href="#cb2-64" aria-hidden="true" tabindex="-1"></a>Make sure your work is credited accordingly so that third parties know what they are allowed to do with and what not. As stated earlier, the license can be stated within the README or in a separate file (e.g., <span class="in">`license.txt`</span>). If you are unsure what license to use, consult your supervisor.</span>
+<span id="cb2-64"><a href="#cb2-64" aria-hidden="true" tabindex="-1"></a>Make sure your work is credited accordingly so that third parties know what they are allowed to do with and what not. As stated earlier, the license can be stated within the README or in a separate file (e.g., *license.txt*). If you are unsure what license to use, consult your supervisor.</span>
 <span id="cb2-65"><a href="#cb2-65" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb2-66"><a href="#cb2-66" aria-hidden="true" tabindex="-1"></a><span class="fu">## Citation</span></span>
 <span id="cb2-67"><a href="#cb2-67" aria-hidden="true" tabindex="-1"></a></span>
@@ -882,18 +883,20 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
 <span id="cb2-83"><a href="#cb2-83" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb2-84"><a href="#cb2-84" aria-hidden="true" tabindex="-1"></a><span class="in">`csl: apa.csl`</span></span>
 <span id="cb2-85"><a href="#cb2-85" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb2-86"><a href="#cb2-86" aria-hidden="true" tabindex="-1"></a>You can cite the work by using the key defined in your <span class="in">`.bib`</span> file, which is usually the surname of the first author followed by the year of publication. For example, if you want to cite the above book, you would use @wickham2023 in your text. But you can also cite the work parathetically by using <span class="co">[</span><span class="ot">@wickham2023</span><span class="co">]</span> in your text. The citation will then be automatically formatted according to the specified style (e.g., APA, MLA, Chicago) and included in the bibliography section of your document.</span>
+<span id="cb2-86"><a href="#cb2-86" aria-hidden="true" tabindex="-1"></a>You can cite the work by using the key defined in your <span class="in">`.bib`</span> file, which is usually the surname of the first author followed by the year of publication. For example, if you want to cite the above book, you would use <span class="in">`@wickham2023`</span> in your text. But you can also cite the work parathetically by using <span class="in">`[@wickham2023]`</span> in your text. The citation will then be automatically formatted according to the specified style (e.g., APA, MLA, Chicago) and included in the bibliography section of your document.</span>
 <span id="cb2-87"><a href="#cb2-87" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb2-88"><a href="#cb2-88" aria-hidden="true" tabindex="-1"></a>To include a bibliography section in your document, you can add the following line at the end of your Quarto document:</span>
 <span id="cb2-89"><a href="#cb2-89" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb2-90"><a href="#cb2-90" aria-hidden="true" tabindex="-1"></a><span class="fu"># References</span></span>
+<span id="cb2-90"><a href="#cb2-90" aria-hidden="true" tabindex="-1"></a>@wickham2023</span>
 <span id="cb2-91"><a href="#cb2-91" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb2-92"><a href="#cb2-92" aria-hidden="true" tabindex="-1"></a>::: {#refs}</span>
-<span id="cb2-93"><a href="#cb2-93" aria-hidden="true" tabindex="-1"></a>:::</span>
-<span id="cb2-94"><a href="#cb2-94" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb2-95"><a href="#cb2-95" aria-hidden="true" tabindex="-1"></a>::: callout-note</span>
-<span id="cb2-96"><a href="#cb2-96" aria-hidden="true" tabindex="-1"></a>To see a real-life example of a script based workflow check out the repository of this website <span class="co">[</span><span class="ot">here</span><span class="co">]({{&lt; repo-url &gt;}})</span> and additionally the code of each page via the <span class="in">`&lt;/&gt;Code`</span>-button in the top right corner. Note that the citation has been included in the <span class="in">`.yml`</span> file of the project and is automatically included in the bibliography section of each page.</span>
-<span id="cb2-97"><a href="#cb2-97" aria-hidden="true" tabindex="-1"></a>:::</span></code><button title="Copy to Clipboard" class="code-copy-button" data-in-quarto-modal=""><i class="bi"></i></button></pre></div>
+<span id="cb2-92"><a href="#cb2-92" aria-hidden="true" tabindex="-1"></a><span class="fu"># References</span></span>
+<span id="cb2-93"><a href="#cb2-93" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-94"><a href="#cb2-94" aria-hidden="true" tabindex="-1"></a>::: {#refs}</span>
+<span id="cb2-95"><a href="#cb2-95" aria-hidden="true" tabindex="-1"></a>:::</span>
+<span id="cb2-96"><a href="#cb2-96" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-97"><a href="#cb2-97" aria-hidden="true" tabindex="-1"></a>::: callout-note</span>
+<span id="cb2-98"><a href="#cb2-98" aria-hidden="true" tabindex="-1"></a>To see a real-life example of a script based workflow check out the repository of this website <span class="co">[</span><span class="ot">here</span><span class="co">]({{&lt; repo-url &gt;}})</span> and additionally the code of each page via the <span class="in">`&lt;/&gt;Code`</span>-button in the top right corner.</span>
+<span id="cb2-99"><a href="#cb2-99" aria-hidden="true" tabindex="-1"></a>:::</span></code><button title="Copy to Clipboard" class="code-copy-button" data-in-quarto-modal=""><i class="bi"></i></button></pre></div>
 </div></div></div></div></div>
 </div> <!-- /content -->
 <footer class="footer">
