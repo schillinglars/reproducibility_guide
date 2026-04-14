@@ -11,8 +11,8 @@ library(ggplot2)
 ```
 
 ```{python, eval = TRUE, include = FALSE}
-import pandas as pd
 import os
+import pandas as pd
 import random
 import session_info
 import matplotlib.pyplot as plt
@@ -46,16 +46,16 @@ execute:
 
 ## Dependencies
 
-Always load your libraries/packages at the very top of your script. This acts as a "list of ingredients" so others know what needs to be installed before running your code. Make sure you do not include any unnecessary packages, as this can lead to confusion and potential issues with package conflicts. Please also make sure to not include the installation of the package (e.g., `install.packages("ggplot2")`) in the script, as this can lead to issues when running the script on different devices. Instead install necessary packages directly via the Console. The loading of packages can take place within the script:
+Always load your libraries/packages at the very top of your script. This acts as a "list of ingredients" so others know what needs to be installed before running your code. Make sure you do not include any unnecessary packages, as this can lead to confusion and potential issues with package conflicts. Please also make sure to not include the installation of the package (e.g., `install.packages("ggplot2")`) in the script, as this can lead to issues when running the script on different devices. Instead install necessary packages directly in the Console. The loading of packages can take place within the script:
 
-```{r, eval = TRUE, echo = TRUE}
+```{r, eval = TRUE, echo = FALSE}
 library(ggplot2)
 ```
 
 ::: python-box
 Python and R do not share the same packages. For data visualization, a commonly used package in Python is `matplotlib`. To load it, you can use the following code:
 
-```{python, eval = TRUE, echo = TRUE}
+```{python, eval = TRUE, echo = FALSE}
 import matplotlib.pyplot as plt
 ```
 :::
@@ -76,7 +76,7 @@ In the IDE of RStudio, settings how chunks should behave globaly can be set with
 The settings of a given chunk can also be set directly within the curly brackets at the beginning of a chunk, for example:
 
 ```{r, eval = TRUE, echo = TRUE, output = TRUE, warning = TRUE, error = FALSE, include = FALSE}
-
+1 + 1
 ```
 
 Here are the explanations of the different options:
@@ -93,6 +93,10 @@ Please note that this is not an extensive list of all available chunk options. F
 
 Headings are the basis for the table of content (toc) in the rendered html-file when such is enabled in the YAML header. They also help to structure the code and make it easier to navigate for others (and for your "future self"). It is recommended to use at least three levels of headings (e.g., `#`, `##`, and `###`) to create a clear structure.
 
+## Hardcoded values
+
+Avoid hardcoded values within your code. Instead, define them as variables within a single chunk at the beginning of your script. This makes it easier to update values in one place and ensures consistency throughout your code. To make it easier to identify hardcoded values in the script, you can use a specific naming convention (e.g., all uppercase letters with underscores) for these variables.
+
 ## Portability
 
 A reproducible script should work regardless of which computer it is running on. Absolute paths (e.g., `C:/Users/Username/Documents/...`) are the "enemy" of reproducibility because they only exist on your specific device.
@@ -101,22 +105,22 @@ Relative paths point to a location relative to your project's root folder.
 
 ```{r, eval = FALSE, echo = TRUE}
 # Bad: Absolute path
-data <- read.csv("C:/Users/Username/Documents/Project/data/raw/my_data.csv")
+my_data <- read.csv("C:/Users/Username/Documents/Project/data/raw/my_data.csv")
 ```
 
 ```{r, eval = TRUE, echo = TRUE}
 # Good: Relative path using 'here'
-data <- read.csv(here::here("data", "raw", "my_data.csv"))
-head(data)
+my_data <- read.csv(here("data", "raw", "my_data.csv"))
+head(my_data)
 ```
 
 ::: box-python
 In Python, you can achieve the same using the `os` module to construct relative paths:
 
-```{python, eval = TRUE echo = TRUE}}
-# Good: Relative path using 'os'
-path = os.path.join("data", "raw", "my_data.csv")
-data = pd.read_csv(path)
+```{python, eval = TRUE, echo = TRUE}
+# Good: Relative path using 'os' (Python`s root is the respective file directory, not the project directory)
+path = os.path.join("..", "data", "raw", "my_data.csv")
+my_data = pd.read_csv(path)
 ```
 :::
 
@@ -142,7 +146,7 @@ Comments should explain why you are doing something, rather than describing the 
 cleaned_data <- subset(my_data, attention_check == "passed") # Result is saved
 ```
 
-```{r, eval = TRUE, echo = TRUE}
+```{r, eval = FALSE, echo = TRUE}
 # GOOD: Explaining the context
 # Removing participants who failed the attention check
 cleaned_data <- subset(my_data, attention_check == "passed")
@@ -159,7 +163,7 @@ sample(1:10, 5)
 ```
 
 ::: python-box
-```{r, eval = TRUE, echo = TRUE}
+```{python, eval = TRUE, echo = TRUE}
 random.seed(123)
 
 random.sample(range(1, 10), 5)
@@ -235,19 +239,29 @@ plot <- ggplot(mtcars, aes(x = wt, y = mpg)) +
 plot
 
 # Save the plot
-ggsave("outputs/figs/mtcars_plot.png", plot = plot, width = 6, height = 4)
+ggsave(here("outputs", "figs", "mtcars_plot.png"), plot = plot, width = 6, height = 4)
 ```
 
 ```{python, eval = TRUE, echo = TRUE}
 # Create a simple plot
-plt.scatter(mtcars['wt'], mtcars['mpg'])
+plt.plot([1, 2, 3], [10, 20, 15], marker='o')
 
 # Show plot
 plt.show()
 
-# Save the plot
-plt.savefig("outputs/figs/mtcars_plot.png", dpi=300, bbox_inches
+# Save the plot (Python`s root is in the respective file directory, not the project directory)
+plt.savefig(os.path.join("..", "outputs", "figs", "own_example_plot.png"))
 ```
+
+## Formulas
+
+If you want to write mathematical formulas in your report (e.g., to explain a statistical model), you can use LaTeX syntax directly within your Quarto document: `$y = \beta_0 + \beta_1 x + \epsilon$.`
+
+For standalone formulas on a new line, use double dollar signs:
+
+`$$y = \beta_0 + \beta_1 x + \epsilon$$`
+
+When rendered, this will display the formula in a professional mathematical format like $y = \beta_0 + \beta_1 x + \epsilon$.
 
 ## In-line Code
 

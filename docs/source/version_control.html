@@ -188,6 +188,8 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   <li><a href="#fundamentals" id="toc-fundamentals" class="nav-link active" data-scroll-target="#fundamentals">Fundamentals</a></li>
   <li><a href="#github" id="toc-github" class="nav-link" data-scroll-target="#github">GitHub</a></li>
   <li><a href="#git" id="toc-git" class="nav-link" data-scroll-target="#git">Git</a></li>
+  <li><a href="#gitignore" id="toc-gitignore" class="nav-link" data-scroll-target="#gitignore">.gitignore</a></li>
+  <li><a href="#renv" id="toc-renv" class="nav-link" data-scroll-target="#renv">renv</a></li>
   </ul>
 </nav>
     </div>
@@ -215,15 +217,17 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 
 <section id="fundamentals" class="level1">
 <h1>Fundamentals</h1>
-<p>To further improve the reproducibility of an analysis, it is useful to use version control. This refers to documenting any changes to the scripts, data, or outputs. This way, it can be traced when and by whom which changes were made. It is also possible to restore previous versions of the scripts, data, or outputs.</p>
+<p><strong>Version control</strong> is the systematic process of documenting every change made to your scripts, data, or outputs. It allows you to trace <strong>when</strong>, <strong>why</strong>, and <strong>by whom</strong> specific changes were made. Most importantly, it acts as a safety net, allowing you to restore previous versions of your work if something goes wrong.</p>
 </section>
 <section id="github" class="level1">
 <h1>GitHub</h1>
-<p><a href="https://github.com/">GitHub</a> is, simply put, a cloud provider like GDrive, OneDrive, or iCloud, but specialized for code and version control. In GitHub, so-called repositories—projects can be created. These are practically the project folder, including all subfolders and files, that were introduced within the workflow. Using the application <a href="https://desktop.github.com/download/">GitHub Desktop</a>, a folder system on your own device can be connected to a repository on GitHub. Any changes to the files are versioned through so-called <em>commits</em> (!= saving the script). The old files are not simply overwritten; instead, it is recorded which changes exist compared to the old file. After a commit, the change can then be transferred to the repository via <em>push</em>. It is also possible to download the current state of the repository to your own device. This is called a <em>pull</em>.</p>
+<p><a href="https://github.com/"><strong>GitHub</strong></a> is essentially a specialized cloud provider—similar to Google Drive or OneDrive—but designed specifically for code and version control. In GitHub, projects are organized into <strong>repositories</strong>, which function as project folders containing all your files and their history.</p>
+<p>By using the <a href="https://desktop.github.com/download/"><strong>GitHub Desktop application</strong></a>, you can sync a folder on your local device with a repository on GitHub. Your progress is tracked through commits. Unlike a standard ‘save,’ a commit creates a permanent snapshot of your project at a specific point in time. Instead of overwriting files, Git records the precise differences between versions.</p>
+<p>Once you have committed your changes locally, you can ‘upload’ them to the cloud using a <strong>push</strong>. Conversely, if the repository has been updated (e.g., by a collaborator or your supervisor), you can download those updates using a <strong>pull</strong>. Always pull before you start working and push once you finish a task to keep everyone in sync.</p>
 </section>
 <section id="git" class="level1">
 <h1>Git</h1>
-<p>The combination of a <strong>script-based workflow</strong> with the version control of GitHub via Git is particularly powerful. <a href="https://git-scm.com/">Git</a> allows, after a one-time setup and connection to the corresponding GitHub repository, to perform commits, pushes, and pulls directly from within the project file. This eliminates the need for an additional installation of GitHub Desktop and another user interface.</p>
+<p>While GitHub Desktop is a great starting point, the true power lies in the underlying software called <a href="https://git-scm.com/"><strong>Git</strong></a>. Git is the ‘engine’ that powers both GitHub and the Desktop app. After a one-time setup, you can connect Git directly to your programming environment (like RStudio). This allows you to perform commits, pushes, and pulls directly within the same window where you write your code, removing the need to switch back and forth between different applications. This integration streamlines your workflow and makes versioning a seamless part of your coding habit.</p>
 <div class="callout callout-style-default callout-note callout-titled">
 <div class="callout-header d-flex align-content-center">
 <div class="callout-icon-container">
@@ -234,7 +238,55 @@ Note
 </div>
 </div>
 <div class="callout-body-container callout-body">
-<p>You can find instructions for the one-time setup of Git, GitHub, and the connection between the two <a href="https://happygitwithr.com/">here</a>.</p>
+<p>You can find instructions for the one-time setup of Git, GitHub, R, and the connection between these <a href="https://happygitwithr.com/">here</a>.</p>
+</div>
+</div>
+<div class="callout callout-style-default callout-note callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Note
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>This website itself was build with the open source programming language of R, the IDE of RStudio, Git and GitHub for version control. You can find the corresponding repository <a href="{{< repo-url >}}">here</a>.</p>
+</div>
+</div>
+</section>
+<section id="gitignore" class="level1">
+<h1>.gitignore</h1>
+<p>A <code>.gitignore</code> file prevents Git from tracking specific files or folders, ensuring they are never uploaded to GitHub. To use it, create a text file named <code>.gitignore</code> in your project root and list any files or patterns (e.g., *.csv, .Rhistory) you wish to exclude. This is a critical security step for protecting sensitive participant data and maintaining a clean repository by excluding unnecessary large files which could break the upload.</p>
+<div class="callout callout-style-default callout-note callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Note
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>Note that on the <a href="{{< repo-url >}}">GitHub repository</a> you can find the respective .gitignore-file for this website project. You can use it as a template for your own project and modify it according to your needs.</p>
+</div>
+</div>
+</section>
+<section id="renv" class="level1">
+<h1>renv</h1>
+<p><strong>renv</strong> (Reproducible Environments) records the exact versions of all R packages you are using.This ensures that anyone who wants to reproduce your work can simply install the same package versions, preventing issues that arise from updates or changes in package behavior. By using renv, you can create a snapshot of your project’s dependencies, making it easier to share and collaborate on your code while maintaining reproducibility.</p>
+<p>You initialize <code>renv</code> in your project by running <code>renv::init()</code> in the R console. This will create a <code>renv.lock</code> file that contains all the package versions you are using. Whenever you install a new package or update an existing one, make sure to run <code>renv::snapshot()</code> to update the lock file. When someone else wants to reproduce your work, they can run <code>renv::restore()</code> to install the exact package versions specified in the lock file.</p>
+<div class="callout callout-style-default callout-note callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Note
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>It is also possible to combine .gitignore and renv by adding the <code>renv/library/</code> folder to the .gitignore file. This way, the actual package files are not tracked by Git, but the <code>renv.lock</code> file is still included in the repository, allowing others to restore the same environment without uploading large package files.</p>
 </div>
 </div>
 
@@ -720,19 +772,45 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
 <span id="cb1-6"><a href="#cb1-6" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb1-7"><a href="#cb1-7" aria-hidden="true" tabindex="-1"></a><span class="fu"># Fundamentals</span></span>
 <span id="cb1-8"><a href="#cb1-8" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-9"><a href="#cb1-9" aria-hidden="true" tabindex="-1"></a>To further improve the reproducibility of an analysis, it is useful to use version control. This refers to documenting any changes to the scripts, data, or outputs. This way, it can be traced when and by whom which changes were made. It is also possible to restore previous versions of the scripts, data, or outputs.</span>
+<span id="cb1-9"><a href="#cb1-9" aria-hidden="true" tabindex="-1"></a>**Version control** is the systematic process of documenting every change made to your scripts, data, or outputs. It allows you to trace **when**, **why**, and **by whom** specific changes were made. Most importantly, it acts as a safety net, allowing you to restore previous versions of your work if something goes wrong.</span>
 <span id="cb1-10"><a href="#cb1-10" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb1-11"><a href="#cb1-11" aria-hidden="true" tabindex="-1"></a><span class="fu"># GitHub</span></span>
 <span id="cb1-12"><a href="#cb1-12" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-13"><a href="#cb1-13" aria-hidden="true" tabindex="-1"></a><span class="co">[</span><span class="ot">GitHub</span><span class="co">](https://github.com/)</span> is, simply put, a cloud provider like GDrive, OneDrive, or iCloud, but specialized for code and version control. In GitHub, so-called repositories—projects can be created. These are practically the project folder, including all subfolders and files, that were introduced within the workflow. Using the application <span class="co">[</span><span class="ot">GitHub Desktop</span><span class="co">](https://desktop.github.com/download/)</span>, a folder system on your own device can be connected to a repository on GitHub. Any changes to the files are versioned through so-called *commits* (!= saving the script). The old files are not simply overwritten; instead, it is recorded which changes exist compared to the old file. After a commit, the change can then be transferred to the repository via *push*. It is also possible to download the current state of the repository to your own device. This is called a *pull*.</span>
+<span id="cb1-13"><a href="#cb1-13" aria-hidden="true" tabindex="-1"></a><span class="co">[</span><span class="ot">**GitHub**</span><span class="co">](https://github.com/)</span> is essentially a specialized cloud provider—similar to Google Drive or OneDrive—but designed specifically for code and version control. In GitHub, projects are organized into **repositories**, which function as project folders containing all your files and their history.</span>
 <span id="cb1-14"><a href="#cb1-14" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-15"><a href="#cb1-15" aria-hidden="true" tabindex="-1"></a><span class="fu"># Git</span></span>
+<span id="cb1-15"><a href="#cb1-15" aria-hidden="true" tabindex="-1"></a>By using the <span class="co">[</span><span class="ot">**GitHub Desktop application**</span><span class="co">](https://desktop.github.com/download/)</span>, you can sync a folder on your local device with a repository on GitHub. Your progress is tracked through commits. Unlike a standard 'save,' a commit creates a permanent snapshot of your project at a specific point in time. Instead of overwriting files, Git records the precise differences between versions.</span>
 <span id="cb1-16"><a href="#cb1-16" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-17"><a href="#cb1-17" aria-hidden="true" tabindex="-1"></a>The combination of a **script-based workflow** with the version control of GitHub via Git is particularly powerful. <span class="co">[</span><span class="ot">Git</span><span class="co">](https://git-scm.com/)</span> allows, after a one-time setup and connection to the corresponding GitHub repository, to perform commits, pushes, and pulls directly from within the project file. This eliminates the need for an additional installation of GitHub Desktop and another user interface.</span>
+<span id="cb1-17"><a href="#cb1-17" aria-hidden="true" tabindex="-1"></a>Once you have committed your changes locally, you can 'upload' them to the cloud using a **push**. Conversely, if the repository has been updated (e.g., by a collaborator or your supervisor), you can download those updates using a **pull**. Always pull before you start working and push once you finish a task to keep everyone in sync.</span>
 <span id="cb1-18"><a href="#cb1-18" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-19"><a href="#cb1-19" aria-hidden="true" tabindex="-1"></a>::: callout-note</span>
-<span id="cb1-20"><a href="#cb1-20" aria-hidden="true" tabindex="-1"></a>You can find instructions for the one-time setup of Git, GitHub, and the connection between the two <span class="co">[</span><span class="ot">here</span><span class="co">](https://happygitwithr.com/)</span>.</span>
-<span id="cb1-21"><a href="#cb1-21" aria-hidden="true" tabindex="-1"></a>:::</span></code><button title="Copy to Clipboard" class="code-copy-button" data-in-quarto-modal=""><i class="bi"></i></button></pre></div>
+<span id="cb1-19"><a href="#cb1-19" aria-hidden="true" tabindex="-1"></a><span class="fu"># Git</span></span>
+<span id="cb1-20"><a href="#cb1-20" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-21"><a href="#cb1-21" aria-hidden="true" tabindex="-1"></a>While GitHub Desktop is a great starting point, the true power lies in the underlying software called <span class="co">[</span><span class="ot">**Git**</span><span class="co">](https://git-scm.com/)</span>. Git is the 'engine' that powers both GitHub and the Desktop app. After a one-time setup, you can connect Git directly to your programming environment (like RStudio). This allows you to perform commits, pushes, and pulls directly within the same window where you write your code, removing the need to switch back and forth between different applications. This integration streamlines your workflow and makes versioning a seamless part of your coding habit.</span>
+<span id="cb1-22"><a href="#cb1-22" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-23"><a href="#cb1-23" aria-hidden="true" tabindex="-1"></a>::: callout-note</span>
+<span id="cb1-24"><a href="#cb1-24" aria-hidden="true" tabindex="-1"></a>You can find instructions for the one-time setup of Git, GitHub, R, and the connection between these <span class="co">[</span><span class="ot">here</span><span class="co">](https://happygitwithr.com/)</span>.</span>
+<span id="cb1-25"><a href="#cb1-25" aria-hidden="true" tabindex="-1"></a>:::</span>
+<span id="cb1-26"><a href="#cb1-26" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-27"><a href="#cb1-27" aria-hidden="true" tabindex="-1"></a>::: callout-note</span>
+<span id="cb1-28"><a href="#cb1-28" aria-hidden="true" tabindex="-1"></a>This website itself was build with the open source programming language of R, the IDE of RStudio, Git and GitHub for version control. You can find the corresponding repository <span class="co">[</span><span class="ot">here</span><span class="co">]({{&lt; repo-url &gt;}})</span>.</span>
+<span id="cb1-29"><a href="#cb1-29" aria-hidden="true" tabindex="-1"></a>:::</span>
+<span id="cb1-30"><a href="#cb1-30" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-31"><a href="#cb1-31" aria-hidden="true" tabindex="-1"></a><span class="fu"># .gitignore</span></span>
+<span id="cb1-32"><a href="#cb1-32" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-33"><a href="#cb1-33" aria-hidden="true" tabindex="-1"></a>A <span class="in">`.gitignore`</span> file prevents Git from tracking specific files or folders, ensuring they are never uploaded to GitHub. To use it, create a text file named <span class="in">`.gitignore`</span> in your project root and list any files or patterns (e.g., *.csv, .Rhistory) you wish to exclude. This is a critical security step for protecting sensitive participant data and maintaining a clean repository by excluding unnecessary large files which could break the upload.</span>
+<span id="cb1-34"><a href="#cb1-34" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-35"><a href="#cb1-35" aria-hidden="true" tabindex="-1"></a>::: callout-note</span>
+<span id="cb1-36"><a href="#cb1-36" aria-hidden="true" tabindex="-1"></a>Note that on the <span class="co">[</span><span class="ot">GitHub repository</span><span class="co">]({{&lt;  repo-url &gt;}})</span> you can find the respective .gitignore-file for this website project. You can use it as a template for your own project and modify it according to your needs.</span>
+<span id="cb1-37"><a href="#cb1-37" aria-hidden="true" tabindex="-1"></a>:::</span>
+<span id="cb1-38"><a href="#cb1-38" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-39"><a href="#cb1-39" aria-hidden="true" tabindex="-1"></a><span class="fu"># renv</span></span>
+<span id="cb1-40"><a href="#cb1-40" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-41"><a href="#cb1-41" aria-hidden="true" tabindex="-1"></a>**renv** (Reproducible Environments) records the exact versions of all R packages you are using.This ensures that anyone who wants to reproduce your work can simply install the same package versions, preventing issues that arise from updates or changes in package behavior. By using renv, you can create a snapshot of your project's dependencies, making it easier to share and collaborate on your code while maintaining reproducibility.</span>
+<span id="cb1-42"><a href="#cb1-42" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-43"><a href="#cb1-43" aria-hidden="true" tabindex="-1"></a>You initialize <span class="in">`renv`</span> in your project by running <span class="in">`renv::init()`</span> in the R console. This will create a <span class="in">`renv.lock`</span> file that contains all the package versions you are using. Whenever you install a new package or update an existing one, make sure to run <span class="in">`renv::snapshot()`</span> to update the lock file. When someone else wants to reproduce your work, they can run <span class="in">`renv::restore()`</span> to install the exact package versions specified in the lock file.</span>
+<span id="cb1-44"><a href="#cb1-44" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-45"><a href="#cb1-45" aria-hidden="true" tabindex="-1"></a>::: callout-note</span>
+<span id="cb1-46"><a href="#cb1-46" aria-hidden="true" tabindex="-1"></a>It is also possible to combine .gitignore and renv by adding the <span class="in">`renv/library/`</span> folder to the .gitignore file. This way, the actual package files are not tracked by Git, but the <span class="in">`renv.lock`</span> file is still included in the repository, allowing others to restore the same environment without uploading large package files.</span>
+<span id="cb1-47"><a href="#cb1-47" aria-hidden="true" tabindex="-1"></a>:::</span></code><button title="Copy to Clipboard" class="code-copy-button" data-in-quarto-modal=""><i class="bi"></i></button></pre></div>
 </div></div></div></div></div>
 </div> <!-- /content -->
 <footer class="footer">
