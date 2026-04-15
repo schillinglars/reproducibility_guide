@@ -1,6 +1,10 @@
 /* --- Global Variables (Central control for colors and spacing) --- */
 :root {
-  /* Colors */
+  /* Brand Colors */
+  --brand-red: #e51734;
+  --brand-red-hover: #b31229;
+
+  /* Language Specific Colors */
   --r-blue: #276DC3;
   --r-bg: #f0f4f8;
   
@@ -14,6 +18,34 @@
   --box-padding: 1em;
   --box-border-width: 5px;
   --box-radius: 3px;
+}
+
+/* --- Hyperlink Styling --- */
+a {
+  color: var(--brand-red);
+  text-decoration: none; /* Optional: cleaner look */
+}
+
+a:hover {
+  color: var(--brand-red-hover);
+  text-decoration: underline;
+}
+
+/* --- Navigation & UI Branding --- */
+
+/* Sidebar title, active TOC links, and active nav links */
+.sidebar-title, .toc-active, .nav-link.active {
+  color: var(--brand-red) !important;
+}
+
+/* Top Navbar bottom border */
+.navbar {
+  border-bottom: 3px solid var(--brand-red);
+}
+
+/* Code tools menu (top right) toggle button */
+.quarto-code-tools-menu .dropdown-toggle {
+  color: var(--brand-red) !important;
 }
 
 /* --- Global Heading 2 (h2) Styling --- */

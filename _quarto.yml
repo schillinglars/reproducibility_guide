@@ -12,6 +12,7 @@ website:
   favicon: images/logo.png
   sidebar:
     logo: images/logo.png
+    title: "Reproducibility Guide"
     style: "docked"
     search: true
     contents:
@@ -40,7 +41,7 @@ website:
 format:
   html:
     theme: flatly
-    primary: "#7a1f1f" #ToDo: Adjust to departments official color scheme
+    primary: "#e51734"
     email-obfuscation: javascript # Hide clear mail addresses from bots
     toc: true
     css: styles.css # Custom CSS for styling

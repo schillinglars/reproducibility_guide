@@ -138,9 +138,12 @@ window.Quarto = {
     </div>
   </nav></header><!-- content --><div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article">
 <!-- sidebar -->
-  <nav id="quarto-sidebar" class="sidebar collapse collapse-horizontal quarto-sidebar-collapse-item sidebar-navigation docked overflow-auto"><div class="pt-lg-2 mt-2 text-left sidebar-header">
+  <nav id="quarto-sidebar" class="sidebar collapse collapse-horizontal quarto-sidebar-collapse-item sidebar-navigation docked overflow-auto"><div class="pt-lg-2 mt-2 text-left sidebar-header sidebar-header-stacked">
       <a href="../index.html" class="sidebar-logo-link">
       <img src="../images/logo.png" alt="" class="sidebar-logo py-0 d-lg-inline d-none"></a>
+    <div class="sidebar-title mb-0 py-0">
+      <a href="../">Reproducibility Guide</a> 
+    </div>
       </div>
         <div class="mt-2 flex-shrink-0 align-items-center">
         <div class="sidebar-search">
@@ -261,7 +264,21 @@ window.Quarto = {
 #| include: true</code></pre>
 <p>The settings of a given chunk can also be set directly within the curly brackets at the beginning of a chunk, for example:</p>
 <pre class="text"><code>{r, eval = TRUE, echo = TRUE, output = TRUE, warning = TRUE, error = FALSE, include = FALSE}</code></pre>
-<p>Here are the explanations of the different options: - <strong>eval: true</strong>: The chunk is actually executed/calculated. - <strong>echo: true</strong>: The code of the chunk is visible in the rendered document. - <strong>output: true</strong>: The results of the chunk (e.g., a table) are shown. - <strong>warning: true</strong>: R warnings appear in the document. error: false: If the code within the chunk has an error, rendering stops immediately (safe mode). - <strong>include: false</strong>: The chunk, including code, output, and potential warnings or errors, is completely ignored.</p>
+<p>Here are the explanations of the different options:</p>
+<ul>
+<li>
+<code>**eval: true**</code>: The chunk is actually executed/calculated.</li>
+<li>
+<code>**echo: true**</code>: The code of the chunk is visible in the rendered document.</li>
+<li>
+<code>**output: true**</code>: The results of the chunk (e.g., a table) are shown.</li>
+<li>
+<code>**warning: true**</code>: R warnings appear in the document.</li>
+<li>
+<code>**error: false**</code>: If the code within the chunk has an error, rendering stops immediately (safe mode).</li>
+<li>
+<code>**include: false**</code>: The chunk, including code, output, and potential warnings or errors, is completely ignored.</li>
+</ul>
 <p>Please note that this is not an extensive list of all available chunk options. For more, see for example the <a href="https://quarto.org/docs/reference/cells/cells-knitr.html">quarto documentation about code cells and knitr chunk options</a>.</p>
 </section><section id="hardcoded-values" class="level2"><h2 class="anchored" data-anchor-id="hardcoded-values">Hardcoded values</h2>
 <p>Avoid hardcoded values within your code. Instead, define them as variables within a single chunk at the beginning of your script. This makes it easier to update values in one place and ensures consistency throughout your code. To make it easier to identify hardcoded values in the script, you can use a specific naming convention (e.g., all uppercase letters with underscores) for these variables.</p>
@@ -522,7 +539,7 @@ session_info        1.0.0
 Python 3.12.13 | packaged by conda-forge | (main, Mar  5 2026, 16:36:12) [MSC v.1944 64 bit (AMD64)]
 Windows-11-10.0.22631-SP0
 -----
-Session information updated at 2026-04-15 12:31</code></pre>
+Session information updated at 2026-04-15 12:54</code></pre>
 </div>
 </div>
 </div>
@@ -1091,218 +1108,219 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
 <span id="cb35-78"><a href="#cb35-78" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
 <span id="cb35-79"><a href="#cb35-79" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb35-80"><a href="#cb35-80" aria-hidden="true" tabindex="-1"></a>Here are the explanations of the different options:</span>
-<span id="cb35-81"><a href="#cb35-81" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span>**eval: true**: The chunk is actually executed/calculated.</span>
-<span id="cb35-82"><a href="#cb35-82" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span>**echo: true**: The code of the chunk is visible in the rendered document.</span>
-<span id="cb35-83"><a href="#cb35-83" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span>**output: true**: The results of the chunk (e.g., a table) are shown.</span>
-<span id="cb35-84"><a href="#cb35-84" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span>**warning: true**: R warnings appear in the document.</span>
-<span id="cb35-85"><a href="#cb35-85" aria-hidden="true" tabindex="-1"></a>error: false: If the code within the chunk has an error, rendering stops immediately (safe mode).</span>
-<span id="cb35-86"><a href="#cb35-86" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span>**include: false**: The chunk, including code, output, and potential warnings or errors, is completely ignored.</span>
-<span id="cb35-87"><a href="#cb35-87" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb35-88"><a href="#cb35-88" aria-hidden="true" tabindex="-1"></a>Please note that this is not an extensive list of all available chunk options. For more, see for example the <span class="co">[</span><span class="ot">quarto documentation about code cells and knitr chunk options</span><span class="co">](https://quarto.org/docs/reference/cells/cells-knitr.html)</span>.</span>
-<span id="cb35-89"><a href="#cb35-89" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb35-90"><a href="#cb35-90" aria-hidden="true" tabindex="-1"></a><span class="fu">## Hardcoded values</span></span>
-<span id="cb35-91"><a href="#cb35-91" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb35-92"><a href="#cb35-92" aria-hidden="true" tabindex="-1"></a>Avoid hardcoded values within your code. Instead, define them as variables within a single chunk at the beginning of your script. This makes it easier to update values in one place and ensures consistency throughout your code. To make it easier to identify hardcoded values in the script, you can use a specific naming convention (e.g., all uppercase letters with underscores) for these variables.</span>
-<span id="cb35-93"><a href="#cb35-93" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb35-94"><a href="#cb35-94" aria-hidden="true" tabindex="-1"></a><span class="fu">## Visual structure</span></span>
-<span id="cb35-95"><a href="#cb35-95" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb35-96"><a href="#cb35-96" aria-hidden="true" tabindex="-1"></a>Headings are the basis for the table of content (toc) in the rendered html-file when such is enabled in the YAML header. They also help to structure the code and make it easier to navigate for others (and for your "future self"). It is recommended to use at least three levels of headings (e.g., <span class="in">`#`</span>, <span class="in">`##`</span>, and <span class="in">`###`</span>) to create a clear structure.</span>
-<span id="cb35-97"><a href="#cb35-97" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb35-98"><a href="#cb35-98" aria-hidden="true" tabindex="-1"></a><span class="fu">## Portability</span></span>
-<span id="cb35-99"><a href="#cb35-99" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb35-100"><a href="#cb35-100" aria-hidden="true" tabindex="-1"></a>A reproducible script should work regardless of which computer it is running on. Absolute paths (e.g., <span class="in">`C:/Users/Username/Documents/...`</span>) are the "enemy" of reproducibility because they only exist on your specific device.</span>
-<span id="cb35-101"><a href="#cb35-101" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb35-102"><a href="#cb35-102" aria-hidden="true" tabindex="-1"></a>Relative paths point to a location relative to your project's root folder.</span>
-<span id="cb35-103"><a href="#cb35-103" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb35-104"><a href="#cb35-104" aria-hidden="true" tabindex="-1"></a><span class="in">```{r, eval = FALSE, echo = TRUE}</span></span>
-<span id="cb35-105"><a href="#cb35-105" aria-hidden="true" tabindex="-1"></a><span class="in"># Bad: Absolute path</span></span>
-<span id="cb35-106"><a href="#cb35-106" aria-hidden="true" tabindex="-1"></a><span class="in">my_data &lt;- read.csv("C:/Users/Username/Documents/Project/data/raw/my_data.csv")</span></span>
-<span id="cb35-107"><a href="#cb35-107" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
-<span id="cb35-108"><a href="#cb35-108" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb35-109"><a href="#cb35-109" aria-hidden="true" tabindex="-1"></a><span class="in">```{r, eval = TRUE, echo = TRUE}</span></span>
-<span id="cb35-110"><a href="#cb35-110" aria-hidden="true" tabindex="-1"></a><span class="in"># Good: Relative path using 'here'</span></span>
-<span id="cb35-111"><a href="#cb35-111" aria-hidden="true" tabindex="-1"></a><span class="in">my_data &lt;- read.csv(here("data", "raw", "my_data.csv"))</span></span>
-<span id="cb35-112"><a href="#cb35-112" aria-hidden="true" tabindex="-1"></a><span class="in">head(my_data)</span></span>
-<span id="cb35-113"><a href="#cb35-113" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
-<span id="cb35-114"><a href="#cb35-114" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb35-115"><a href="#cb35-115" aria-hidden="true" tabindex="-1"></a>::: box-python</span>
-<span id="cb35-116"><a href="#cb35-116" aria-hidden="true" tabindex="-1"></a>In Python, you can achieve the same using the <span class="in">`os`</span> module to construct relative paths:</span>
-<span id="cb35-117"><a href="#cb35-117" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb35-118"><a href="#cb35-118" aria-hidden="true" tabindex="-1"></a><span class="in">```{python, eval = TRUE, echo = TRUE}</span></span>
-<span id="cb35-119"><a href="#cb35-119" aria-hidden="true" tabindex="-1"></a><span class="in"># Good: Relative path using 'os' (Python`s root is the respective file directory, not the project directory)</span></span>
-<span id="cb35-120"><a href="#cb35-120" aria-hidden="true" tabindex="-1"></a><span class="in">path = os.path.join("..", "data", "raw", "my_data.csv")</span></span>
-<span id="cb35-121"><a href="#cb35-121" aria-hidden="true" tabindex="-1"></a><span class="in">my_data = pd.read_csv(path)</span></span>
-<span id="cb35-122"><a href="#cb35-122" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
-<span id="cb35-123"><a href="#cb35-123" aria-hidden="true" tabindex="-1"></a>:::</span>
-<span id="cb35-124"><a href="#cb35-124" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb35-125"><a href="#cb35-125" aria-hidden="true" tabindex="-1"></a><span class="fu">## Naming Conventions</span></span>
-<span id="cb35-126"><a href="#cb35-126" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb35-127"><a href="#cb35-127" aria-hidden="true" tabindex="-1"></a>Clear naming is the first step toward "self-documenting code."</span>
-<span id="cb35-128"><a href="#cb35-128" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb35-129"><a href="#cb35-129" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span>**Variables**: Use nouns (e.g., <span class="in">`participant_scores`</span>).</span>
-<span id="cb35-130"><a href="#cb35-130" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb35-131"><a href="#cb35-131" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span>**Functions**: Use verbs (e.g., <span class="in">`calculate_mean`</span>).</span>
-<span id="cb35-132"><a href="#cb35-132" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb35-133"><a href="#cb35-133" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span>**Style**: Use snake_case (lowercase letters with underscores) for both R and Python.</span>
-<span id="cb35-134"><a href="#cb35-134" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb35-135"><a href="#cb35-135" aria-hidden="true" tabindex="-1"></a>Avoid generic names like <span class="in">`data1`</span>, <span class="in">`temp`</span>, or <span class="in">`foo`</span>. Instead, be descriptive: <span class="in">`raw_survey_data`</span> is much more helpful than just <span class="in">`df`</span>.</span>
-<span id="cb35-136"><a href="#cb35-136" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb35-137"><a href="#cb35-137" aria-hidden="true" tabindex="-1"></a><span class="fu">## Comments</span></span>
-<span id="cb35-138"><a href="#cb35-138" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb35-139"><a href="#cb35-139" aria-hidden="true" tabindex="-1"></a>Comments should explain why you are doing something, rather than describing the code itself. Anyone can look up what e.g. the <span class="in">`mean()`</span> function does, but only you know why you chose to exclude certain outliers before calculating it.</span>
-<span id="cb35-140"><a href="#cb35-140" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb35-141"><a href="#cb35-141" aria-hidden="true" tabindex="-1"></a><span class="in">```{r, eval = FALSE, echo = TRUE}</span></span>
-<span id="cb35-142"><a href="#cb35-142" aria-hidden="true" tabindex="-1"></a><span class="in"># OVERLOAD: Describing the syntax (Avoid this)</span></span>
-<span id="cb35-143"><a href="#cb35-143" aria-hidden="true" tabindex="-1"></a><span class="in"># Defining a variable and using the subset function</span></span>
-<span id="cb35-144"><a href="#cb35-144" aria-hidden="true" tabindex="-1"></a><span class="in">cleaned_data &lt;- subset(my_data, attention_check == "passed") # Result is saved</span></span>
-<span id="cb35-145"><a href="#cb35-145" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
-<span id="cb35-146"><a href="#cb35-146" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb35-147"><a href="#cb35-147" aria-hidden="true" tabindex="-1"></a><span class="in">```{r, eval = FALSE, echo = TRUE}</span></span>
-<span id="cb35-148"><a href="#cb35-148" aria-hidden="true" tabindex="-1"></a><span class="in"># GOOD: Explaining the context</span></span>
-<span id="cb35-149"><a href="#cb35-149" aria-hidden="true" tabindex="-1"></a><span class="in"># Removing participants who failed the attention check</span></span>
-<span id="cb35-150"><a href="#cb35-150" aria-hidden="true" tabindex="-1"></a><span class="in">cleaned_data &lt;- subset(my_data, attention_check == "passed")</span></span>
-<span id="cb35-151"><a href="#cb35-151" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
-<span id="cb35-152"><a href="#cb35-152" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb35-153"><a href="#cb35-153" aria-hidden="true" tabindex="-1"></a><span class="fu">## Seed</span></span>
-<span id="cb35-154"><a href="#cb35-154" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb35-155"><a href="#cb35-155" aria-hidden="true" tabindex="-1"></a>If your analysis involves random processes (like creating random groups or running a bootstrap), you **must** set a seed. This ensures that the "random" numbers are the same every time the script is run. this ensures reproducibility across devices and over time.</span>
-<span id="cb35-156"><a href="#cb35-156" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb35-157"><a href="#cb35-157" aria-hidden="true" tabindex="-1"></a><span class="in">```{r, eval = TRUE, echo = TRUE}</span></span>
-<span id="cb35-158"><a href="#cb35-158" aria-hidden="true" tabindex="-1"></a><span class="in">set.seed(123)</span></span>
-<span id="cb35-159"><a href="#cb35-159" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb35-160"><a href="#cb35-160" aria-hidden="true" tabindex="-1"></a><span class="in">sample(1:10, 5)</span></span>
-<span id="cb35-161"><a href="#cb35-161" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
-<span id="cb35-162"><a href="#cb35-162" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb35-163"><a href="#cb35-163" aria-hidden="true" tabindex="-1"></a>::: box-python</span>
-<span id="cb35-164"><a href="#cb35-164" aria-hidden="true" tabindex="-1"></a><span class="in">```{python, eval = TRUE, echo = TRUE}</span></span>
-<span id="cb35-165"><a href="#cb35-165" aria-hidden="true" tabindex="-1"></a><span class="in">random.seed(123)</span></span>
-<span id="cb35-166"><a href="#cb35-166" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb35-167"><a href="#cb35-167" aria-hidden="true" tabindex="-1"></a><span class="in">random.sample(range(1, 10), 5)</span></span>
-<span id="cb35-168"><a href="#cb35-168" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
-<span id="cb35-169"><a href="#cb35-169" aria-hidden="true" tabindex="-1"></a>:::</span>
-<span id="cb35-170"><a href="#cb35-170" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb35-171"><a href="#cb35-171" aria-hidden="true" tabindex="-1"></a><span class="fu">## Functions</span></span>
-<span id="cb35-172"><a href="#cb35-172" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb35-173"><a href="#cb35-173" aria-hidden="true" tabindex="-1"></a>**Don`t repeat yourself (DRY)**: If you find yourself writing the same code multiple times, it's a sign that you should create a function. This reduces errors—if you need to change a parameter, you only have to change it in one place.</span>
-<span id="cb35-174"><a href="#cb35-174" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb35-175"><a href="#cb35-175" aria-hidden="true" tabindex="-1"></a><span class="in">```{r, eval = TRUE, echo = TRUE}</span></span>
-<span id="cb35-176"><a href="#cb35-176" aria-hidden="true" tabindex="-1"></a><span class="in">#' Convert Celsius to Fahrenheit</span></span>
-<span id="cb35-177"><a href="#cb35-177" aria-hidden="true" tabindex="-1"></a><span class="in">#' </span></span>
-<span id="cb35-178"><a href="#cb35-178" aria-hidden="true" tabindex="-1"></a><span class="in">#' The function converts a temperature value from Celsius to Fahrenheit.</span></span>
-<span id="cb35-179"><a href="#cb35-179" aria-hidden="true" tabindex="-1"></a><span class="in">#' @param celsius A numeric value representing degrees Celsius.</span></span>
-<span id="cb35-180"><a href="#cb35-180" aria-hidden="true" tabindex="-1"></a><span class="in">#' @return A numeric value representing degrees Fahrenheit.</span></span>
-<span id="cb35-181"><a href="#cb35-181" aria-hidden="true" tabindex="-1"></a><span class="in"># Define the conversion function</span></span>
-<span id="cb35-182"><a href="#cb35-182" aria-hidden="true" tabindex="-1"></a><span class="in">convert_celsius_to_fahrenheit &lt;- function(celsius) {</span></span>
-<span id="cb35-183"><a href="#cb35-183" aria-hidden="true" tabindex="-1"></a><span class="in">  # Calculate fahrenheit using the standard formula</span></span>
-<span id="cb35-184"><a href="#cb35-184" aria-hidden="true" tabindex="-1"></a><span class="in">  fahrenheit &lt;- (celsius * 9/5) + 32</span></span>
-<span id="cb35-185"><a href="#cb35-185" aria-hidden="true" tabindex="-1"></a><span class="in">  </span></span>
-<span id="cb35-186"><a href="#cb35-186" aria-hidden="true" tabindex="-1"></a><span class="in">  # Return the final result</span></span>
-<span id="cb35-187"><a href="#cb35-187" aria-hidden="true" tabindex="-1"></a><span class="in">  return(fahrenheit)</span></span>
-<span id="cb35-188"><a href="#cb35-188" aria-hidden="true" tabindex="-1"></a><span class="in">}</span></span>
-<span id="cb35-189"><a href="#cb35-189" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb35-190"><a href="#cb35-190" aria-hidden="true" tabindex="-1"></a><span class="in"># Apply the function to different values</span></span>
-<span id="cb35-191"><a href="#cb35-191" aria-hidden="true" tabindex="-1"></a><span class="in">convert_celsius_to_fahrenheit(0)   # Freezing point</span></span>
-<span id="cb35-192"><a href="#cb35-192" aria-hidden="true" tabindex="-1"></a><span class="in">convert_celsius_to_fahrenheit(20)  # Room temperature</span></span>
-<span id="cb35-193"><a href="#cb35-193" aria-hidden="true" tabindex="-1"></a><span class="in">convert_celsius_to_fahrenheit(37)  # Body temperature</span></span>
-<span id="cb35-194"><a href="#cb35-194" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
-<span id="cb35-195"><a href="#cb35-195" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb35-196"><a href="#cb35-196" aria-hidden="true" tabindex="-1"></a>::: box-python</span>
-<span id="cb35-197"><a href="#cb35-197" aria-hidden="true" tabindex="-1"></a><span class="in">```{python, eval = TRUE, echo = TRUE}</span></span>
-<span id="cb35-198"><a href="#cb35-198" aria-hidden="true" tabindex="-1"></a><span class="in"># Define the conversion function</span></span>
-<span id="cb35-199"><a href="#cb35-199" aria-hidden="true" tabindex="-1"></a><span class="in">def convert_celsius_to_fahrenheit(celsius):</span></span>
-<span id="cb35-200"><a href="#cb35-200" aria-hidden="true" tabindex="-1"></a><span class="in">    """</span></span>
-<span id="cb35-201"><a href="#cb35-201" aria-hidden="true" tabindex="-1"></a><span class="in">The function convert_celsius_to_fahrenheit converts a temperature value from Celsius to Fahrenheit using the standard formula F = (C × 9/5) + 32.</span></span>
-<span id="cb35-202"><a href="#cb35-202" aria-hidden="true" tabindex="-1"></a><span class="in">Arguments: @param celsius: A numeric value (or vector/series) representing the temperature in degrees Celsius.</span></span>
-<span id="cb35-203"><a href="#cb35-203" aria-hidden="true" tabindex="-1"></a><span class="in">Return value: A numeric value (or vector/series) representing the corresponding temperature in degrees Fahrenheit</span></span>
-<span id="cb35-204"><a href="#cb35-204" aria-hidden="true" tabindex="-1"></a><span class="in">    """</span></span>
-<span id="cb35-205"><a href="#cb35-205" aria-hidden="true" tabindex="-1"></a><span class="in">    # Calculate fahrenheit using the standard formula</span></span>
-<span id="cb35-206"><a href="#cb35-206" aria-hidden="true" tabindex="-1"></a><span class="in">    fahrenheit = (celsius * 9/5) + 32</span></span>
-<span id="cb35-207"><a href="#cb35-207" aria-hidden="true" tabindex="-1"></a><span class="in">    </span></span>
-<span id="cb35-208"><a href="#cb35-208" aria-hidden="true" tabindex="-1"></a><span class="in">    # Return the final result</span></span>
-<span id="cb35-209"><a href="#cb35-209" aria-hidden="true" tabindex="-1"></a><span class="in">    return fahrenheit</span></span>
-<span id="cb35-210"><a href="#cb35-210" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb35-211"><a href="#cb35-211" aria-hidden="true" tabindex="-1"></a><span class="in"># Apply the function to different values</span></span>
-<span id="cb35-212"><a href="#cb35-212" aria-hidden="true" tabindex="-1"></a><span class="in">print(convert_celsius_to_fahrenheit(0))   # Freezing point</span></span>
-<span id="cb35-213"><a href="#cb35-213" aria-hidden="true" tabindex="-1"></a><span class="in">print(convert_celsius_to_fahrenheit(20))  # Room temperature</span></span>
-<span id="cb35-214"><a href="#cb35-214" aria-hidden="true" tabindex="-1"></a><span class="in">print(convert_celsius_to_fahrenheit(37))  # Body temperature</span></span>
-<span id="cb35-215"><a href="#cb35-215" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
-<span id="cb35-216"><a href="#cb35-216" aria-hidden="true" tabindex="-1"></a>:::</span>
-<span id="cb35-217"><a href="#cb35-217" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb35-218"><a href="#cb35-218" aria-hidden="true" tabindex="-1"></a><span class="fu">## Parallelization</span></span>
-<span id="cb35-219"><a href="#cb35-219" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb35-220"><a href="#cb35-220" aria-hidden="true" tabindex="-1"></a>Normally, your code runs **sequentially** (one task after another). If you have a computer with multiple CPU cores, **parallelization** allows you to run multiple independent tasks at the same time, significantly reducing execution time for "embarrassingly parallel" tasks.</span>
-<span id="cb35-221"><a href="#cb35-221" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb35-222"><a href="#cb35-222" aria-hidden="true" tabindex="-1"></a>You can use it, for example, in R (Simulations) if you need to run a lot of independent iterations of the same model or in Python if you want to make many requests to APIs or networks in general.</span>
-<span id="cb35-223"><a href="#cb35-223" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb35-224"><a href="#cb35-224" aria-hidden="true" tabindex="-1"></a>Consult your supervisor for more information on how to implement parallelization in your specific project, as it can be complex and may not be necessary for all analyses. # ToDo</span>
-<span id="cb35-225"><a href="#cb35-225" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb35-226"><a href="#cb35-226" aria-hidden="true" tabindex="-1"></a><span class="fu">## Plots and figures</span></span>
-<span id="cb35-227"><a href="#cb35-227" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb35-228"><a href="#cb35-228" aria-hidden="true" tabindex="-1"></a>Plots and figures of your final thesis should never be edited manually but always within the script only. This ensures they are fully reproducible. You can save your plots and figures directly from your script using the <span class="in">`ggsave()`</span> function in R or the <span class="in">`savefig()`</span> function in Python. </span>
-<span id="cb35-229"><a href="#cb35-229" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb35-230"><a href="#cb35-230" aria-hidden="true" tabindex="-1"></a><span class="in">```{r, eval = TRUE, echo = TRUE}</span></span>
-<span id="cb35-231"><a href="#cb35-231" aria-hidden="true" tabindex="-1"></a><span class="in"># Create a simple plot</span></span>
-<span id="cb35-232"><a href="#cb35-232" aria-hidden="true" tabindex="-1"></a><span class="in">plot &lt;- ggplot(mtcars, aes(x = wt, y = mpg)) +</span></span>
-<span id="cb35-233"><a href="#cb35-233" aria-hidden="true" tabindex="-1"></a><span class="in">  geom_point() +</span></span>
-<span id="cb35-234"><a href="#cb35-234" aria-hidden="true" tabindex="-1"></a><span class="in">  theme_minimal()</span></span>
-<span id="cb35-235"><a href="#cb35-235" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb35-236"><a href="#cb35-236" aria-hidden="true" tabindex="-1"></a><span class="in"># Show plot</span></span>
-<span id="cb35-237"><a href="#cb35-237" aria-hidden="true" tabindex="-1"></a><span class="in">plot</span></span>
-<span id="cb35-238"><a href="#cb35-238" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb35-239"><a href="#cb35-239" aria-hidden="true" tabindex="-1"></a><span class="in"># Save the plot</span></span>
-<span id="cb35-240"><a href="#cb35-240" aria-hidden="true" tabindex="-1"></a><span class="in">ggsave(here("outputs", "figs", "mtcars_plot.png"), plot = plot, width = 6, height = 4)</span></span>
-<span id="cb35-241"><a href="#cb35-241" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
-<span id="cb35-242"><a href="#cb35-242" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb35-243"><a href="#cb35-243" aria-hidden="true" tabindex="-1"></a>::: box-python</span>
-<span id="cb35-244"><a href="#cb35-244" aria-hidden="true" tabindex="-1"></a><span class="in">```{python, eval = TRUE, echo = TRUE}</span></span>
-<span id="cb35-245"><a href="#cb35-245" aria-hidden="true" tabindex="-1"></a><span class="in"># Create a simple plot</span></span>
-<span id="cb35-246"><a href="#cb35-246" aria-hidden="true" tabindex="-1"></a><span class="in">plt.plot([1, 2, 3], [10, 20, 15], marker='o')</span></span>
-<span id="cb35-247"><a href="#cb35-247" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb35-248"><a href="#cb35-248" aria-hidden="true" tabindex="-1"></a><span class="in"># Show plot</span></span>
-<span id="cb35-249"><a href="#cb35-249" aria-hidden="true" tabindex="-1"></a><span class="in">plt.show()</span></span>
-<span id="cb35-250"><a href="#cb35-250" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb35-251"><a href="#cb35-251" aria-hidden="true" tabindex="-1"></a><span class="in"># Save the plot (Python`s root is in the respective file directory, not the project directory)</span></span>
-<span id="cb35-252"><a href="#cb35-252" aria-hidden="true" tabindex="-1"></a><span class="in">plt.savefig(os.path.join("..", "outputs", "figs", "own_example_plot.png"))</span></span>
-<span id="cb35-253"><a href="#cb35-253" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
-<span id="cb35-254"><a href="#cb35-254" aria-hidden="true" tabindex="-1"></a>:::</span>
-<span id="cb35-255"><a href="#cb35-255" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb35-256"><a href="#cb35-256" aria-hidden="true" tabindex="-1"></a><span class="fu">## Equations</span></span>
-<span id="cb35-257"><a href="#cb35-257" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb35-258"><a href="#cb35-258" aria-hidden="true" tabindex="-1"></a>If you want to write mathematical formulas or just simple equations in your report (e.g., to explain a statistical model), you can use LaTeX syntax directly within your Quarto document: <span class="in">`$y = \beta_0 + \beta_1 x + \epsilon$.`</span></span>
-<span id="cb35-259"><a href="#cb35-259" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb35-260"><a href="#cb35-260" aria-hidden="true" tabindex="-1"></a>For standalone formulas on a new line, use double dollar signs:</span>
-<span id="cb35-261"><a href="#cb35-261" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb35-262"><a href="#cb35-262" aria-hidden="true" tabindex="-1"></a><span class="in">`$$y = \beta_0 + \beta_1 x + \epsilon$$`</span></span>
-<span id="cb35-263"><a href="#cb35-263" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb35-264"><a href="#cb35-264" aria-hidden="true" tabindex="-1"></a>When rendered, this will display the formula in a professional mathematical format like $y = \beta_0 + \beta_1 x + \epsilon$.</span>
-<span id="cb35-265"><a href="#cb35-265" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb35-266"><a href="#cb35-266" aria-hidden="true" tabindex="-1"></a><span class="fu">## In-line Code</span></span>
-<span id="cb35-267"><a href="#cb35-267" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb35-268"><a href="#cb35-268" aria-hidden="true" tabindex="-1"></a>In-line code allows you to include the results of code directly within your text. This is particularly useful for reporting specific values, such as means, standard deviations, or p-values, without having to create a separate code chunk for it. In R, you can use the <span class="in">``r ``</span> syntax to include in-line code.</span>
-<span id="cb35-269"><a href="#cb35-269" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb35-270"><a href="#cb35-270" aria-hidden="true" tabindex="-1"></a>This document was last rendered on the <span class="in">`r Sys.Date()`</span>.</span>
-<span id="cb35-271"><a href="#cb35-271" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb35-272"><a href="#cb35-272" aria-hidden="true" tabindex="-1"></a>::: callout-note</span>
-<span id="cb35-273"><a href="#cb35-273" aria-hidden="true" tabindex="-1"></a>To better understand the source code behind the in-line code and other style related code syntax it is recommended to click on the <span class="in">`&lt;/&gt;Code`</span>-button in the top right corner of this page and select "Show source code". This will show you the source code of this the respective page.</span>
-<span id="cb35-274"><a href="#cb35-274" aria-hidden="true" tabindex="-1"></a>:::</span>
-<span id="cb35-275"><a href="#cb35-275" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb35-276"><a href="#cb35-276" aria-hidden="true" tabindex="-1"></a><span class="fu">## Session</span></span>
-<span id="cb35-277"><a href="#cb35-277" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb35-278"><a href="#cb35-278" aria-hidden="true" tabindex="-1"></a>At the end of your report, always include a summary of your system and software versions. This is vital for troubleshooting if a package update or software update breaks your code in the future.</span>
-<span id="cb35-279"><a href="#cb35-279" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb35-280"><a href="#cb35-280" aria-hidden="true" tabindex="-1"></a><span class="in">```{r, eval = TRUE, echo = TRUE}</span></span>
-<span id="cb35-281"><a href="#cb35-281" aria-hidden="true" tabindex="-1"></a><span class="in">sessionInfo()</span></span>
-<span id="cb35-282"><a href="#cb35-282" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
-<span id="cb35-283"><a href="#cb35-283" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb35-284"><a href="#cb35-284" aria-hidden="true" tabindex="-1"></a>::: box-python</span>
-<span id="cb35-285"><a href="#cb35-285" aria-hidden="true" tabindex="-1"></a><span class="in">```{python, eval = TRUE, echo = TRUE}</span></span>
-<span id="cb35-286"><a href="#cb35-286" aria-hidden="true" tabindex="-1"></a><span class="in">session_info.show()</span></span>
-<span id="cb35-287"><a href="#cb35-287" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
-<span id="cb35-288"><a href="#cb35-288" aria-hidden="true" tabindex="-1"></a>:::</span>
-<span id="cb35-289"><a href="#cb35-289" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb35-290"><a href="#cb35-290" aria-hidden="true" tabindex="-1"></a>::: callout-note</span>
-<span id="cb35-291"><a href="#cb35-291" aria-hidden="true" tabindex="-1"></a>The IDE RStudio offers an automatic formatter. Use <span class="in">`Ctrl + Shift + A`</span> (Windows) or <span class="in">`Cmd + Shift + A`</span> (Mac) to reformat a highlighted code block.</span>
-<span id="cb35-292"><a href="#cb35-292" aria-hidden="true" tabindex="-1"></a>:::</span></code><button title="Copy to Clipboard" class="code-copy-button" data-in-quarto-modal=""><i class="bi"></i></button></pre></div>
+<span id="cb35-81"><a href="#cb35-81" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb35-82"><a href="#cb35-82" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span><span class="in">`**eval: true**`</span>: The chunk is actually executed/calculated.</span>
+<span id="cb35-83"><a href="#cb35-83" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span><span class="in">`**echo: true**`</span>: The code of the chunk is visible in the rendered document.</span>
+<span id="cb35-84"><a href="#cb35-84" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span><span class="in">`**output: true**`</span>: The results of the chunk (e.g., a table) are shown.</span>
+<span id="cb35-85"><a href="#cb35-85" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span><span class="in">`**warning: true**`</span>: R warnings appear in the document.</span>
+<span id="cb35-86"><a href="#cb35-86" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span><span class="in">`**error: false**`</span>: If the code within the chunk has an error, rendering stops immediately (safe mode).</span>
+<span id="cb35-87"><a href="#cb35-87" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span><span class="in">`**include: false**`</span>: The chunk, including code, output, and potential warnings or errors, is completely ignored.</span>
+<span id="cb35-88"><a href="#cb35-88" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb35-89"><a href="#cb35-89" aria-hidden="true" tabindex="-1"></a>Please note that this is not an extensive list of all available chunk options. For more, see for example the <span class="co">[</span><span class="ot">quarto documentation about code cells and knitr chunk options</span><span class="co">](https://quarto.org/docs/reference/cells/cells-knitr.html)</span>.</span>
+<span id="cb35-90"><a href="#cb35-90" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb35-91"><a href="#cb35-91" aria-hidden="true" tabindex="-1"></a><span class="fu">## Hardcoded values</span></span>
+<span id="cb35-92"><a href="#cb35-92" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb35-93"><a href="#cb35-93" aria-hidden="true" tabindex="-1"></a>Avoid hardcoded values within your code. Instead, define them as variables within a single chunk at the beginning of your script. This makes it easier to update values in one place and ensures consistency throughout your code. To make it easier to identify hardcoded values in the script, you can use a specific naming convention (e.g., all uppercase letters with underscores) for these variables.</span>
+<span id="cb35-94"><a href="#cb35-94" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb35-95"><a href="#cb35-95" aria-hidden="true" tabindex="-1"></a><span class="fu">## Visual structure</span></span>
+<span id="cb35-96"><a href="#cb35-96" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb35-97"><a href="#cb35-97" aria-hidden="true" tabindex="-1"></a>Headings are the basis for the table of content (toc) in the rendered html-file when such is enabled in the YAML header. They also help to structure the code and make it easier to navigate for others (and for your "future self"). It is recommended to use at least three levels of headings (e.g., <span class="in">`#`</span>, <span class="in">`##`</span>, and <span class="in">`###`</span>) to create a clear structure.</span>
+<span id="cb35-98"><a href="#cb35-98" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb35-99"><a href="#cb35-99" aria-hidden="true" tabindex="-1"></a><span class="fu">## Portability</span></span>
+<span id="cb35-100"><a href="#cb35-100" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb35-101"><a href="#cb35-101" aria-hidden="true" tabindex="-1"></a>A reproducible script should work regardless of which computer it is running on. Absolute paths (e.g., <span class="in">`C:/Users/Username/Documents/...`</span>) are the "enemy" of reproducibility because they only exist on your specific device.</span>
+<span id="cb35-102"><a href="#cb35-102" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb35-103"><a href="#cb35-103" aria-hidden="true" tabindex="-1"></a>Relative paths point to a location relative to your project's root folder.</span>
+<span id="cb35-104"><a href="#cb35-104" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb35-105"><a href="#cb35-105" aria-hidden="true" tabindex="-1"></a><span class="in">```{r, eval = FALSE, echo = TRUE}</span></span>
+<span id="cb35-106"><a href="#cb35-106" aria-hidden="true" tabindex="-1"></a><span class="in"># Bad: Absolute path</span></span>
+<span id="cb35-107"><a href="#cb35-107" aria-hidden="true" tabindex="-1"></a><span class="in">my_data &lt;- read.csv("C:/Users/Username/Documents/Project/data/raw/my_data.csv")</span></span>
+<span id="cb35-108"><a href="#cb35-108" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
+<span id="cb35-109"><a href="#cb35-109" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb35-110"><a href="#cb35-110" aria-hidden="true" tabindex="-1"></a><span class="in">```{r, eval = TRUE, echo = TRUE}</span></span>
+<span id="cb35-111"><a href="#cb35-111" aria-hidden="true" tabindex="-1"></a><span class="in"># Good: Relative path using 'here'</span></span>
+<span id="cb35-112"><a href="#cb35-112" aria-hidden="true" tabindex="-1"></a><span class="in">my_data &lt;- read.csv(here("data", "raw", "my_data.csv"))</span></span>
+<span id="cb35-113"><a href="#cb35-113" aria-hidden="true" tabindex="-1"></a><span class="in">head(my_data)</span></span>
+<span id="cb35-114"><a href="#cb35-114" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
+<span id="cb35-115"><a href="#cb35-115" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb35-116"><a href="#cb35-116" aria-hidden="true" tabindex="-1"></a>::: box-python</span>
+<span id="cb35-117"><a href="#cb35-117" aria-hidden="true" tabindex="-1"></a>In Python, you can achieve the same using the <span class="in">`os`</span> module to construct relative paths:</span>
+<span id="cb35-118"><a href="#cb35-118" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb35-119"><a href="#cb35-119" aria-hidden="true" tabindex="-1"></a><span class="in">```{python, eval = TRUE, echo = TRUE}</span></span>
+<span id="cb35-120"><a href="#cb35-120" aria-hidden="true" tabindex="-1"></a><span class="in"># Good: Relative path using 'os' (Python`s root is the respective file directory, not the project directory)</span></span>
+<span id="cb35-121"><a href="#cb35-121" aria-hidden="true" tabindex="-1"></a><span class="in">path = os.path.join("..", "data", "raw", "my_data.csv")</span></span>
+<span id="cb35-122"><a href="#cb35-122" aria-hidden="true" tabindex="-1"></a><span class="in">my_data = pd.read_csv(path)</span></span>
+<span id="cb35-123"><a href="#cb35-123" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
+<span id="cb35-124"><a href="#cb35-124" aria-hidden="true" tabindex="-1"></a>:::</span>
+<span id="cb35-125"><a href="#cb35-125" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb35-126"><a href="#cb35-126" aria-hidden="true" tabindex="-1"></a><span class="fu">## Naming Conventions</span></span>
+<span id="cb35-127"><a href="#cb35-127" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb35-128"><a href="#cb35-128" aria-hidden="true" tabindex="-1"></a>Clear naming is the first step toward "self-documenting code."</span>
+<span id="cb35-129"><a href="#cb35-129" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb35-130"><a href="#cb35-130" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span>**Variables**: Use nouns (e.g., <span class="in">`participant_scores`</span>).</span>
+<span id="cb35-131"><a href="#cb35-131" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb35-132"><a href="#cb35-132" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span>**Functions**: Use verbs (e.g., <span class="in">`calculate_mean`</span>).</span>
+<span id="cb35-133"><a href="#cb35-133" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb35-134"><a href="#cb35-134" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span>**Style**: Use snake_case (lowercase letters with underscores) for both R and Python.</span>
+<span id="cb35-135"><a href="#cb35-135" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb35-136"><a href="#cb35-136" aria-hidden="true" tabindex="-1"></a>Avoid generic names like <span class="in">`data1`</span>, <span class="in">`temp`</span>, or <span class="in">`foo`</span>. Instead, be descriptive: <span class="in">`raw_survey_data`</span> is much more helpful than just <span class="in">`df`</span>.</span>
+<span id="cb35-137"><a href="#cb35-137" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb35-138"><a href="#cb35-138" aria-hidden="true" tabindex="-1"></a><span class="fu">## Comments</span></span>
+<span id="cb35-139"><a href="#cb35-139" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb35-140"><a href="#cb35-140" aria-hidden="true" tabindex="-1"></a>Comments should explain why you are doing something, rather than describing the code itself. Anyone can look up what e.g. the <span class="in">`mean()`</span> function does, but only you know why you chose to exclude certain outliers before calculating it.</span>
+<span id="cb35-141"><a href="#cb35-141" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb35-142"><a href="#cb35-142" aria-hidden="true" tabindex="-1"></a><span class="in">```{r, eval = FALSE, echo = TRUE}</span></span>
+<span id="cb35-143"><a href="#cb35-143" aria-hidden="true" tabindex="-1"></a><span class="in"># OVERLOAD: Describing the syntax (Avoid this)</span></span>
+<span id="cb35-144"><a href="#cb35-144" aria-hidden="true" tabindex="-1"></a><span class="in"># Defining a variable and using the subset function</span></span>
+<span id="cb35-145"><a href="#cb35-145" aria-hidden="true" tabindex="-1"></a><span class="in">cleaned_data &lt;- subset(my_data, attention_check == "passed") # Result is saved</span></span>
+<span id="cb35-146"><a href="#cb35-146" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
+<span id="cb35-147"><a href="#cb35-147" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb35-148"><a href="#cb35-148" aria-hidden="true" tabindex="-1"></a><span class="in">```{r, eval = FALSE, echo = TRUE}</span></span>
+<span id="cb35-149"><a href="#cb35-149" aria-hidden="true" tabindex="-1"></a><span class="in"># GOOD: Explaining the context</span></span>
+<span id="cb35-150"><a href="#cb35-150" aria-hidden="true" tabindex="-1"></a><span class="in"># Removing participants who failed the attention check</span></span>
+<span id="cb35-151"><a href="#cb35-151" aria-hidden="true" tabindex="-1"></a><span class="in">cleaned_data &lt;- subset(my_data, attention_check == "passed")</span></span>
+<span id="cb35-152"><a href="#cb35-152" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
+<span id="cb35-153"><a href="#cb35-153" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb35-154"><a href="#cb35-154" aria-hidden="true" tabindex="-1"></a><span class="fu">## Seed</span></span>
+<span id="cb35-155"><a href="#cb35-155" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb35-156"><a href="#cb35-156" aria-hidden="true" tabindex="-1"></a>If your analysis involves random processes (like creating random groups or running a bootstrap), you **must** set a seed. This ensures that the "random" numbers are the same every time the script is run. this ensures reproducibility across devices and over time.</span>
+<span id="cb35-157"><a href="#cb35-157" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb35-158"><a href="#cb35-158" aria-hidden="true" tabindex="-1"></a><span class="in">```{r, eval = TRUE, echo = TRUE}</span></span>
+<span id="cb35-159"><a href="#cb35-159" aria-hidden="true" tabindex="-1"></a><span class="in">set.seed(123)</span></span>
+<span id="cb35-160"><a href="#cb35-160" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb35-161"><a href="#cb35-161" aria-hidden="true" tabindex="-1"></a><span class="in">sample(1:10, 5)</span></span>
+<span id="cb35-162"><a href="#cb35-162" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
+<span id="cb35-163"><a href="#cb35-163" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb35-164"><a href="#cb35-164" aria-hidden="true" tabindex="-1"></a>::: box-python</span>
+<span id="cb35-165"><a href="#cb35-165" aria-hidden="true" tabindex="-1"></a><span class="in">```{python, eval = TRUE, echo = TRUE}</span></span>
+<span id="cb35-166"><a href="#cb35-166" aria-hidden="true" tabindex="-1"></a><span class="in">random.seed(123)</span></span>
+<span id="cb35-167"><a href="#cb35-167" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb35-168"><a href="#cb35-168" aria-hidden="true" tabindex="-1"></a><span class="in">random.sample(range(1, 10), 5)</span></span>
+<span id="cb35-169"><a href="#cb35-169" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
+<span id="cb35-170"><a href="#cb35-170" aria-hidden="true" tabindex="-1"></a>:::</span>
+<span id="cb35-171"><a href="#cb35-171" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb35-172"><a href="#cb35-172" aria-hidden="true" tabindex="-1"></a><span class="fu">## Functions</span></span>
+<span id="cb35-173"><a href="#cb35-173" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb35-174"><a href="#cb35-174" aria-hidden="true" tabindex="-1"></a>**Don`t repeat yourself (DRY)**: If you find yourself writing the same code multiple times, it's a sign that you should create a function. This reduces errors—if you need to change a parameter, you only have to change it in one place.</span>
+<span id="cb35-175"><a href="#cb35-175" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb35-176"><a href="#cb35-176" aria-hidden="true" tabindex="-1"></a><span class="in">```{r, eval = TRUE, echo = TRUE}</span></span>
+<span id="cb35-177"><a href="#cb35-177" aria-hidden="true" tabindex="-1"></a><span class="in">#' Convert Celsius to Fahrenheit</span></span>
+<span id="cb35-178"><a href="#cb35-178" aria-hidden="true" tabindex="-1"></a><span class="in">#' </span></span>
+<span id="cb35-179"><a href="#cb35-179" aria-hidden="true" tabindex="-1"></a><span class="in">#' The function converts a temperature value from Celsius to Fahrenheit.</span></span>
+<span id="cb35-180"><a href="#cb35-180" aria-hidden="true" tabindex="-1"></a><span class="in">#' @param celsius A numeric value representing degrees Celsius.</span></span>
+<span id="cb35-181"><a href="#cb35-181" aria-hidden="true" tabindex="-1"></a><span class="in">#' @return A numeric value representing degrees Fahrenheit.</span></span>
+<span id="cb35-182"><a href="#cb35-182" aria-hidden="true" tabindex="-1"></a><span class="in"># Define the conversion function</span></span>
+<span id="cb35-183"><a href="#cb35-183" aria-hidden="true" tabindex="-1"></a><span class="in">convert_celsius_to_fahrenheit &lt;- function(celsius) {</span></span>
+<span id="cb35-184"><a href="#cb35-184" aria-hidden="true" tabindex="-1"></a><span class="in">  # Calculate fahrenheit using the standard formula</span></span>
+<span id="cb35-185"><a href="#cb35-185" aria-hidden="true" tabindex="-1"></a><span class="in">  fahrenheit &lt;- (celsius * 9/5) + 32</span></span>
+<span id="cb35-186"><a href="#cb35-186" aria-hidden="true" tabindex="-1"></a><span class="in">  </span></span>
+<span id="cb35-187"><a href="#cb35-187" aria-hidden="true" tabindex="-1"></a><span class="in">  # Return the final result</span></span>
+<span id="cb35-188"><a href="#cb35-188" aria-hidden="true" tabindex="-1"></a><span class="in">  return(fahrenheit)</span></span>
+<span id="cb35-189"><a href="#cb35-189" aria-hidden="true" tabindex="-1"></a><span class="in">}</span></span>
+<span id="cb35-190"><a href="#cb35-190" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb35-191"><a href="#cb35-191" aria-hidden="true" tabindex="-1"></a><span class="in"># Apply the function to different values</span></span>
+<span id="cb35-192"><a href="#cb35-192" aria-hidden="true" tabindex="-1"></a><span class="in">convert_celsius_to_fahrenheit(0)   # Freezing point</span></span>
+<span id="cb35-193"><a href="#cb35-193" aria-hidden="true" tabindex="-1"></a><span class="in">convert_celsius_to_fahrenheit(20)  # Room temperature</span></span>
+<span id="cb35-194"><a href="#cb35-194" aria-hidden="true" tabindex="-1"></a><span class="in">convert_celsius_to_fahrenheit(37)  # Body temperature</span></span>
+<span id="cb35-195"><a href="#cb35-195" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
+<span id="cb35-196"><a href="#cb35-196" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb35-197"><a href="#cb35-197" aria-hidden="true" tabindex="-1"></a>::: box-python</span>
+<span id="cb35-198"><a href="#cb35-198" aria-hidden="true" tabindex="-1"></a><span class="in">```{python, eval = TRUE, echo = TRUE}</span></span>
+<span id="cb35-199"><a href="#cb35-199" aria-hidden="true" tabindex="-1"></a><span class="in"># Define the conversion function</span></span>
+<span id="cb35-200"><a href="#cb35-200" aria-hidden="true" tabindex="-1"></a><span class="in">def convert_celsius_to_fahrenheit(celsius):</span></span>
+<span id="cb35-201"><a href="#cb35-201" aria-hidden="true" tabindex="-1"></a><span class="in">    """</span></span>
+<span id="cb35-202"><a href="#cb35-202" aria-hidden="true" tabindex="-1"></a><span class="in">The function convert_celsius_to_fahrenheit converts a temperature value from Celsius to Fahrenheit using the standard formula F = (C × 9/5) + 32.</span></span>
+<span id="cb35-203"><a href="#cb35-203" aria-hidden="true" tabindex="-1"></a><span class="in">Arguments: @param celsius: A numeric value (or vector/series) representing the temperature in degrees Celsius.</span></span>
+<span id="cb35-204"><a href="#cb35-204" aria-hidden="true" tabindex="-1"></a><span class="in">Return value: A numeric value (or vector/series) representing the corresponding temperature in degrees Fahrenheit</span></span>
+<span id="cb35-205"><a href="#cb35-205" aria-hidden="true" tabindex="-1"></a><span class="in">    """</span></span>
+<span id="cb35-206"><a href="#cb35-206" aria-hidden="true" tabindex="-1"></a><span class="in">    # Calculate fahrenheit using the standard formula</span></span>
+<span id="cb35-207"><a href="#cb35-207" aria-hidden="true" tabindex="-1"></a><span class="in">    fahrenheit = (celsius * 9/5) + 32</span></span>
+<span id="cb35-208"><a href="#cb35-208" aria-hidden="true" tabindex="-1"></a><span class="in">    </span></span>
+<span id="cb35-209"><a href="#cb35-209" aria-hidden="true" tabindex="-1"></a><span class="in">    # Return the final result</span></span>
+<span id="cb35-210"><a href="#cb35-210" aria-hidden="true" tabindex="-1"></a><span class="in">    return fahrenheit</span></span>
+<span id="cb35-211"><a href="#cb35-211" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb35-212"><a href="#cb35-212" aria-hidden="true" tabindex="-1"></a><span class="in"># Apply the function to different values</span></span>
+<span id="cb35-213"><a href="#cb35-213" aria-hidden="true" tabindex="-1"></a><span class="in">print(convert_celsius_to_fahrenheit(0))   # Freezing point</span></span>
+<span id="cb35-214"><a href="#cb35-214" aria-hidden="true" tabindex="-1"></a><span class="in">print(convert_celsius_to_fahrenheit(20))  # Room temperature</span></span>
+<span id="cb35-215"><a href="#cb35-215" aria-hidden="true" tabindex="-1"></a><span class="in">print(convert_celsius_to_fahrenheit(37))  # Body temperature</span></span>
+<span id="cb35-216"><a href="#cb35-216" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
+<span id="cb35-217"><a href="#cb35-217" aria-hidden="true" tabindex="-1"></a>:::</span>
+<span id="cb35-218"><a href="#cb35-218" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb35-219"><a href="#cb35-219" aria-hidden="true" tabindex="-1"></a><span class="fu">## Parallelization</span></span>
+<span id="cb35-220"><a href="#cb35-220" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb35-221"><a href="#cb35-221" aria-hidden="true" tabindex="-1"></a>Normally, your code runs **sequentially** (one task after another). If you have a computer with multiple CPU cores, **parallelization** allows you to run multiple independent tasks at the same time, significantly reducing execution time for "embarrassingly parallel" tasks.</span>
+<span id="cb35-222"><a href="#cb35-222" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb35-223"><a href="#cb35-223" aria-hidden="true" tabindex="-1"></a>You can use it, for example, in R (Simulations) if you need to run a lot of independent iterations of the same model or in Python if you want to make many requests to APIs or networks in general.</span>
+<span id="cb35-224"><a href="#cb35-224" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb35-225"><a href="#cb35-225" aria-hidden="true" tabindex="-1"></a>Consult your supervisor for more information on how to implement parallelization in your specific project, as it can be complex and may not be necessary for all analyses. # ToDo</span>
+<span id="cb35-226"><a href="#cb35-226" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb35-227"><a href="#cb35-227" aria-hidden="true" tabindex="-1"></a><span class="fu">## Plots and figures</span></span>
+<span id="cb35-228"><a href="#cb35-228" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb35-229"><a href="#cb35-229" aria-hidden="true" tabindex="-1"></a>Plots and figures of your final thesis should never be edited manually but always within the script only. This ensures they are fully reproducible. You can save your plots and figures directly from your script using the <span class="in">`ggsave()`</span> function in R or the <span class="in">`savefig()`</span> function in Python. </span>
+<span id="cb35-230"><a href="#cb35-230" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb35-231"><a href="#cb35-231" aria-hidden="true" tabindex="-1"></a><span class="in">```{r, eval = TRUE, echo = TRUE}</span></span>
+<span id="cb35-232"><a href="#cb35-232" aria-hidden="true" tabindex="-1"></a><span class="in"># Create a simple plot</span></span>
+<span id="cb35-233"><a href="#cb35-233" aria-hidden="true" tabindex="-1"></a><span class="in">plot &lt;- ggplot(mtcars, aes(x = wt, y = mpg)) +</span></span>
+<span id="cb35-234"><a href="#cb35-234" aria-hidden="true" tabindex="-1"></a><span class="in">  geom_point() +</span></span>
+<span id="cb35-235"><a href="#cb35-235" aria-hidden="true" tabindex="-1"></a><span class="in">  theme_minimal()</span></span>
+<span id="cb35-236"><a href="#cb35-236" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb35-237"><a href="#cb35-237" aria-hidden="true" tabindex="-1"></a><span class="in"># Show plot</span></span>
+<span id="cb35-238"><a href="#cb35-238" aria-hidden="true" tabindex="-1"></a><span class="in">plot</span></span>
+<span id="cb35-239"><a href="#cb35-239" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb35-240"><a href="#cb35-240" aria-hidden="true" tabindex="-1"></a><span class="in"># Save the plot</span></span>
+<span id="cb35-241"><a href="#cb35-241" aria-hidden="true" tabindex="-1"></a><span class="in">ggsave(here("outputs", "figs", "mtcars_plot.png"), plot = plot, width = 6, height = 4)</span></span>
+<span id="cb35-242"><a href="#cb35-242" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
+<span id="cb35-243"><a href="#cb35-243" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb35-244"><a href="#cb35-244" aria-hidden="true" tabindex="-1"></a>::: box-python</span>
+<span id="cb35-245"><a href="#cb35-245" aria-hidden="true" tabindex="-1"></a><span class="in">```{python, eval = TRUE, echo = TRUE}</span></span>
+<span id="cb35-246"><a href="#cb35-246" aria-hidden="true" tabindex="-1"></a><span class="in"># Create a simple plot</span></span>
+<span id="cb35-247"><a href="#cb35-247" aria-hidden="true" tabindex="-1"></a><span class="in">plt.plot([1, 2, 3], [10, 20, 15], marker='o')</span></span>
+<span id="cb35-248"><a href="#cb35-248" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb35-249"><a href="#cb35-249" aria-hidden="true" tabindex="-1"></a><span class="in"># Show plot</span></span>
+<span id="cb35-250"><a href="#cb35-250" aria-hidden="true" tabindex="-1"></a><span class="in">plt.show()</span></span>
+<span id="cb35-251"><a href="#cb35-251" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb35-252"><a href="#cb35-252" aria-hidden="true" tabindex="-1"></a><span class="in"># Save the plot (Python`s root is in the respective file directory, not the project directory)</span></span>
+<span id="cb35-253"><a href="#cb35-253" aria-hidden="true" tabindex="-1"></a><span class="in">plt.savefig(os.path.join("..", "outputs", "figs", "own_example_plot.png"))</span></span>
+<span id="cb35-254"><a href="#cb35-254" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
+<span id="cb35-255"><a href="#cb35-255" aria-hidden="true" tabindex="-1"></a>:::</span>
+<span id="cb35-256"><a href="#cb35-256" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb35-257"><a href="#cb35-257" aria-hidden="true" tabindex="-1"></a><span class="fu">## Equations</span></span>
+<span id="cb35-258"><a href="#cb35-258" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb35-259"><a href="#cb35-259" aria-hidden="true" tabindex="-1"></a>If you want to write mathematical formulas or just simple equations in your report (e.g., to explain a statistical model), you can use LaTeX syntax directly within your Quarto document: <span class="in">`$y = \beta_0 + \beta_1 x + \epsilon$.`</span></span>
+<span id="cb35-260"><a href="#cb35-260" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb35-261"><a href="#cb35-261" aria-hidden="true" tabindex="-1"></a>For standalone formulas on a new line, use double dollar signs:</span>
+<span id="cb35-262"><a href="#cb35-262" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb35-263"><a href="#cb35-263" aria-hidden="true" tabindex="-1"></a><span class="in">`$$y = \beta_0 + \beta_1 x + \epsilon$$`</span></span>
+<span id="cb35-264"><a href="#cb35-264" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb35-265"><a href="#cb35-265" aria-hidden="true" tabindex="-1"></a>When rendered, this will display the formula in a professional mathematical format like $y = \beta_0 + \beta_1 x + \epsilon$.</span>
+<span id="cb35-266"><a href="#cb35-266" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb35-267"><a href="#cb35-267" aria-hidden="true" tabindex="-1"></a><span class="fu">## In-line Code</span></span>
+<span id="cb35-268"><a href="#cb35-268" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb35-269"><a href="#cb35-269" aria-hidden="true" tabindex="-1"></a>In-line code allows you to include the results of code directly within your text. This is particularly useful for reporting specific values, such as means, standard deviations, or p-values, without having to create a separate code chunk for it. In R, you can use the <span class="in">``r ``</span> syntax to include in-line code.</span>
+<span id="cb35-270"><a href="#cb35-270" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb35-271"><a href="#cb35-271" aria-hidden="true" tabindex="-1"></a>This document was last rendered on the <span class="in">`r Sys.Date()`</span>.</span>
+<span id="cb35-272"><a href="#cb35-272" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb35-273"><a href="#cb35-273" aria-hidden="true" tabindex="-1"></a>::: callout-note</span>
+<span id="cb35-274"><a href="#cb35-274" aria-hidden="true" tabindex="-1"></a>To better understand the source code behind the in-line code and other style related code syntax it is recommended to click on the <span class="in">`&lt;/&gt;Code`</span>-button in the top right corner of this page and select "Show source code". This will show you the source code of this the respective page.</span>
+<span id="cb35-275"><a href="#cb35-275" aria-hidden="true" tabindex="-1"></a>:::</span>
+<span id="cb35-276"><a href="#cb35-276" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb35-277"><a href="#cb35-277" aria-hidden="true" tabindex="-1"></a><span class="fu">## Session</span></span>
+<span id="cb35-278"><a href="#cb35-278" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb35-279"><a href="#cb35-279" aria-hidden="true" tabindex="-1"></a>At the end of your report, always include a summary of your system and software versions. This is vital for troubleshooting if a package update or software update breaks your code in the future.</span>
+<span id="cb35-280"><a href="#cb35-280" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb35-281"><a href="#cb35-281" aria-hidden="true" tabindex="-1"></a><span class="in">```{r, eval = TRUE, echo = TRUE}</span></span>
+<span id="cb35-282"><a href="#cb35-282" aria-hidden="true" tabindex="-1"></a><span class="in">sessionInfo()</span></span>
+<span id="cb35-283"><a href="#cb35-283" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
+<span id="cb35-284"><a href="#cb35-284" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb35-285"><a href="#cb35-285" aria-hidden="true" tabindex="-1"></a>::: box-python</span>
+<span id="cb35-286"><a href="#cb35-286" aria-hidden="true" tabindex="-1"></a><span class="in">```{python, eval = TRUE, echo = TRUE}</span></span>
+<span id="cb35-287"><a href="#cb35-287" aria-hidden="true" tabindex="-1"></a><span class="in">session_info.show()</span></span>
+<span id="cb35-288"><a href="#cb35-288" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
+<span id="cb35-289"><a href="#cb35-289" aria-hidden="true" tabindex="-1"></a>:::</span>
+<span id="cb35-290"><a href="#cb35-290" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb35-291"><a href="#cb35-291" aria-hidden="true" tabindex="-1"></a>::: callout-note</span>
+<span id="cb35-292"><a href="#cb35-292" aria-hidden="true" tabindex="-1"></a>The IDE RStudio offers an automatic formatter. Use <span class="in">`Ctrl + Shift + A`</span> (Windows) or <span class="in">`Cmd + Shift + A`</span> (Mac) to reformat a highlighted code block.</span>
+<span id="cb35-293"><a href="#cb35-293" aria-hidden="true" tabindex="-1"></a>:::</span></code><button title="Copy to Clipboard" class="code-copy-button" data-in-quarto-modal=""><i class="bi"></i></button></pre></div>
 </div></div></div></div></div>
 </div> <!-- /content -->
 <footer class="footer"><div class="nav-footer">

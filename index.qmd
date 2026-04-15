@@ -1,5 +1,5 @@
 ---
-title: "Welcome"
+title: "Reproducibility Guide"
 date: last-modified
 ---
 

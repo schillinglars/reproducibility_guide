@@ -78,12 +78,13 @@ The settings of a given chunk can also be set directly within the curly brackets
 ```
 
 Here are the explanations of the different options:
-- **eval: true**: The chunk is actually executed/calculated.
-- **echo: true**: The code of the chunk is visible in the rendered document.
-- **output: true**: The results of the chunk (e.g., a table) are shown.
-- **warning: true**: R warnings appear in the document.
-error: false: If the code within the chunk has an error, rendering stops immediately (safe mode).
-- **include: false**: The chunk, including code, output, and potential warnings or errors, is completely ignored.
+
+- `**eval: true**`: The chunk is actually executed/calculated.
+- `**echo: true**`: The code of the chunk is visible in the rendered document.
+- `**output: true**`: The results of the chunk (e.g., a table) are shown.
+- `**warning: true**`: R warnings appear in the document.
+- `**error: false**`: If the code within the chunk has an error, rendering stops immediately (safe mode).
+- `**include: false**`: The chunk, including code, output, and potential warnings or errors, is completely ignored.
 
 Please note that this is not an extensive list of all available chunk options. For more, see for example the [quarto documentation about code cells and knitr chunk options](https://quarto.org/docs/reference/cells/cells-knitr.html).
 
