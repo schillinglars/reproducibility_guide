@@ -38,12 +38,12 @@ h1, h2, h3, h4 {
 }
 
 /* --- Hyperlink Styling --- */
-#quarto-content a {
+main.content a:not(.nav-link) {
   color: var(--brand-red);
   text-decoration: none;
 }
 
-#quarto-content a:hover {
+main.content a:not(.nav-link):hover {
   color: var(--brand-red-hover);
   text-decoration: underline;
 }
