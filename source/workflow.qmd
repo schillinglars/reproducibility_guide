@@ -69,13 +69,15 @@ Quarto makes it possible to include citations automatically by using a BibTeX (f
 
 A standard entry within a BibTex-file looks like this:
 
-atbook{wickham2023,
+```text
+@book{wickham2023,
   author = {Wickham, Hadley and Mineault, Patrick},
   title = {R for Data Science},
   year = {2023},
   publisher = {O'Reilly Media},
   edition = {2nd edition}
 }
+```
 
 The YAML header of the Quarto document should include the following lines to link the BibTeX file and the citation style file (e.g. APA 7 Style; can be found and downloaded from [Zotero Style Repository](https://www.zotero.org/styles)):
 
@@ -85,7 +87,7 @@ The YAML header of the Quarto document should include the following lines to lin
 
 You can cite the work by using the key defined in your `.bib` file, which is usually the surname of the first author followed by the year of publication. For example, if you want to cite the above book, you would use `@wickham2023` in your text. But you can also cite the work parathetically by using `[@wickham2023]` in your text. The citation will then be automatically formatted according to the specified style (e.g., APA, MLA, Chicago) and included in the bibliography section of your document.
 
-To include a bibliography section in your document, simply add the citation as described above and the Reference section will be automatically generated at the end of your document.
+To include a bibliography section in your document, simply add the citation as described above and the Reference section will be automatically generated at the end of your document:
 
 @wickham2023
 
