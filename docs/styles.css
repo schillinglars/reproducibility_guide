@@ -1,6 +1,10 @@
+/* --- External Fonts --- */
+/* Importing Lato for body and News Cycle for headings from the SCSS source */
+@import url('https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,400;0,700;1,400;1,700&family=News+Cycle:wght@400;700&display=swap');
+
 /* --- Global Variables (Central control for colors and spacing) --- */
 :root {
-  /* Brand Colors */
+  /* Brand Colors (Uni Bern Red) */
   --brand-red: #e51734;
   --brand-red-hover: #b31229;
 
@@ -20,13 +24,26 @@
   --box-radius: 3px;
 }
 
+/* --- Typography Overrides --- */
+body {
+  font-family: 'Lato', sans-serif;
+  color: #333;
+  line-height: 1.5;
+}
+
+h1, h2, h3, h4 {
+  font-family: 'News Cycle', sans-serif;
+  font-weight: 700;
+  color: #222;
+}
+
 /* --- Hyperlink Styling --- */
-a {
+#quarto-content a {
   color: var(--brand-red);
   text-decoration: none;
 }
 
-a:hover {
+#quarto-content a:hover {
   color: var(--brand-red-hover);
   text-decoration: underline;
 }
