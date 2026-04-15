@@ -9,7 +9,9 @@ lang: en
 
 website:
   title: "Reproducibility Guide"
+  favicon: images/logo.png
   sidebar:
+    logo: images/logo.png
     style: "docked"
     search: true
     contents:
