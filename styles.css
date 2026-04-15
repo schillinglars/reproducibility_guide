@@ -23,7 +23,7 @@
 /* --- Hyperlink Styling --- */
 a {
   color: var(--brand-red);
-  text-decoration: none; /* Optional: cleaner look */
+  text-decoration: none;
 }
 
 a:hover {
@@ -32,20 +32,8 @@ a:hover {
 }
 
 /* --- Navigation & UI Branding --- */
-
-/* Sidebar title, active TOC links, and active nav links */
-.sidebar-title, .toc-active, .nav-link.active {
-  color: var(--brand-red) !important;
-}
-
-/* Top Navbar bottom border */
 .navbar {
   border-bottom: 3px solid var(--brand-red);
-}
-
-/* Code tools menu (top right) toggle button */
-.quarto-code-tools-menu .dropdown-toggle {
-  color: var(--brand-red) !important;
 }
 
 /* --- Global Heading 2 (h2) Styling --- */

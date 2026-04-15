@@ -40,7 +40,6 @@ website:
 
 format:
   html:
-    theme: flatly
     primary: "#e51734"
     email-obfuscation: javascript # Hide clear mail addresses from bots
     toc: true
