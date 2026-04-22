@@ -17,5 +17,5 @@ To make research results more reproducible, there are the so-called **FAIR princ
 The following pages provide practical guidance on implementing the FAIR principles in your work. While this is not an exhaustive list, it serves as a robust starting point for making your research more transparent and reproducible. As you write your thesis, keep the FAIR principles in mind and look for opportunities to align your workflow even more closely with them.
 
 ::: callout-note
-If you are interested, for a more comprehensive overview of the FAIR-Principles and their application in research, check out the [FAIR Principles website](https://www.go-fair.org/fair-principles/).
+If you are interested in a more comprehensive overview of the FAIR-Principles and their application in research, check out the [FAIR Principles website](https://www.go-fair.org/fair-principles/).
 :::

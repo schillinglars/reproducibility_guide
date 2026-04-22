@@ -7,15 +7,18 @@ title: "Syntax"
 ```{r}
 #| eval: true
 #| echo: false
+#| message: false
+#| warning: false
 
-library(furrr)
-library(here)
-library(ggplot2)
+suppressPackageStartupMessages(library(here))
+suppressPackageStartupMessages(library(ggplot2))
 ```
 
 ```{python}
 #| eval: true
 #| echo: false
+#| message: false
+#| warning: false
 
 import os
 import pandas as pd
@@ -141,9 +144,9 @@ my_data <- read.csv(here("data", "raw", "my_data.csv"))
 ```
 :::
 
-::: box-python
 In Python, you can achieve the same using the `os` module to construct relative paths:
 
+::: box-python
 ```{python}
 #| eval: true
 #| echo: true

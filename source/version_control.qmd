@@ -17,7 +17,7 @@ By using the [**GitHub Desktop application**](https://desktop.github.com/downloa
 Once you have committed your changes locally, you can 'upload' them to the cloud using a **push**. Conversely, if the repository has been updated (e.g., by a collaborator or your supervisor), you can download those updates using a **pull**. Always pull before you start working and push once you finish a task to keep everyone in sync.
 
 ::: callout-note
-As a student of the University of Bern you are eligible for a free GitHub Pro account, which includes unlimited private repositories. You can sign up for this account [here](https://github.com/education/students).
+As a student of the University of Bern you are eligible for a free GitHub Pro account, which gives you access to the GitHub Copilot and other benefits. For more information check out [GitHubs information for students](https://github.com/education/students).
 :::
 
 # Git
