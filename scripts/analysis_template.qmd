@@ -14,7 +14,7 @@ execute:
   warning: false
 ---
 
-Download this template from the [GitHub repository]({{<  repo-url >}}) or via the `</>Code`-button in the top right corner. This template is designed to be a starting point for your analyses, following many of the best practices for reproducibility and clarity. Note that you may need to download and place additional content in the respective folder for this script to run (e.g. `references.bib`).
+Download this template from the [GitHub repository][repo-url] or via the `</>Code`-button in the top right corner. This template is designed to be a starting point for your analyses, following many of the best practices for reproducibility and clarity. Note that you may need to download and place additional content in the respective folder for this script to run (e.g. `references.bib`).
 
 # Dependencies
 
@@ -22,13 +22,14 @@ We load all necessary libraries at the beginning to ensure portability and clari
 
 ```{r}
 #| label: setup-r
-#| include: true
+
 library(here)    # For relative paths
 library(ggplot2) # For visualization
 ```
 
 ```{python}
 #| label: setup-python
+
 import os
 import pandas as pd
 import matplotlib.pyplot as plt
@@ -40,15 +41,19 @@ import session_info
 
 We define constants here to avoid "magic numbers" later in the script.
 
+::: box-r
 ```{r}
 #| label: hardcoded-values-r
+
 ATTENTION_THRESHOLD <- 2
 PLOT_COLOUR <- "steelblue"
 ```
+:::
 
 ::: python-box
 ```{python}
 #| label: hardcoded-values-python
+
 ATTENTION_THRESHOLD = 2
 PLOT_COLOUR = "steelblue"
 ```
@@ -60,15 +65,19 @@ PLOT_COLOUR = "steelblue"
 
 Using relative paths ensures that the script runs on any device.
 
+::: box-r
 ```{r}
 #| label: load-data-r
+
 # Example for a real file: 
 my_data <- read.csv(here("data", "raw", "my_data.csv"))
 ```
+:::
 
-::: python-box
+::: box-python
 ```{python}
 #| label: load-data-python
+
 # In Python, we go one level up to reach the project root from 'scripts/'
 path = os.path.join("..", "data", "raw", "my_data.csv")
 df = pd.read_csv(path)
@@ -79,17 +88,40 @@ df = pd.read_csv(path)
 
 We follow naming conventions (snake_case) and explain *why* we filter data.
 
+::: box-r
 ```{r}
 #| label: processing-r
+
 # Removing cases that don't meet the attention threshold
 cleaned_data <- subset(my_data, reaction_time < ATTENTION_THRESHOLD)
 ```
+:::
 
-::: python-box
+::: box-python
 ```{python}
 #| label: processing-python
+
 # Removing cases that don't meet the attention threshold
 df_cleaned = df[df['reaction_time'] < ATTENTION_THRESHOLD].copy()
+```
+:::
+
+We can also save the cleaned data for future use.
+
+::: box-r
+```{r}
+#| label: save-cleaned-data-r
+
+write.csv(cleaned_data, here("data", "processed", "cleaned_data.csv"))
+```
+:::
+
+::: box-python
+```{python}
+#| label: save-cleaned-data-python
+
+save_path = os.path.join("..", "data", "processed", "cleaned_data.csv")
+df_cleaned.to_csv(save_path, index=False)
 ```
 :::
 
@@ -99,14 +131,18 @@ df_cleaned = df[df['reaction_time'] < ATTENTION_THRESHOLD].copy()
 
 Here we would perform our statistical tests, ensuring to report all relevant details for reproducibility.
 
+::: box-r
 ```{r}
 #| label: stats-r
+
 mean_reaction_time <- mean(cleaned_data$reaction_time)
 ```
+:::
 
-::: python-box
+::: box-python
 ```{python}
 #| label: stats-python
+
 mean_reaction_time = df_cleaned['reaction_time'].mean()
 ```
 :::
@@ -117,8 +153,10 @@ To report the result I can simply use inline code. The mean reaction time is `r 
 
 According to our workflow, we create all figures within the code and save all figures into the `outputs/figs/` directory.
 
+::: box-r
 ```{r}
 #| label: plot-r
+
 # Create the plot
 p <- ggplot(cleaned_data, aes(x = condition, y = reaction_time)) +
   geom_point(color = PLOT_COLOUR) +
@@ -132,10 +170,12 @@ p
 # Save using 'here' to target the project root
 ggsave(here("outputs", "figs", "analysis_plot_r.png"), plot = p, width = 6, height = 4)
 ```
+:::
 
-::: python-box
+::: box-python
 ```{python}
 #| label: plot-python
+
 # Create the plot
 plt.figure(figsize=(6, 4))
 plt.scatter(df['condition'], df['reaction_time'], color=PLOT_COLOUR, alpha=0.7)
@@ -158,16 +198,20 @@ plt.savefig(save_path, dpi=300, bbox_inches='tight')
 
 To ensure results remain the same across devices, we set a seed.
 
+::: box-r
 ```{r}
 #| label: seed-r
+
 set.seed(123)
 sample_values <- sample(1:100, 3)
 sample_values
 ```
+:::
 
-::: python-box
+::: box-python
 ```{python}
 #| label: seed-python
+
 random.seed(123)
 sample_values = random.sample(range(1, 101), 3)
 sample_values
@@ -191,12 +235,17 @@ $$y = \beta_0 + \beta_1 x + \epsilon$$
 
 This section is vital for long-term maintenance and troubleshooting.
 
+::: box-r
 ```{r}
+#| label: info-r
+
 sessionInfo()
 ```
 
-::: python-box
+::: box-python
 ```{python}
+#| label: info-python
+
 session_info.show()
 ```
 :::

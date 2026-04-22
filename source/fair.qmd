@@ -15,3 +15,7 @@ To make research results more reproducible, there are the so-called **FAIR princ
 4.  **Reusable**: Software should be designed so that it can be easily reused by other researchers. This includes ensuring that it is clearly documented, allowing for modifications to be built upon it, or making it integratable into other software.
 
 The following pages provide practical guidance on implementing the FAIR principles in your work. While this is not an exhaustive list, it serves as a robust starting point for making your research more transparent and reproducible. As you write your thesis, keep the FAIR principles in mind and look for opportunities to align your workflow even more closely with them.
+
+::: callout-note
+If you are interested, for a more comprehensive overview of the FAIR-Principles and their application in research, check out the [FAIR Principles website](https://www.go-fair.org/fair-principles/).
+:::

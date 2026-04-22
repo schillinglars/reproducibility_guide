@@ -40,6 +40,8 @@ website:
 
 format:
   html:
+    link-external-newwindow: true
+    link-external-icon: true
     primary: "#e51734"
     email-obfuscation: javascript # Hide clear mail addresses from bots
     toc: true

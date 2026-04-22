@@ -6,7 +6,7 @@
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
-<meta name="dcterms.date" content="2026-04-15">
+<meta name="dcterms.date" content="2026-04-22">
 
 <title>Reproducibility Guide</title>
 <style>
@@ -204,7 +204,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
     <div>
     <div class="quarto-title-meta-heading">Published</div>
     <div class="quarto-title-meta-contents">
-      <p class="date">April 15, 2026</p>
+      <p class="date">April 22, 2026</p>
     </div>
   </div>
   
@@ -230,7 +230,12 @@ Important
 <p>Whatever the content of this guide, please note that any guidelines from your supervisor are always superior to the guidelines provided here. This guide is intended to be a helpful resource, but it cannot replace the specific requirements and expectations of your supervisor. Always prioritize the instructions and feedback from your supervisor when working on your thesis.</p>
 </div>
 </div>
-<p>This guide is hosted on GitHub and is open for contributions. If you have suggestions for improvement, please let us know by creating an issue on the <a href="{{< repo-url >}}">GitHub repository</a> or by <a href="{< contact >}}">contacting us directly</a>.</p>
+<p>This guide is hosted on GitHub and is open for contributions. If you have suggestions for improvement, please let us know by creating an issue on the <a href="https://github.com/schillinglars/reproducibility_guide">GitHub repository</a> or by <script type="text/javascript">
+<!--
+h='&#x75;&#110;&#x69;&#98;&#x65;&#46;&#x63;&#104;';a='&#64;';n='&#76;&#x61;&#114;&#x73;&#46;&#x53;&#x63;&#104;&#x69;&#108;&#108;&#x69;&#110;&#x67;';e=n+a+h;
+document.write('<a h'+'ref'+'="ma'+'ilto'+':'+e+'" clas'+'s="em' + 'ail">'+'&#x63;&#x6f;&#110;&#116;&#x61;&#x63;&#116;&#x69;&#110;&#x67;&#32;&#x75;&#x73;&#32;&#100;&#x69;&#114;&#x65;&#x63;&#116;&#108;&#x79;'+'<\/'+'a'+'>');
+// -->
+</script><noscript>contacting us directly (Lars.Schilling at unibe dot ch)</noscript>.</p>
 <p>The guide is inspired by the <a href="https://bes-guide.github.io/reproducible-code/">Guide to Reproducible Code</a> from the British Ecological Society (BES).</p>
 <p>For your orientation: The content of this guide is mostly written such that the guidelines can be followed independently for any programming language but for the IDE of RStudio. However, the examples provided focus on the programming language of R as this is the most commonly used one for data analysis in psychology. If a particular guideline applies differently to the programming language of Python, this will be marked explicitly in the text via the following information box:</p>
 <div class="box-python">
@@ -397,6 +402,13 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
         if (link.dataset.originalHref !== undefined) {
           link.href = link.dataset.originalHref;
         }
+          // target, if specified
+          link.setAttribute("target", "_blank");
+          if (link.getAttribute("rel") === null) {
+            link.setAttribute("rel", "noopener");
+          }
+          // default icon
+          link.classList.add("external");
       }
     }
   function tippyHover(el, contentFn, onTriggerFn, onUntriggerFn) {
@@ -723,7 +735,7 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
 <span id="cb1-11"><a href="#cb1-11" aria-hidden="true" tabindex="-1"></a>Whatever the content of this guide, please note that any guidelines from your supervisor are always superior to the guidelines provided here. This guide is intended to be a helpful resource, but it cannot replace the specific requirements and expectations of your supervisor. Always prioritize the instructions and feedback from your supervisor when working on your thesis.</span>
 <span id="cb1-12"><a href="#cb1-12" aria-hidden="true" tabindex="-1"></a>:::</span>
 <span id="cb1-13"><a href="#cb1-13" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-14"><a href="#cb1-14" aria-hidden="true" tabindex="-1"></a>This guide is hosted on GitHub and is open for contributions. If you have suggestions for improvement, please let us know by creating an issue on the <span class="co">[</span><span class="ot">GitHub repository</span><span class="co">]({{&lt;  repo-url &gt;}})</span> or by <span class="co">[</span><span class="ot">contacting us directly</span><span class="co">]({&lt;  contact &gt;}})</span>.</span>
+<span id="cb1-14"><a href="#cb1-14" aria-hidden="true" tabindex="-1"></a>This guide is hosted on GitHub and is open for contributions. If you have suggestions for improvement, please let us know by creating an issue on the <span class="co">[</span><span class="ot">GitHub repository</span><span class="co">][repo-url]</span> or by <span class="co">[</span><span class="ot">contacting us directly</span><span class="co">][contact]</span>.</span>
 <span id="cb1-15"><a href="#cb1-15" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb1-16"><a href="#cb1-16" aria-hidden="true" tabindex="-1"></a>The guide is inspired by the <span class="co">[</span><span class="ot">Guide to Reproducible Code</span><span class="co">](https://bes-guide.github.io/reproducible-code/)</span> from the British Ecological Society (BES).</span>
 <span id="cb1-17"><a href="#cb1-17" aria-hidden="true" tabindex="-1"></a></span>

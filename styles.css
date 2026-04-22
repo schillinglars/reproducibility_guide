@@ -1,8 +1,7 @@
 /* --- External Fonts --- */
-/* Importing Lato for body and News Cycle for headings from the SCSS source */
 @import url('https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,400;0,700;1,400;1,700&family=News+Cycle:wght@400;700&display=swap');
 
-/* --- Global Variables (Central control for colors and spacing) --- */
+/* --- Global Variables --- */
 :root {
   /* Brand Colors (Uni Bern Red) */
   --brand-red: #e51734;
@@ -63,9 +62,30 @@ h2 {
 /* --- Global settings for all language boxes --- */
 .code-box, .box-r, .box-python {
   padding: var(--box-padding);
-  margin: 1em 0;
+  margin: 1.5em 0;
   border-left: var(--box-border-width) solid;
   border-radius: var(--box-radius);
+  position: relative;
+  padding-top: 2.5em; 
+}
+
+/* Shared Header Style for Boxes (Pseudo-Elements) */
+.box-r::before, .box-python::before {
+  position: absolute;
+  top: 0.6em;
+  left: 1em;
+  height: 20px;
+  padding-left: 28px;
+  background-repeat: no-repeat;
+  background-size: 20px 20px;
+  background-position: left center;
+  font-family: 'News Cycle', sans-serif;
+  font-weight: bold;
+  font-size: 0.85em;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  display: flex;
+  align-items: center;
 }
 
 /* --- R-specific styling --- */
@@ -75,10 +95,9 @@ h2 {
 }
 
 .box-r::before {
-  content: "R ℹ️";
-  font-weight: bold;
+  content: "R Implementation";
   color: var(--r-blue);
-  display: block;
+  background-image: url('images/r-logo.png');
 }
 
 /* --- Python-specific styling --- */
@@ -88,8 +107,7 @@ h2 {
 }
 
 .box-python::before {
-  content: "Python 🐍";
-  font-weight: bold;
+  content: "Python Implementation";
   color: var(--python-text);
-  display: block;
+  background-image: url('images/python-logo.png');
 }

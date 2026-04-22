@@ -4,13 +4,13 @@ title: "Syntax"
 
 {{< include ../_hardcoded_values.qmd >}}
 
-```{r, eval = TRUE, include = FALSE}
+```{r}
 library(furrr)
 library(here)
 library(ggplot2)
 ```
 
-```{python, eval = TRUE, include = FALSE}
+```{python}
 import os
 import pandas as pd
 import random
@@ -20,12 +20,17 @@ import matplotlib.pyplot as plt
 
 # Codestyle
 
-A **codestyle** is a set of conventions and rules for building script and writing the code within it. Adhering to the following rules is partly mandatory for it to run successfully or simply makes your scripts easier to read for others (and for your "future self") and ensures that your analysis can be maintained over time.
+A **codestyle** is a set of conventions and rules for building script and writing the code within it. Adhering to the following rules is partly mandatory for it to run successfully,to make your scripts easier to read for others (and for your "future self") and ensures that your analysis can be maintained over time.
 
 ## Meta settings
 
 Within a script, important meta-information can be provided using the YAML header. This includes not only the author, the date, or the integration of citations, but also formatting options for the rendered document. Here is examplary content of a YAML header:
 
+```{r}
+#| eval: false
+#| echo: true
+
+---
 title: "Analysis of Psychological Well-being"
 author: "Your Name"
 date: last-modified
@@ -41,19 +46,29 @@ format:
 execute:
   echo: true               # Shows the code in the output by default (global setting)
   warning: false           # Hides R/Python warnings in the final report (global setting)
+---
+```
 
 ## Dependencies
 
 Always load your libraries/packages at the very top of your script. This acts as a "list of ingredients" so others know what needs to be installed before running your code. Make sure you do not include any unnecessary packages, as this can lead to confusion and potential issues with package conflicts. Please also make sure to not include the installation of the package (e.g., `install.packages("ggplot2")`) in the script, as this can lead to issues when running the script on different devices. Instead install necessary packages directly in the Console. The loading of packages can take place within the script:
 
-```{r, eval = TRUE, echo = TRUE}
+::: box-r
+```{r}
+#| eval: true
+#| echo: true
+
 library(ggplot2)
 ```
+:::
 
-::: python-box
+::: box-python
 Python and R do not share the same packages. For data visualization, a commonly used package in Python is `matplotlib`. To load it, you can use the following code:
 
-```{python, eval = TRUE, echo =  TRUE}
+```{python}
+#| eval: true
+#| echo: true
+#| 
 import matplotlib.pyplot as plt
 ```
 :::
@@ -102,21 +117,32 @@ A reproducible script should work regardless of which computer it is running on.
 
 Relative paths point to a location relative to your project's root folder.
 
-```{r, eval = FALSE, echo = TRUE}
+::: box-r
+```{r}
+#| eval: false
+#| echo: true
+
 # Bad: Absolute path
 my_data <- read.csv("C:/Users/Username/Documents/Project/data/raw/my_data.csv")
 ```
 
-```{r, eval = TRUE, echo = TRUE}
+```{r}
+#| eval: true
+#| echo: true
+
 # Good: Relative path using 'here'
 my_data <- read.csv(here("data", "raw", "my_data.csv"))
 head(my_data)
 ```
+:::
 
 ::: box-python
 In Python, you can achieve the same using the `os` module to construct relative paths:
 
-```{python, eval = TRUE, echo = TRUE}
+```{python}
+#| eval: true
+#| echo: true
+
 # Good: Relative path using 'os' (Python`s root is the respective file directory, not the project directory)
 path = os.path.join("..", "data", "raw", "my_data.csv")
 my_data = pd.read_csv(path)
@@ -139,30 +165,46 @@ Avoid generic names like `data1`, `temp`, or `foo`. Instead, be descriptive: `ra
 
 Comments should explain why you are doing something, rather than describing the code itself. Anyone can look up what e.g. the `mean()` function does, but only you know why you chose to exclude certain outliers before calculating it.
 
-```{r, eval = FALSE, echo = TRUE}
+::: box-r
+```{r}
+#| eval: false
+#| echo: true
+
 # OVERLOAD: Describing the syntax (Avoid this)
 # Defining a variable and using the subset function
 cleaned_data <- subset(my_data, attention_check == "passed") # Result is saved
 ```
 
-```{r, eval = FALSE, echo = TRUE}
+```{r}
+#| eval: false
+#| echo: true
+
 # GOOD: Explaining the context
 # Removing participants who failed the attention check
 cleaned_data <- subset(my_data, attention_check == "passed")
 ```
+:::
 
 ## Seed
 
 If your analysis involves random processes (like creating random groups or running a bootstrap), you **must** set a seed. This ensures that the "random" numbers are the same every time the script is run. this ensures reproducibility across devices and over time.
 
-```{r, eval = TRUE, echo = TRUE}
+::: box-r
+```{r}
+#| eval: true
+#| echo: true
+
 set.seed(123)
 
 sample(1:10, 5)
 ```
+:::
 
 ::: box-python
-```{python, eval = TRUE, echo = TRUE}
+```{python}
+#| eval: true
+#| echo: true
+
 random.seed(123)
 
 random.sample(range(1, 10), 5)
@@ -173,7 +215,11 @@ random.sample(range(1, 10), 5)
 
 **Don`t repeat yourself (DRY)**: If you find yourself writing the same code multiple times, it's a sign that you should create a function. This reduces errors—if you need to change a parameter, you only have to change it in one place.
 
-```{r, eval = TRUE, echo = TRUE}
+::: box-r
+```{r}
+#| eval: true
+#| echo: true
+
 #' Convert Celsius to Fahrenheit
 #' 
 #' The function converts a temperature value from Celsius to Fahrenheit.
@@ -193,9 +239,13 @@ convert_celsius_to_fahrenheit(0)   # Freezing point
 convert_celsius_to_fahrenheit(20)  # Room temperature
 convert_celsius_to_fahrenheit(37)  # Body temperature
 ```
+:::
 
 ::: box-python
-```{python, eval = TRUE, echo = TRUE}
+```{python}
+#| eval: true
+#| echo: true
+
 # Define the conversion function
 def convert_celsius_to_fahrenheit(celsius):
     """
@@ -222,13 +272,17 @@ Normally, your code runs **sequentially** (one task after another). If you have 
 
 You can use it, for example, in R (Simulations) if you need to run a lot of independent iterations of the same model or in Python if you want to make many requests to APIs or networks in general.
 
-Consult your supervisor for more information on how to implement parallelization in your specific project, as it can be complex and may not be necessary for all analyses. # ToDo
+Consult your supervisor for more information on how to implement parallelization in your specific project, as it can be complex and may not be necessary for all analyses.
 
 ## Plots and figures
 
 Plots and figures of your final thesis should never be edited manually but always within the script only. This ensures they are fully reproducible. You can save your plots and figures directly from your script using the `ggsave()` function in R or the `savefig()` function in Python. 
 
-```{r, eval = TRUE, echo = TRUE}
+::: box-r
+```{r}
+#| eval: true
+#| echo: true
+#| 
 # Create a simple plot
 plot <- ggplot(mtcars, aes(x = wt, y = mpg)) +
   geom_point() +
@@ -240,9 +294,13 @@ plot
 # Save the plot
 ggsave(here("outputs", "figs", "mtcars_plot.png"), plot = plot, width = 6, height = 4)
 ```
+:::
 
 ::: box-python
-```{python, eval = TRUE, echo = TRUE}
+```{python}
+#| eval: true
+#| echo: true
+#| 
 # Create a simple plot
 plt.plot([1, 2, 3], [10, 20, 15], marker='o')
 
@@ -266,28 +324,38 @@ When rendered, this will display the formula in a professional mathematical form
 
 ## In-line Code
 
-In-line code allows you to include the results of code directly within your text. This is particularly useful for reporting specific values, such as means, standard deviations, or p-values, without having to create a separate code chunk for it. In R, you can use the ``r `` syntax to include in-line code.
+In-line code allows you to include the results of code directly within your text. This is particularly useful for reporting specific values, such as means, standard deviations, or p-values, without having to create a separate code chunk for it. In R, you can use the `\r ` syntax to include in-line code.
 
-This document was last rendered on the `r Sys.Date()`.
+This document was last rendered on the `\r Sys.Date()` will display as `r Sys.Date()`.
 
 ::: callout-note
-To better understand the source code behind the in-line code and other style related code syntax it is recommended to click on the `</>Code`-button in the top right corner of this page and select "Show source code". This will show you the source code of this the respective page.
+To better understand the source code behind the in-line code and other style related code syntax it is recommended to click on the `</>Code`-button in the top right corner of this page and select "Show source code". This will show you the source code of the respective page.
 :::
 
 ## Session
 
 At the end of your report, always include a summary of your system and software versions. This is vital for troubleshooting if a package update or software update breaks your code in the future.
 
-```{r, eval = TRUE, echo = TRUE}
+::: box-r
+```{r}
+#| eval: true
+#| echo: true
+
 sessionInfo()
 ```
+:::
 
 ::: box-python
-```{python, eval = TRUE, echo = TRUE}
+```{python}
+#| eval: true
+#| echo: true
+
 session_info.show()
 ```
 :::
 
 ::: callout-note
 The IDE RStudio offers an automatic formatter. Use `Ctrl + Shift + A` (Windows) or `Cmd + Shift + A` (Mac) to reformat a highlighted code block.
+
+You can also use the `styler` package in R to automatically format your code according to a consistent style.
 :::

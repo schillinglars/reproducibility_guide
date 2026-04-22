@@ -16,6 +16,10 @@ By using the [**GitHub Desktop application**](https://desktop.github.com/downloa
 
 Once you have committed your changes locally, you can 'upload' them to the cloud using a **push**. Conversely, if the repository has been updated (e.g., by a collaborator or your supervisor), you can download those updates using a **pull**. Always pull before you start working and push once you finish a task to keep everyone in sync.
 
+::: callout-note
+As a student of the University of Bern you are eligible for a free GitHub Pro account, which includes unlimited private repositories. You can sign up for this account [here](https://github.com/education/students).
+:::
+
 # Git
 
 While GitHub Desktop is a great starting point, the true power lies in the underlying software called [**Git**](https://git-scm.com/). Git is the 'engine' that powers both GitHub and the Desktop app. After a one-time setup, you can connect Git directly to your programming environment (like RStudio). This allows you to perform commits, pushes, and pulls directly within the same window where you write your code, removing the need to switch back and forth between different applications. This integration streamlines your workflow and makes versioning a seamless part of your coding habit.
@@ -33,12 +37,12 @@ This website itself was build with the open source programming language of R, th
 A `.gitignore` file prevents Git from tracking specific files or folders, ensuring they are never uploaded to GitHub. To use it, create a text file named `.gitignore` in your project root and list any files or patterns (e.g., *.csv, .Rhistory) you wish to exclude. This is a critical security step for protecting sensitive participant data and maintaining a clean repository by excluding unnecessary large files which could break the upload.
 
 ::: callout-note
-Note that on the [GitHub repository]({{<  repo-url >}}) you can find the respective .gitignore-file for this website project. You can use it as a template for your own project and modify it according to your needs.
+Note that on the [GitHub repository][repo-url] you can find the respective .gitignore-file for this website project. You can use it as a template for your own project and modify it according to your needs.
 :::
 
 # renv
 
-**renv** (Reproducible Environments) records the exact versions of all R packages you are using.This ensures that anyone who wants to reproduce your work can simply install the same package versions, preventing issues that arise from updates or changes in package behavior. By using renv, you can create a snapshot of your project's dependencies, making it easier to share and collaborate on your code while maintaining reproducibility.
+**renv** (Reproducible Environments) records the exact versions of all R packages you are using. This ensures that anyone who wants to reproduce your work can simply install the same package versions, preventing issues that arise from updates or changes in package behavior. By using renv, you can create a snapshot of your project's dependencies, making it easier to share and collaborate on your code while maintaining reproducibility.
 
 You initialize `renv` in your project by running `renv::init()` in the R console. This will create a `renv.lock` file that contains all the package versions you are using. Whenever you install a new package or update an existing one, make sure to run `renv::snapshot()` to update the lock file. When someone else wants to reproduce your work, they can run `renv::restore()` to install the exact package versions specified in the lock file.
 
