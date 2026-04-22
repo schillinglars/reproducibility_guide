@@ -20,13 +20,16 @@ Download this template from the [GitHub repository][repo-url] or via the `</>Cod
 
 We load all necessary libraries at the beginning to ensure portability and clarity.
 
+::: box-r
 ```{r}
 #| label: setup-r
 
 library(here)    # For relative paths
 library(ggplot2) # For visualization
 ```
+:::
 
+::: box-python
 ```{python}
 #| label: setup-python
 
@@ -36,6 +39,7 @@ import matplotlib.pyplot as plt
 import random
 import session_info
 ```
+:::
 
 # Hardcoded Values
 
@@ -50,7 +54,7 @@ PLOT_COLOUR <- "steelblue"
 ```
 :::
 
-::: python-box
+::: box-python
 ```{python}
 #| label: hardcoded-values-python
 
@@ -241,6 +245,7 @@ This section is vital for long-term maintenance and troubleshooting.
 
 sessionInfo()
 ```
+:::
 
 ::: box-python
 ```{python}

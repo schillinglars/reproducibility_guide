@@ -33,13 +33,9 @@ An RStudio Project file (file extension *.Rproj*) serves as the "anchor" for you
 
 Raw data is the "source of truth" and must remain **immutable** (taking into account privacy concerns and anonymisation). Once stored in `data/raw/`, these files should never be edited manually. This ensures the raw data as basement for all other parts so that these can potentially always be recovered.
 
-ToDo: Add psychDS package and include JSON-metadata files and a codebook
-
 ## Scripts
 
 As the name of the **script-based** workflow suggests, the script is the heart of it. It connects your raw data to your final results. Every step from data cleaning to visualization must be coded. This eliminates the risk of "forgotten" manual steps in e.g. Excel and ensures that anyone (including your future self) can reproduce your exact results.
-
-ToDo: Add a section about RStudio and Quarto/Markdown
 
 ::: box-python
 If you have installed python on your device, it is generally possible to run both Python and R code within the same script. For the IDE of RStudio, this can be achieved by using Quarto documents (file extension *.qmd*). Check out the official [Quarto documentation](https://quarto.org/docs/computations/python.html) for more information on how to set up and use Python within Quarto.
@@ -101,7 +97,5 @@ To include a bibliography section in your document, simply add the citation as d
 :::
 
 ::: callout-note
-To see a real-life example of a script based workflow check out the repository of this website [here]({{< repo-url >}}) and additionally the code of each page via the `</>Code`-button in the top right corner.
+To see a real-life example of a script based workflow check out the repository of this website [here][repo-url] and additionally the code of each page via the `</>Code`-button in the top right corner.
 :::
-
-ToDo: Quarto extension for APA7

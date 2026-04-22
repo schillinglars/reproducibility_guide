@@ -29,7 +29,7 @@ You can find instructions for the one-time setup of Git, GitHub, R, and the conn
 :::
 
 ::: callout-note
-This website itself was build with the open source programming language of R, the IDE of RStudio, Git and GitHub for version control. You can find the corresponding repository [here]({{< repo-url >}}).
+This website itself was build with the open source programming languages of R, Python, the IDE of RStudio, Git and GitHub for version control. You can find the corresponding repository [here][repo-url].
 :::
 
 # .gitignore
