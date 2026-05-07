@@ -4,7 +4,9 @@ project:
   resources:
     - "code/analysis.qmd"
   render:
-    - "source/*.qmd"
+    - "index.qmd" # Landing page
+    - "source/*.qmd" # Content pages
+    - "!code/" # Exclude example pages
 
 lang: en
 
