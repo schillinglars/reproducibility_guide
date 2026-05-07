@@ -1,10 +1,12 @@
 <!DOCTYPE html>
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
-<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+
 <meta charset="utf-8">
 <meta name="generator" content="quarto-1.6.42">
+
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
-<meta name="author" content="Your name">
+
+
 <title>Analysis Template – Reproducibility Guide</title>
 <style>
 code{white-space: pre-wrap;}
@@ -18,61 +20,8 @@ ul.task-list li input[type="checkbox"] {
   margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
   vertical-align: middle;
 }
-/* CSS for syntax highlighting */
-pre > code.sourceCode { white-space: pre; position: relative; }
-pre > code.sourceCode > span { line-height: 1.25; }
-pre > code.sourceCode > span:empty { height: 1.2em; }
-.sourceCode { overflow: visible; }
-code.sourceCode > span { color: inherit; text-decoration: inherit; }
-div.sourceCode { margin: 1em 0; }
-pre.sourceCode { margin: 0; }
-@media screen {
-div.sourceCode { overflow: auto; }
-}
-@media print {
-pre > code.sourceCode { white-space: pre-wrap; }
-pre > code.sourceCode > span { display: inline-block; text-indent: -5em; padding-left: 5em; }
-}
-pre.numberSource code
-  { counter-reset: source-line 0; }
-pre.numberSource code > span
-  { position: relative; left: -4em; counter-increment: source-line; }
-pre.numberSource code > span > a:first-child::before
-  { content: counter(source-line);
-    position: relative; left: -1em; text-align: right; vertical-align: baseline;
-    border: none; display: inline-block;
-    -webkit-touch-callout: none; -webkit-user-select: none;
-    -khtml-user-select: none; -moz-user-select: none;
-    -ms-user-select: none; user-select: none;
-    padding: 0 4px; width: 4em;
-  }
-pre.numberSource { margin-left: 3em;  padding-left: 4px; }
-div.sourceCode
-  {   }
-@media screen {
-pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
-}
-/* CSS for citations */
-div.csl-bib-body { }
-div.csl-entry {
-  clear: both;
-  margin-bottom: 0em;
-}
-.hanging-indent div.csl-entry {
-  margin-left:2em;
-  text-indent:-2em;
-}
-div.csl-left-margin {
-  min-width:2em;
-  float:left;
-}
-div.csl-right-inline {
-  margin-left:2em;
-  padding-left:1em;
-}
-div.csl-indent {
-  margin-left: 2em;
-}</style>
+</style>
+
 
 <script src="../site_libs/quarto-nav/quarto-nav.js"></script>
 <script src="../site_libs/quarto-nav/headroom.min.js"></script>
@@ -90,7 +39,8 @@ div.csl-indent {
 <link href="../site_libs/quarto-html/quarto-syntax-highlighting-2f5df379a58b258e96c21c0638c20c03.css" rel="stylesheet" id="quarto-text-highlighting-styles">
 <script src="../site_libs/bootstrap/bootstrap.min.js"></script>
 <link href="../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
-<link href="../site_libs/bootstrap/bootstrap-5260835210f0825f17da3e85d5e435aa.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light"><script id="quarto-search-options" type="application/json">{
+<link href="../site_libs/bootstrap/bootstrap-5260835210f0825f17da3e85d5e435aa.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
+<script id="quarto-search-options" type="application/json">{
   "location": "sidebar",
   "copy-button": false,
   "collapse-after": 3,
@@ -116,37 +66,18 @@ div.csl-indent {
     "search-submit-button-title": "Submit",
     "search-label": "Search"
   }
-}</script><script src="https://cdnjs.cloudflare.com/polyfill/v3/polyfill.min.js?features=es6"></script><script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml-full.js" type="text/javascript"></script><script type="text/javascript">
-const typesetMath = (el) => {
-  if (window.MathJax) {
-    // MathJax Typeset
-    window.MathJax.typeset([el]);
-  } else if (window.katex) {
-    // KaTeX Render
-    var mathElements = el.getElementsByClassName("math");
-    var macros = [];
-    for (var i = 0; i < mathElements.length; i++) {
-      var texText = mathElements[i].firstChild;
-      if (mathElements[i].tagName == "SPAN") {
-        window.katex.render(texText.data, mathElements[i], {
-          displayMode: mathElements[i].classList.contains('display'),
-          throwOnError: false,
-          macros: macros,
-          fleqn: false
-        });
-      }
-    }
-  }
-}
-window.Quarto = {
-  typesetMath
-};
-</script><link rel="stylesheet" href="../styles.css">
+}</script>
+
+
+<link rel="stylesheet" href="../styles.css">
 </head>
+
 <body class="nav-sidebar docked">
 
 <div id="quarto-search-results"></div>
-  <header id="quarto-header" class="headroom fixed-top"><nav class="quarto-secondary-nav"><div class="container-fluid d-flex">
+  <header id="quarto-header" class="headroom fixed-top">
+  <nav class="quarto-secondary-nav">
+    <div class="container-fluid d-flex">
       <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" role="button" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
         <i class="bi bi-layout-text-sidebar-reverse"></i>
       </button>
@@ -157,11 +88,16 @@ window.Quarto = {
         <i class="bi bi-search"></i>
       </button>
     </div>
-  </nav></header><!-- content --><div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article">
+  </nav>
+</header>
+<!-- content -->
+<div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article">
 <!-- sidebar -->
-  <nav id="quarto-sidebar" class="sidebar collapse collapse-horizontal quarto-sidebar-collapse-item sidebar-navigation docked overflow-auto"><div class="pt-lg-2 mt-2 text-left sidebar-header sidebar-header-stacked">
+  <nav id="quarto-sidebar" class="sidebar collapse collapse-horizontal quarto-sidebar-collapse-item sidebar-navigation docked overflow-auto">
+    <div class="pt-lg-2 mt-2 text-left sidebar-header sidebar-header-stacked">
       <a href="../index.html" class="sidebar-logo-link">
-      <img src="../images/logo.png" alt="" class="sidebar-logo py-0 d-lg-inline d-none"></a>
+      <img src="../images/logo.png" alt="" class="sidebar-logo py-0 d-lg-inline d-none">
+      </a>
     <div class="sidebar-title mb-0 py-0">
       <a href="../">Reproducibility Guide</a> 
     </div>
@@ -173,7 +109,7 @@ window.Quarto = {
         </div>
     <div class="sidebar-menu-container"> 
     <ul class="list-unstyled mt-1">
-<li class="sidebar-item">
+        <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="../index.qmd" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Welcome</span></a>
@@ -210,312 +146,50 @@ window.Quarto = {
   </div>
 </li>
     </ul>
-</div>
-</nav><div id="quarto-sidebar-glass" class="quarto-sidebar-collapse-item" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item"></div>
+    </div>
+</nav>
+<div id="quarto-sidebar-glass" class="quarto-sidebar-collapse-item" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item"></div>
 <!-- margin-sidebar -->
     <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
-        <nav id="TOC" role="doc-toc" class="toc-active"><h2 id="toc-title">On this page</h2>
+        <nav id="TOC" role="doc-toc" class="toc-active">
+    <h2 id="toc-title">On this page</h2>
    
   <ul>
-<li><a href="#general-information" id="toc-general-information" class="nav-link active" data-scroll-target="#general-information">General information</a></li>
-  <li><a href="#preview" id="toc-preview" class="nav-link" data-scroll-target="#preview">Preview</a></li>
-  <li><a href="#dependencies" id="toc-dependencies" class="nav-link" data-scroll-target="#dependencies">Dependencies</a></li>
-  <li><a href="#hardcoded-values" id="toc-hardcoded-values" class="nav-link" data-scroll-target="#hardcoded-values">Hardcoded Values</a></li>
-  <li>
-<a href="#data-management" id="toc-data-management" class="nav-link" data-scroll-target="#data-management">Data Management</a>
-  <ul class="collapse">
-<li><a href="#loading-data" id="toc-loading-data" class="nav-link" data-scroll-target="#loading-data">Loading Data</a></li>
-  <li><a href="#processing" id="toc-processing" class="nav-link" data-scroll-target="#processing">Processing</a></li>
+  <li><a href="#general-information" id="toc-general-information" class="nav-link active" data-scroll-target="#general-information">General information</a></li>
   </ul>
-</li>
-  <li>
-<a href="#analysis-visualization" id="toc-analysis-visualization" class="nav-link" data-scroll-target="#analysis-visualization">Analysis &amp; Visualization</a>
-  <ul class="collapse">
-<li><a href="#statistical-analysis" id="toc-statistical-analysis" class="nav-link" data-scroll-target="#statistical-analysis">Statistical Analysis</a></li>
-  <li><a href="#plotting" id="toc-plotting" class="nav-link" data-scroll-target="#plotting">Plotting</a></li>
-  </ul>
-</li>
-  <li>
-<a href="#reproducibility-extras" id="toc-reproducibility-extras" class="nav-link" data-scroll-target="#reproducibility-extras">Reproducibility Extras</a>
-  <ul class="collapse">
-<li><a href="#seeds-randomness" id="toc-seeds-randomness" class="nav-link" data-scroll-target="#seeds-randomness">Seeds &amp; Randomness</a></li>
-  <li><a href="#citations" id="toc-citations" class="nav-link" data-scroll-target="#citations">Citations</a></li>
-  <li><a href="#equations" id="toc-equations" class="nav-link" data-scroll-target="#equations">Equations</a></li>
-  <li><a href="#references" id="toc-references" class="nav-link" data-scroll-target="#references">References</a></li>
-  <li><a href="#session-information" id="toc-session-information" class="nav-link" data-scroll-target="#session-information">Session Information</a></li>
-  </ul>
-</li>
-  </ul></nav>
+</nav>
     </div>
 <!-- main -->
-<main class="content" id="quarto-document-content"><header id="title-block-header" class="quarto-title-block default"><div class="quarto-title">
-<div class="quarto-title-block"><div><h1 class="title">Analysis Template</h1><button type="button" class="btn code-tools-button dropdown-toggle" id="quarto-code-tools-menu" data-bs-toggle="dropdown" aria-expanded="false"><i class="bi"></i> Code</button><ul class="dropdown-menu dropdown-menu-end" aria-labelelledby="quarto-code-tools-menu"><li><a id="quarto-show-all-code" class="dropdown-item" href="javascript:void(0)" role="button">Show All Code</a></li><li><a id="quarto-hide-all-code" class="dropdown-item" href="javascript:void(0)" role="button">Hide All Code</a></li><li><hr class="dropdown-divider"></li><li><a id="quarto-view-source" class="dropdown-item" href="javascript:void(0)" role="button">View Source</a></li></ul></div></div>
+<main class="content" id="quarto-document-content">
+
+<header id="title-block-header" class="quarto-title-block default">
+<div class="quarto-title">
+<div class="quarto-title-block"><div><h1 class="title">Analysis Template</h1><button type="button" class="btn code-tools-button" id="quarto-code-tools-source" data-quarto-source-url="../code/analysis.qmd"><i class="bi"></i> Download</button></div></div>
 </div>
 
 
 
 <div class="quarto-title-meta">
 
-    <div>
-    <div class="quarto-title-meta-heading">Author</div>
-    <div class="quarto-title-meta-contents">
-             <p>Your name </p>
-          </div>
-  </div>
     
-    <div>
-    <div class="quarto-title-meta-heading">Published</div>
-    <div class="quarto-title-meta-contents">
-      <p class="date">last-modified</p>
-    </div>
-  </div>
   
     
   </div>
   
 
 
-</header><section id="general-information" class="level1"><h1>General information</h1>
+</header>
+
+
+<section id="general-information" class="level1">
+<h1>General information</h1>
 <p>We provide a template <code>.qmd</code>-file with this guide. You can download it via the <code>Download</code>-button in the top right corner. This template in particular is designed to be a starting point for your analyses, following many of the best practices for reproducibility and clarity. Note that you may need to download and place additional content in the respective folder for this script to run (e.g.&nbsp;<code>references.bib</code>). You can download this <code>.bib</code>-file and all other parts of the project behind this guide from the <a href="https://github.com/schillinglars/reproducibility_guide">GitHub repository</a>.</p>
-</section><section id="preview" class="level1"><h1>Preview</h1>
-</section><section id="dependencies" class="level1"><h1>Dependencies</h1>
-<p>We load all necessary libraries at the beginning to ensure portability and clarity.</p>
-<div class="box-r">
-<div class="cell">
-<details class="code-fold"><summary>Code</summary><div class="sourceCode" id="cb1"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="kw"><a href="https://rdrr.io/r/base/library.html">library</a></span><span class="op">(</span><span class="va"><a href="https://here.r-lib.org/">here</a></span><span class="op">)</span>    <span class="co"># For relative paths</span></span>
-<span><span class="kw"><a href="https://rdrr.io/r/base/library.html">library</a></span><span class="op">(</span><span class="va"><a href="https://ggplot2.tidyverse.org">ggplot2</a></span><span class="op">)</span> <span class="co"># For visualization</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-</details>
-</div>
-</div>
-<div class="box-python">
-<div class="cell">
-<details class="code-fold"><summary>Code</summary><div class="sourceCode cell-code" id="cb2"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> os</span>
-<span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> pandas <span class="im">as</span> pd</span>
-<span id="cb2-3"><a href="#cb2-3" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> matplotlib.pyplot <span class="im">as</span> plt</span>
-<span id="cb2-4"><a href="#cb2-4" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> random</span>
-<span id="cb2-5"><a href="#cb2-5" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> session_info</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-</details>
-</div>
-</div>
-</section><section id="hardcoded-values" class="level1"><h1>Hardcoded Values</h1>
-<p>We define constants here to avoid “magic numbers” later in the script.</p>
-<div class="box-r">
-<div class="cell">
-<details class="code-fold"><summary>Code</summary><div class="sourceCode" id="cb3"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="va">ATTENTION_THRESHOLD</span> <span class="op">&lt;-</span> <span class="fl">2</span></span>
-<span><span class="va">PLOT_COLOUR</span> <span class="op">&lt;-</span> <span class="st">"steelblue"</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-</details>
-</div>
-</div>
-<div class="box-python">
-<div class="cell">
-<details class="code-fold"><summary>Code</summary><div class="sourceCode cell-code" id="cb4"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a>ATTENTION_THRESHOLD <span class="op">=</span> <span class="dv">2</span></span>
-<span id="cb4-2"><a href="#cb4-2" aria-hidden="true" tabindex="-1"></a>PLOT_COLOUR <span class="op">=</span> <span class="st">"steelblue"</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-</details>
-</div>
-</div>
-</section><section id="data-management" class="level1"><h1>Data Management</h1>
-<section id="loading-data" class="level2"><h2 class="anchored" data-anchor-id="loading-data">Loading Data</h2>
-<p>Using relative paths ensures that the script runs on any device.</p>
-<div class="box-r">
-<div class="cell">
-<details class="code-fold"><summary>Code</summary><div class="sourceCode" id="cb5"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="co"># Example for a real file: </span></span>
-<span><span class="va">my_data</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/utils/read.table.html">read.csv</a></span><span class="op">(</span><span class="fu"><a href="https://here.r-lib.org/reference/here.html">here</a></span><span class="op">(</span><span class="st">"data"</span>, <span class="st">"raw"</span>, <span class="st">"my_data.csv"</span><span class="op">)</span><span class="op">)</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-</details>
-</div>
-</div>
-<div class="box-python">
-<div class="cell">
-<details class="code-fold"><summary>Code</summary><div class="sourceCode cell-code" id="cb6"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a><span class="co"># In Python, we go one level up to reach the project root from 'scripts/'</span></span>
-<span id="cb6-2"><a href="#cb6-2" aria-hidden="true" tabindex="-1"></a>path <span class="op">=</span> os.path.join(<span class="st">".."</span>, <span class="st">"data"</span>, <span class="st">"raw"</span>, <span class="st">"my_data.csv"</span>)</span>
-<span id="cb6-3"><a href="#cb6-3" aria-hidden="true" tabindex="-1"></a>df <span class="op">=</span> pd.read_csv(path)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-</details>
-</div>
-</div>
-</section><section id="processing" class="level2"><h2 class="anchored" data-anchor-id="processing">Processing</h2>
-<p>We follow naming conventions (snake_case and UPPER_CASE for hardcoded values) and explain <em>why</em> and not how we filter data.</p>
-<div class="box-r">
-<div class="cell">
-<details class="code-fold"><summary>Code</summary><div class="sourceCode" id="cb7"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="co"># Removing cases that don't meet the attention threshold</span></span>
-<span><span class="va">cleaned_data</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/base/subset.html">subset</a></span><span class="op">(</span><span class="va">my_data</span>, <span class="va">reaction_time</span> <span class="op">&lt;</span> <span class="va">ATTENTION_THRESHOLD</span><span class="op">)</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-</details>
-</div>
-</div>
-<div class="box-python">
-<div class="cell">
-<details class="code-fold"><summary>Code</summary><div class="sourceCode cell-code" id="cb8"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb8-1"><a href="#cb8-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Removing cases that don't meet the attention threshold</span></span>
-<span id="cb8-2"><a href="#cb8-2" aria-hidden="true" tabindex="-1"></a>df_cleaned <span class="op">=</span> df[df[<span class="st">'reaction_time'</span>] <span class="op">&lt;</span> ATTENTION_THRESHOLD].copy()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-</details>
-</div>
-</div>
-<p>We can also save the cleaned data for future use in the <code>data/processed</code> folder.</p>
-<div class="box-r">
-<div class="cell">
-<details class="code-fold"><summary>Code</summary><div class="sourceCode" id="cb9"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="fu"><a href="https://rdrr.io/r/utils/write.table.html">write.csv</a></span><span class="op">(</span><span class="va">cleaned_data</span>, <span class="fu"><a href="https://here.r-lib.org/reference/here.html">here</a></span><span class="op">(</span><span class="st">"data"</span>, <span class="st">"processed"</span>, <span class="st">"cleaned_data.csv"</span><span class="op">)</span><span class="op">)</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-</details>
-</div>
-</div>
-<div class="box-python">
-<div class="cell">
-<details class="code-fold"><summary>Code</summary><div class="sourceCode cell-code" id="cb10"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb10-1"><a href="#cb10-1" aria-hidden="true" tabindex="-1"></a>save_path <span class="op">=</span> os.path.join(<span class="st">".."</span>, <span class="st">"data"</span>, <span class="st">"processed"</span>, <span class="st">"cleaned_data.csv"</span>)</span>
-<span id="cb10-2"><a href="#cb10-2" aria-hidden="true" tabindex="-1"></a>df_cleaned.to_csv(save_path, index<span class="op">=</span><span class="va">False</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-</details>
-</div>
-</div>
-</section></section><section id="analysis-visualization" class="level1"><h1>Analysis &amp; Visualization</h1>
-<section id="statistical-analysis" class="level2"><h2 class="anchored" data-anchor-id="statistical-analysis">Statistical Analysis</h2>
-<p>Here we would perform our statistical tests, ensuring to report all relevant details for reproducibility.</p>
-<div class="box-r">
-<div class="cell">
-<details class="code-fold"><summary>Code</summary><div class="sourceCode" id="cb11"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="va">mean_reaction_time</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/base/mean.html">mean</a></span><span class="op">(</span><span class="va">cleaned_data</span><span class="op">$</span><span class="va">reaction_time</span><span class="op">)</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-</details>
-</div>
-</div>
-<div class="box-python">
-<div class="cell">
-<details class="code-fold"><summary>Code</summary><div class="sourceCode cell-code" id="cb12"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb12-1"><a href="#cb12-1" aria-hidden="true" tabindex="-1"></a>mean_reaction_time <span class="op">=</span> df_cleaned[<span class="st">'reaction_time'</span>].mean()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-</details>
-</div>
-</div>
-<p>To report the result I can simply use inline code. The mean reaction time is 1.49 seconds.</p>
-</section><section id="plotting" class="level2"><h2 class="anchored" data-anchor-id="plotting">Plotting</h2>
-<p>According to our workflow, we create all figures within the code and save all figures into the <code>outputs/figs/</code> directory.</p>
-<div class="box-r">
-<div class="cell">
-<details class="code-fold"><summary>Code</summary><div class="sourceCode" id="cb13"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="co"># Create the plot</span></span>
-<span><span class="va">p</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/ggplot.html">ggplot</a></span><span class="op">(</span><span class="va">cleaned_data</span>, <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/aes.html">aes</a></span><span class="op">(</span>x <span class="op">=</span> <span class="va">condition</span>, y <span class="op">=</span> <span class="va">reaction_time</span><span class="op">)</span><span class="op">)</span> <span class="op">+</span></span>
-<span>  <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/geom_point.html">geom_point</a></span><span class="op">(</span>color <span class="op">=</span> <span class="va">PLOT_COLOUR</span><span class="op">)</span> <span class="op">+</span></span>
-<span>  <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/ggtheme.html">theme_minimal</a></span><span class="op">(</span><span class="op">)</span> <span class="op">+</span></span>
-<span>  <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/labs.html">labs</a></span><span class="op">(</span>title <span class="op">=</span> <span class="st">"Reaction time in dependence of condition"</span>,</span>
-<span>       caption <span class="op">=</span> <span class="st">"Data source: Reaction test XY"</span><span class="op">)</span></span>
-<span></span>
-<span><span class="co"># Display</span></span>
-<span><span class="va">p</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-</details><div class="cell-output-display">
-<div>
-<figure class="figure"><p><img src="analysis_template_files/figure-html/plot-r-1.png" class="img-fluid figure-img" width="672"></p>
-</figure>
-</div>
-</div>
-</div>
-<div class="cell">
-<details class="code-fold"><summary>Code</summary><div class="sourceCode" id="cb14"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="co"># Save using 'here' to target the project root</span></span>
-<span><span class="fu"><a href="https://ggplot2.tidyverse.org/reference/ggsave.html">ggsave</a></span><span class="op">(</span><span class="fu"><a href="https://here.r-lib.org/reference/here.html">here</a></span><span class="op">(</span><span class="st">"outputs"</span>, <span class="st">"figs"</span>, <span class="st">"analysis_plot_r.png"</span><span class="op">)</span>, plot <span class="op">=</span> <span class="va">p</span>, width <span class="op">=</span> <span class="fl">6</span>, height <span class="op">=</span> <span class="fl">4</span><span class="op">)</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-</details>
-</div>
-</div>
-<div class="box-python">
-<div class="cell">
-<details class="code-fold"><summary>Code</summary><div class="sourceCode cell-code" id="cb15"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb15-1"><a href="#cb15-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Create the plot</span></span>
-<span id="cb15-2"><a href="#cb15-2" aria-hidden="true" tabindex="-1"></a>plt.figure(figsize<span class="op">=</span>(<span class="dv">6</span>, <span class="dv">4</span>))</span>
-<span id="cb15-3"><a href="#cb15-3" aria-hidden="true" tabindex="-1"></a>plt.scatter(df[<span class="st">'condition'</span>], df[<span class="st">'reaction_time'</span>], color<span class="op">=</span>PLOT_COLOUR, alpha<span class="op">=</span><span class="fl">0.7</span>)</span>
-<span id="cb15-4"><a href="#cb15-4" aria-hidden="true" tabindex="-1"></a>plt.title(<span class="st">'Reaction time in dependence of condition'</span>)</span>
-<span id="cb15-5"><a href="#cb15-5" aria-hidden="true" tabindex="-1"></a>plt.xlabel(<span class="st">'Condition'</span>)</span>
-<span id="cb15-6"><a href="#cb15-6" aria-hidden="true" tabindex="-1"></a>plt.ylabel(<span class="st">'Reaction Time'</span>)</span>
-<span id="cb15-7"><a href="#cb15-7" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb15-8"><a href="#cb15-8" aria-hidden="true" tabindex="-1"></a><span class="co"># Display</span></span>
-<span id="cb15-9"><a href="#cb15-9" aria-hidden="true" tabindex="-1"></a>plt.show()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-</details><div class="cell-output-display">
-<div>
-<figure class="figure"><p><img src="analysis_template_files/figure-html/plot-python-1.png" class="img-fluid figure-img" width="576"></p>
-</figure>
-</div>
-</div>
-</div>
-<div class="cell">
-<div class="cell-output-display">
-<div>
-<figure class="figure"><p><img src="analysis_template_files/figure-html/save-plot-python-3.png" class="img-fluid figure-img" width="672"></p>
-</figure>
-</div>
-</div>
-</div>
-</div>
-</section></section><section id="reproducibility-extras" class="level1"><h1>Reproducibility Extras</h1>
-<section id="seeds-randomness" class="level2"><h2 class="anchored" data-anchor-id="seeds-randomness">Seeds &amp; Randomness</h2>
-<p>To ensure results remain the same across devices, we set a seed.</p>
-<div class="box-r">
-<div class="cell">
-<div class="cell-output cell-output-stdout">
-<pre><code>[1] 31 79 51</code></pre>
-</div>
-</div>
-</div>
-<div class="box-python">
-<div class="cell">
-<div class="cell-output cell-output-stdout">
-<pre><code>[7, 35, 12]</code></pre>
-</div>
-</div>
-</div>
-</section><section id="citations" class="level2"><h2 class="anchored" data-anchor-id="citations">Citations</h2>
-<p>As discussed by <span class="citation" data-cites="wickham2023">Wickham &amp; Mineault (<a href="#ref-wickham2023" role="doc-biblioref">2023</a>)</span>…</p>
-</section><section id="equations" class="level2"><h2 class="anchored" data-anchor-id="equations">Equations</h2>
-<p><span class="math display">\[y = \beta_0 + \beta_1 x + \epsilon\]</span></p>
-</section><section id="references" class="level2"><h2 class="anchored" data-anchor-id="references">References</h2>
-<div id="refs" class="references csl-bib-body hanging-indent" data-entry-spacing="0" data-line-spacing="2" role="list">
-<div id="ref-wickham2023" class="csl-entry" role="listitem">
-Wickham, H., &amp; Mineault, P. (2023). <em>R for data science</em> (2nd edition). O’Reilly Media.
-</div>
-</div>
-</section><section id="session-information" class="level2"><h2 class="anchored" data-anchor-id="session-information">Session Information</h2>
-<p>This section is vital for long-term maintenance and troubleshooting.</p>
-<div class="box-r">
-<div class="cell">
-<div class="cell-output cell-output-stdout">
-<pre><code>R version 4.5.2 (2025-10-31 ucrt)
-Platform: x86_64-w64-mingw32/x64
-Running under: Windows 11 x64 (build 22631)
-
-Matrix products: default
-  LAPACK version 3.12.1
-
-locale:
-[1] LC_COLLATE=German_Switzerland.utf8  LC_CTYPE=German_Switzerland.utf8   
-[3] LC_MONETARY=German_Switzerland.utf8 LC_NUMERIC=C                       
-[5] LC_TIME=German_Switzerland.utf8    
-
-time zone: Europe/Zurich
-tzcode source: internal
-
-attached base packages:
-[1] stats     graphics  grDevices datasets  utils     methods   base     
-
-other attached packages:
-[1] ggplot2_4.0.2 here_1.0.2   
-
-loaded via a namespace (and not attached):
- [1] vctrs_0.7.3        cli_3.6.6          knitr_1.50         rlang_1.2.0       
- [5] xfun_0.54          png_0.1-9          renv_1.2.0         S7_0.2.1          
- [9] jsonlite_2.0.0     labeling_0.4.3     glue_1.8.0         rprojroot_2.1.1   
-[13] htmltools_0.5.9    scales_1.4.0       rmarkdown_2.30     rappdirs_0.3.4    
-[17] grid_4.5.2         evaluate_1.0.5     fastmap_1.2.0      yaml_2.3.12       
-[21] lifecycle_1.0.5    compiler_4.5.2     RColorBrewer_1.1-3 Rcpp_1.1.1        
-[25] rstudioapi_0.18.0  farver_2.1.2       lattice_0.22-9     digest_0.6.39     
-[29] R6_2.6.1           reticulate_1.46.0  Matrix_1.7-5       tools_4.5.2       
-[33] withr_3.0.2        gtable_0.3.6      </code></pre>
-</div>
-</div>
-</div>
-<div class="box-python">
-<div class="cell">
-<div class="cell-output cell-output-stdout">
-<pre><code>-----
-matplotlib          3.10.8
-pandas              3.0.2
-session_info        1.0.0
------
-Python 3.12.13 | packaged by conda-forge | (main, Mar  5 2026, 16:36:12) [MSC v.1944 64 bit (AMD64)]
-Windows-11-10.0.22631-SP0
------
-Session information updated at 2026-05-08 00:02</code></pre>
-</div>
-</div>
-</div>
 
 
-<!-- -->
+</section>
 
-</section></section></main><!-- /main --><script id="quarto-html-after-body" type="application/javascript">
+</main> <!-- /main -->
+<script id="quarto-html-after-body" type="application/javascript">
 window.document.addEventListener("DOMContentLoaded", function (event) {
   const toggleBodyColorMode = (bsSheetEl) => {
     const mode = bsSheetEl.getAttribute("data-mode");
@@ -989,34 +663,16 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
     }
   }
 });
-</script><div class="modal fade" id="quarto-embedded-source-code-modal" tabindex="-1" aria-labelledby="quarto-embedded-source-code-modal-label" aria-hidden="true"><div class="modal-dialog modal-dialog-scrollable"><div class="modal-content"><div class="modal-header"><h5 class="modal-title" id="quarto-embedded-source-code-modal-label">Source Code</h5><button class="btn-close" data-bs-dismiss="modal"></button></div><div class="modal-body"><div class="">
-<div class="sourceCode" id="cb20" data-shortcodes="false"><pre class="sourceCode markdown code-with-copy"><code class="sourceCode markdown"><span id="cb20-1"><a href="#cb20-1" aria-hidden="true" tabindex="-1"></a><span class="co">---</span></span>
-<span id="cb20-2"><a href="#cb20-2" aria-hidden="true" tabindex="-1"></a><span class="an">title:</span><span class="co"> "Analysis Template"</span></span>
-<span id="cb20-3"><a href="#cb20-3" aria-hidden="true" tabindex="-1"></a><span class="an">format:</span></span>
-<span id="cb20-4"><a href="#cb20-4" aria-hidden="true" tabindex="-1"></a><span class="co">  html:</span></span>
-<span id="cb20-5"><a href="#cb20-5" aria-hidden="true" tabindex="-1"></a><span class="co">    code-tools:</span></span>
-<span id="cb20-6"><a href="#cb20-6" aria-hidden="true" tabindex="-1"></a><span class="co">      source: "../code/analysis.qmd"</span></span>
-<span id="cb20-7"><a href="#cb20-7" aria-hidden="true" tabindex="-1"></a><span class="co">      caption: "Download"</span></span>
-<span id="cb20-8"><a href="#cb20-8" aria-hidden="true" tabindex="-1"></a><span class="co">---</span></span>
-<span id="cb20-9"><a href="#cb20-9" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb20-10"><a href="#cb20-10" aria-hidden="true" tabindex="-1"></a>{{&lt; include ../_hardcoded_values.qmd &gt;}}</span>
-<span id="cb20-11"><a href="#cb20-11" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb20-12"><a href="#cb20-12" aria-hidden="true" tabindex="-1"></a><span class="fu"># General information</span></span>
-<span id="cb20-13"><a href="#cb20-13" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb20-14"><a href="#cb20-14" aria-hidden="true" tabindex="-1"></a>We provide a template <span class="in">`.qmd`</span>-file with this guide. You can download it via the <span class="in">`Download`</span>-button in the top right corner. This template in particular is designed to be a starting point for your analyses, following many of the best practices for reproducibility and clarity. Note that you may need to download and place additional content in the respective folder for this script to run (e.g. <span class="in">`references.bib`</span>). You can download this <span class="in">`.bib`</span>-file and all other parts of the project behind this guide from the <span class="co">[</span><span class="ot">GitHub repository</span><span class="co">][repo-url]</span>.</span>
-<span id="cb20-15"><a href="#cb20-15" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb20-16"><a href="#cb20-16" aria-hidden="true" tabindex="-1"></a><span class="fu"># Preview</span></span>
-<span id="cb20-17"><a href="#cb20-17" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb20-18"><a href="#cb20-18" aria-hidden="true" tabindex="-1"></a>{{&lt; include ../code/analysis.qmd &gt;}}</span></code><button title="Copy to Clipboard" class="code-copy-button" data-in-quarto-modal=""><i class="bi"></i></button></pre></div>
-</div></div></div></div></div>
+</script>
 </div> <!-- /content -->
-<footer class="footer"><div class="nav-footer">
+<footer class="footer">
+  <div class="nav-footer">
     <div class="nav-footer-left">
 <p>© 2026 Department Psychology of Digitalisation</p>
 </div>   
     <div class="nav-footer-center">
       <ul class="footer-items list-unstyled">
-<li class="nav-item">
+    <li class="nav-item">
     <a class="nav-link" href="https://github.com/schillinglars/reproducibility_guide">
 <p><i class="bi bi-github"></i> GitHub</p>
 </a>
@@ -1027,12 +683,14 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
 </a>
   </li>  
 </ul>
-</div>
+    </div>
     <div class="nav-footer-right">
 <p>Licensed under <a href="https://creativecommons.org/licenses/by-nc/4.0/">CC BY-NC 4.0</a></p>
 </div>
   </div>
 </footer>
+
+
 
 
 </body></html>
