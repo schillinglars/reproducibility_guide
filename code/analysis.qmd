@@ -13,10 +13,6 @@ execute:
   warning: false
 ---
 
-{{< include ../_hardcoded_values.qmd >}}
-
-Download this template from the \[GitHub repository\]\[repo-url\] or via the `</>Code`-button in the top right corner. This template is designed to be a starting point for your analyses, following many of the best practices for reproducibility and clarity. Note that you may need to download and place additional content in the respective folder for this script to run (e.g. `references.bib`).
-
 # Dependencies
 
 We load all necessary libraries at the beginning to ensure portability and clarity.

@@ -20,18 +20,18 @@
     ]
   },
   {
-    "objectID": "scripts/analysis_template.html",
-    "href": "scripts/analysis_template.html",
+    "objectID": "source/analysis_template.html",
+    "href": "source/analysis_template.html",
     "title": "Analysis Template",
     "section": "",
-    "text": "Download this template from the [GitHub repository][repo-url] or via the &lt;/&gt;Code-button in the top right corner. This template is designed to be a starting point for your analyses, following many of the best practices for reproducibility and clarity. Note that you may need to download and place additional content in the respective folder for this script to run (e.g. references.bib).",
+    "text": "We provide a template .qmd-file with this guide. You can download it via the Download-button in the top right corner. This template in particular is designed to be a starting point for your analyses, following many of the best practices for reproducibility and clarity. Note that you may need to download and place additional content in the respective folder for this script to run (e.g. references.bib). You can download this .bib-file and all other parts of the project behind this guide from the GitHub repository.",
     "crumbs": [
       "5. Template"
     ]
   },
   {
-    "objectID": "scripts/analysis_template.html#loading-data",
-    "href": "scripts/analysis_template.html#loading-data",
+    "objectID": "source/analysis_template.html#loading-data",
+    "href": "source/analysis_template.html#loading-data",
     "title": "Analysis Template",
     "section": "Loading Data",
     "text": "Loading Data\nUsing relative paths ensures that the script runs on any device.\n\n\nCode# Example for a real file: \nmy_data &lt;- read.csv(here(\"data\", \"raw\", \"my_data.csv\"))\n\n\n\n\n\nCode# In Python, we go one level up to reach the project root from 'scripts/'\npath = os.path.join(\"..\", \"data\", \"raw\", \"my_data.csv\")\ndf = pd.read_csv(path)",
@@ -40,8 +40,8 @@
     ]
   },
   {
-    "objectID": "scripts/analysis_template.html#processing",
-    "href": "scripts/analysis_template.html#processing",
+    "objectID": "source/analysis_template.html#processing",
+    "href": "source/analysis_template.html#processing",
     "title": "Analysis Template",
     "section": "Processing",
     "text": "Processing\nWe follow naming conventions (snake_case and UPPER_CASE for hardcoded values) and explain why and not how we filter data.\n\n\nCode# Removing cases that don't meet the attention threshold\ncleaned_data &lt;- subset(my_data, reaction_time &lt; ATTENTION_THRESHOLD)\n\n\n\n\n\nCode# Removing cases that don't meet the attention threshold\ndf_cleaned = df[df['reaction_time'] &lt; ATTENTION_THRESHOLD].copy()\n\n\n\nWe can also save the cleaned data for future use in the data/processed folder.\n\n\nCodewrite.csv(cleaned_data, here(\"data\", \"processed\", \"cleaned_data.csv\"))\n\n\n\n\n\nCodesave_path = os.path.join(\"..\", \"data\", \"processed\", \"cleaned_data.csv\")\ndf_cleaned.to_csv(save_path, index=False)",
@@ -50,8 +50,8 @@
     ]
   },
   {
-    "objectID": "scripts/analysis_template.html#statistical-analysis",
-    "href": "scripts/analysis_template.html#statistical-analysis",
+    "objectID": "source/analysis_template.html#statistical-analysis",
+    "href": "source/analysis_template.html#statistical-analysis",
     "title": "Analysis Template",
     "section": "Statistical Analysis",
     "text": "Statistical Analysis\nHere we would perform our statistical tests, ensuring to report all relevant details for reproducibility.\n\n\nCodemean_reaction_time &lt;- mean(cleaned_data$reaction_time)\n\n\n\n\n\nCodemean_reaction_time = df_cleaned['reaction_time'].mean()\n\n\n\nTo report the result I can simply use inline code. The mean reaction time is 1.49 seconds.",
@@ -60,8 +60,8 @@
     ]
   },
   {
-    "objectID": "scripts/analysis_template.html#plotting",
-    "href": "scripts/analysis_template.html#plotting",
+    "objectID": "source/analysis_template.html#plotting",
+    "href": "source/analysis_template.html#plotting",
     "title": "Analysis Template",
     "section": "Plotting",
     "text": "Plotting\nAccording to our workflow, we create all figures within the code and save all figures into the outputs/figs/ directory.\n\n\nCode# Create the plot\np &lt;- ggplot(cleaned_data, aes(x = condition, y = reaction_time)) +\n  geom_point(color = PLOT_COLOUR) +\n  theme_minimal() +\n  labs(title = \"Reaction time in dependence of condition\",\n       caption = \"Data source: Reaction test XY\")\n\n# Display\np\n\n\n\n\n\n\n\n\nCode# Save using 'here' to target the project root\nggsave(here(\"outputs\", \"figs\", \"analysis_plot_r.png\"), plot = p, width = 6, height = 4)\n\n\n\n\n\nCode# Create the plot\nplt.figure(figsize=(6, 4))\nplt.scatter(df['condition'], df['reaction_time'], color=PLOT_COLOUR, alpha=0.7)\nplt.title('Reaction time in dependence of condition')\nplt.xlabel('Condition')\nplt.ylabel('Reaction Time')\n\n# Display\nplt.show()",
@@ -70,8 +70,8 @@
     ]
   },
   {
-    "objectID": "scripts/analysis_template.html#seeds-randomness",
-    "href": "scripts/analysis_template.html#seeds-randomness",
+    "objectID": "source/analysis_template.html#seeds-randomness",
+    "href": "source/analysis_template.html#seeds-randomness",
     "title": "Analysis Template",
     "section": "Seeds & Randomness",
     "text": "Seeds & Randomness\nTo ensure results remain the same across devices, we set a seed.\n\n\n\n[1] 31 79 51\n\n\n\n\n\n\n[7, 35, 12]",
@@ -80,8 +80,8 @@
     ]
   },
   {
-    "objectID": "scripts/analysis_template.html#citations",
-    "href": "scripts/analysis_template.html#citations",
+    "objectID": "source/analysis_template.html#citations",
+    "href": "source/analysis_template.html#citations",
     "title": "Analysis Template",
     "section": "Citations",
     "text": "Citations\nAs discussed by Wickham & Mineault (2023)…",
@@ -90,8 +90,8 @@
     ]
   },
   {
-    "objectID": "scripts/analysis_template.html#equations",
-    "href": "scripts/analysis_template.html#equations",
+    "objectID": "source/analysis_template.html#equations",
+    "href": "source/analysis_template.html#equations",
     "title": "Analysis Template",
     "section": "Equations",
     "text": "Equations\n\\[y = \\beta_0 + \\beta_1 x + \\epsilon\\]",
@@ -100,8 +100,8 @@
     ]
   },
   {
-    "objectID": "scripts/analysis_template.html#references",
-    "href": "scripts/analysis_template.html#references",
+    "objectID": "source/analysis_template.html#references",
+    "href": "source/analysis_template.html#references",
     "title": "Analysis Template",
     "section": "References",
     "text": "References\n\n\nWickham, H., & Mineault, P. (2023). R for data science (2nd edition). O’Reilly Media.",
@@ -110,30 +110,13 @@
     ]
   },
   {
-    "objectID": "scripts/analysis_template.html#session-information",
-    "href": "scripts/analysis_template.html#session-information",
+    "objectID": "source/analysis_template.html#session-information",
+    "href": "source/analysis_template.html#session-information",
     "title": "Analysis Template",
     "section": "Session Information",
-    "text": "Session Information\nThis section is vital for long-term maintenance and troubleshooting.\n\n\n\nR version 4.5.2 (2025-10-31 ucrt)\nPlatform: x86_64-w64-mingw32/x64\nRunning under: Windows 11 x64 (build 22631)\n\nMatrix products: default\n  LAPACK version 3.12.1\n\nlocale:\n[1] LC_COLLATE=German_Switzerland.utf8  LC_CTYPE=German_Switzerland.utf8   \n[3] LC_MONETARY=German_Switzerland.utf8 LC_NUMERIC=C                       \n[5] LC_TIME=German_Switzerland.utf8    \n\ntime zone: Europe/Zurich\ntzcode source: internal\n\nattached base packages:\n[1] stats     graphics  grDevices datasets  utils     methods   base     \n\nother attached packages:\n[1] ggplot2_4.0.2 here_1.0.2   \n\nloaded via a namespace (and not attached):\n [1] vctrs_0.7.3        cli_3.6.6          knitr_1.50         rlang_1.2.0       \n [5] xfun_0.54          png_0.1-9          renv_1.2.0         S7_0.2.1          \n [9] jsonlite_2.0.0     labeling_0.4.3     glue_1.8.0         rprojroot_2.1.1   \n[13] htmltools_0.5.9    scales_1.4.0       rmarkdown_2.30     rappdirs_0.3.4    \n[17] grid_4.5.2         evaluate_1.0.5     fastmap_1.2.0      yaml_2.3.12       \n[21] lifecycle_1.0.5    compiler_4.5.2     RColorBrewer_1.1-3 Rcpp_1.1.1        \n[25] rstudioapi_0.18.0  farver_2.1.2       lattice_0.22-9     digest_0.6.39     \n[29] R6_2.6.1           reticulate_1.46.0  Matrix_1.7-5       tools_4.5.2       \n[33] withr_3.0.2        gtable_0.3.6      \n\n\n\n\n\n\n-----\nmatplotlib          3.10.8\npandas              3.0.2\nsession_info        1.0.0\n-----\nPython 3.12.13 | packaged by conda-forge | (main, Mar  5 2026, 16:36:12) [MSC v.1944 64 bit (AMD64)]\nWindows-11-10.0.22631-SP0\n-----\nSession information updated at 2026-05-07 21:06",
+    "text": "Session Information\nThis section is vital for long-term maintenance and troubleshooting.\n\n\n\nR version 4.5.2 (2025-10-31 ucrt)\nPlatform: x86_64-w64-mingw32/x64\nRunning under: Windows 11 x64 (build 22631)\n\nMatrix products: default\n  LAPACK version 3.12.1\n\nlocale:\n[1] LC_COLLATE=German_Switzerland.utf8  LC_CTYPE=German_Switzerland.utf8   \n[3] LC_MONETARY=German_Switzerland.utf8 LC_NUMERIC=C                       \n[5] LC_TIME=German_Switzerland.utf8    \n\ntime zone: Europe/Zurich\ntzcode source: internal\n\nattached base packages:\n[1] stats     graphics  grDevices datasets  utils     methods   base     \n\nother attached packages:\n[1] ggplot2_4.0.2 here_1.0.2   \n\nloaded via a namespace (and not attached):\n [1] vctrs_0.7.3        cli_3.6.6          knitr_1.50         rlang_1.2.0       \n [5] xfun_0.54          png_0.1-9          renv_1.2.0         S7_0.2.1          \n [9] jsonlite_2.0.0     labeling_0.4.3     glue_1.8.0         rprojroot_2.1.1   \n[13] htmltools_0.5.9    scales_1.4.0       rmarkdown_2.30     rappdirs_0.3.4    \n[17] grid_4.5.2         evaluate_1.0.5     fastmap_1.2.0      yaml_2.3.12       \n[21] lifecycle_1.0.5    compiler_4.5.2     RColorBrewer_1.1-3 Rcpp_1.1.1        \n[25] rstudioapi_0.18.0  farver_2.1.2       lattice_0.22-9     digest_0.6.39     \n[29] R6_2.6.1           reticulate_1.46.0  Matrix_1.7-5       tools_4.5.2       \n[33] withr_3.0.2        gtable_0.3.6      \n\n\n\n\n\n\n-----\nmatplotlib          3.10.8\npandas              3.0.2\nsession_info        1.0.0\n-----\nPython 3.12.13 | packaged by conda-forge | (main, Mar  5 2026, 16:36:12) [MSC v.1944 64 bit (AMD64)]\nWindows-11-10.0.22631-SP0\n-----\nSession information updated at 2026-05-08 00:02",
     "crumbs": [
       "5. Template"
-    ]
-  },
-  {
-    "objectID": "about.html",
-    "href": "about.html",
-    "title": "About",
-    "section": "",
-    "text": "About this site\n\n1 + 1\n\n[1] 2"
-  },
-  {
-    "objectID": "index.html",
-    "href": "index.html",
-    "title": "Reproducibility Guide",
-    "section": "",
-    "text": "This is the landing page of the reproducibility guide of the Department Psychology of Digitalisation at the University of Bern. This guide aims to give students an introduction to reproducible and clean code for their thesis projects.\n\n\n\n\n\n\nImportant\n\n\n\nWhatever the content of this guide, please note that any guidelines from your supervisor are always superior to the guidelines provided here. This guide is intended to be a helpful resource, but it cannot replace the specific requirements and expectations of your supervisor. Always prioritize the instructions and feedback from your supervisor when working on your thesis.\n\n\nFor your orientation: The content of this guide is mostly written such that the guidelines can be followed independently for any programming language but for Quarto used within the IDE of RStudio. The examples provided focus on the programming language of R as this is the most commonly used one for data analysis in psychology. If a particular guideline applies differently to the programming language of Python, this will be marked explicitly in the text via the following information box:\n\nContent related in particular to Python will be placed in these information boxes.\n\nThis guide is hosted on GitHub and is open for contributions. If you have suggestions for improvement, please let us know by creating an issue on the GitHub repository or by contacting us directly (Lars.Schilling at unibe dot ch).\nThe guide is inspired by the Guide to Reproducible Code from the British Ecological Society (BES).",
-    "crumbs": [
-      "Welcome"
     ]
   },
   {
@@ -281,7 +264,7 @@
     "href": "source/codestyle.html#in-line-code",
     "title": "Style",
     "section": "In-line Code",
-    "text": "In-line Code\nIn-line code allows you to include the results of code directly within your text. This is particularly useful for reporting specific values, such as means, standard deviations, or p-values, without having to create a separate code chunk for it. For R, you can use the text `r ` syntax to include in-line code.\nThis document was last rendered on the text r Sys.Date() will display as 2026-05-07.\n\nAs equivalent for python based in-line code you can simply use text `python `.\nThis document was last rendered on the `python date.today()` will display as python date.today()",
+    "text": "In-line Code\nIn-line code allows you to include the results of code directly within your text. This is particularly useful for reporting specific values, such as means, standard deviations, or p-values, without having to create a separate code chunk for it. For R, you can use the text `r ` syntax to include in-line code.\nThis document was last rendered on the text r Sys.Date() will display as 2026-05-08.\n\nAs equivalent for python based in-line code you can simply use text `python `.\nThis document was last rendered on the `python date.today()` will display as python date.today()",
     "crumbs": [
       "3. Style"
     ]
@@ -291,7 +274,7 @@
     "href": "source/codestyle.html#session",
     "title": "Style",
     "section": "Session",
-    "text": "Session\nAt the end of your report, always include a summary of your system and software versions. This is vital for troubleshooting if a package update or software update breaks your code in the future.\n\n\nsessionInfo()\n\nR version 4.5.2 (2025-10-31 ucrt)\nPlatform: x86_64-w64-mingw32/x64\nRunning under: Windows 11 x64 (build 22631)\n\nMatrix products: default\n  LAPACK version 3.12.1\n\nlocale:\n[1] LC_COLLATE=German_Switzerland.utf8  LC_CTYPE=German_Switzerland.utf8   \n[3] LC_MONETARY=German_Switzerland.utf8 LC_NUMERIC=C                       \n[5] LC_TIME=German_Switzerland.utf8    \n\ntime zone: Europe/Zurich\ntzcode source: internal\n\nattached base packages:\n[1] stats     graphics  grDevices datasets  utils     methods   base     \n\nother attached packages:\n[1] ggplot2_4.0.2 here_1.0.2   \n\nloaded via a namespace (and not attached):\n [1] vctrs_0.7.3        cli_3.6.6          knitr_1.50         rlang_1.2.0       \n [5] xfun_0.54          png_0.1-9          renv_1.2.0         S7_0.2.1          \n [9] jsonlite_2.0.0     labeling_0.4.3     glue_1.8.0         rprojroot_2.1.1   \n[13] htmltools_0.5.9    scales_1.4.0       rmarkdown_2.30     rappdirs_0.3.4    \n[17] grid_4.5.2         evaluate_1.0.5     fastmap_1.2.0      yaml_2.3.12       \n[21] lifecycle_1.0.5    compiler_4.5.2     RColorBrewer_1.1-3 Rcpp_1.1.1        \n[25] rstudioapi_0.18.0  farver_2.1.2       lattice_0.22-9     digest_0.6.39     \n[29] R6_2.6.1           reticulate_1.46.0  Matrix_1.7-5       tools_4.5.2       \n[33] withr_3.0.2        gtable_0.3.6      \n\n\n\n\n\nsession_info.show()\n\n-----\nmatplotlib          3.10.8\npandas              3.0.2\nsession_info        1.0.0\n-----\nPython 3.12.13 | packaged by conda-forge | (main, Mar  5 2026, 16:36:12) [MSC v.1944 64 bit (AMD64)]\nWindows-11-10.0.22631-SP0\n-----\nSession information updated at 2026-05-07 21:06\n\n\n\n\n\n\n\n\n\nNote\n\n\n\nThe IDE RStudio offers an automatic formatter. Use Ctrl + Shift + A (Windows) or Cmd + Shift + A (Mac) to reformat a highlighted code block.\nYou can also use the styler package in R to automatically format your code according to a consistent style.",
+    "text": "Session\nAt the end of your report, always include a summary of your system and software versions. This is vital for troubleshooting if a package update or software update breaks your code in the future.\n\n\nsessionInfo()\n\nR version 4.5.2 (2025-10-31 ucrt)\nPlatform: x86_64-w64-mingw32/x64\nRunning under: Windows 11 x64 (build 22631)\n\nMatrix products: default\n  LAPACK version 3.12.1\n\nlocale:\n[1] LC_COLLATE=German_Switzerland.utf8  LC_CTYPE=German_Switzerland.utf8   \n[3] LC_MONETARY=German_Switzerland.utf8 LC_NUMERIC=C                       \n[5] LC_TIME=German_Switzerland.utf8    \n\ntime zone: Europe/Zurich\ntzcode source: internal\n\nattached base packages:\n[1] stats     graphics  grDevices datasets  utils     methods   base     \n\nother attached packages:\n[1] ggplot2_4.0.2 here_1.0.2   \n\nloaded via a namespace (and not attached):\n [1] vctrs_0.7.3        cli_3.6.6          knitr_1.50         rlang_1.2.0       \n [5] xfun_0.54          png_0.1-9          renv_1.2.0         S7_0.2.1          \n [9] jsonlite_2.0.0     labeling_0.4.3     glue_1.8.0         rprojroot_2.1.1   \n[13] htmltools_0.5.9    scales_1.4.0       rmarkdown_2.30     rappdirs_0.3.4    \n[17] grid_4.5.2         evaluate_1.0.5     fastmap_1.2.0      yaml_2.3.12       \n[21] lifecycle_1.0.5    compiler_4.5.2     RColorBrewer_1.1-3 Rcpp_1.1.1        \n[25] rstudioapi_0.18.0  farver_2.1.2       lattice_0.22-9     digest_0.6.39     \n[29] R6_2.6.1           reticulate_1.46.0  Matrix_1.7-5       tools_4.5.2       \n[33] withr_3.0.2        gtable_0.3.6      \n\n\n\n\n\nsession_info.show()\n\n-----\nmatplotlib          3.10.8\npandas              3.0.2\nsession_info        1.0.0\n-----\nPython 3.12.13 | packaged by conda-forge | (main, Mar  5 2026, 16:36:12) [MSC v.1944 64 bit (AMD64)]\nWindows-11-10.0.22631-SP0\n-----\nSession information updated at 2026-05-08 00:03\n\n\n\n\n\n\n\n\n\nNote\n\n\n\nThe IDE RStudio offers an automatic formatter. Use Ctrl + Shift + A (Windows) or Cmd + Shift + A (Mac) to reformat a highlighted code block.\nYou can also use the styler package in R to automatically format your code according to a consistent style.",
     "crumbs": [
       "3. Style"
     ]
@@ -301,7 +284,7 @@
     "href": "source/project_setup.html",
     "title": "Project setup",
     "section": "",
-    "text": "At the core of a robust, reproducible analysis is a project setup which is based on a script-based workflow. This ensures that every step of your data processing pipeline is documented and can be re-executed with a single command. A well-organized project structure is the prerequisite for this automation, making your research transparent, traceable, and easy to share. Here you can see an exemplary folder structure for a script-based workflow:\nParent_Folder/\n├── project.Rproj         # Project file\n├── scripts/              # All analysis scripts\n│   └── analyses.qmd      # Main script\n├── data/                 # All analysis inputs\n│   └── raw/              # Raw data\n│   └── processed/        # Processed data\n├── outputs/              # All analysis outputs\n│   ├── figs/             # Graphics and plots\n│   └── tables/           # Tables\n├── README.md             # Brief project explanation\n├── licence.txt           # License information\n└── references.bib        # BibTex file\n\n\nAn RStudio Project file (file extension .Rproj) serves as the “anchor” for your work. It defines the root directory of your project. With a project file opened in the IDE of RStudio it is possible and highly recommended to seamlessly integrate version control via Git and GitHub. This part will be covered later on in this guide.\n\n\n\nAs the name suggests, the script-based workflow is the heart of reproducibility. Scripts connect your raw data to your processed data and other output. By coding every single step, you eliminate the risk of “forgotten” manual edits and ensure that anyone, including your future self, can reproduce the results.\n\nIf you have installed python on your device, it is generally possible to run both Python and R code within the same script. For the IDE of RStudio, this can be achieved by using Quarto documents (file extension .qmd). Check out the official Quarto documentation for more information on how to set up and use Python within Quarto.\n\n\n\n\nRaw data is the “source of truth” and must remain immutable (taking into account privacy concerns and anonymisation). Once stored in data/raw/, these files should never be edited manually. This ensures the raw data as basement for all other parts so that these can potentially always be recovered.\n\n\n\nProcessed data is technically ‘disposable’ because it can always be re-generated by running your scripts again on the raw data as input. The resulting data files are stored in data/processed/. This strict separation ensures that your analysis always builds upon a clean foundation without ever risking accidental overwrites of your original observations.\n\n\n\nAll figures and tables generated by the scripts belong in the outputs/ folder. Like with the processed data files, they are created completely automatically and hence they are technically “disposable”. You can delete them at any time and recreate them perfectly by re-running your scripts on the raw data as input via a single command.\n\n\n\nThe README (file extension .md) is the manual for your project. It is the first file a collaborator or supervisor will read to understand and potentially contribute to the project. A good README should include:\n\nBrief Description: What is the study about?\nProject Structure: Where is the data and what is the order in which the scripts should be executed?\nInstructions for Reproduction: Which software is required and how can the scripts be executed to reproduce the results?\nLicensing: Should others cite your work, and is it allowed to reuse the code?\n\nNote that the licensing can be stated elsewhere and is not obligatory in a README.\n\n\n\nMake sure your work is credited accordingly so that third parties know what they are allowed to do with and what not. As stated earlier, the license can be stated within the README or in a separate file (e.g., license.txt). You can find typical licenses for research projects with assicated information here. If you are unsure what license to use, consult your supervisor.\n\n\n\nQuarto makes it possible to include citations automatically by using a BibTeX (file extension .bib) file.\nA standard entry within a BibTex-file looks like this:\n@book{wickham2023,\n  author = {Wickham, Hadley and Mineault, Patrick},\n  title = {R for Data Science},\n  year = {2023},\n  publisher = {O'Reilly Media},\n  edition = {2nd edition}\n}\nThe YAML header of the Quarto document should include the following lines to link the BibTeX file and the citation style file (e.g. APA 7 Style; can be found and downloaded from Zotero Style Repository):\nbibliography: references.bib\ncsl: apa.csl\nYou can cite the work by using the key defined in your .bib file, which is usually the surname of the first author followed by the year of publication. For example, if you want to cite the above book, you would use @wickham2023 in your text. But you can also cite the work parathetically by using [@wickham2023] in your text. The citation will then be automatically formatted according to the specified style (e.g., APA, MLA, Chicago) and included in the bibliography section of your document.\nTo include a bibliography section in your document, simply add the citation as described above and the Reference section will be automatically generated at the end of your document:\nWickham & Mineault (2023)",
+    "text": "At the core of a robust, reproducible analysis is a project setup which is based on a script-based workflow. This ensures that every step of your data processing pipeline is documented and can be re-executed with a single command. A well-organized project structure is the prerequisite for this automation, making your research transparent, traceable, and easy to share. Here you can see an exemplary folder structure for a script-based workflow:\nParent_Folder/\n├── project.Rproj         # Project  information\n├── code/                 # All code\n│   └── analyses.qmd      # Analysis script\n├── data/                 # All inputs\n│   ├── raw/              # Raw data\n│   └── processed/        # Processed data\n├── outputs/              # All non-data outputs\n│   ├── figs/             # Generated plots and graphs\n│   └── tables/           # Generated tables\n├── README.md             # Brief project explanation\n├── licence.txt           # License information\n└── references.bib        # Citation information\n\n\nAn RStudio Project file (file extension .Rproj) serves as the “anchor” for your work. It defines the root directory of your project. With a project file opened in the IDE of RStudio it is possible and highly recommended to seamlessly integrate version control via Git and GitHub. This part will be covered later on in this guide.\n\n\n\nAs the name suggests, the script is at the heart of reproducibility. Code-based scripts connect your raw data to your processed data and other output. By coding every single step, you eliminate the risk of “forgotten” manual edits and ensure that anyone, including your future self, can reproduce the results.\n\nIf you have installed python on your device, it is generally possible to run both Python and R code within the same script. For the IDE of RStudio, this can be achieved by using Quarto documents (file extension .qmd). Check out the official Quarto documentation for more information on how to set up and use Python within Quarto.\n\n\n\n\nRaw data is the “source of truth” and must remain immutable (taking into account privacy concerns and anonymisation). Once stored in data/raw/, these files should never be edited manually. This ensures the raw data as basement for all other parts so that these can potentially always be recovered.\n\n\n\nProcessed data is technically ‘disposable’ because it can always be re-generated by running your scripts again on the raw data as input. The resulting data files are stored in data/processed/. This strict separation ensures that your analysis always builds upon a clean foundation without ever risking accidental overwrites of your original observations.\n\n\n\nAll figures and tables generated by the scripts belong in the outputs/ folder. Like with the processed data files, they are created completely automatically and hence they are technically “disposable”. You can delete them at any time and recreate them perfectly by re-running your scripts on the raw data as input via a single command.\n\n\n\nThe README (file extension .md) is the manual for your project. It is the first file a collaborator or supervisor will read to understand and potentially contribute to the project. A good README should include:\n\nBrief Description: What is the study about?\nProject Structure: Where is the data and what is the order in which the scripts should be executed?\nInstructions for Reproduction: Which software is required and how can the scripts be executed to reproduce the results?\nLicensing: Should others cite your work, and is it allowed to reuse the code?\n\nNote that the licensing can be stated elsewhere and is not obligatory in a README.\n\n\n\nMake sure your work is credited accordingly so that third parties know what they are allowed to do with and what not. As stated earlier, the license can be stated within the README or in a separate file (e.g., license.txt). You can find typical licenses for research projects with assicated information here. If you are unsure what license to use, consult your supervisor.\n\n\n\nQuarto makes it possible to include citations automatically by using a BibTeX (file extension .bib) file.\nA standard entry within a BibTex-file looks like this:\n@book{wickham2023,\n  author = {Wickham, Hadley and Mineault, Patrick},\n  title = {R for Data Science},\n  year = {2023},\n  publisher = {O'Reilly Media},\n  edition = {2nd edition}\n}\nThe YAML header of the Quarto document should include the following lines to link the BibTeX file and the citation style file (e.g. APA 7 Style; can be found and downloaded from Zotero Style Repository):\nbibliography: references.bib\ncsl: apa.csl\nYou can cite the work by using the key defined in your .bib file, which is usually the surname of the first author followed by the year of publication. For example, if you want to cite the above book, you would use @wickham2023 in your text. But you can also cite the work parathetically by using [@wickham2023] in your text. The citation will then be automatically formatted according to the specified style (e.g., APA, MLA, Chicago) and included in the bibliography section of your document.\nTo include a bibliography section in your document, simply add the citation as described above and the Reference section will be automatically generated at the end of your document:\nWickham & Mineault (2023)",
     "crumbs": [
       "2. Project setup"
     ]
@@ -317,11 +300,11 @@
     ]
   },
   {
-    "objectID": "source/project_setup.html#scripts",
-    "href": "source/project_setup.html#scripts",
+    "objectID": "source/project_setup.html#code",
+    "href": "source/project_setup.html#code",
     "title": "Project setup",
     "section": "",
-    "text": "As the name suggests, the script-based workflow is the heart of reproducibility. Scripts connect your raw data to your processed data and other output. By coding every single step, you eliminate the risk of “forgotten” manual edits and ensure that anyone, including your future self, can reproduce the results.\n\nIf you have installed python on your device, it is generally possible to run both Python and R code within the same script. For the IDE of RStudio, this can be achieved by using Quarto documents (file extension .qmd). Check out the official Quarto documentation for more information on how to set up and use Python within Quarto.",
+    "text": "As the name suggests, the script is at the heart of reproducibility. Code-based scripts connect your raw data to your processed data and other output. By coding every single step, you eliminate the risk of “forgotten” manual edits and ensure that anyone, including your future self, can reproduce the results.\n\nIf you have installed python on your device, it is generally possible to run both Python and R code within the same script. For the IDE of RStudio, this can be achieved by using Quarto documents (file extension .qmd). Check out the official Quarto documentation for more information on how to set up and use Python within Quarto.",
     "crumbs": [
       "2. Project setup"
     ]

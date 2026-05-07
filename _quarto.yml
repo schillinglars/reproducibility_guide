@@ -1,9 +1,10 @@
 project:
   type: website
-  render:
-    - "*.qmd"
-    - "!scripts/data_simulation.qmd"
   output-dir: docs
+  resources:
+    - "code/analysis.qmd"
+  render:
+    - "source/*.qmd"
 
 lang: en
 
@@ -27,7 +28,7 @@ website:
       - text: "4. Reproducible workflow"
         href: source/reproducible_workflow.qmd
       - text: "5. Template"
-        href: scripts/analysis_template.qmd
+        href: source/analysis_template.qmd
 
   page-footer:
     left: "© 2026 Department Psychology of Digitalisation"

@@ -12,27 +12,27 @@ At the core of a robust, reproducible analysis is a project setup which is based
 
 ``` text
 Parent_Folder/
-├── project.Rproj         # Project file
-├── scripts/              # All analysis scripts
-│   └── analyses.qmd      # Main script
-├── data/                 # All analysis inputs
+├── project.Rproj         # Project  information
+├── code/                 # All code
+│   └── analyses.qmd      # Analysis script
+├── data/                 # All inputs
 │   ├── raw/              # Raw data
 │   └── processed/        # Processed data
-├── outputs/              # All analysis outputs
-│   ├── figs/             # Graphics and plots
-│   └── tables/           # Tables
+├── outputs/              # All non-data outputs
+│   ├── figs/             # Generated plots and graphs
+│   └── tables/           # Generated tables
 ├── README.md             # Brief project explanation
 ├── licence.txt           # License information
-└── references.bib        # BibTex file
+└── references.bib        # Citation information
 ```
 
 ## Project file
 
 An RStudio Project file (file extension *.Rproj*) serves as the "anchor" for your work. It defines the root directory of your project. With a project file opened in the IDE of **RStudio** it is possible and **highly recommended** to seamlessly integrate version control via Git and GitHub. This part will be covered later on in this guide.
 
-## Scripts
+## Code
 
-As the name suggests, the **script-based workflow** is the heart of reproducibility. Scripts connect your raw data to your processed data and other output. By coding every single step, you eliminate the risk of "forgotten" manual edits and ensure that anyone, including your future self, can reproduce the results.
+As the name suggests, the **script** is at the heart of reproducibility. Code-based scripts connect your raw data to your processed data and other output. By coding every single step, you eliminate the risk of "forgotten" manual edits and ensure that anyone, including your future self, can reproduce the results.
 
 ::: box-python
 If you have installed python on your device, it is generally possible to run both Python and R code within the same script. For the IDE of RStudio, this can be achieved by using Quarto documents (file extension *.qmd*). Check out the official [Quarto documentation](https://quarto.org/docs/computations/python.html) for more information on how to set up and use Python within Quarto.
