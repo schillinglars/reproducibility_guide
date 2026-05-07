@@ -1,5 +1,5 @@
 ---
-title: "Style"
+title: "Code style"
 ---
 
 {{< include ../_hardcoded_values.qmd >}}
@@ -30,10 +30,8 @@ import matplotlib.pyplot as plt
 ```
 
 ::: callout-note
-To better understand the source code behind the code style conventions it is recommended to click on the `</>Code`-button in the top right corner of this page and select "Show source code". This will show you the exact source code of this page.
+To better understand the source code behind the code style conventions it is recommended to click on the `</>Code`-button in the top right corner of this page. This will show you the exact source code of this page.
 :::
-
-# Code style
 
 A **codestyle** is a set of conventions and rules for building script and writing the code within it. Adhering to the following rules is partly mandatory for it to run successfully, to make your scripts easier to read for others (and for your "future self") and ensures that your analysis can be maintained over time.
 

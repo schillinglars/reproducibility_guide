@@ -23,7 +23,7 @@ website:
         href: source/general_principles.qmd
       - text: "2. Project setup"
         href: source/project_setup.qmd
-      - text: "3. Style"
+      - text: "3. Code style"
         href: source/codestyle.qmd
       - text: "4. Reproducible workflow"
         href: source/reproducible_workflow.qmd

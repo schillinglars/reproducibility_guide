@@ -24,7 +24,7 @@
     "href": "source/analysis_template.html",
     "title": "Analysis Template",
     "section": "",
-    "text": "General information\nWe provide a template .qmd-file with this guide. You can download it via the Download-button in the top right corner. This template in particular is designed to be a starting point for your analyses, following many of the best practices for reproducibility and clarity. Note that you may need to download and place additional content in the respective folder for this script to run (e.g. references.bib). You can download this .bib-file and all other parts of the project behind this guide from the GitHub repository.",
+    "text": "General information\nWe provide a template .qmd-file with this guide. You can download it via the &lt;/&gt; Download-button in the top right corner. This template in particular is designed to be a starting point for your own analyses script, following many of the best practices for code style. Note that you may need to download and place additional content in the respective folder for this script to run (e.g. references.bib). You can download this .bib-file and all other parts of the project behind this guide from the GitHub repository to further follow many of the best practices for reproducibility.",
     "crumbs": [
       "5. Template"
     ]
@@ -32,161 +32,161 @@
   {
     "objectID": "source/codestyle.html",
     "href": "source/codestyle.html",
-    "title": "Style",
+    "title": "Code style",
     "section": "",
-    "text": "Note\n\n\n\nTo better understand the source code behind the code style conventions it is recommended to click on the &lt;/&gt;Code-button in the top right corner of this page and select “Show source code”. This will show you the exact source code of this page.",
+    "text": "Note\n\n\n\nTo better understand the source code behind the code style conventions it is recommended to click on the &lt;/&gt;Code-button in the top right corner of this page. This will show you the exact source code of this page.\nA codestyle is a set of conventions and rules for building script and writing the code within it. Adhering to the following rules is partly mandatory for it to run successfully, to make your scripts easier to read for others (and for your “future self”) and ensures that your analysis can be maintained over time.",
     "crumbs": [
-      "3. Style"
+      "3. Code style"
     ]
   },
   {
     "objectID": "source/codestyle.html#meta-settings",
     "href": "source/codestyle.html#meta-settings",
-    "title": "Style",
+    "title": "Code style",
     "section": "Meta settings",
     "text": "Meta settings\nWithin a script, important meta-information can be provided using the YAML header. This includes not only the author, the date, or the integration of citations, but also formatting options for the rendered document. Here is examplary content of a YAML header:\n\n---\ntitle: \"Analysis of Psychological Well-being\"\nauthor: \"Your Name\"\ndate: last-modified\n\nbibliography: references.bib # Path to your bibliography file (see section \"Citation\" in the workflow chapter)\ncsl: apa.csl # Path to your citation style file (see section \"Citation\" in the workflow chapter)\n\nformat:\n  html:\n    toc: true              # Adds a Table of Contents\n    number-sections: true  # Numbers your headings\n    code-fold: true        # Allows readers to click to show/hide code\nexecute:\n  echo: true               # Shows the code in the output by default (global setting)\n  warning: false           # Hides R/Python warnings in the final report (global setting)\n---",
     "crumbs": [
-      "3. Style"
+      "3. Code style"
     ]
   },
   {
     "objectID": "source/codestyle.html#dependencies",
     "href": "source/codestyle.html#dependencies",
-    "title": "Style",
+    "title": "Code style",
     "section": "Dependencies",
     "text": "Dependencies\n\n\n\n\n\n\nNote\n\n\n\nMake sure to not include the installation of the package (e.g., install.packages(\"ggplot2\")) in the script, as this would repeatedly install the packages each time the script is rendered. Instead install packages if necessary directly via the Console.\n\n\nAlways load your libraries/packages at the very top of your script. This acts as a “list of ingredients” so others know what needs to be installed before running your code. Make sure you do not include any unnecessary packages, as this can lead to confusion and potential issues with package conflicts.\nThe loading of packages can take place within the script:\n\n\nlibrary(ggplot2)\n\n\nPython and R do not share the same packages. For data visualization, for example, a commonly used package in Python is matplotlib. To load it, you can use the following code:\n\n\nimport matplotlib.pyplot as plt",
     "crumbs": [
-      "3. Style"
+      "3. Code style"
     ]
   },
   {
     "objectID": "source/codestyle.html#chunk-options",
     "href": "source/codestyle.html#chunk-options",
-    "title": "Style",
+    "title": "Code style",
     "section": "Chunk options",
     "text": "Chunk options\nIn the IDE of RStudio, settings how chunks should behave globaly can be set within the YAML header. However, these settings can be overwritten for each chunk individually by adding the following options at the beginning of a chunk:\n#| eval: true\n#| echo: true\n#| output: true\n#| warning: true\n#| error: false\n#| include: false\nThe settings of a given chunk can also be set directly within the curly brackets at the beginning of a chunk, for example:\n{r, eval = TRUE, echo = TRUE, output = TRUE, warning = TRUE, error = FALSE, include = FALSE}\nHere are the explanations of the different options:\n\n\neval: true: The chunk is actually executed/calculated.\n\necho: true: The code of the chunk is visible in the rendered document.\n\noutput: true: The results of the chunk (e.g., a table) are shown.\n\nwarning: true: R warnings appear in the document.\n\nerror: false: If the code within the chunk has an error, rendering stops immediately (safe mode).\n\ninclude: false: The chunk, including code, output, and potential warnings or errors, is completely ignored.\n\nPlease note that this is not an extensive list of all available chunk options. For more, see for example the quarto documentation about code cells and knitr chunk options.",
     "crumbs": [
-      "3. Style"
+      "3. Code style"
     ]
   },
   {
     "objectID": "source/codestyle.html#hardcoded-values",
     "href": "source/codestyle.html#hardcoded-values",
-    "title": "Style",
+    "title": "Code style",
     "section": "Hardcoded values",
     "text": "Hardcoded values\nHardcoding refers to the practice of embedding specific data—like numbers, file paths, or fixed thresholds—directly into your analysis code instead of using a variable.\nAvoid hardcoded values within your code. Instead, define them as variables within a separate chunk at the beginning of your script. This makes it easier to update values in one place and ensures consistency throughout your analysis. To make these values stand out, use a specific naming convention (e.g., UPPERCASE_LETTERS with underscores).\n\n\n\nGOOD\nBAD\n\n\n\nThe value is defined at the beginning of the script in a separate chunk for hardcoded values…\n\nMAX_SCORE &lt;- 10\n\n… and later on refered to in the analysis.\n\nfiltered_seq &lt;- seq(1:MAX_SCORE)\n\n\n\nThe value is simply inserted in the middle of your script. If they change you have to search for all of these and change them manually.\n\nfiltered_seq &lt;- seq(1:10)",
     "crumbs": [
-      "3. Style"
+      "3. Code style"
     ]
   },
   {
     "objectID": "source/codestyle.html#visual-structure",
     "href": "source/codestyle.html#visual-structure",
-    "title": "Style",
+    "title": "Code style",
     "section": "Visual structure",
     "text": "Visual structure\nHeadings are the basis for the table of content (toc) in the rendered html-file when such is enabled in the YAML header. They also help to structure the code and make it easier to navigate for others (and for your “future self”). It is recommended to use at least three levels of headings (e.g., #, ##, and ###) to create a clear structure.",
     "crumbs": [
-      "3. Style"
+      "3. Code style"
     ]
   },
   {
     "objectID": "source/codestyle.html#portability",
     "href": "source/codestyle.html#portability",
-    "title": "Style",
+    "title": "Code style",
     "section": "Portability",
     "text": "Portability\nA reproducible script should work regardless of which computer it is running on. Absolute paths (e.g., C:/Users/Username/Documents/...) are the “enemy” of reproducibility because they only exist on your specific device.\nInstead use relative paths which point to a location relative to your project’s root folder.\n\n\n\nGOOD\nBAD\n\n\n\nRelative path, even better to use with the function here() from the same named package as this ensures the relative path starts at the project file:\n\nmy_data &lt;- read.csv(here(\"data\", \"raw\", \"my_data.csv\"))\n\n\n\nAbsolute path:\n\nmy_data &lt;- read.csv(\"C:/Users/Username/Documents/Project/data/raw/my_data.csv\")\n\n\n\n\n\n\nIn Python, you can achieve the same using the os module to construct relative paths:\nRelative path (note that in Python the relative path starts at the scripts directory)\n\npath = os.path.join(\"..\", \"data\", \"raw\", \"my_data.csv\")\nmy_data = pd.read_csv(path)",
     "crumbs": [
-      "3. Style"
+      "3. Code style"
     ]
   },
   {
     "objectID": "source/codestyle.html#naming-conventions",
     "href": "source/codestyle.html#naming-conventions",
-    "title": "Style",
+    "title": "Code style",
     "section": "Naming Conventions",
     "text": "Naming Conventions\nClear naming is the first step toward “self-documenting code.”\n\nVariables: Use nouns (e.g., participant_scores).\nFunctions: Use verbs (e.g., calculate_mean).\nStyle: Use snake_case (lowercase letters with underscores) for both R and Python.\n\nAvoid generic names like data1, temp, or foo. Instead, be descriptive: raw_survey_data is much more helpful than just df.",
     "crumbs": [
-      "3. Style"
+      "3. Code style"
     ]
   },
   {
     "objectID": "source/codestyle.html#comments",
     "href": "source/codestyle.html#comments",
-    "title": "Style",
+    "title": "Code style",
     "section": "Comments",
     "text": "Comments\nComments should explain why you are doing something, rather than describing the code itself. Anyone can look up what e.g. the mean() function does, but only you know why you chose to exclude certain outliers before calculating it.\n\n\n\nGOOD\nBAD\n\n\n\nExplaining the context of the code, not the logic itself:\n\n# Removing participants who failed the attention check\ncleaned_data &lt;- subset(my_data, attention_check == \"passed\")\n\n\n\nExplaining basic code logic:\n\n# Defining a variable and using the subset function\ncleaned_data &lt;- subset(my_data, attention_check == \"passed\") # Result is saved",
     "crumbs": [
-      "3. Style"
+      "3. Code style"
     ]
   },
   {
     "objectID": "source/codestyle.html#seed",
     "href": "source/codestyle.html#seed",
-    "title": "Style",
+    "title": "Code style",
     "section": "Seed",
     "text": "Seed\nIf your analysis involves random processes (like creating random groups or running a bootstrap), you must set a seed. This ensures that the “random” numbers are the same every time the script is run. this ensures reproducibility across devices and over time.\n\n\n\n[1]  3 10  2  8  6\n\n\n\n\n\n\n[1, 5, 9, 4, 3]",
     "crumbs": [
-      "3. Style"
+      "3. Code style"
     ]
   },
   {
     "objectID": "source/codestyle.html#functions",
     "href": "source/codestyle.html#functions",
-    "title": "Style",
+    "title": "Code style",
     "section": "Functions",
     "text": "Functions\nDon`t repeat yourself (DRY): If you find yourself writing the same code multiple times, it’s a sign that you should create a function. This reduces errors—if you need to change a parameter, you only have to change it in one place.\n\n\n\n[1] 32\n\n\n[1] 68\n\n\n[1] 98.6\n\n\n\n\n\n\n32.0\n\n\n68.0\n\n\n98.6",
     "crumbs": [
-      "3. Style"
+      "3. Code style"
     ]
   },
   {
     "objectID": "source/codestyle.html#parallelization",
     "href": "source/codestyle.html#parallelization",
-    "title": "Style",
+    "title": "Code style",
     "section": "Parallelization",
     "text": "Parallelization\nNormally, your code runs sequentially (one task after another). If you have a computer with multiple CPU cores, parallelization allows you to run multiple independent tasks at the same time, significantly reducing execution time for “embarrassingly parallel” tasks.\nYou can use it, for example, in R (Simulations) if you need to run a lot of independent iterations of the same model or in Python if you want to make many requests to APIs or networks in general.\nConsult your supervisor for more information on how to implement parallelization in your specific project, as it can be complex and may not be necessary for all analyses.",
     "crumbs": [
-      "3. Style"
+      "3. Code style"
     ]
   },
   {
     "objectID": "source/codestyle.html#plots-and-figures",
     "href": "source/codestyle.html#plots-and-figures",
-    "title": "Style",
+    "title": "Code style",
     "section": "Plots and figures",
     "text": "Plots and figures\nPlots and figures of your final thesis should never be edited manually but always within the script only. This ensures they are fully reproducible. You can save your plots and figures directly from your script using the ggsave() function in R or the savefig() function in Python.\n\n\n# Create a simple plot\nplot &lt;- ggplot(mtcars, aes(x = wt, y = mpg)) +\n  geom_point() +\n  theme_minimal()\n\n# Show plot\nplot\n\n\n\n\n\n\n\n\n\n\n# Create a simple plot\nplt.plot([1, 2, 3], [10, 20, 15], marker='o')\n\n# Show plot\nplt.show()",
     "crumbs": [
-      "3. Style"
+      "3. Code style"
     ]
   },
   {
     "objectID": "source/codestyle.html#equations",
     "href": "source/codestyle.html#equations",
-    "title": "Style",
+    "title": "Code style",
     "section": "Equations",
     "text": "Equations\nIf you want to write mathematical formulas or just simple equations in your report (e.g., to explain a statistical model), you can use LaTeX syntax directly within your Quarto document: $y = \\beta_0 + \\beta_1 x + \\epsilon$.\nFor standalone formulas on a new line, use double dollar signs:\n$$y = \\beta_0 + \\beta_1 x + \\epsilon$$\nWhen rendered, this will display the formula in a professional mathematical format like \\(y = \\beta_0 + \\beta_1 x + \\epsilon\\).",
     "crumbs": [
-      "3. Style"
+      "3. Code style"
     ]
   },
   {
     "objectID": "source/codestyle.html#in-line-code",
     "href": "source/codestyle.html#in-line-code",
-    "title": "Style",
+    "title": "Code style",
     "section": "In-line Code",
     "text": "In-line Code\nIn-line code allows you to include the results of code directly within your text. This is particularly useful for reporting specific values, such as means, standard deviations, or p-values, without having to create a separate code chunk for it. For R, you can use the text `r ` syntax to include in-line code.\nThis document was last rendered on the text r Sys.Date() will display as 2026-05-08.\n\nAs equivalent for python based in-line code you can simply use text `python `.\nThis document was last rendered on the `python date.today()` will display as python date.today()",
     "crumbs": [
-      "3. Style"
+      "3. Code style"
     ]
   },
   {
     "objectID": "source/codestyle.html#session",
     "href": "source/codestyle.html#session",
-    "title": "Style",
+    "title": "Code style",
     "section": "Session",
-    "text": "Session\nAt the end of your report, always include a summary of your system and software versions. This is vital for troubleshooting if a package update or software update breaks your code in the future.\n\n\nsessionInfo()\n\nR version 4.5.2 (2025-10-31 ucrt)\nPlatform: x86_64-w64-mingw32/x64\nRunning under: Windows 11 x64 (build 22631)\n\nMatrix products: default\n  LAPACK version 3.12.1\n\nlocale:\n[1] LC_COLLATE=German_Switzerland.utf8  LC_CTYPE=German_Switzerland.utf8   \n[3] LC_MONETARY=German_Switzerland.utf8 LC_NUMERIC=C                       \n[5] LC_TIME=German_Switzerland.utf8    \n\ntime zone: Europe/Zurich\ntzcode source: internal\n\nattached base packages:\n[1] stats     graphics  grDevices datasets  utils     methods   base     \n\nother attached packages:\n[1] ggplot2_4.0.2 here_1.0.2   \n\nloaded via a namespace (and not attached):\n [1] vctrs_0.7.3        cli_3.6.6          knitr_1.50         rlang_1.2.0       \n [5] xfun_0.54          png_0.1-9          renv_1.2.0         S7_0.2.1          \n [9] jsonlite_2.0.0     labeling_0.4.3     glue_1.8.0         rprojroot_2.1.1   \n[13] htmltools_0.5.9    scales_1.4.0       rmarkdown_2.30     rappdirs_0.3.4    \n[17] grid_4.5.2         evaluate_1.0.5     fastmap_1.2.0      yaml_2.3.12       \n[21] lifecycle_1.0.5    compiler_4.5.2     RColorBrewer_1.1-3 Rcpp_1.1.1        \n[25] rstudioapi_0.18.0  farver_2.1.2       lattice_0.22-9     digest_0.6.39     \n[29] R6_2.6.1           reticulate_1.46.0  Matrix_1.7-5       tools_4.5.2       \n[33] withr_3.0.2        gtable_0.3.6      \n\n\n\n\n\nsession_info.show()\n\n-----\nmatplotlib          3.10.8\npandas              3.0.2\nsession_info        1.0.0\n-----\nPython 3.12.13 | packaged by conda-forge | (main, Mar  5 2026, 16:36:12) [MSC v.1944 64 bit (AMD64)]\nWindows-11-10.0.22631-SP0\n-----\nSession information updated at 2026-05-08 00:10\n\n\n\n\n\n\n\n\n\nNote\n\n\n\nThe IDE RStudio offers an automatic formatter. Use Ctrl + Shift + A (Windows) or Cmd + Shift + A (Mac) to reformat a highlighted code block.\nYou can also use the styler package in R to automatically format your code according to a consistent style.",
+    "text": "Session\nAt the end of your report, always include a summary of your system and software versions. This is vital for troubleshooting if a package update or software update breaks your code in the future.\n\n\nsessionInfo()\n\nR version 4.5.2 (2025-10-31 ucrt)\nPlatform: x86_64-w64-mingw32/x64\nRunning under: Windows 11 x64 (build 22631)\n\nMatrix products: default\n  LAPACK version 3.12.1\n\nlocale:\n[1] LC_COLLATE=German_Switzerland.utf8  LC_CTYPE=German_Switzerland.utf8   \n[3] LC_MONETARY=German_Switzerland.utf8 LC_NUMERIC=C                       \n[5] LC_TIME=German_Switzerland.utf8    \n\ntime zone: Europe/Zurich\ntzcode source: internal\n\nattached base packages:\n[1] stats     graphics  grDevices datasets  utils     methods   base     \n\nother attached packages:\n[1] ggplot2_4.0.2 here_1.0.2   \n\nloaded via a namespace (and not attached):\n [1] vctrs_0.7.3        cli_3.6.6          knitr_1.50         rlang_1.2.0       \n [5] xfun_0.54          png_0.1-9          renv_1.2.0         S7_0.2.1          \n [9] jsonlite_2.0.0     labeling_0.4.3     glue_1.8.1         rprojroot_2.1.1   \n[13] htmltools_0.5.9    scales_1.4.0       rmarkdown_2.30     rappdirs_0.3.4    \n[17] grid_4.5.2         evaluate_1.0.5     fastmap_1.2.0      yaml_2.3.12       \n[21] lifecycle_1.0.5    compiler_4.5.2     RColorBrewer_1.1-3 Rcpp_1.1.1        \n[25] rstudioapi_0.18.0  farver_2.1.2       lattice_0.22-9     digest_0.6.39     \n[29] R6_2.6.1           reticulate_1.46.0  Matrix_1.7-5       tools_4.5.2       \n[33] withr_3.0.2        gtable_0.3.6      \n\n\n\n\n\nsession_info.show()\n\n-----\nmatplotlib          3.10.8\npandas              3.0.2\nsession_info        1.0.0\n-----\nPython 3.12.13 | packaged by conda-forge | (main, Mar  5 2026, 16:36:12) [MSC v.1944 64 bit (AMD64)]\nWindows-11-10.0.22631-SP0\n-----\nSession information updated at 2026-05-08 00:49\n\n\n\n\n\n\n\n\n\nNote\n\n\n\nThe IDE RStudio offers an automatic formatter. Use Ctrl + Shift + A (Windows) or Cmd + Shift + A (Mac) to reformat a highlighted code block.\nYou can also use the styler package in R to automatically format your code according to a consistent style.",
     "crumbs": [
-      "3. Style"
+      "3. Code style"
     ]
   },
   {
