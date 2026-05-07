@@ -2,6 +2,8 @@
 title: "Reproducibility Guide"
 subtitle: "General information"
 date: last-modified
+bibliography: source/references.bib
+csl: source/apa.csl
 ---
 
 {{< include _hardcoded_values.qmd >}}
@@ -18,6 +20,16 @@ For your orientation: The content of this guide is mostly written such that the 
 Content related in particular to Python will be placed in these information boxes.
 :::
 
+If you are not familiar with R, RStudio and Quarto you can check out one of the two guides of our department:
+
+- Introductory level (German only): [R you ready?](https://r-you-ready.github.io/Webseite_FS26_Seminar/) [@grinschgl2026]
+- Progressive level (English): [Reproducible Data Processing and Visualization](https://wrangling.tidyver.se/) [@hussey2026]
+
 This guide is hosted on GitHub and is open for contributions. If you have suggestions for improvement, please let us know by creating an issue on the [GitHub repository][repo-url] or by [contacting us directly][contact].
 
 The guide is inspired by the [Guide to Reproducible Code](https://bes-guide.github.io/reproducible-code/) from the British Ecological Society (BES).
+
+## References
+
+::: {#refs}
+:::
