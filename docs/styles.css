@@ -88,6 +88,24 @@ h2 {
   align-items: center;
 }
 
+/* --- Callout Customization (Important) --- */
+
+/* Der gesamte Inhalt der Box */
+.callout-important.callout {
+  font-size: 1.1em;
+}
+
+/* Speziell nur der Titel (Header) der Box */
+.callout-important .callout-header {
+  font-size: 1.1em;
+  font-family: 'News Cycle', sans-serif;
+}
+
+/* Der Textkörper innerhalb der Box */
+.callout-important .callout-body {
+  font-size: 1.1em;
+}
+
 /* --- R-specific styling --- */
 .box-r {
   background-color: var(--r-bg);

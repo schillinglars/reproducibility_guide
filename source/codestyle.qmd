@@ -1,8 +1,9 @@
 ---
-title: "Syntax"
+title: "Style"
 ---
 
 {{< include ../_hardcoded_values.qmd >}}
+
 
 ```{r}
 #| eval: true
@@ -23,13 +24,18 @@ suppressPackageStartupMessages(library(ggplot2))
 import os
 import pandas as pd
 import random
+from datetime import date
 import session_info
 import matplotlib.pyplot as plt
 ```
 
-# Codestyle
+::: callout-note
+To better understand the source code behind the code style conventions it is recommended to click on the `</>Code`-button in the top right corner of this page and select "Show source code". This will show you the exact source code of this page.
+:::
 
-A **codestyle** is a set of conventions and rules for building script and writing the code within it. Adhering to the following rules is partly mandatory for it to run successfully,to make your scripts easier to read for others (and for your "future self") and ensures that your analysis can be maintained over time.
+# Code style
+
+A **codestyle** is a set of conventions and rules for building script and writing the code within it. Adhering to the following rules is partly mandatory for it to run successfully, to make your scripts easier to read for others (and for your "future self") and ensures that your analysis can be maintained over time.
 
 ## Meta settings
 
@@ -60,7 +66,13 @@ execute:
 
 ## Dependencies
 
-Always load your libraries/packages at the very top of your script. This acts as a "list of ingredients" so others know what needs to be installed before running your code. Make sure you do not include any unnecessary packages, as this can lead to confusion and potential issues with package conflicts. Please also make sure to not include the installation of the package (e.g., `install.packages("ggplot2")`) in the script, as this can lead to issues when running the script on different devices. Instead install necessary packages directly in the Console. The loading of packages can take place within the script:
+::: callout-note
+Make sure to not include the installation of the package (e.g., `install.packages("ggplot2")`) in the script, as this would repeatedly install the packages each time the script is rendered. Instead install packages if necessary directly via the Console.
+:::
+
+Always load your libraries/packages at the very top of your script. This acts as a "list of ingredients" so others know what needs to be installed before running your code. Make sure you do not include any unnecessary packages, as this can lead to confusion and potential issues with package conflicts.
+
+The loading of packages can take place within the script:
 
 ::: box-r
 ```{r}
@@ -71,7 +83,7 @@ library(ggplot2)
 ```
 :::
 
-Python and R do not share the same packages. For data visualization, a commonly used package in Python is `matplotlib`. To load it, you can use the following code:
+Python and R do not share the same packages. For data visualization, for example, a commonly used package in Python is `matplotlib`. To load it, you can use the following code:
 
 ::: box-python
 ```{python}
@@ -91,8 +103,8 @@ In the IDE of RStudio, settings how chunks should behave globaly can be set with
 #| echo: true
 #| output: true
 #| warning: true
-#| error: true
-#| include: true
+#| error: false
+#| include: false
 ```
 
 The settings of a given chunk can also be set directly within the curly brackets at the beginning of a chunk, for example:
@@ -103,18 +115,56 @@ The settings of a given chunk can also be set directly within the curly brackets
 
 Here are the explanations of the different options:
 
-- `**eval: true**`: The chunk is actually executed/calculated.
-- `**echo: true**`: The code of the chunk is visible in the rendered document.
-- `**output: true**`: The results of the chunk (e.g., a table) are shown.
-- `**warning: true**`: R warnings appear in the document.
-- `**error: false**`: If the code within the chunk has an error, rendering stops immediately (safe mode).
-- `**include: false**`: The chunk, including code, output, and potential warnings or errors, is completely ignored.
+- **`eval: true`**: The chunk is actually executed/calculated.
+- **`echo: true`**: The code of the chunk is visible in the rendered document.
+- **`output: true`**: The results of the chunk (e.g., a table) are shown.
+- **`warning: true`**: R warnings appear in the document.
+- **`error: false`**: If the code within the chunk has an error, rendering stops immediately (safe mode).
+- **`include: false`**: The chunk, including code, output, and potential warnings or errors, is completely ignored.
 
 Please note that this is not an extensive list of all available chunk options. For more, see for example the [quarto documentation about code cells and knitr chunk options](https://quarto.org/docs/reference/cells/cells-knitr.html).
 
 ## Hardcoded values
 
-Avoid hardcoded values within your code. Instead, define them as variables within a single chunk at the beginning of your script. This makes it easier to update values in one place and ensures consistency throughout your code. To make it easier to identify hardcoded values in the script, you can use a specific naming convention (e.g., all uppercase letters with underscores) for these variables.
+Hardcoding refers to the practice of embedding specific data—like numbers, file paths, or fixed thresholds—directly into your analysis code instead of using a variable.
+
+Avoid hardcoded values within your code. Instead, define them as variables within a separate chunk at the beginning of your script. This makes it easier to update values in one place and ensures consistency throughout your analysis. To make these values stand out, use a specific naming convention (e.g., UPPERCASE_LETTERS with underscores).
+
+::: box-r
+::: {.panel-tabset}
+
+## GOOD
+
+The value is defined at the beginning of the script in a separate chunk for hardcoded values...
+
+```{r}
+#| eval: true
+#| echo: true
+
+MAX_SCORE <- 10
+```
+
+
+... and later on refered to in the analysis.
+```{r}
+#| eval: true
+#| echo: true
+
+filtered_seq <- seq(1:MAX_SCORE)
+```
+
+## BAD
+
+The value is simply inserted in the middle of your script. If they change you have to search for all of these and change them manually.
+
+```{r}
+#| eval: true
+#| echo: true
+
+filtered_seq <- seq(1:10)
+```
+:::
+:::
 
 ## Visual structure
 
@@ -124,34 +174,45 @@ Headings are the basis for the table of content (toc) in the rendered html-file 
 
 A reproducible script should work regardless of which computer it is running on. Absolute paths (e.g., `C:/Users/Username/Documents/...`) are the "enemy" of reproducibility because they only exist on your specific device.
 
-Relative paths point to a location relative to your project's root folder.
+Instead use relative paths which point to a location relative to your project's root folder.
 
 ::: box-r
+::: {.panel-tabset}
+
+## GOOD
+
+Relative path, even better to use with the function `here()` from the same named package as this ensures the relative path starts at the project file:
+
+```{r}
+#| eval: true
+#| echo: true
+
+my_data <- read.csv(here("data", "raw", "my_data.csv"))
+```
+
+## BAD
+
+Absolute path:
+
 ```{r}
 #| eval: false
 #| echo: true
 
-# Bad: Absolute path
 my_data <- read.csv("C:/Users/Username/Documents/Project/data/raw/my_data.csv")
 ```
-
-```{r}
-#| eval: true
-#| echo: true
-
-# Good: Relative path using 'here'
-my_data <- read.csv(here("data", "raw", "my_data.csv"))
-```
+:::
 :::
 
-In Python, you can achieve the same using the `os` module to construct relative paths:
 
 ::: box-python
+In Python, you can achieve the same using the `os` module to construct relative paths:
+
+Relative path (note that in Python the relative path starts at the scripts directory)
+
 ```{python}
 #| eval: true
 #| echo: true
 
-# Good: Relative path using 'os' (Python`s root is the respective file directory, not the project directory)
 path = os.path.join("..", "data", "raw", "my_data.csv")
 my_data = pd.read_csv(path)
 ```
@@ -174,23 +235,32 @@ Avoid generic names like `data1`, `temp`, or `foo`. Instead, be descriptive: `ra
 Comments should explain why you are doing something, rather than describing the code itself. Anyone can look up what e.g. the `mean()` function does, but only you know why you chose to exclude certain outliers before calculating it.
 
 ::: box-r
-```{r}
-#| eval: false
-#| echo: true
+::: {.panel-tabset}
 
-# OVERLOAD: Describing the syntax (Avoid this)
-# Defining a variable and using the subset function
-cleaned_data <- subset(my_data, attention_check == "passed") # Result is saved
-```
+## GOOD
+
+Explaining the context of the code, not the logic itself:
 
 ```{r}
 #| eval: false
 #| echo: true
 
-# GOOD: Explaining the context
 # Removing participants who failed the attention check
 cleaned_data <- subset(my_data, attention_check == "passed")
 ```
+
+## BAD
+
+Explaining basic code logic:
+
+```{r}
+#| eval: false
+#| echo: true
+
+# Defining a variable and using the subset function
+cleaned_data <- subset(my_data, attention_check == "passed") # Result is saved
+```
+:::
 :::
 
 ## Seed
@@ -200,7 +270,7 @@ If your analysis involves random processes (like creating random groups or runni
 ::: box-r
 ```{r}
 #| eval: true
-#| echo: true
+#| echo: false
 
 set.seed(123)
 
@@ -211,7 +281,7 @@ sample(1:10, 5)
 ::: box-python
 ```{python}
 #| eval: true
-#| echo: true
+#| echo: false
 
 random.seed(123)
 
@@ -226,7 +296,7 @@ random.sample(range(1, 10), 5)
 ::: box-r
 ```{r}
 #| eval: true
-#| echo: true
+#| echo: false
 
 #' Convert Celsius to Fahrenheit
 #' 
@@ -252,7 +322,7 @@ convert_celsius_to_fahrenheit(37)  # Body temperature
 ::: box-python
 ```{python}
 #| eval: true
-#| echo: true
+#| echo: false
 
 # Define the conversion function
 def convert_celsius_to_fahrenheit(celsius):
@@ -290,7 +360,7 @@ Plots and figures of your final thesis should never be edited manually but alway
 ```{r}
 #| eval: true
 #| echo: true
-#| 
+
 # Create a simple plot
 plot <- ggplot(mtcars, aes(x = wt, y = mpg)) +
   geom_point() +
@@ -298,6 +368,11 @@ plot <- ggplot(mtcars, aes(x = wt, y = mpg)) +
 
 # Show plot
 plot
+```
+
+```{r}
+#| eval: true
+#| echo: false
 
 # Save the plot
 ggsave(here("outputs", "figs", "mtcars_plot.png"), plot = plot, width = 6, height = 4)
@@ -308,12 +383,17 @@ ggsave(here("outputs", "figs", "mtcars_plot.png"), plot = plot, width = 6, heigh
 ```{python}
 #| eval: true
 #| echo: true
-#| 
+ 
 # Create a simple plot
 plt.plot([1, 2, 3], [10, 20, 15], marker='o')
 
 # Show plot
 plt.show()
+```
+
+```{python}
+#| eval: true
+#| echo: false
 
 # Save the plot (Python`s root is in the respective file directory, not the project directory)
 plt.savefig(os.path.join("..", "outputs", "figs", "own_example_plot.png"))
@@ -332,12 +412,14 @@ When rendered, this will display the formula in a professional mathematical form
 
 ## In-line Code
 
-In-line code allows you to include the results of code directly within your text. This is particularly useful for reporting specific values, such as means, standard deviations, or p-values, without having to create a separate code chunk for it. In R, you can use the `\r ` syntax to include in-line code.
+In-line code allows you to include the results of code directly within your text. This is particularly useful for reporting specific values, such as means, standard deviations, or p-values, without having to create a separate code chunk for it. For R, you can use the ```text `r ` ``` syntax to include in-line code.
 
-This document was last rendered on the `\r Sys.Date()` will display without the `\` as `r Sys.Date()`.
+This document was last rendered on the ```text r Sys.Date()``` will display as `r Sys.Date()`.
 
-::: callout-note
-To better understand the source code behind the in-line code and other style related code syntax it is recommended to click on the `</>Code`-button in the top right corner of this page and select "Show source code". This will show you the source code of the respective page.
+::: box-python
+As equivalent for python based in-line code you can simply use ```text `python ` ```.
+
+This document was last rendered on the ``` `python date.today()` ``` will display as `python date.today()`
 :::
 
 ## Session

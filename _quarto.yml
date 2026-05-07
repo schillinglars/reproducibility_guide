@@ -16,16 +16,16 @@ website:
     style: "docked"
     search: true
     contents:
-      - text: "0. Welcome"
+      - text: "Welcome"
         href: index.qmd
-      - text: "1. FAIR Principles"
-        href: source/fair.qmd
-      - text: "2. Version control"
-        href: source/version_control.qmd
-      - text: "3. Workflow"
-        href: source/workflow.qmd
-      - text: "4. Syntax"
-        href: source/syntax.qmd
+      - text: "1. General principles"
+        href: source/general_principles.qmd
+      - text: "2. Project setup"
+        href: source/project_setup.qmd
+      - text: "3. Style"
+        href: source/codestyle.qmd
+      - text: "4. Reproducible workflow"
+        href: source/reproducible_workflow.qmd
       - text: "5. Template"
         href: scripts/analysis_template.qmd
 
@@ -46,7 +46,7 @@ format:
     email-obfuscation: javascript # Hide clear mail addresses from bots
     toc: true
     css: styles.css # Custom CSS for styling
-    code-fold: true # Hide code by default
+    code-fold: false # Hide code by default
     code-tools: true # Add the "Code" menu at the top right
     code-copy: true # Allow easy copying of snippets
     code-link: true # Hyperlinks to functions documentations

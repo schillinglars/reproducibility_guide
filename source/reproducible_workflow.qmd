@@ -1,12 +1,12 @@
 ---
-title: "Version control"
+title: "Repropducible workflow"
 ---
 
 {{< include ../_hardcoded_values.qmd >}}
 
 # Fundamentals
 
-**Version control** is the systematic process of documenting every change made to your scripts, data, or outputs. It allows you to trace **when**, **why**, and **by whom** specific changes were made. Most importantly, it acts as a safety net, allowing you to restore previous versions of your work if something goes wrong.
+To achieve a maximal reproducible workflow one can use **Version control**. Version control is the systematic process of documenting every change made to your scripts, data, or outputs. It allows you to trace **when**, **why**, and **by whom** specific changes were made. Most importantly, it acts as a safety net, allowing you to restore previous versions of your work if something goes wrong.
 
 # GitHub
 

@@ -1,13 +1,12 @@
 ---
 title: "Analysis Template"
-author: "Your Name"
+author: "Your name"
 date: last-modified
 bibliography: ../source/references.bib
 csl: ../source/apa.csl
 format:
   html:
     toc: true
-    number-sections: true
     code-fold: true
 execute:
   echo: true
@@ -16,7 +15,7 @@ execute:
 
 {{< include ../_hardcoded_values.qmd >}}
 
-Download this template from the [GitHub repository][repo-url] or via the `</>Code`-button in the top right corner. This template is designed to be a starting point for your analyses, following many of the best practices for reproducibility and clarity. Note that you may need to download and place additional content in the respective folder for this script to run (e.g. `references.bib`).
+Download this template from the \[GitHub repository\]\[repo-url\] or via the `</>Code`-button in the top right corner. This template is designed to be a starting point for your analyses, following many of the best practices for reproducibility and clarity. Note that you may need to download and place additional content in the respective folder for this script to run (e.g. `references.bib`).
 
 # Dependencies
 
@@ -92,7 +91,7 @@ df = pd.read_csv(path)
 
 ## Processing
 
-We follow naming conventions (snake_case) and explain *why* we filter data.
+We follow naming conventions (snake_case and UPPER_CASE for hardcoded values) and explain *why* and not how we filter data.
 
 ::: box-r
 ```{r}
@@ -112,7 +111,7 @@ df_cleaned = df[df['reaction_time'] < ATTENTION_THRESHOLD].copy()
 ```
 :::
 
-We can also save the cleaned data for future use.
+We can also save the cleaned data for future use in the `data/processed` folder.
 
 ::: box-r
 ```{r}
@@ -172,6 +171,10 @@ p <- ggplot(cleaned_data, aes(x = condition, y = reaction_time)) +
 
 # Display
 p
+```
+
+```{r}
+#| label: save-plot-r
 
 # Save using 'here' to target the project root
 ggsave(here("outputs", "figs", "analysis_plot_r.png"), plot = p, width = 6, height = 4)
@@ -191,6 +194,11 @@ plt.ylabel('Reaction Time')
 
 # Display
 plt.show()
+```
+
+```{python}
+#| label: save-plot-python
+#| echo: false
 
 # Save using os.path to target the project root
 save_path = os.path.join("..", "outputs", "figs", "analysis_plot_py.png")
@@ -207,6 +215,7 @@ To ensure results remain the same across devices, we set a seed.
 ::: box-r
 ```{r}
 #| label: seed-r
+#| echo: false
 
 set.seed(123)
 sample_values <- sample(1:100, 3)
@@ -217,6 +226,7 @@ sample_values
 ::: box-python
 ```{python}
 #| label: seed-python
+#| echo: false
 
 random.seed(123)
 sample_values = random.sample(range(1, 101), 3)
@@ -244,6 +254,7 @@ This section is vital for long-term maintenance and troubleshooting.
 ::: box-r
 ```{r}
 #| label: info-r
+#| echo: false
 
 sessionInfo()
 ```
@@ -252,6 +263,7 @@ sessionInfo()
 ::: box-python
 ```{python}
 #| label: info-python
+#| echo: false
 
 session_info.show()
 ```
