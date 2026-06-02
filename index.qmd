@@ -23,8 +23,3 @@ Content related in particular to Python will be placed in these information boxe
 This guide is hosted on GitHub and is open for contributions. If you have suggestions for improvement, please let us know by creating an issue on the [GitHub repository][repo-url] or by [contacting us directly][contact].
 
 The guide is inspired by the [Guide to Reproducible Code](https://bes-guide.github.io/reproducible-code/) from the British Ecological Society (BES).
-
-## References
-
-::: {#refs}
-:::
