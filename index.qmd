@@ -14,7 +14,7 @@ This is the landing page of the reproducibility guide of the Department *Psychol
 Whatever the content of this guide, please note that any guidelines from your supervisor are always superior to the guidelines provided here. This guide is intended to be a helpful resource, but it cannot replace the specific requirements and expectations of your supervisor. Always prioritize the instructions and feedback from your supervisor when working on your thesis.
 :::
 
-For your orientation: The content of this guide is mostly written such that the guidelines can be followed independently for any programming language but for Quarto used within the IDE of RStudio. The examples provided focus on the programming language of R as this is the most commonly used one for data analysis in psychology. If a particular guideline applies differently to the programming language of Python, this will be marked explicitly in the text via the following information box:
+For your orientation: The content of this guide is mostly written such that the guidelines can be followed independently for any programming language. However the guide focuses on the IDE of RStudio and Quarto in particular. The examples provided focus on the programming language of R as this is the most commonly used one for data analysis in psychology. If a particular guideline applies differently to the programming language of Python, this will be marked explicitly in the text via the following information box:
 
 ::: box-python
 Content related in particular to Python will be placed in these information boxes.

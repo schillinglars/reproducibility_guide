@@ -263,10 +263,12 @@ If your analysis involves random processes (like creating random groups or runni
 ::: box-r
 ```{r}
 #| eval: true
-#| echo: false
+#| echo: true
 
+# Setting a seed
 set.seed(123)
 
+# Sampling
 sample(1:10, 5)
 ```
 :::
@@ -274,10 +276,12 @@ sample(1:10, 5)
 ::: box-python
 ```{python}
 #| eval: true
-#| echo: false
+#| echo: true
 
+# Setting a seed
 random.seed(123)
 
+# Sampling
 random.sample(range(1, 10), 5)
 ```
 :::
@@ -289,7 +293,7 @@ random.sample(range(1, 10), 5)
 ::: box-r
 ```{r}
 #| eval: true
-#| echo: false
+#| echo: true
 
 #' Convert Celsius to Fahrenheit
 #' 
@@ -315,7 +319,7 @@ convert_celsius_to_fahrenheit(37)  # Body temperature
 ::: box-python
 ```{python}
 #| eval: true
-#| echo: false
+#| echo: true
 
 # Define the conversion function
 def convert_celsius_to_fahrenheit(celsius):
@@ -343,7 +347,7 @@ Normally, your code runs **sequentially** (one task after another). If you have 
 
 You can use it, for example, in R (Simulations) if you need to run a lot of independent iterations of the same model or in Python if you want to make many requests to APIs or networks in general.
 
-Consult your supervisor for more information on how to implement parallelization in your specific project, as it can be complex and may not be necessary for all analyses.
+Consult your supervisor for more information on how to implement parallelization in your specific project, as it can be complex and may only be necessary for analyses which otherwise require a long runtime.
 
 ## Plots and figures
 
@@ -376,6 +380,7 @@ ggsave(here("outputs", "figs", "mtcars_plot.png"), plot = plot, width = 6, heigh
 ```{python}
 #| eval: true
 #| echo: true
+#| fig-show: hold
  
 # Create a simple plot
 plt.plot([1, 2, 3], [10, 20, 15], marker='o')
@@ -395,7 +400,7 @@ plt.savefig(os.path.join("..", "outputs", "figs", "own_example_plot.png"))
 
 ## Equations
 
-If you want to write mathematical formulas or just simple equations in your report (e.g., to explain a statistical model), you can use LaTeX syntax directly within your Quarto document: `$y = \beta_0 + \beta_1 x + \epsilon$.`
+If you want to write mathematical formulas or just simple equations in your report (e.g., to explain a statistical model), you can use LaTeX syntax directly within your Quarto document: `$y = \beta_0 + \beta_1 x + \epsilon$`.
 
 For standalone formulas on a new line, use double dollar signs:
 
@@ -403,16 +408,28 @@ For standalone formulas on a new line, use double dollar signs:
 
 When rendered, this will display the formula in a professional mathematical format like $y = \beta_0 + \beta_1 x + \epsilon$.
 
+LaTeX math syntax follows a simple rule: normal characters (like `x`, `y`, `a`, `b`) are typed as they are, while special mathematical symbols or formatting structures always start with a backslash (`\`) or use curly brackets `{}` to group elements.
+
+For example:
+
+-   **Greek letters**: `\alpha` becomes $\alpha$, `\beta` becomes $\beta$ 
+
+-   **Subscripts**: `x_i` becomes $x_i$
+
+-   **Powers**: `R^2` becomes $R^2$
+
+-   **Fractions**: `\frac{a}{b}` becomes $\frac{a}{b}$
+
+Since the list of mathematical symbols is vast, you should never try to memorize them. For the most comprehensive, easy-to-use, and visual overview of how to write any formula you need, bookmark the official [*Overleaf Mathematical Expressions Guide*](https://www.overleaf.com/learn/latex/Mathematical_expressions).
+
 ## In-line Code
 
-In-line code allows you to include the results of code directly within your text. This is particularly useful for reporting specific values, such as means, standard deviations, or p-values, without having to create a separate code chunk for it. For R, you can use the `` text `r ` `` syntax to include in-line code.
+In-line code allows you to include the results of code directly within your text. This is particularly useful for reporting specific values, such as means, standard deviations, or p-values, without having to create a separate code chunk for it. For R, you can use the `r ` syntax to include in-line code.
 
-This document was last rendered on the `text r Sys.Date()` will display as `r Sys.Date()`.
+This document was last rendered on the `r Sys.Date()`.
 
 ::: box-python
-As equivalent for python based in-line code you can simply use `` text `python ` ``.
-
-This document was last rendered on the `` `python date.today()` `` will display as `python date.today()`
+In principle Python also allows for in-line code. For more information check out the official [Quarto documentation about in-line code](https://quarto.org/docs/computations/inline-code.html).
 :::
 
 ## Session

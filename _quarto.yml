@@ -21,8 +21,8 @@ website:
     contents:
       - text: "Welcome"
         href: index.qmd
-      - text: "1. General principles"
-        href: source/general_principles.qmd
+      - text: "1. FAIR principles"
+        href: source/fair_principles.qmd
       - text: "2. RStudio and Quarto"
         href: source/ide.qmd
       - text: "3. Project setup"

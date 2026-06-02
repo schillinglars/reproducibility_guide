@@ -8,7 +8,13 @@ csl: apa.csl
 
 ## Fundamentals
 
-At the core of a robust, reproducible analysis is a project setup which is based on a **script-based** workflow. This ensures that every step of your data processing pipeline is documented and can be re-executed with a single command. A well-organized project structure is the prerequisite for this automation, making your research transparent, traceable, and easy to share. Here you can see an exemplary folder structure for a script-based workflow:
+At the core of a robust, reproducible analysis is a project setup which is based on a **script-based** workflow. This ensures that every step of your data processing pipeline is documented and can be re-executed with a single command. A well-organized project structure is the prerequisite for this automation, making your research transparent, traceable, and easy to share.
+
+::: callout-note
+To see a real-life example of a script based workflow check out the repository of this website \[here\]\[repo-url\] and additionally the code of each page via the `</>Code`-button in the top right corner.
+:::
+
+Here you can see an exemplary folder structure for a script-based workflow:
 
 ``` text
 Parent_Folder/
@@ -27,6 +33,10 @@ Parent_Folder/
 └── references.bib        # Citation information
 ```
 
+::: callout-note
+The project setup described here is a simplified version of the [psych-DS](https://psych-ds.github.io/) standard. For more detailed information, feel free to explore their official documentation. Ian Hussey from our lab has developed the R package [`psychdsish`](https://github.com/ianhussey/psychdsish), which can be used to generate a structure that adheres to the full psych-DS specifications or to validate an existing project against it.
+:::
+
 ### Project file
 
 An RStudio Project file (file extension *.Rproj*), which we had created on the previous page, serves as the "anchor" for your work. It defines the root directory of your project. With a project file opened in the IDE of **RStudio** it is possible and **highly recommended** to seamlessly integrate version control via Git and GitHub, and to set relative paths. These two topics will be covered later on in this guide.
@@ -36,7 +46,7 @@ An RStudio Project file (file extension *.Rproj*), which we had created on the p
 The folder for `code` contains all **scripts**, like the one we created on the previous page, which are at the heart of reproducibility. These connect your raw data to your processed data and other output. By coding every single step, you eliminate the risk of "forgotten" manual edits and ensure that anyone, including your future self, can reproduce the results. The basic script is always the Quarto file and the output of a rendered Quarto file is typically the final report (e.g., in HTML).
 
 ::: callout-note
-If you are not familiar with Quarto or the IDE of RStudio in general yet, on the following page you can find a brief introduction on how to use it within the scope of this guide.
+If you are not familiar with Quarto or the IDE of RStudio in general yet, on the previous page you can find a brief introduction on how to set it up for the first time within the scope of this guide.
 :::
 
 ::: box-python
@@ -69,11 +79,15 @@ Note that the licensing can be stated elsewhere and is not obligatory in a READM
 
 ### License
 
-Make sure your work is credited accordingly so that third parties know what they are allowed to do with and what not. As stated earlier, the license can be stated within the README or in a separate file (e.g., *license.txt*). You can find typical licenses for research projects with assicated information [here](https://help.osf.io/article/148-licensing). If you are unsure what license to use, consult your supervisor.
+Make sure your work is credited accordingly so that third parties know what they are allowed to do with and what not. As stated earlier, the license can be stated within the README or in a separate file (e.g., *license.txt*). On the [OSF Support for licensing](https://help.osf.io/article/148-licensing) you can find typical licenses for research projects with associated information. If you are unsure what license to use, check out [Creative Commons](https://creativecommons.org/choose/) or consult your supervisor.
 
 ### Citation
 
 Quarto makes it possible to include citations automatically by using a BibTeX (file extension *.bib*) file.
+
+You can automatically generate a BibTex-file from a reference manager like **Zotero**, which is a free, open-source tool widely used in social sciences and can be downloaded from <https://www.zotero.org/>.
+
+By using Zotero alongside the **Better BibTeX** extension, you can export your library directly into your RStudio project folder as a `references.bib` file. If you enable the synchronization option during export, Zotero will automatically update this file whenever you add new sources to your library. This ensures your citation keys are always up to date in Quarto without any manual copy-pasting.
 
 A standard entry within a BibTex-file looks like this:
 
@@ -89,11 +103,12 @@ A standard entry within a BibTex-file looks like this:
 
 The YAML header of the Quarto document should include the following lines to link the BibTeX file and the citation style file (e.g. APA 7 Style; can be found and downloaded from [Zotero Style Repository](https://www.zotero.org/styles)):
 
+```text
 `bibliography: references.bib`
-
 `csl: apa.csl`
+```
 
-You can cite the work by using the key defined in your `.bib` file, which is usually the surname of the first author followed by the year of publication. For example, if you want to cite the above book, you would use `@wickham2023` in your text. But you can also cite the work parathetically by using `[@wickham2023]` in your text. The citation will then be automatically formatted according to the specified style (e.g., APA, MLA, Chicago) and included in the bibliography section of your document.
+You can cite the work by using the key defined in your `.bib` file, which is usually the surname of the first author followed by the year of publication. For example, if you want to cite the above book, you would use `@wickham2023` in your text. But you can also cite the work parathetically by using `[@wickham2023]` in your text. The citation will then be automatically formatted according to the specified style (e.g., APA) and included in the bibliography section of your document.
 
 To include a bibliography section in your document, simply add the citation as described above and the Reference section will be automatically generated at the end of your document:
 
@@ -102,12 +117,4 @@ To include a bibliography section in your document, simply add the citation as d
 ### References
 
 ::: {#refs}
-:::
-
-::: callout-note
-To see a real-life example of a script based workflow check out the repository of this website \[here\]\[repo-url\] and additionally the code of each page via the `</>Code`-button in the top right corner.
-:::
-
-::: callout-note
-The project setup described here is a simplified version of the [psych-DS](https://psych-ds.github.io/) standard. For more detailed information, feel free to explore their official documentation. Ian Hussey from our lab has developed the R package [`psychdsish`](https://github.com/ianhussey/psychdsish), which can be used to generate a structure that adheres to the full psych-DS specifications or to validate an existing project.
 :::

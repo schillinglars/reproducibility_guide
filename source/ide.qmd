@@ -1,8 +1,8 @@
 ---
-title: "Integrated Development Environment (IDE)"
+title: "RStudio and Quarto"
 ---
 
-This page provides a brief introduction to the RStudio IDE. If you are already familiar with RStudio and Quarto, you can safely skip this page. More details about the specific code style will be provided on the following pages.
+This page provides a brief introduction to the RStudio Integrated Development Environment (IDE). If you are already familiar with RStudio and Quarto, you can safely skip this page. More details about the specific code style will be provided on the following pages.
 
 ## General
 
@@ -20,9 +20,9 @@ Python can be downloaded from <https://www.python.org/downloads/>. Note that for
 
 To follow the suggested project setup, which will be introduced on the next page, and to keep your research project reproducible, you should always start by creating an **RStudio Project** (`.Rproj`). Whenever you work on a Quarto document, this document should be opened from within the project file. To create a new project, follow these steps:
 
-1.  Go to `File` \> `New Project...`
+1.  Go to `File` > `New Project...`
 2.  Choose `New Directory` or `Existing Directory`.
-3.  If you choose `New Directory`, select `New Project` and give your project a name (e.g., `thesis-project`). If you choose `Existing Directory`, select the folder where you want to save your project (e.g., `thesis-project`).
+3.  If you choose `New Directory`, select `New Project` and give your project a name (e.g., `thesis-project`). If you choose `Existing Directory`, select the folder where you want to create your project (e.g., `thesis-project`).
 4.  Click `Create Project`.
 
 ### Overview of the IDE
