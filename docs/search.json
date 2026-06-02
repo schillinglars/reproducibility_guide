@@ -4,9 +4,309 @@
     "href": "source/reproducible_workflow.html",
     "title": "Repropducible workflow",
     "section": "",
-    "text": "Fundamentals\nTo achieve a maximal reproducible workflow one can use Version control. Version control is the systematic process of documenting every change made to your scripts, data, or outputs. It allows you to trace when, why, and by whom specific changes were made. Most importantly, it acts as a safety net, allowing you to restore previous versions of your work if something goes wrong.\n\n\nGitHub\nGitHub is essentially a specialized cloud provider—similar to Google Drive or OneDrive—but designed specifically for code and version control. In GitHub, projects are organized into repositories, which function as project folders containing all your files and their history.\nBy using the GitHub Desktop application, you can sync a folder on your local device with a repository on GitHub. Your progress is tracked through commits. Unlike a standard ‘save,’ a commit creates a permanent snapshot of your project at a specific point in time. Instead of overwriting files, Git records the precise differences between versions.\nOnce you have committed your changes locally, you can ‘upload’ them to the cloud using a push. Conversely, if the repository has been updated (e.g., by a collaborator or your supervisor), you can download those updates using a pull. Always pull before you start working and push once you finish a task to keep everyone in sync.\n\n\n\n\n\n\nNote\n\n\n\nAs a student of the University of Bern you are eligible for a free GitHub Pro account, which gives you access to the GitHub Copilot and other benefits. For more information check out GitHubs information for students.\n\n\n\n\nGit\nWhile GitHub Desktop is a great starting point, the true power lies in the underlying software called Git. Git is the ‘engine’ that powers both GitHub and the Desktop app. After a one-time setup, you can connect Git directly to your programming environment (like RStudio). This allows you to perform commits, pushes, and pulls directly within the same window where you write your code, removing the need to switch back and forth between different applications. This integration streamlines your workflow and makes versioning a seamless part of your coding habit.\n\n\n\n\n\n\nNote\n\n\n\nYou can find instructions for the one-time setup of Git, GitHub, R, and the connection between these here.\n\n\n\n\n\n\n\n\nNote\n\n\n\nThis website itself was build with the open source programming languages of R, Python, the IDE of RStudio, Git and GitHub for version control. You can find the corresponding repository here.\n\n\n\n\n.gitignore\nA .gitignore file prevents Git from tracking specific files or folders, ensuring they are never uploaded to GitHub. To use it, create a text file named .gitignore in your project root and list any files or patterns (e.g., *.csv, .Rhistory) you wish to exclude. This is a critical security step for protecting sensitive participant data and maintaining a clean repository by excluding unnecessary large files which could break the upload.\n\n\n\n\n\n\nNote\n\n\n\nNote that on the GitHub repository you can find the respective .gitignore-file for this website project. You can use it as a template for your own project and modify it according to your needs.\n\n\n\n\nrenv\nrenv (Reproducible Environments) records the exact versions of all R packages you are using. This ensures that anyone who wants to reproduce your work can simply install the same package versions, preventing issues that arise from updates or changes in package behavior. By using renv, you can create a snapshot of your project’s dependencies, making it easier to share and collaborate on your code while maintaining reproducibility.\nYou initialize renv in your project by running renv::init() in the R console. This will create a renv.lock file that contains all the package versions you are using. Whenever you install a new package or update an existing one, make sure to run renv::snapshot() to update the lock file. When someone else wants to reproduce your work, they can run renv::restore() to install the exact package versions specified in the lock file.\n\n\n\n\n\n\nNote\n\n\n\nIt is also possible to combine .gitignore and renv by adding the renv/library/ folder to the .gitignore file. This way, the actual package files are not tracked by Git, but the renv.lock file is still included in the repository, allowing others to restore the same environment without uploading large package files.",
+    "text": "To achieve a maximal reproducible workflow one can use Version control. Version control is the systematic process of documenting every change made to your scripts, data, or outputs. It allows you to trace when, why, and by whom specific changes were made. Most importantly, it acts as a safety net, allowing you to restore previous versions of your work if something goes wrong.",
     "crumbs": [
-      "4. Reproducible workflow"
+      "5. Reproducible workflow"
+    ]
+  },
+  {
+    "objectID": "source/reproducible_workflow.html#fundamentals",
+    "href": "source/reproducible_workflow.html#fundamentals",
+    "title": "Repropducible workflow",
+    "section": "",
+    "text": "To achieve a maximal reproducible workflow one can use Version control. Version control is the systematic process of documenting every change made to your scripts, data, or outputs. It allows you to trace when, why, and by whom specific changes were made. Most importantly, it acts as a safety net, allowing you to restore previous versions of your work if something goes wrong.",
+    "crumbs": [
+      "5. Reproducible workflow"
+    ]
+  },
+  {
+    "objectID": "source/reproducible_workflow.html#github",
+    "href": "source/reproducible_workflow.html#github",
+    "title": "Repropducible workflow",
+    "section": "GitHub",
+    "text": "GitHub\nGitHub is essentially a specialized cloud provider—similar to Google Drive or OneDrive—but designed specifically for code and version control. In GitHub, projects are organized into repositories, which function as project folders containing all your files and their history.\nBy using the GitHub Desktop application, you can sync a folder on your local device with a repository on GitHub. Your progress is tracked through commits. Unlike a standard ‘save,’ a commit creates a permanent snapshot of your project at a specific point in time. Instead of overwriting files, Git records the precise differences between versions.\nOnce you have committed your changes locally, you can ‘upload’ them to the cloud using a push. Conversely, if the repository has been updated (e.g., by a collaborator or your supervisor), you can download those updates using a pull. Always pull before you start working and push once you finish a task to keep everyone in sync.\n\n\n\n\n\n\nNote\n\n\n\nAs a student of the University of Bern you are eligible for a free GitHub Pro account, which gives you access to the GitHub Copilot and other benefits. For more information check out GitHubs information for students.",
+    "crumbs": [
+      "5. Reproducible workflow"
+    ]
+  },
+  {
+    "objectID": "source/reproducible_workflow.html#git",
+    "href": "source/reproducible_workflow.html#git",
+    "title": "Repropducible workflow",
+    "section": "Git",
+    "text": "Git\nWhile GitHub Desktop is a great starting point, the true power lies in the underlying software called Git. Git is the ‘engine’ that powers both GitHub and the Desktop app. After a one-time setup, you can connect Git directly to your programming environment (like RStudio). This allows you to perform commits, pushes, and pulls directly within the same window where you write your code, removing the need to switch back and forth between different applications. This integration streamlines your workflow and makes versioning a seamless part of your coding habit.\n\n\n\n\n\n\nNote\n\n\n\nYou can find instructions for the one-time setup of Git, GitHub, R, and the connection between these here.\n\n\n\n\n\n\n\n\nNote\n\n\n\nThis website itself was build with the open source programming languages of R, Python, the IDE of RStudio, Git and GitHub for version control. You can find the corresponding repository here.",
+    "crumbs": [
+      "5. Reproducible workflow"
+    ]
+  },
+  {
+    "objectID": "source/reproducible_workflow.html#gitignore",
+    "href": "source/reproducible_workflow.html#gitignore",
+    "title": "Repropducible workflow",
+    "section": ".gitignore",
+    "text": ".gitignore\nA .gitignore file prevents Git from tracking specific files or folders, ensuring they are never uploaded to GitHub. To use it, create a text file named .gitignore in your project root and list any files or patterns (e.g., *.csv, .Rhistory) you wish to exclude. This is a critical security step for protecting sensitive participant data and maintaining a clean repository by excluding unnecessary large files which could break the upload.\n\n\n\n\n\n\nNote\n\n\n\nNote that on the GitHub repository you can find the respective .gitignore-file for this website project. You can use it as a template for your own project and modify it according to your needs.",
+    "crumbs": [
+      "5. Reproducible workflow"
+    ]
+  },
+  {
+    "objectID": "source/reproducible_workflow.html#renv",
+    "href": "source/reproducible_workflow.html#renv",
+    "title": "Repropducible workflow",
+    "section": "renv",
+    "text": "renv\nrenv (Reproducible Environments) records the exact versions of all R packages you are using. This ensures that anyone who wants to reproduce your work can simply install the same package versions, preventing issues that arise from updates or changes in package behavior. By using renv, you can create a snapshot of your project’s dependencies, making it easier to share and collaborate on your code while maintaining reproducibility.\nYou initialize renv in your project by running renv::init() in the R console. This will create a renv.lock file that contains all the package versions you are using. Whenever you install a new package or update an existing one, make sure to run renv::snapshot() to update the lock file. When someone else wants to reproduce your work, they can run renv::restore() to install the exact package versions specified in the lock file.\n\n\n\n\n\n\nNote\n\n\n\nIt is also possible to combine .gitignore and renv by adding the renv/library/ folder to the .gitignore file. This way, the actual package files are not tracked by Git, but the renv.lock file is still included in the repository, allowing others to restore the same environment without uploading large package files.",
+    "crumbs": [
+      "5. Reproducible workflow"
+    ]
+  },
+  {
+    "objectID": "source/ide.html",
+    "href": "source/ide.html",
+    "title": "Integrated Development Environment (IDE)",
+    "section": "",
+    "text": "This page provides a brief introduction to the RStudio IDE. If you are already familiar with RStudio and Quarto, you can safely skip this page. More details about the specific code style will be provided on the following pages.",
+    "crumbs": [
+      "2. RStudio and Quarto"
+    ]
+  },
+  {
+    "objectID": "source/ide.html#general",
+    "href": "source/ide.html#general",
+    "title": "Integrated Development Environment (IDE)",
+    "section": "General",
+    "text": "General\nInstallation\nRStudio is an Integrated Development Environment (IDE). You can think of R or Python as the engine of a car, and RStudio as the dashboard and steering wheel that allows you to drive it efficiently.\nR can be downloaded from https://cran.r-project.org/ and RStudio from https://posit.co/download/rstudio-desktop/.\n\nPython can be downloaded from https://www.python.org/downloads/. Note that for running Python within the RStudio IDE, you will need to additionally install the reticulate package in R.\n\nSetting up a Project\nTo follow the suggested project setup, which will be introduced on the next page, and to keep your research project reproducible, you should always start by creating an RStudio Project (.Rproj). Whenever you work on a Quarto document, this document should be opened from within the project file. To create a new project, follow these steps:\n\nGo to File &gt; New Project...\n\nChoose New Directory or Existing Directory.\nIf you choose New Directory, select New Project and give your project a name (e.g., thesis-project). If you choose Existing Directory, select the folder where you want to save your project (e.g., thesis-project).\nClick Create Project.\nOverview of the IDE\nRStudio has four main panes: The Source Editor (top left) where you can write your code, the Console (bottom left) where you can run commands interactively, the Environment/History pane (top right) where you can inspect defined variables and your command history, and the Files/Plots/Packages/Help pane (bottom right) where you can manage files, view plots, install packages, and access help documentation.\nWhen you open RStudio for the first time, the source editor (top left) might be empty. To create a new Quarto document, make sure you have opened RStudio within your project, go to File &gt; New File &gt; Quarto Document. This will open a new Quarto document in the source editor where you can start writing your code and text. Make sure to save this file with a meaningful name (e.g., analysis.qmd) and at the correct location within your project. The project setup will be explained on the following page.",
+    "crumbs": [
+      "2. RStudio and Quarto"
+    ]
+  },
+  {
+    "objectID": "source/ide.html#document-structure",
+    "href": "source/ide.html#document-structure",
+    "title": "Integrated Development Environment (IDE)",
+    "section": "Document Structure",
+    "text": "Document Structure\nThe YAML Header\nEvery Quarto document starts with a metadata block called the YAML header. It is fenced by three dashes (---) at the very top of the file. A simple YAML header looks like this:\n---\ntitle: \"My Thesis Project\"\n---\nNote that YAML headers can become much more complex. More information about the YAML header can be found on the following page.\nCode chunks\nFollowing the YAML header, you can write your code inside code chunks. Code chunks are fenced by three backticks and include a language identifier. For the R programming language, a code chunk looks like this:\n::: {.cell}\n\n:::\n\nFor the programming language of Python, the code chunk looks like:\n::: {.cell}\n\n:::\n\nInside these code chunks, everything is treated as code and will be executed when you run the chunk. Outside of the code chunks, everything is treated as regular text and will be rendered as such. This allows you to intersperse your code with explanations, interpretations, additional text and other elements like images, making your document significantly more readable and informative.",
+    "crumbs": [
+      "2. RStudio and Quarto"
+    ]
+  },
+  {
+    "objectID": "source/ide.html#workflow",
+    "href": "source/ide.html#workflow",
+    "title": "Integrated Development Environment (IDE)",
+    "section": "Workflow",
+    "text": "Workflow\nWhenever you are done with the code for a respective chunk, run it. You can do this by clicking the Run button in the toolbar or by using the following shortcuts:\n\n\nCtrl + Enter (Windows) or Command + Enter (Mac): Run the current line or selection.\n\nCtrl + Shift + Enter (Windows) or Command + Shift + Enter (Mac): Run the entire code chunk.\n\nCtrl + Alt + P (Windows) or Command + Option + P (Mac): Run the previous code region.\n\nCtrl + Alt + R (Windows) or Command + Option + R (Mac): Run all code chunks in the document.\n\nWhen all code chunks are running without errors, you can render the document to see the final output. You can do this by clicking the Render button in the toolbar or by using the shortcut Ctrl + Shift + K (Windows) or Command + Shift + K (Mac). If not specified differently in the YAML-Header, the output format will be html. In your rendered html file you can see the code chunks, the output of the code chunks and plain text separately.",
+    "crumbs": [
+      "2. RStudio and Quarto"
+    ]
+  },
+  {
+    "objectID": "source/ide.html#further-resources",
+    "href": "source/ide.html#further-resources",
+    "title": "Integrated Development Environment (IDE)",
+    "section": "Further Resources",
+    "text": "Further Resources\nThe introduction given here only scratches the surface of what can be done to set up and use RStudio and in particular Quarto. If you want to dive deeper into data processing and visualization before continuing with this guide, feel free to check out the Reproducible Data Processing and Visualization guide, written by Ian Hussey from our lab [@hussey2026] or feel free to check out the official Quarto documentation page.",
+    "crumbs": [
+      "2. RStudio and Quarto"
+    ]
+  },
+  {
+    "objectID": "source/codestyle.html",
+    "href": "source/codestyle.html",
+    "title": "Code style",
+    "section": "",
+    "text": "Note\n\n\n\nTo better understand the source code behind the code style conventions it is recommended to click on the &lt;/&gt;Code-button in the top right corner of this page. This will show you the exact source code of this page.\nA code style is a set of conventions and rules for building script and writing the code within it. Adhering to the following rules is partly mandatory for it to run successfully, to make your scripts easier to read for others (and for your “future self”) and ensures that your analysis can be maintained over time.",
+    "crumbs": [
+      "4. Code style"
+    ]
+  },
+  {
+    "objectID": "source/codestyle.html#meta-settings",
+    "href": "source/codestyle.html#meta-settings",
+    "title": "Code style",
+    "section": "Meta settings",
+    "text": "Meta settings\nWithin a script, important meta-information can be provided using the YAML header. This includes not only the author, the date, or the integration of citations, but also formatting options for the rendered document. Here is examplary content of a YAML header:\n\n---\ntitle: \"Analysis of Psychological Well-being\"\nauthor: \"Your Name\"\ndate: last-modified\n\nbibliography: references.bib # Path to your bibliography file (see section \"Citation\" in the workflow chapter)\ncsl: apa.csl # Path to your citation style file (see section \"Citation\" in the workflow chapter)\n\nformat:\n  html:\n    toc: true              # Adds a Table of Contents\n    number-sections: true  # Numbers your headings\n    code-fold: true        # Allows readers to click to show/hide code\nexecute:\n  echo: true               # Shows the code in the output by default (global setting)\n  warning: false           # Hides R/Python warnings in the final report (global setting)\n---",
+    "crumbs": [
+      "4. Code style"
+    ]
+  },
+  {
+    "objectID": "source/codestyle.html#dependencies",
+    "href": "source/codestyle.html#dependencies",
+    "title": "Code style",
+    "section": "Dependencies",
+    "text": "Dependencies\n\n\n\n\n\n\nNote\n\n\n\nMake sure to not include the installation of the package (e.g., install.packages(\"ggplot2\")) in the script, as this would repeatedly install the packages each time the script is rendered. Instead install packages if necessary directly via the Console.\n\n\nAlways load your libraries/packages at the very top of your script. This acts as a “list of ingredients” so others know what needs to be installed before running your code. Make sure you do not include any unnecessary packages, as this can lead to confusion and potential issues with package conflicts.\nThe loading of packages can take place within the script:\n\n\nlibrary(ggplot2)\n\n\nPython and R do not share the same packages. For data visualization, for example, a commonly used package in Python is matplotlib. To load it, you can use the following code:\n\n\nimport matplotlib.pyplot as plt",
+    "crumbs": [
+      "4. Code style"
+    ]
+  },
+  {
+    "objectID": "source/codestyle.html#chunk-options",
+    "href": "source/codestyle.html#chunk-options",
+    "title": "Code style",
+    "section": "Chunk options",
+    "text": "Chunk options\nIn the IDE of RStudio, settings how chunks should behave globaly can be set within the YAML header. However, these settings can be overwritten for each chunk individually by adding the following options at the beginning of a chunk:\n#| eval: true\n#| echo: true\n#| output: true\n#| warning: true\n#| error: false\n#| include: false\nThe settings of a given chunk can also be set directly within the curly brackets at the beginning of a chunk, for example:\n{r, eval = TRUE, echo = TRUE, output = TRUE, warning = TRUE, error = FALSE, include = FALSE}\nHere are the explanations of the different options:\n\n\neval: true: The chunk is actually executed/calculated.\n\necho: true: The code of the chunk is visible in the rendered document.\n\noutput: true: The results of the chunk (e.g., a table) are shown.\n\nwarning: true: R warnings appear in the document.\n\nerror: false: If the code within the chunk has an error, rendering stops immediately (safe mode).\n\ninclude: false: The chunk, including code, output, and potential warnings or errors, is completely ignored.\n\nPlease note that this is not an extensive list of all available chunk options. For more, see for example the quarto documentation about code cells and knitr chunk options.",
+    "crumbs": [
+      "4. Code style"
+    ]
+  },
+  {
+    "objectID": "source/codestyle.html#hardcoded-values",
+    "href": "source/codestyle.html#hardcoded-values",
+    "title": "Code style",
+    "section": "Hardcoded values",
+    "text": "Hardcoded values\nHardcoding refers to the practice of embedding specific data—like numbers, file paths, or fixed thresholds—directly into your analysis code instead of using a variable.\nAvoid hardcoded values within your code. Instead, define them as variables within a separate chunk at the beginning of your script. This makes it easier to update values in one place and ensures consistency throughout your analysis. To make these values stand out, use a specific naming convention (e.g., UPPERCASE_LETTERS with underscores).\n\n\n\nGOOD\nBAD\n\n\n\nThe value is defined at the beginning of the script in a separate chunk for hardcoded values…\n\nMAX_SCORE &lt;- 10\n\n… and later on refered to in the analysis.\n\nfiltered_seq &lt;- seq(1:MAX_SCORE)\n\n\n\nThe value is simply inserted in the middle of your script. If they change you have to search for all of these and change them manually.\n\nfiltered_seq &lt;- seq(1:10)",
+    "crumbs": [
+      "4. Code style"
+    ]
+  },
+  {
+    "objectID": "source/codestyle.html#visual-structure",
+    "href": "source/codestyle.html#visual-structure",
+    "title": "Code style",
+    "section": "Visual structure",
+    "text": "Visual structure\nHeadings are the basis for the table of content (toc) in the rendered html-file when such is enabled in the YAML header. They also help to structure the code and make it easier to navigate for others (and for your “future self”). It is recommended to use at least three levels of headings (e.g., #, ##, and ###) to create a clear structure.",
+    "crumbs": [
+      "4. Code style"
+    ]
+  },
+  {
+    "objectID": "source/codestyle.html#portability",
+    "href": "source/codestyle.html#portability",
+    "title": "Code style",
+    "section": "Portability",
+    "text": "Portability\nA reproducible script should work regardless of which computer it is running on. Absolute paths (e.g., C:/Users/Username/Documents/...) are the “enemy” of reproducibility because they only exist on your specific device.\nInstead use relative paths which point to a location relative to your project’s root folder.\n\n\n\nGOOD\nBAD\n\n\n\nRelative path, even better to use with the function here() from the same named package as this ensures the relative path starts at the project file:\n\nmy_data &lt;- read.csv(here(\"data\", \"raw\", \"my_data.csv\"))\n\n\n\nAbsolute path:\n\nmy_data &lt;- read.csv(\"C:/Users/Username/Documents/Project/data/raw/my_data.csv\")\n\n\n\n\n\n\nIn Python, you can achieve the same using the os module to construct relative paths:\nRelative path (note that in Python the relative path starts at the scripts directory)\n\npath = os.path.join(\"..\", \"data\", \"raw\", \"my_data.csv\")\nmy_data = pd.read_csv(path)",
+    "crumbs": [
+      "4. Code style"
+    ]
+  },
+  {
+    "objectID": "source/codestyle.html#naming-conventions",
+    "href": "source/codestyle.html#naming-conventions",
+    "title": "Code style",
+    "section": "Naming Conventions",
+    "text": "Naming Conventions\nClear naming is the first step toward “self-documenting code.”\n\nVariables: Use nouns (e.g., participant_scores).\nFunctions: Use verbs (e.g., calculate_mean).\nStyle: Use snake_case (lowercase letters with underscores) for both R and Python.\n\nAvoid generic names like data1, temp, or foo. Instead, be descriptive: raw_survey_data is much more helpful than just df.",
+    "crumbs": [
+      "4. Code style"
+    ]
+  },
+  {
+    "objectID": "source/codestyle.html#comments",
+    "href": "source/codestyle.html#comments",
+    "title": "Code style",
+    "section": "Comments",
+    "text": "Comments\nComments should explain why you are doing something, rather than describing the code itself. Anyone can look up what e.g. the mean() function does, but only you know why you chose to exclude certain outliers before calculating it.\n\n\n\nGOOD\nBAD\n\n\n\nExplaining the context of the code, not the logic itself:\n\n# Removing participants who failed the attention check\ncleaned_data &lt;- subset(my_data, attention_check == \"passed\")\n\n\n\nExplaining basic code logic:\n\n# Defining a variable and using the subset function\ncleaned_data &lt;- subset(my_data, attention_check == \"passed\") # Result is saved",
+    "crumbs": [
+      "4. Code style"
+    ]
+  },
+  {
+    "objectID": "source/codestyle.html#seed",
+    "href": "source/codestyle.html#seed",
+    "title": "Code style",
+    "section": "Seed",
+    "text": "Seed\nIf your analysis involves random processes (like creating random groups or running a bootstrap), you must set a seed. This ensures that the “random” numbers are the same every time the script is run. this ensures reproducibility across devices and over time.\n\n\n\n[1]  3 10  2  8  6\n\n\n\n\n\n\n[1, 5, 9, 4, 3]",
+    "crumbs": [
+      "4. Code style"
+    ]
+  },
+  {
+    "objectID": "source/codestyle.html#functions",
+    "href": "source/codestyle.html#functions",
+    "title": "Code style",
+    "section": "Functions",
+    "text": "Functions\nDon`t repeat yourself (DRY): If you find yourself writing the same code multiple times, it’s a sign that you should create a function. This reduces errors—if you need to change a parameter, you only have to change it in one place.\n\n\n\n[1] 32\n\n\n[1] 68\n\n\n[1] 98.6\n\n\n\n\n\n\n32.0\n\n\n68.0\n\n\n98.6",
+    "crumbs": [
+      "4. Code style"
+    ]
+  },
+  {
+    "objectID": "source/codestyle.html#parallelization",
+    "href": "source/codestyle.html#parallelization",
+    "title": "Code style",
+    "section": "Parallelization",
+    "text": "Parallelization\nNormally, your code runs sequentially (one task after another). If you have a computer with multiple CPU cores, parallelization allows you to run multiple independent tasks at the same time, significantly reducing execution time for “embarrassingly parallel” tasks.\nYou can use it, for example, in R (Simulations) if you need to run a lot of independent iterations of the same model or in Python if you want to make many requests to APIs or networks in general.\nConsult your supervisor for more information on how to implement parallelization in your specific project, as it can be complex and may not be necessary for all analyses.",
+    "crumbs": [
+      "4. Code style"
+    ]
+  },
+  {
+    "objectID": "source/codestyle.html#plots-and-figures",
+    "href": "source/codestyle.html#plots-and-figures",
+    "title": "Code style",
+    "section": "Plots and figures",
+    "text": "Plots and figures\nPlots and figures of your final thesis should never be edited manually but always within the script only. This ensures they are fully reproducible. You can save your plots and figures directly from your script using the ggsave() function in R or the savefig() function in Python.\n\n\n# Create a simple plot\nplot &lt;- ggplot(mtcars, aes(x = wt, y = mpg)) +\n  geom_point() +\n  theme_minimal()\n\n# Show plot\nplot\n\n\n\n\n\n\n\n\n\n\n# Create a simple plot\nplt.plot([1, 2, 3], [10, 20, 15], marker='o')\n\n# Show plot\nplt.show()",
+    "crumbs": [
+      "4. Code style"
+    ]
+  },
+  {
+    "objectID": "source/codestyle.html#equations",
+    "href": "source/codestyle.html#equations",
+    "title": "Code style",
+    "section": "Equations",
+    "text": "Equations\nIf you want to write mathematical formulas or just simple equations in your report (e.g., to explain a statistical model), you can use LaTeX syntax directly within your Quarto document: $y = \\beta_0 + \\beta_1 x + \\epsilon$.\nFor standalone formulas on a new line, use double dollar signs:\n$$y = \\beta_0 + \\beta_1 x + \\epsilon$$\nWhen rendered, this will display the formula in a professional mathematical format like \\(y = \\beta_0 + \\beta_1 x + \\epsilon\\).",
+    "crumbs": [
+      "4. Code style"
+    ]
+  },
+  {
+    "objectID": "source/codestyle.html#in-line-code",
+    "href": "source/codestyle.html#in-line-code",
+    "title": "Code style",
+    "section": "In-line Code",
+    "text": "In-line Code\nIn-line code allows you to include the results of code directly within your text. This is particularly useful for reporting specific values, such as means, standard deviations, or p-values, without having to create a separate code chunk for it. For R, you can use the text `r ` syntax to include in-line code.\nThis document was last rendered on the text r Sys.Date() will display as 2026-06-02.\n\nAs equivalent for python based in-line code you can simply use text `python `.\nThis document was last rendered on the `python date.today()` will display as python date.today()",
+    "crumbs": [
+      "4. Code style"
+    ]
+  },
+  {
+    "objectID": "source/codestyle.html#session",
+    "href": "source/codestyle.html#session",
+    "title": "Code style",
+    "section": "Session",
+    "text": "Session\nAt the end of your report, always include a summary of your system and software versions. This is vital for troubleshooting if a package update or software update breaks your code in the future.\n\n\nsessionInfo()\n\nR version 4.5.2 (2025-10-31 ucrt)\nPlatform: x86_64-w64-mingw32/x64\nRunning under: Windows 11 x64 (build 22631)\n\nMatrix products: default\n  LAPACK version 3.12.1\n\nlocale:\n[1] LC_COLLATE=German_Switzerland.utf8  LC_CTYPE=German_Switzerland.utf8   \n[3] LC_MONETARY=German_Switzerland.utf8 LC_NUMERIC=C                       \n[5] LC_TIME=German_Switzerland.utf8    \n\ntime zone: Europe/Zurich\ntzcode source: internal\n\nattached base packages:\n[1] stats     graphics  grDevices datasets  utils     methods   base     \n\nother attached packages:\n[1] ggplot2_4.0.2 here_1.0.2   \n\nloaded via a namespace (and not attached):\n [1] vctrs_0.7.3        cli_3.6.6          knitr_1.50         rlang_1.2.0       \n [5] xfun_0.54          png_0.1-9          renv_1.2.0         S7_0.2.1          \n [9] jsonlite_2.0.0     labeling_0.4.3     glue_1.8.1         rprojroot_2.1.1   \n[13] htmltools_0.5.9    scales_1.4.0       rmarkdown_2.30     rappdirs_0.3.4    \n[17] grid_4.5.2         evaluate_1.0.5     fastmap_1.2.0      yaml_2.3.12       \n[21] lifecycle_1.0.5    compiler_4.5.2     RColorBrewer_1.1-3 Rcpp_1.1.1        \n[25] rstudioapi_0.18.0  farver_2.1.2       lattice_0.22-9     digest_0.6.39     \n[29] R6_2.6.1           reticulate_1.46.0  Matrix_1.7-5       tools_4.5.2       \n[33] withr_3.0.2        gtable_0.3.6      \n\n\n\n\n\nsession_info.show()\n\n-----\nmatplotlib          3.10.8\npandas              3.0.2\nsession_info        1.0.0\n-----\nPython 3.12.13 | packaged by conda-forge | (main, Mar  5 2026, 16:36:12) [MSC v.1944 64 bit (AMD64)]\nWindows-11-10.0.22631-SP0\n-----\nSession information updated at 2026-06-02 21:42\n\n\n\n\n\n\n\n\n\nNote\n\n\n\nThe IDE RStudio offers an automatic formatter. Use Ctrl + Shift + A (Windows) or Cmd + Shift + A (Mac) to reformat a highlighted code block.\nYou can also use the styler package in R to automatically format your code according to a consistent style.",
+    "crumbs": [
+      "4. Code style"
+    ]
+  },
+  {
+    "objectID": "index.html",
+    "href": "index.html",
+    "title": "Reproducibility Guide",
+    "section": "",
+    "text": "This is the landing page of the reproducibility guide of the Department Psychology of Digitalisation at the University of Bern. This guide aims to give students an introduction to reproducible and clean code for their thesis projects.\nFor your orientation: The content of this guide is mostly written such that the guidelines can be followed independently for any programming language but for Quarto used within the IDE of RStudio. The examples provided focus on the programming language of R as this is the most commonly used one for data analysis in psychology. If a particular guideline applies differently to the programming language of Python, this will be marked explicitly in the text via the following information box:\nThis guide is hosted on GitHub and is open for contributions. If you have suggestions for improvement, please let us know by creating an issue on the GitHub repository or by contacting us directly (Lars.Schilling at unibe dot ch).\nThe guide is inspired by the Guide to Reproducible Code from the British Ecological Society (BES).",
+    "crumbs": [
+      "Welcome"
+    ]
+  },
+  {
+    "objectID": "index.html#references",
+    "href": "index.html#references",
+    "title": "Reproducibility Guide",
+    "section": "References",
+    "text": "References",
+    "crumbs": [
+      "Welcome"
+    ]
+  },
+  {
+    "objectID": "source/analysis_template.html",
+    "href": "source/analysis_template.html",
+    "title": "Analysis Template",
+    "section": "",
+    "text": "We provide a template .qmd-file with this guide. You can download it via the &lt;/&gt; Download-button in the top right corner. This template in particular is designed to be a starting point for your own analyses script, following many of the best practices for code style. Note that you may need to download and place additional content in the respective folder for this script to run (e.g. references.bib). You can download this .bib-file and all other parts of the project behind this guide from the GitHub repository to further follow many of the best practices for reproducibility.",
+    "crumbs": [
+      "6. Template"
+    ]
+  },
+  {
+    "objectID": "source/analysis_template.html#general-information",
+    "href": "source/analysis_template.html#general-information",
+    "title": "Analysis Template",
+    "section": "",
+    "text": "We provide a template .qmd-file with this guide. You can download it via the &lt;/&gt; Download-button in the top right corner. This template in particular is designed to be a starting point for your own analyses script, following many of the best practices for code style. Note that you may need to download and place additional content in the respective folder for this script to run (e.g. references.bib). You can download this .bib-file and all other parts of the project behind this guide from the GitHub repository to further follow many of the best practices for reproducibility.",
+    "crumbs": [
+      "6. Template"
     ]
   },
   {
@@ -20,283 +320,23 @@
     ]
   },
   {
-    "objectID": "source/analysis_template.html",
-    "href": "source/analysis_template.html",
-    "title": "Analysis Template",
-    "section": "",
-    "text": "General information\nWe provide a template .qmd-file with this guide. You can download it via the &lt;/&gt; Download-button in the top right corner. This template in particular is designed to be a starting point for your own analyses script, following many of the best practices for code style. Note that you may need to download and place additional content in the respective folder for this script to run (e.g. references.bib). You can download this .bib-file and all other parts of the project behind this guide from the GitHub repository to further follow many of the best practices for reproducibility.",
-    "crumbs": [
-      "5. Template"
-    ]
-  },
-  {
-    "objectID": "index.html",
-    "href": "index.html",
-    "title": "Reproducibility Guide",
-    "section": "",
-    "text": "This is the landing page of the reproducibility guide of the Department Psychology of Digitalisation at the University of Bern. This guide aims to give students an introduction to reproducible and clean code for their thesis projects.\nFor your orientation: The content of this guide is mostly written such that the guidelines can be followed independently for any programming language but for Quarto used within the IDE of RStudio. The examples provided focus on the programming language of R as this is the most commonly used one for data analysis in psychology. If a particular guideline applies differently to the programming language of Python, this will be marked explicitly in the text via the following information box:\nIf you are not familiar with R, RStudio and Quarto you can check out one of the two guides of our department:\nThis guide is hosted on GitHub and is open for contributions. If you have suggestions for improvement, please let us know by creating an issue on the GitHub repository or by contacting us directly (Lars.Schilling at unibe dot ch).\nThe guide is inspired by the Guide to Reproducible Code from the British Ecological Society (BES).",
-    "crumbs": [
-      "Welcome"
-    ]
-  },
-  {
-    "objectID": "index.html#references",
-    "href": "index.html#references",
-    "title": "Reproducibility Guide",
-    "section": "References",
-    "text": "References\n\n\nGrinschgl, S., Hirt, L., & Schilling, L. (2026). R you ready? https://r-you-ready.github.io/Webseite_FS26_Seminar/\n\n\nHussey, I. (2026). Reproducible data processing and visualization in r and tidyverse. https://doi.org/10.5281/zenodo.19427860",
-    "crumbs": [
-      "Welcome"
-    ]
-  },
-  {
-    "objectID": "source/codestyle.html",
-    "href": "source/codestyle.html",
-    "title": "Code style",
-    "section": "",
-    "text": "Note\n\n\n\nTo better understand the source code behind the code style conventions it is recommended to click on the &lt;/&gt;Code-button in the top right corner of this page. This will show you the exact source code of this page.\nA codestyle is a set of conventions and rules for building script and writing the code within it. Adhering to the following rules is partly mandatory for it to run successfully, to make your scripts easier to read for others (and for your “future self”) and ensures that your analysis can be maintained over time.",
-    "crumbs": [
-      "3. Code style"
-    ]
-  },
-  {
-    "objectID": "source/codestyle.html#meta-settings",
-    "href": "source/codestyle.html#meta-settings",
-    "title": "Code style",
-    "section": "Meta settings",
-    "text": "Meta settings\nWithin a script, important meta-information can be provided using the YAML header. This includes not only the author, the date, or the integration of citations, but also formatting options for the rendered document. Here is examplary content of a YAML header:\n\n---\ntitle: \"Analysis of Psychological Well-being\"\nauthor: \"Your Name\"\ndate: last-modified\n\nbibliography: references.bib # Path to your bibliography file (see section \"Citation\" in the workflow chapter)\ncsl: apa.csl # Path to your citation style file (see section \"Citation\" in the workflow chapter)\n\nformat:\n  html:\n    toc: true              # Adds a Table of Contents\n    number-sections: true  # Numbers your headings\n    code-fold: true        # Allows readers to click to show/hide code\nexecute:\n  echo: true               # Shows the code in the output by default (global setting)\n  warning: false           # Hides R/Python warnings in the final report (global setting)\n---",
-    "crumbs": [
-      "3. Code style"
-    ]
-  },
-  {
-    "objectID": "source/codestyle.html#dependencies",
-    "href": "source/codestyle.html#dependencies",
-    "title": "Code style",
-    "section": "Dependencies",
-    "text": "Dependencies\n\n\n\n\n\n\nNote\n\n\n\nMake sure to not include the installation of the package (e.g., install.packages(\"ggplot2\")) in the script, as this would repeatedly install the packages each time the script is rendered. Instead install packages if necessary directly via the Console.\n\n\nAlways load your libraries/packages at the very top of your script. This acts as a “list of ingredients” so others know what needs to be installed before running your code. Make sure you do not include any unnecessary packages, as this can lead to confusion and potential issues with package conflicts.\nThe loading of packages can take place within the script:\n\n\nlibrary(ggplot2)\n\n\nPython and R do not share the same packages. For data visualization, for example, a commonly used package in Python is matplotlib. To load it, you can use the following code:\n\n\nimport matplotlib.pyplot as plt",
-    "crumbs": [
-      "3. Code style"
-    ]
-  },
-  {
-    "objectID": "source/codestyle.html#chunk-options",
-    "href": "source/codestyle.html#chunk-options",
-    "title": "Code style",
-    "section": "Chunk options",
-    "text": "Chunk options\nIn the IDE of RStudio, settings how chunks should behave globaly can be set within the YAML header. However, these settings can be overwritten for each chunk individually by adding the following options at the beginning of a chunk:\n#| eval: true\n#| echo: true\n#| output: true\n#| warning: true\n#| error: false\n#| include: false\nThe settings of a given chunk can also be set directly within the curly brackets at the beginning of a chunk, for example:\n{r, eval = TRUE, echo = TRUE, output = TRUE, warning = TRUE, error = FALSE, include = FALSE}\nHere are the explanations of the different options:\n\n\neval: true: The chunk is actually executed/calculated.\n\necho: true: The code of the chunk is visible in the rendered document.\n\noutput: true: The results of the chunk (e.g., a table) are shown.\n\nwarning: true: R warnings appear in the document.\n\nerror: false: If the code within the chunk has an error, rendering stops immediately (safe mode).\n\ninclude: false: The chunk, including code, output, and potential warnings or errors, is completely ignored.\n\nPlease note that this is not an extensive list of all available chunk options. For more, see for example the quarto documentation about code cells and knitr chunk options.",
-    "crumbs": [
-      "3. Code style"
-    ]
-  },
-  {
-    "objectID": "source/codestyle.html#hardcoded-values",
-    "href": "source/codestyle.html#hardcoded-values",
-    "title": "Code style",
-    "section": "Hardcoded values",
-    "text": "Hardcoded values\nHardcoding refers to the practice of embedding specific data—like numbers, file paths, or fixed thresholds—directly into your analysis code instead of using a variable.\nAvoid hardcoded values within your code. Instead, define them as variables within a separate chunk at the beginning of your script. This makes it easier to update values in one place and ensures consistency throughout your analysis. To make these values stand out, use a specific naming convention (e.g., UPPERCASE_LETTERS with underscores).\n\n\n\nGOOD\nBAD\n\n\n\nThe value is defined at the beginning of the script in a separate chunk for hardcoded values…\n\nMAX_SCORE &lt;- 10\n\n… and later on refered to in the analysis.\n\nfiltered_seq &lt;- seq(1:MAX_SCORE)\n\n\n\nThe value is simply inserted in the middle of your script. If they change you have to search for all of these and change them manually.\n\nfiltered_seq &lt;- seq(1:10)",
-    "crumbs": [
-      "3. Code style"
-    ]
-  },
-  {
-    "objectID": "source/codestyle.html#visual-structure",
-    "href": "source/codestyle.html#visual-structure",
-    "title": "Code style",
-    "section": "Visual structure",
-    "text": "Visual structure\nHeadings are the basis for the table of content (toc) in the rendered html-file when such is enabled in the YAML header. They also help to structure the code and make it easier to navigate for others (and for your “future self”). It is recommended to use at least three levels of headings (e.g., #, ##, and ###) to create a clear structure.",
-    "crumbs": [
-      "3. Code style"
-    ]
-  },
-  {
-    "objectID": "source/codestyle.html#portability",
-    "href": "source/codestyle.html#portability",
-    "title": "Code style",
-    "section": "Portability",
-    "text": "Portability\nA reproducible script should work regardless of which computer it is running on. Absolute paths (e.g., C:/Users/Username/Documents/...) are the “enemy” of reproducibility because they only exist on your specific device.\nInstead use relative paths which point to a location relative to your project’s root folder.\n\n\n\nGOOD\nBAD\n\n\n\nRelative path, even better to use with the function here() from the same named package as this ensures the relative path starts at the project file:\n\nmy_data &lt;- read.csv(here(\"data\", \"raw\", \"my_data.csv\"))\n\n\n\nAbsolute path:\n\nmy_data &lt;- read.csv(\"C:/Users/Username/Documents/Project/data/raw/my_data.csv\")\n\n\n\n\n\n\nIn Python, you can achieve the same using the os module to construct relative paths:\nRelative path (note that in Python the relative path starts at the scripts directory)\n\npath = os.path.join(\"..\", \"data\", \"raw\", \"my_data.csv\")\nmy_data = pd.read_csv(path)",
-    "crumbs": [
-      "3. Code style"
-    ]
-  },
-  {
-    "objectID": "source/codestyle.html#naming-conventions",
-    "href": "source/codestyle.html#naming-conventions",
-    "title": "Code style",
-    "section": "Naming Conventions",
-    "text": "Naming Conventions\nClear naming is the first step toward “self-documenting code.”\n\nVariables: Use nouns (e.g., participant_scores).\nFunctions: Use verbs (e.g., calculate_mean).\nStyle: Use snake_case (lowercase letters with underscores) for both R and Python.\n\nAvoid generic names like data1, temp, or foo. Instead, be descriptive: raw_survey_data is much more helpful than just df.",
-    "crumbs": [
-      "3. Code style"
-    ]
-  },
-  {
-    "objectID": "source/codestyle.html#comments",
-    "href": "source/codestyle.html#comments",
-    "title": "Code style",
-    "section": "Comments",
-    "text": "Comments\nComments should explain why you are doing something, rather than describing the code itself. Anyone can look up what e.g. the mean() function does, but only you know why you chose to exclude certain outliers before calculating it.\n\n\n\nGOOD\nBAD\n\n\n\nExplaining the context of the code, not the logic itself:\n\n# Removing participants who failed the attention check\ncleaned_data &lt;- subset(my_data, attention_check == \"passed\")\n\n\n\nExplaining basic code logic:\n\n# Defining a variable and using the subset function\ncleaned_data &lt;- subset(my_data, attention_check == \"passed\") # Result is saved",
-    "crumbs": [
-      "3. Code style"
-    ]
-  },
-  {
-    "objectID": "source/codestyle.html#seed",
-    "href": "source/codestyle.html#seed",
-    "title": "Code style",
-    "section": "Seed",
-    "text": "Seed\nIf your analysis involves random processes (like creating random groups or running a bootstrap), you must set a seed. This ensures that the “random” numbers are the same every time the script is run. this ensures reproducibility across devices and over time.\n\n\n\n[1]  3 10  2  8  6\n\n\n\n\n\n\n[1, 5, 9, 4, 3]",
-    "crumbs": [
-      "3. Code style"
-    ]
-  },
-  {
-    "objectID": "source/codestyle.html#functions",
-    "href": "source/codestyle.html#functions",
-    "title": "Code style",
-    "section": "Functions",
-    "text": "Functions\nDon`t repeat yourself (DRY): If you find yourself writing the same code multiple times, it’s a sign that you should create a function. This reduces errors—if you need to change a parameter, you only have to change it in one place.\n\n\n\n[1] 32\n\n\n[1] 68\n\n\n[1] 98.6\n\n\n\n\n\n\n32.0\n\n\n68.0\n\n\n98.6",
-    "crumbs": [
-      "3. Code style"
-    ]
-  },
-  {
-    "objectID": "source/codestyle.html#parallelization",
-    "href": "source/codestyle.html#parallelization",
-    "title": "Code style",
-    "section": "Parallelization",
-    "text": "Parallelization\nNormally, your code runs sequentially (one task after another). If you have a computer with multiple CPU cores, parallelization allows you to run multiple independent tasks at the same time, significantly reducing execution time for “embarrassingly parallel” tasks.\nYou can use it, for example, in R (Simulations) if you need to run a lot of independent iterations of the same model or in Python if you want to make many requests to APIs or networks in general.\nConsult your supervisor for more information on how to implement parallelization in your specific project, as it can be complex and may not be necessary for all analyses.",
-    "crumbs": [
-      "3. Code style"
-    ]
-  },
-  {
-    "objectID": "source/codestyle.html#plots-and-figures",
-    "href": "source/codestyle.html#plots-and-figures",
-    "title": "Code style",
-    "section": "Plots and figures",
-    "text": "Plots and figures\nPlots and figures of your final thesis should never be edited manually but always within the script only. This ensures they are fully reproducible. You can save your plots and figures directly from your script using the ggsave() function in R or the savefig() function in Python.\n\n\n# Create a simple plot\nplot &lt;- ggplot(mtcars, aes(x = wt, y = mpg)) +\n  geom_point() +\n  theme_minimal()\n\n# Show plot\nplot\n\n\n\n\n\n\n\n\n\n\n# Create a simple plot\nplt.plot([1, 2, 3], [10, 20, 15], marker='o')\n\n# Show plot\nplt.show()",
-    "crumbs": [
-      "3. Code style"
-    ]
-  },
-  {
-    "objectID": "source/codestyle.html#equations",
-    "href": "source/codestyle.html#equations",
-    "title": "Code style",
-    "section": "Equations",
-    "text": "Equations\nIf you want to write mathematical formulas or just simple equations in your report (e.g., to explain a statistical model), you can use LaTeX syntax directly within your Quarto document: $y = \\beta_0 + \\beta_1 x + \\epsilon$.\nFor standalone formulas on a new line, use double dollar signs:\n$$y = \\beta_0 + \\beta_1 x + \\epsilon$$\nWhen rendered, this will display the formula in a professional mathematical format like \\(y = \\beta_0 + \\beta_1 x + \\epsilon\\).",
-    "crumbs": [
-      "3. Code style"
-    ]
-  },
-  {
-    "objectID": "source/codestyle.html#in-line-code",
-    "href": "source/codestyle.html#in-line-code",
-    "title": "Code style",
-    "section": "In-line Code",
-    "text": "In-line Code\nIn-line code allows you to include the results of code directly within your text. This is particularly useful for reporting specific values, such as means, standard deviations, or p-values, without having to create a separate code chunk for it. For R, you can use the text `r ` syntax to include in-line code.\nThis document was last rendered on the text r Sys.Date() will display as 2026-05-08.\n\nAs equivalent for python based in-line code you can simply use text `python `.\nThis document was last rendered on the `python date.today()` will display as python date.today()",
-    "crumbs": [
-      "3. Code style"
-    ]
-  },
-  {
-    "objectID": "source/codestyle.html#session",
-    "href": "source/codestyle.html#session",
-    "title": "Code style",
-    "section": "Session",
-    "text": "Session\nAt the end of your report, always include a summary of your system and software versions. This is vital for troubleshooting if a package update or software update breaks your code in the future.\n\n\nsessionInfo()\n\nR version 4.5.2 (2025-10-31 ucrt)\nPlatform: x86_64-w64-mingw32/x64\nRunning under: Windows 11 x64 (build 22631)\n\nMatrix products: default\n  LAPACK version 3.12.1\n\nlocale:\n[1] LC_COLLATE=German_Switzerland.utf8  LC_CTYPE=German_Switzerland.utf8   \n[3] LC_MONETARY=German_Switzerland.utf8 LC_NUMERIC=C                       \n[5] LC_TIME=German_Switzerland.utf8    \n\ntime zone: Europe/Zurich\ntzcode source: internal\n\nattached base packages:\n[1] stats     graphics  grDevices datasets  utils     methods   base     \n\nother attached packages:\n[1] ggplot2_4.0.2 here_1.0.2   \n\nloaded via a namespace (and not attached):\n [1] vctrs_0.7.3        cli_3.6.6          knitr_1.50         rlang_1.2.0       \n [5] xfun_0.54          png_0.1-9          renv_1.2.0         S7_0.2.1          \n [9] jsonlite_2.0.0     labeling_0.4.3     glue_1.8.1         rprojroot_2.1.1   \n[13] htmltools_0.5.9    scales_1.4.0       rmarkdown_2.30     rappdirs_0.3.4    \n[17] grid_4.5.2         evaluate_1.0.5     fastmap_1.2.0      yaml_2.3.12       \n[21] lifecycle_1.0.5    compiler_4.5.2     RColorBrewer_1.1-3 Rcpp_1.1.1        \n[25] rstudioapi_0.18.0  farver_2.1.2       lattice_0.22-9     digest_0.6.39     \n[29] R6_2.6.1           reticulate_1.46.0  Matrix_1.7-5       tools_4.5.2       \n[33] withr_3.0.2        gtable_0.3.6      \n\n\n\n\n\nsession_info.show()\n\n-----\nmatplotlib          3.10.8\npandas              3.0.2\nsession_info        1.0.0\n-----\nPython 3.12.13 | packaged by conda-forge | (main, Mar  5 2026, 16:36:12) [MSC v.1944 64 bit (AMD64)]\nWindows-11-10.0.22631-SP0\n-----\nSession information updated at 2026-05-08 01:31\n\n\n\n\n\n\n\n\n\nNote\n\n\n\nThe IDE RStudio offers an automatic formatter. Use Ctrl + Shift + A (Windows) or Cmd + Shift + A (Mac) to reformat a highlighted code block.\nYou can also use the styler package in R to automatically format your code according to a consistent style.",
-    "crumbs": [
-      "3. Code style"
-    ]
-  },
-  {
     "objectID": "source/project_setup.html",
     "href": "source/project_setup.html",
     "title": "Project setup",
     "section": "",
-    "text": "At the core of a robust, reproducible analysis is a project setup which is based on a script-based workflow. This ensures that every step of your data processing pipeline is documented and can be re-executed with a single command. A well-organized project structure is the prerequisite for this automation, making your research transparent, traceable, and easy to share. Here you can see an exemplary folder structure for a script-based workflow:\nParent_Folder/\n├── project.Rproj         # Project  information\n├── code/                 # All code\n│   └── analyses.qmd      # Analysis script\n├── data/                 # All inputs\n│   ├── raw/              # Raw data\n│   └── processed/        # Processed data\n├── outputs/              # All non-data outputs\n│   ├── figs/             # Generated plots and graphs\n│   └── tables/           # Generated tables\n├── README.md             # Brief project explanation\n├── licence.txt           # License information\n└── references.bib        # Citation information\n\n\nAn RStudio Project file (file extension .Rproj) serves as the “anchor” for your work. It defines the root directory of your project. With a project file opened in the IDE of RStudio it is possible and highly recommended to seamlessly integrate version control via Git and GitHub. This part will be covered later on in this guide.\n\n\n\nAs the name suggests, the script is at the heart of reproducibility. Code-based scripts connect your raw data to your processed data and other output. By coding every single step, you eliminate the risk of “forgotten” manual edits and ensure that anyone, including your future self, can reproduce the results.\n\nIf you have installed python on your device, it is generally possible to run both Python and R code within the same script. For the IDE of RStudio, this can be achieved by using Quarto documents (file extension .qmd). Check out the official Quarto documentation for more information on how to set up and use Python within Quarto.\n\n\n\n\nRaw data is the “source of truth” and must remain immutable (taking into account privacy concerns and anonymisation). Once stored in data/raw/, these files should never be edited manually. This ensures the raw data as basement for all other parts so that these can potentially always be recovered.\n\n\n\nProcessed data is technically ‘disposable’ because it can always be re-generated by running your scripts again on the raw data as input. The resulting data files are stored in data/processed/. This strict separation ensures that your analysis always builds upon a clean foundation without ever risking accidental overwrites of your original observations.\n\n\n\nAll figures and tables generated by the scripts belong in the outputs/ folder. Like with the processed data files, they are created completely automatically and hence they are technically “disposable”. You can delete them at any time and recreate them perfectly by re-running your scripts on the raw data as input via a single command.\n\n\n\nThe README (file extension .md) is the manual for your project. It is the first file a collaborator or supervisor will read to understand and potentially contribute to the project. A good README should include:\n\nBrief Description: What is the study about?\nProject Structure: Where is the data and what is the order in which the scripts should be executed?\nInstructions for Reproduction: Which software is required and how can the scripts be executed to reproduce the results?\nLicensing: Should others cite your work, and is it allowed to reuse the code?\n\nNote that the licensing can be stated elsewhere and is not obligatory in a README.\n\n\n\nMake sure your work is credited accordingly so that third parties know what they are allowed to do with and what not. As stated earlier, the license can be stated within the README or in a separate file (e.g., license.txt). You can find typical licenses for research projects with assicated information here. If you are unsure what license to use, consult your supervisor.\n\n\n\nQuarto makes it possible to include citations automatically by using a BibTeX (file extension .bib) file.\nA standard entry within a BibTex-file looks like this:\n@book{wickham2023,\n  author = {Wickham, Hadley and Mineault, Patrick},\n  title = {R for Data Science},\n  year = {2023},\n  publisher = {O'Reilly Media},\n  edition = {2nd edition}\n}\nThe YAML header of the Quarto document should include the following lines to link the BibTeX file and the citation style file (e.g. APA 7 Style; can be found and downloaded from Zotero Style Repository):\nbibliography: references.bib\ncsl: apa.csl\nYou can cite the work by using the key defined in your .bib file, which is usually the surname of the first author followed by the year of publication. For example, if you want to cite the above book, you would use @wickham2023 in your text. But you can also cite the work parathetically by using [@wickham2023] in your text. The citation will then be automatically formatted according to the specified style (e.g., APA, MLA, Chicago) and included in the bibliography section of your document.\nTo include a bibliography section in your document, simply add the citation as described above and the Reference section will be automatically generated at the end of your document:\nWickham & Mineault (2023)",
+    "text": "At the core of a robust, reproducible analysis is a project setup which is based on a script-based workflow. This ensures that every step of your data processing pipeline is documented and can be re-executed with a single command. A well-organized project structure is the prerequisite for this automation, making your research transparent, traceable, and easy to share. Here you can see an exemplary folder structure for a script-based workflow:\nParent_Folder/\n├── project.Rproj         # Project  information\n├── code/                 # All code\n│   ├── analyses.qmd      # Analysis script\n│   └── analyses.html     #\n├── data/                 # All inputs\n│   ├── raw/              # Raw data\n│   └── processed/        # Processed data\n├── outputs/              # All non-data outputs\n│   ├── figs/             # Generated plots and graphs\n│   └── tables/           # Generated tables\n├── README.md             # Brief project explanation\n├── licence.txt           # License information\n└── references.bib        # Citation information\n\n\nAn RStudio Project file (file extension .Rproj), which we had created on the previous page, serves as the “anchor” for your work. It defines the root directory of your project. With a project file opened in the IDE of RStudio it is possible and highly recommended to seamlessly integrate version control via Git and GitHub, and to set relative paths. These two topics will be covered later on in this guide.\n\n\n\nThe folder for code contains all scripts, like the one we created on the previous page, which are at the heart of reproducibility. These connect your raw data to your processed data and other output. By coding every single step, you eliminate the risk of “forgotten” manual edits and ensure that anyone, including your future self, can reproduce the results. The basic script is always the Quarto file and the output of a rendered Quarto file is typically the final report (e.g., in HTML).\n\n\n\n\n\n\nNote\n\n\n\nIf you are not familiar with Quarto or the IDE of RStudio in general yet, on the following page you can find a brief introduction on how to use it within the scope of this guide.\n\n\n\nIf you have installed python on your device, it is generally possible to run both Python and R code within the same script. For the IDE of RStudio, this can be achieved by using Quarto documents (file extension .qmd). Check out the official Quarto documentation for more information on how to set up and use Python within Quarto.\n\n\n\n\nRaw data is the “source of truth” and must remain immutable (taking into account privacy concerns and anonymisation). Once stored in data/raw/, these files should never be edited manually. This ensures the raw data as basement for all other parts so that these can potentially always be recovered.\nProcessed data is technically ‘disposable’ because it can always be re-generated by running your scripts again on the raw data as input. The resulting data files are stored in data/processed/. This strict separation ensures that your analysis always builds upon a clean foundation without ever risking accidental overwrites of your original observations.\n\n\n\nAll figures and tables generated by the scripts belong in the outputs/ folder. Like with the processed data files, they are created completely automatically and hence they are technically “disposable”. You can delete them at any time and recreate them perfectly by re-running your scripts on the raw data as input via a single command.\n\n\n\nThe README (file extension .md) is the manual for your project. It is the first file a collaborator or supervisor will read to understand and potentially contribute to the project. A good README should include:\n\nBrief Description: What is the study about?\nProject Structure: Where is the data and what is the order in which the scripts should be executed?\nInstructions for Reproduction: Which software is required and how can the scripts be executed to reproduce the results?\nLicensing: Should others cite your work, and is it allowed to reuse the code?\n\nNote that the licensing can be stated elsewhere and is not obligatory in a README.\n\n\n\nMake sure your work is credited accordingly so that third parties know what they are allowed to do with and what not. As stated earlier, the license can be stated within the README or in a separate file (e.g., license.txt). You can find typical licenses for research projects with assicated information here. If you are unsure what license to use, consult your supervisor.\n\n\n\nQuarto makes it possible to include citations automatically by using a BibTeX (file extension .bib) file.\nA standard entry within a BibTex-file looks like this:\n@book{wickham2023,\n  author = {Wickham, Hadley and Mineault, Patrick},\n  title = {R for Data Science},\n  year = {2023},\n  publisher = {O'Reilly Media},\n  edition = {2nd edition}\n}\nThe YAML header of the Quarto document should include the following lines to link the BibTeX file and the citation style file (e.g. APA 7 Style; can be found and downloaded from Zotero Style Repository):\nbibliography: references.bib\ncsl: apa.csl\nYou can cite the work by using the key defined in your .bib file, which is usually the surname of the first author followed by the year of publication. For example, if you want to cite the above book, you would use @wickham2023 in your text. But you can also cite the work parathetically by using [@wickham2023] in your text. The citation will then be automatically formatted according to the specified style (e.g., APA, MLA, Chicago) and included in the bibliography section of your document.\nTo include a bibliography section in your document, simply add the citation as described above and the Reference section will be automatically generated at the end of your document:\nWickham & Mineault (2023)\n\n\n\n\n\nWickham, H., & Mineault, P. (2023). R for data science (2nd edition). O’Reilly Media.\n\n\n\n\n\n\n\n\nNote\n\n\n\nTo see a real-life example of a script based workflow check out the repository of this website [here][repo-url] and additionally the code of each page via the &lt;/&gt;Code-button in the top right corner.\n\n\n\n\n\n\n\n\nNote\n\n\n\nThe project setup described here is a simplified version of the psych-DS standard. For more detailed information, feel free to explore their official documentation. Ian Hussey from our lab has developed the R package psychdsish, which can be used to generate a structure that adheres to the full psych-DS specifications or to validate an existing project.",
     "crumbs": [
-      "2. Project setup"
+      "3. Project setup"
     ]
   },
   {
-    "objectID": "source/project_setup.html#project-file",
-    "href": "source/project_setup.html#project-file",
+    "objectID": "source/project_setup.html#fundamentals",
+    "href": "source/project_setup.html#fundamentals",
     "title": "Project setup",
     "section": "",
-    "text": "An RStudio Project file (file extension .Rproj) serves as the “anchor” for your work. It defines the root directory of your project. With a project file opened in the IDE of RStudio it is possible and highly recommended to seamlessly integrate version control via Git and GitHub. This part will be covered later on in this guide.",
+    "text": "At the core of a robust, reproducible analysis is a project setup which is based on a script-based workflow. This ensures that every step of your data processing pipeline is documented and can be re-executed with a single command. A well-organized project structure is the prerequisite for this automation, making your research transparent, traceable, and easy to share. Here you can see an exemplary folder structure for a script-based workflow:\nParent_Folder/\n├── project.Rproj         # Project  information\n├── code/                 # All code\n│   ├── analyses.qmd      # Analysis script\n│   └── analyses.html     #\n├── data/                 # All inputs\n│   ├── raw/              # Raw data\n│   └── processed/        # Processed data\n├── outputs/              # All non-data outputs\n│   ├── figs/             # Generated plots and graphs\n│   └── tables/           # Generated tables\n├── README.md             # Brief project explanation\n├── licence.txt           # License information\n└── references.bib        # Citation information\n\n\nAn RStudio Project file (file extension .Rproj), which we had created on the previous page, serves as the “anchor” for your work. It defines the root directory of your project. With a project file opened in the IDE of RStudio it is possible and highly recommended to seamlessly integrate version control via Git and GitHub, and to set relative paths. These two topics will be covered later on in this guide.\n\n\n\nThe folder for code contains all scripts, like the one we created on the previous page, which are at the heart of reproducibility. These connect your raw data to your processed data and other output. By coding every single step, you eliminate the risk of “forgotten” manual edits and ensure that anyone, including your future self, can reproduce the results. The basic script is always the Quarto file and the output of a rendered Quarto file is typically the final report (e.g., in HTML).\n\n\n\n\n\n\nNote\n\n\n\nIf you are not familiar with Quarto or the IDE of RStudio in general yet, on the following page you can find a brief introduction on how to use it within the scope of this guide.\n\n\n\nIf you have installed python on your device, it is generally possible to run both Python and R code within the same script. For the IDE of RStudio, this can be achieved by using Quarto documents (file extension .qmd). Check out the official Quarto documentation for more information on how to set up and use Python within Quarto.\n\n\n\n\nRaw data is the “source of truth” and must remain immutable (taking into account privacy concerns and anonymisation). Once stored in data/raw/, these files should never be edited manually. This ensures the raw data as basement for all other parts so that these can potentially always be recovered.\nProcessed data is technically ‘disposable’ because it can always be re-generated by running your scripts again on the raw data as input. The resulting data files are stored in data/processed/. This strict separation ensures that your analysis always builds upon a clean foundation without ever risking accidental overwrites of your original observations.\n\n\n\nAll figures and tables generated by the scripts belong in the outputs/ folder. Like with the processed data files, they are created completely automatically and hence they are technically “disposable”. You can delete them at any time and recreate them perfectly by re-running your scripts on the raw data as input via a single command.\n\n\n\nThe README (file extension .md) is the manual for your project. It is the first file a collaborator or supervisor will read to understand and potentially contribute to the project. A good README should include:\n\nBrief Description: What is the study about?\nProject Structure: Where is the data and what is the order in which the scripts should be executed?\nInstructions for Reproduction: Which software is required and how can the scripts be executed to reproduce the results?\nLicensing: Should others cite your work, and is it allowed to reuse the code?\n\nNote that the licensing can be stated elsewhere and is not obligatory in a README.\n\n\n\nMake sure your work is credited accordingly so that third parties know what they are allowed to do with and what not. As stated earlier, the license can be stated within the README or in a separate file (e.g., license.txt). You can find typical licenses for research projects with assicated information here. If you are unsure what license to use, consult your supervisor.\n\n\n\nQuarto makes it possible to include citations automatically by using a BibTeX (file extension .bib) file.\nA standard entry within a BibTex-file looks like this:\n@book{wickham2023,\n  author = {Wickham, Hadley and Mineault, Patrick},\n  title = {R for Data Science},\n  year = {2023},\n  publisher = {O'Reilly Media},\n  edition = {2nd edition}\n}\nThe YAML header of the Quarto document should include the following lines to link the BibTeX file and the citation style file (e.g. APA 7 Style; can be found and downloaded from Zotero Style Repository):\nbibliography: references.bib\ncsl: apa.csl\nYou can cite the work by using the key defined in your .bib file, which is usually the surname of the first author followed by the year of publication. For example, if you want to cite the above book, you would use @wickham2023 in your text. But you can also cite the work parathetically by using [@wickham2023] in your text. The citation will then be automatically formatted according to the specified style (e.g., APA, MLA, Chicago) and included in the bibliography section of your document.\nTo include a bibliography section in your document, simply add the citation as described above and the Reference section will be automatically generated at the end of your document:\nWickham & Mineault (2023)\n\n\n\n\n\nWickham, H., & Mineault, P. (2023). R for data science (2nd edition). O’Reilly Media.\n\n\n\n\n\n\n\n\nNote\n\n\n\nTo see a real-life example of a script based workflow check out the repository of this website [here][repo-url] and additionally the code of each page via the &lt;/&gt;Code-button in the top right corner.\n\n\n\n\n\n\n\n\nNote\n\n\n\nThe project setup described here is a simplified version of the psych-DS standard. For more detailed information, feel free to explore their official documentation. Ian Hussey from our lab has developed the R package psychdsish, which can be used to generate a structure that adheres to the full psych-DS specifications or to validate an existing project.",
     "crumbs": [
-      "2. Project setup"
-    ]
-  },
-  {
-    "objectID": "source/project_setup.html#code",
-    "href": "source/project_setup.html#code",
-    "title": "Project setup",
-    "section": "",
-    "text": "As the name suggests, the script is at the heart of reproducibility. Code-based scripts connect your raw data to your processed data and other output. By coding every single step, you eliminate the risk of “forgotten” manual edits and ensure that anyone, including your future self, can reproduce the results.\n\nIf you have installed python on your device, it is generally possible to run both Python and R code within the same script. For the IDE of RStudio, this can be achieved by using Quarto documents (file extension .qmd). Check out the official Quarto documentation for more information on how to set up and use Python within Quarto.",
-    "crumbs": [
-      "2. Project setup"
-    ]
-  },
-  {
-    "objectID": "source/project_setup.html#raw-data",
-    "href": "source/project_setup.html#raw-data",
-    "title": "Project setup",
-    "section": "",
-    "text": "Raw data is the “source of truth” and must remain immutable (taking into account privacy concerns and anonymisation). Once stored in data/raw/, these files should never be edited manually. This ensures the raw data as basement for all other parts so that these can potentially always be recovered.",
-    "crumbs": [
-      "2. Project setup"
-    ]
-  },
-  {
-    "objectID": "source/project_setup.html#processed-data",
-    "href": "source/project_setup.html#processed-data",
-    "title": "Project setup",
-    "section": "",
-    "text": "Processed data is technically ‘disposable’ because it can always be re-generated by running your scripts again on the raw data as input. The resulting data files are stored in data/processed/. This strict separation ensures that your analysis always builds upon a clean foundation without ever risking accidental overwrites of your original observations.",
-    "crumbs": [
-      "2. Project setup"
-    ]
-  },
-  {
-    "objectID": "source/project_setup.html#outputs",
-    "href": "source/project_setup.html#outputs",
-    "title": "Project setup",
-    "section": "",
-    "text": "All figures and tables generated by the scripts belong in the outputs/ folder. Like with the processed data files, they are created completely automatically and hence they are technically “disposable”. You can delete them at any time and recreate them perfectly by re-running your scripts on the raw data as input via a single command.",
-    "crumbs": [
-      "2. Project setup"
-    ]
-  },
-  {
-    "objectID": "source/project_setup.html#readme",
-    "href": "source/project_setup.html#readme",
-    "title": "Project setup",
-    "section": "",
-    "text": "The README (file extension .md) is the manual for your project. It is the first file a collaborator or supervisor will read to understand and potentially contribute to the project. A good README should include:\n\nBrief Description: What is the study about?\nProject Structure: Where is the data and what is the order in which the scripts should be executed?\nInstructions for Reproduction: Which software is required and how can the scripts be executed to reproduce the results?\nLicensing: Should others cite your work, and is it allowed to reuse the code?\n\nNote that the licensing can be stated elsewhere and is not obligatory in a README.",
-    "crumbs": [
-      "2. Project setup"
-    ]
-  },
-  {
-    "objectID": "source/project_setup.html#license",
-    "href": "source/project_setup.html#license",
-    "title": "Project setup",
-    "section": "",
-    "text": "Make sure your work is credited accordingly so that third parties know what they are allowed to do with and what not. As stated earlier, the license can be stated within the README or in a separate file (e.g., license.txt). You can find typical licenses for research projects with assicated information here. If you are unsure what license to use, consult your supervisor.",
-    "crumbs": [
-      "2. Project setup"
-    ]
-  },
-  {
-    "objectID": "source/project_setup.html#citation",
-    "href": "source/project_setup.html#citation",
-    "title": "Project setup",
-    "section": "",
-    "text": "Quarto makes it possible to include citations automatically by using a BibTeX (file extension .bib) file.\nA standard entry within a BibTex-file looks like this:\n@book{wickham2023,\n  author = {Wickham, Hadley and Mineault, Patrick},\n  title = {R for Data Science},\n  year = {2023},\n  publisher = {O'Reilly Media},\n  edition = {2nd edition}\n}\nThe YAML header of the Quarto document should include the following lines to link the BibTeX file and the citation style file (e.g. APA 7 Style; can be found and downloaded from Zotero Style Repository):\nbibliography: references.bib\ncsl: apa.csl\nYou can cite the work by using the key defined in your .bib file, which is usually the surname of the first author followed by the year of publication. For example, if you want to cite the above book, you would use @wickham2023 in your text. But you can also cite the work parathetically by using [@wickham2023] in your text. The citation will then be automatically formatted according to the specified style (e.g., APA, MLA, Chicago) and included in the bibliography section of your document.\nTo include a bibliography section in your document, simply add the citation as described above and the Reference section will be automatically generated at the end of your document:\nWickham & Mineault (2023)",
-    "crumbs": [
-      "2. Project setup"
+      "3. Project setup"
     ]
   }
 ]

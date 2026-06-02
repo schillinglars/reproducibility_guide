@@ -4,7 +4,6 @@ title: "Code style"
 
 {{< include ../_hardcoded_values.qmd >}}
 
-
 ```{r}
 #| eval: true
 #| echo: false
@@ -33,7 +32,7 @@ import matplotlib.pyplot as plt
 To better understand the source code behind the code style conventions it is recommended to click on the `</>Code`-button in the top right corner of this page. This will show you the exact source code of this page.
 :::
 
-A **codestyle** is a set of conventions and rules for building script and writing the code within it. Adhering to the following rules is partly mandatory for it to run successfully, to make your scripts easier to read for others (and for your "future self") and ensures that your analysis can be maintained over time.
+A **code style** is a set of conventions and rules for building script and writing the code within it. Adhering to the following rules is partly mandatory for it to run successfully, to make your scripts easier to read for others (and for your "future self") and ensures that your analysis can be maintained over time.
 
 ## Meta settings
 
@@ -96,7 +95,7 @@ import matplotlib.pyplot as plt
 
 In the IDE of RStudio, settings how chunks should behave globaly can be set within the YAML header. However, these settings can be overwritten for each chunk individually by adding the following options at the beginning of a chunk:
 
-```text
+``` text
 #| eval: true
 #| echo: true
 #| output: true
@@ -107,18 +106,18 @@ In the IDE of RStudio, settings how chunks should behave globaly can be set with
 
 The settings of a given chunk can also be set directly within the curly brackets at the beginning of a chunk, for example:
 
-```text
+``` text
 {r, eval = TRUE, echo = TRUE, output = TRUE, warning = TRUE, error = FALSE, include = FALSE}
 ```
 
 Here are the explanations of the different options:
 
-- **`eval: true`**: The chunk is actually executed/calculated.
-- **`echo: true`**: The code of the chunk is visible in the rendered document.
-- **`output: true`**: The results of the chunk (e.g., a table) are shown.
-- **`warning: true`**: R warnings appear in the document.
-- **`error: false`**: If the code within the chunk has an error, rendering stops immediately (safe mode).
-- **`include: false`**: The chunk, including code, output, and potential warnings or errors, is completely ignored.
+-   **`eval: true`**: The chunk is actually executed/calculated.
+-   **`echo: true`**: The code of the chunk is visible in the rendered document.
+-   **`output: true`**: The results of the chunk (e.g., a table) are shown.
+-   **`warning: true`**: R warnings appear in the document.
+-   **`error: false`**: If the code within the chunk has an error, rendering stops immediately (safe mode).
+-   **`include: false`**: The chunk, including code, output, and potential warnings or errors, is completely ignored.
 
 Please note that this is not an extensive list of all available chunk options. For more, see for example the [quarto documentation about code cells and knitr chunk options](https://quarto.org/docs/reference/cells/cells-knitr.html).
 
@@ -128,9 +127,8 @@ Hardcoding refers to the practice of embedding specific data—like numbers, fil
 
 Avoid hardcoded values within your code. Instead, define them as variables within a separate chunk at the beginning of your script. This makes it easier to update values in one place and ensures consistency throughout your analysis. To make these values stand out, use a specific naming convention (e.g., UPPERCASE_LETTERS with underscores).
 
-::: box-r
-::: {.panel-tabset}
-
+:::: box-r
+::: panel-tabset
 ## GOOD
 
 The value is defined at the beginning of the script in a separate chunk for hardcoded values...
@@ -142,8 +140,8 @@ The value is defined at the beginning of the script in a separate chunk for hard
 MAX_SCORE <- 10
 ```
 
-
 ... and later on refered to in the analysis.
+
 ```{r}
 #| eval: true
 #| echo: true
@@ -162,7 +160,7 @@ The value is simply inserted in the middle of your script. If they change you ha
 filtered_seq <- seq(1:10)
 ```
 :::
-:::
+::::
 
 ## Visual structure
 
@@ -174,9 +172,8 @@ A reproducible script should work regardless of which computer it is running on.
 
 Instead use relative paths which point to a location relative to your project's root folder.
 
-::: box-r
-::: {.panel-tabset}
-
+:::: box-r
+::: panel-tabset
 ## GOOD
 
 Relative path, even better to use with the function `here()` from the same named package as this ensures the relative path starts at the project file:
@@ -199,8 +196,7 @@ Absolute path:
 my_data <- read.csv("C:/Users/Username/Documents/Project/data/raw/my_data.csv")
 ```
 :::
-:::
-
+::::
 
 ::: box-python
 In Python, you can achieve the same using the `os` module to construct relative paths:
@@ -220,11 +216,11 @@ my_data = pd.read_csv(path)
 
 Clear naming is the first step toward "self-documenting code."
 
-- **Variables**: Use nouns (e.g., `participant_scores`).
+-   **Variables**: Use nouns (e.g., `participant_scores`).
 
-- **Functions**: Use verbs (e.g., `calculate_mean`).
+-   **Functions**: Use verbs (e.g., `calculate_mean`).
 
-- **Style**: Use snake_case (lowercase letters with underscores) for both R and Python.
+-   **Style**: Use snake_case (lowercase letters with underscores) for both R and Python.
 
 Avoid generic names like `data1`, `temp`, or `foo`. Instead, be descriptive: `raw_survey_data` is much more helpful than just `df`.
 
@@ -232,9 +228,8 @@ Avoid generic names like `data1`, `temp`, or `foo`. Instead, be descriptive: `ra
 
 Comments should explain why you are doing something, rather than describing the code itself. Anyone can look up what e.g. the `mean()` function does, but only you know why you chose to exclude certain outliers before calculating it.
 
-::: box-r
-::: {.panel-tabset}
-
+:::: box-r
+::: panel-tabset
 ## GOOD
 
 Explaining the context of the code, not the logic itself:
@@ -259,7 +254,7 @@ Explaining basic code logic:
 cleaned_data <- subset(my_data, attention_check == "passed") # Result is saved
 ```
 :::
-:::
+::::
 
 ## Seed
 
@@ -289,7 +284,7 @@ random.sample(range(1, 10), 5)
 
 ## Functions
 
-**Don`t repeat yourself (DRY)**: If you find yourself writing the same code multiple times, it's a sign that you should create a function. This reduces errors—if you need to change a parameter, you only have to change it in one place.
+**Don\`t repeat yourself (DRY)**: If you find yourself writing the same code multiple times, it's a sign that you should create a function. This reduces errors—if you need to change a parameter, you only have to change it in one place.
 
 ::: box-r
 ```{r}
@@ -352,7 +347,7 @@ Consult your supervisor for more information on how to implement parallelization
 
 ## Plots and figures
 
-Plots and figures of your final thesis should never be edited manually but always within the script only. This ensures they are fully reproducible. You can save your plots and figures directly from your script using the `ggsave()` function in R or the `savefig()` function in Python. 
+Plots and figures of your final thesis should never be edited manually but always within the script only. This ensures they are fully reproducible. You can save your plots and figures directly from your script using the `ggsave()` function in R or the `savefig()` function in Python.
 
 ::: box-r
 ```{r}
@@ -410,14 +405,14 @@ When rendered, this will display the formula in a professional mathematical form
 
 ## In-line Code
 
-In-line code allows you to include the results of code directly within your text. This is particularly useful for reporting specific values, such as means, standard deviations, or p-values, without having to create a separate code chunk for it. For R, you can use the ```text `r ` ``` syntax to include in-line code.
+In-line code allows you to include the results of code directly within your text. This is particularly useful for reporting specific values, such as means, standard deviations, or p-values, without having to create a separate code chunk for it. For R, you can use the `` text `r ` `` syntax to include in-line code.
 
-This document was last rendered on the ```text r Sys.Date()``` will display as `r Sys.Date()`.
+This document was last rendered on the `text r Sys.Date()` will display as `r Sys.Date()`.
 
 ::: box-python
-As equivalent for python based in-line code you can simply use ```text `python ` ```.
+As equivalent for python based in-line code you can simply use `` text `python ` ``.
 
-This document was last rendered on the ``` `python date.today()` ``` will display as `python date.today()`
+This document was last rendered on the `` `python date.today()` `` will display as `python date.today()`
 :::
 
 ## Session

@@ -1,0 +1,83 @@
+---
+title: "Integrated Development Environment (IDE)"
+---
+
+This page provides a brief introduction to the RStudio IDE. If you are already familiar with RStudio and Quarto, you can safely skip this page. More details about the specific code style will be provided on the following pages.
+
+## General
+
+### Installation
+
+RStudio is an **Integrated Development Environment (IDE)**. You can think of R or Python as the engine of a car, and RStudio as the dashboard and steering wheel that allows you to drive it efficiently.
+
+R can be downloaded from <https://cran.r-project.org/> and RStudio from <https://posit.co/download/rstudio-desktop/>.
+
+::: box-python
+Python can be downloaded from <https://www.python.org/downloads/>. Note that for running Python within the RStudio IDE, you will need to additionally install the `reticulate` package in R.
+:::
+
+### Setting up a Project
+
+To follow the suggested project setup, which will be introduced on the next page, and to keep your research project reproducible, you should always start by creating an **RStudio Project** (`.Rproj`). Whenever you work on a Quarto document, this document should be opened from within the project file. To create a new project, follow these steps:
+
+1.  Go to `File` \> `New Project...`
+2.  Choose `New Directory` or `Existing Directory`.
+3.  If you choose `New Directory`, select `New Project` and give your project a name (e.g., `thesis-project`). If you choose `Existing Directory`, select the folder where you want to save your project (e.g., `thesis-project`).
+4.  Click `Create Project`.
+
+### Overview of the IDE
+
+RStudio has four main panes: The **Source Editor** (top left) where you can write your code, the **Console** (bottom left) where you can run commands interactively, the **Environment/History** pane (top right) where you can inspect defined variables and your command history, and the **Files/Plots/Packages/Help** pane (bottom right) where you can manage files, view plots, install packages, and access help documentation.
+
+When you open RStudio for the first time, the source editor (top left) might be empty. To create a new Quarto document, make sure you have opened RStudio within your project, go to `File` \> `New File` \> `Quarto Document`. This will open a new Quarto document in the source editor where you can start writing your code and text. Make sure to save this file with a meaningful name (e.g., `analysis.qmd`) and at the correct location within your project. The project setup will be explained on the following page.
+
+## Document Structure
+
+### The YAML Header
+
+Every Quarto document starts with a metadata block called the **YAML header**. It is fenced by three dashes (`---`) at the very top of the file. A simple YAML header looks like this:
+
+``` text
+---
+title: "My Thesis Project"
+---
+```
+
+Note that YAML headers can become much more complex. More information about the YAML header can be found on the following page.
+
+### Code chunks
+
+Following the YAML header, you can write your code inside **code chunks**. Code chunks are fenced by three backticks and include a language identifier. For the R programming language, a code chunk looks like this:
+
+```` text
+```{r}
+
+```
+````
+
+::: box-python
+For the programming language of Python, the code chunk looks like:
+
+```` text
+```{python}
+
+```
+````
+:::
+
+Inside these code chunks, everything is treated as code and will be executed when you run the chunk. Outside of the code chunks, everything is treated as regular text and will be rendered as such. This allows you to intersperse your code with explanations, interpretations, additional text and other elements like images, making your document significantly more readable and informative.
+
+## Workflow
+
+Whenever you are done with the code for a respective chunk, run it. You can do this by clicking the `Run` button in the toolbar or by using the following shortcuts:
+
+-   `Ctrl + Enter` (Windows) or `Command + Enter` (Mac): Run the current line or selection.
+-   `Ctrl + Shift + Enter` (Windows) or `Command + Shift + Enter` (Mac): Run the entire code chunk.
+-   `Ctrl + Alt + P` (Windows) or `Command + Option + P` (Mac): Run the previous code region.
+-   `Ctrl + Alt + R (Windows)` or `Command + Option + R` (Mac): Run all code chunks in the document.
+
+When all code chunks are running without errors, you can render the document to see the final output. You can do this by clicking the `Render` button in the toolbar or by using the shortcut `Ctrl + Shift + K` (Windows) or `Command + Shift + K` (Mac). If not specified differently in the YAML-Header, the output format will be `html`. In your rendered `html` file you can see the code chunks, the output of the code chunks and plain text separately.
+
+## Further Resources
+
+The introduction given here only scratches the surface of what can be done to set up and use RStudio and in particular Quarto. If you want to dive deeper into data processing and visualization before continuing with this guide, feel free to check out the [Reproducible Data Processing and Visualization](https://wrangling.tidyver.se/) guide, written by Ian Hussey from our lab [@hussey2026] or feel free to check out the [official Quarto documentation page](https://quarto.org/).

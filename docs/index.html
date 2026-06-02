@@ -6,7 +6,7 @@
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
-<meta name="dcterms.date" content="2026-05-08">
+<meta name="dcterms.date" content="2026-06-02">
 
 <title>Reproducibility Guide</title>
 <style>
@@ -59,7 +59,6 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 div.csl-bib-body { }
 div.csl-entry {
   clear: both;
-  margin-bottom: 0em;
 }
 .hanging-indent div.csl-entry {
   margin-left:2em;
@@ -178,26 +177,32 @@ div.csl-indent {
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
+  <a href="./source/ide.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">2. RStudio and Quarto</span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
   <a href="./source/project_setup.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">2. Project setup</span></a>
+ <span class="menu-text">3. Project setup</span></a>
   </div>
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./source/codestyle.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">3. Code style</span></a>
+ <span class="menu-text">4. Code style</span></a>
   </div>
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./source/reproducible_workflow.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">4. Reproducible workflow</span></a>
+ <span class="menu-text">5. Reproducible workflow</span></a>
   </div>
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./source/analysis_template.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">5. Template</span></a>
+ <span class="menu-text">6. Template</span></a>
   </div>
 </li>
     </ul>
@@ -231,7 +236,7 @@ div.csl-indent {
     <div>
     <div class="quarto-title-meta-heading">Published</div>
     <div class="quarto-title-meta-contents">
-      <p class="date">May 8, 2026</p>
+      <p class="date">June 2, 2026</p>
     </div>
   </div>
   
@@ -261,11 +266,6 @@ Important
 <div class="box-python">
 <p>Content related in particular to Python will be placed in these information boxes.</p>
 </div>
-<p>If you are not familiar with R, RStudio and Quarto you can check out one of the two guides of our department:</p>
-<ul>
-<li>Introductory level (German only): <a href="https://r-you-ready.github.io/Webseite_FS26_Seminar/">R you ready?</a> <span class="citation" data-cites="grinschgl2026">(<a href="#ref-grinschgl2026" role="doc-biblioref">Grinschgl et al., 2026</a>)</span></li>
-<li>Progressive level (English): <a href="https://wrangling.tidyver.se/">Reproducible Data Processing and Visualization</a> <span class="citation" data-cites="hussey2026">(<a href="#ref-hussey2026" role="doc-biblioref">Hussey, 2026</a>)</span></li>
-</ul>
 <p>This guide is hosted on GitHub and is open for contributions. If you have suggestions for improvement, please let us know by creating an issue on the <a href="https://github.com/schillinglars/reproducibility_guide">GitHub repository</a> or by <script type="text/javascript">
 <!--
 h='&#x75;&#110;&#x69;&#98;&#x65;&#46;&#x63;&#104;';a='&#64;';n='&#76;&#x61;&#114;&#x73;&#46;&#x53;&#x63;&#104;&#x69;&#108;&#108;&#x69;&#110;&#x67;';e=n+a+h;
@@ -275,13 +275,8 @@ document.write('<a h'+'ref'+'="ma'+'ilto'+':'+e+'" clas'+'s="em' + 'ail">'+'&#x6
 <p>The guide is inspired by the <a href="https://bes-guide.github.io/reproducible-code/">Guide to Reproducible Code</a> from the British Ecological Society (BES).</p>
 <section id="references" class="level2">
 <h2 class="anchored" data-anchor-id="references">References</h2>
-<div id="refs" class="references csl-bib-body hanging-indent" data-entry-spacing="0" data-line-spacing="2" role="list">
-<div id="ref-grinschgl2026" class="csl-entry" role="listitem">
-Grinschgl, S., Hirt, L., &amp; Schilling, L. (2026). <em>R you ready?</em> <a href="https://r-you-ready.github.io/Webseite_FS26_Seminar/">https://r-you-ready.github.io/Webseite_FS26_Seminar/</a>
-</div>
-<div id="ref-hussey2026" class="csl-entry" role="listitem">
-Hussey, I. (2026). <em>Reproducible data processing and visualization in r and tidyverse</em>. <a href="https://doi.org/10.5281/zenodo.19427860">https://doi.org/10.5281/zenodo.19427860</a>
-</div>
+<div id="refs" role="list">
+
 </div>
 
 
@@ -787,19 +782,14 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
 <span id="cb1-20"><a href="#cb1-20" aria-hidden="true" tabindex="-1"></a>Content related in particular to Python will be placed in these information boxes.</span>
 <span id="cb1-21"><a href="#cb1-21" aria-hidden="true" tabindex="-1"></a>:::</span>
 <span id="cb1-22"><a href="#cb1-22" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-23"><a href="#cb1-23" aria-hidden="true" tabindex="-1"></a>If you are not familiar with R, RStudio and Quarto you can check out one of the two guides of our department:</span>
+<span id="cb1-23"><a href="#cb1-23" aria-hidden="true" tabindex="-1"></a>This guide is hosted on GitHub and is open for contributions. If you have suggestions for improvement, please let us know by creating an issue on the <span class="co">[</span><span class="ot">GitHub repository</span><span class="co">][repo-url]</span> or by <span class="co">[</span><span class="ot">contacting us directly</span><span class="co">][contact]</span>.</span>
 <span id="cb1-24"><a href="#cb1-24" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-25"><a href="#cb1-25" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span>Introductory level (German only): <span class="co">[</span><span class="ot">R you ready?</span><span class="co">](https://r-you-ready.github.io/Webseite_FS26_Seminar/)</span> <span class="co">[</span><span class="ot">@grinschgl2026</span><span class="co">]</span></span>
-<span id="cb1-26"><a href="#cb1-26" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span>Progressive level (English): <span class="co">[</span><span class="ot">Reproducible Data Processing and Visualization</span><span class="co">](https://wrangling.tidyver.se/)</span> <span class="co">[</span><span class="ot">@hussey2026</span><span class="co">]</span></span>
-<span id="cb1-27"><a href="#cb1-27" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-28"><a href="#cb1-28" aria-hidden="true" tabindex="-1"></a>This guide is hosted on GitHub and is open for contributions. If you have suggestions for improvement, please let us know by creating an issue on the <span class="co">[</span><span class="ot">GitHub repository</span><span class="co">][repo-url]</span> or by <span class="co">[</span><span class="ot">contacting us directly</span><span class="co">][contact]</span>.</span>
-<span id="cb1-29"><a href="#cb1-29" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-30"><a href="#cb1-30" aria-hidden="true" tabindex="-1"></a>The guide is inspired by the <span class="co">[</span><span class="ot">Guide to Reproducible Code</span><span class="co">](https://bes-guide.github.io/reproducible-code/)</span> from the British Ecological Society (BES).</span>
-<span id="cb1-31"><a href="#cb1-31" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-32"><a href="#cb1-32" aria-hidden="true" tabindex="-1"></a><span class="fu">## References</span></span>
-<span id="cb1-33"><a href="#cb1-33" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-34"><a href="#cb1-34" aria-hidden="true" tabindex="-1"></a>::: {#refs}</span>
-<span id="cb1-35"><a href="#cb1-35" aria-hidden="true" tabindex="-1"></a>:::</span></code><button title="Copy to Clipboard" class="code-copy-button" data-in-quarto-modal=""><i class="bi"></i></button></pre></div>
+<span id="cb1-25"><a href="#cb1-25" aria-hidden="true" tabindex="-1"></a>The guide is inspired by the <span class="co">[</span><span class="ot">Guide to Reproducible Code</span><span class="co">](https://bes-guide.github.io/reproducible-code/)</span> from the British Ecological Society (BES).</span>
+<span id="cb1-26"><a href="#cb1-26" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-27"><a href="#cb1-27" aria-hidden="true" tabindex="-1"></a><span class="fu">## References</span></span>
+<span id="cb1-28"><a href="#cb1-28" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-29"><a href="#cb1-29" aria-hidden="true" tabindex="-1"></a>::: {#refs}</span>
+<span id="cb1-30"><a href="#cb1-30" aria-hidden="true" tabindex="-1"></a>:::</span></code><button title="Copy to Clipboard" class="code-copy-button" data-in-quarto-modal=""><i class="bi"></i></button></pre></div>
 </div></div></div></div></div>
 </div> <!-- /content -->
 <footer class="footer">

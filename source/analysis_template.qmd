@@ -9,6 +9,6 @@ format:
 
 {{< include ../_hardcoded_values.qmd >}}
 
-# General information
+## General information
 
 We provide a template `.qmd`-file with this guide. You can download it via the `</> Download`-button in the top right corner. This template in particular is designed to be a starting point for your own analyses script, following many of the best practices for code style. Note that you may need to download and place additional content in the respective folder for this script to run (e.g. `references.bib`). You can download this `.bib`-file and all other parts of the project behind this guide from the [GitHub repository][repo-url] to further follow many of the best practices for reproducibility.

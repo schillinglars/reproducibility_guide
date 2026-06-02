@@ -1,13 +1,10 @@
 <!DOCTYPE html>
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
-
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <meta charset="utf-8">
 <meta name="generator" content="quarto-1.6.42">
-
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
-
-
-<title>General principles – Reproducibility Guide</title>
+<title>Integrated Development Environment (IDE) – Reproducibility Guide</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -56,7 +53,6 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 }
 </style>
 
-
 <script src="../site_libs/quarto-nav/quarto-nav.js"></script>
 <script src="../site_libs/quarto-nav/headroom.min.js"></script>
 <script src="../site_libs/clipboard/clipboard.min.js"></script>
@@ -73,8 +69,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <link href="../site_libs/quarto-html/quarto-syntax-highlighting-2f5df379a58b258e96c21c0638c20c03.css" rel="stylesheet" id="quarto-text-highlighting-styles">
 <script src="../site_libs/bootstrap/bootstrap.min.js"></script>
 <link href="../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
-<link href="../site_libs/bootstrap/bootstrap-5260835210f0825f17da3e85d5e435aa.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
-<script id="quarto-search-options" type="application/json">{
+<link href="../site_libs/bootstrap/bootstrap-5260835210f0825f17da3e85d5e435aa.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light"><script id="quarto-search-options" type="application/json">{
   "location": "sidebar",
   "copy-button": false,
   "collapse-after": 3,
@@ -100,38 +95,27 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
     "search-submit-button-title": "Submit",
     "search-label": "Search"
   }
-}</script>
-
-
-<link rel="stylesheet" href="../styles.css">
+}</script><link rel="stylesheet" href="../styles.css">
 </head>
-
 <body class="nav-sidebar docked">
 
 <div id="quarto-search-results"></div>
-  <header id="quarto-header" class="headroom fixed-top">
-  <nav class="quarto-secondary-nav">
-    <div class="container-fluid d-flex">
+  <header id="quarto-header" class="headroom fixed-top"><nav class="quarto-secondary-nav"><div class="container-fluid d-flex">
       <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" role="button" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
         <i class="bi bi-layout-text-sidebar-reverse"></i>
       </button>
-        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../source/general_principles.html">1. General principles</a></li></ol></nav>
+        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../source/ide.html">2. RStudio and Quarto</a></li></ol></nav>
         <a class="flex-grow-1" role="navigation" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
         </a>
       <button type="button" class="btn quarto-search-button" aria-label="Search" onclick="window.quartoOpenSearch();">
         <i class="bi bi-search"></i>
       </button>
     </div>
-  </nav>
-</header>
-<!-- content -->
-<div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article">
+  </nav></header><!-- content --><div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article">
 <!-- sidebar -->
-  <nav id="quarto-sidebar" class="sidebar collapse collapse-horizontal quarto-sidebar-collapse-item sidebar-navigation docked overflow-auto">
-    <div class="pt-lg-2 mt-2 text-left sidebar-header sidebar-header-stacked">
+  <nav id="quarto-sidebar" class="sidebar collapse collapse-horizontal quarto-sidebar-collapse-item sidebar-navigation docked overflow-auto"><div class="pt-lg-2 mt-2 text-left sidebar-header sidebar-header-stacked">
       <a href="../index.html" class="sidebar-logo-link">
-      <img src="../images/logo.png" alt="" class="sidebar-logo py-0 d-lg-inline d-none">
-      </a>
+      <img src="../images/logo.png" alt="" class="sidebar-logo py-0 d-lg-inline d-none"></a>
     <div class="sidebar-title mb-0 py-0">
       <a href="../">Reproducibility Guide</a> 
     </div>
@@ -143,7 +127,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
         </div>
     <div class="sidebar-menu-container"> 
     <ul class="list-unstyled mt-1">
-        <li class="sidebar-item">
+<li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="../index.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Welcome</span></a>
@@ -151,13 +135,13 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../source/general_principles.html" class="sidebar-item-text sidebar-link active">
+  <a href="../source/general_principles.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">1. General principles</span></a>
   </div>
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../source/ide.html" class="sidebar-item-text sidebar-link">
+  <a href="../source/ide.html" class="sidebar-item-text sidebar-link active">
  <span class="menu-text">2. RStudio and Quarto</span></a>
   </div>
 </li>
@@ -186,19 +170,35 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   </div>
 </li>
     </ul>
-    </div>
-</nav>
-<div id="quarto-sidebar-glass" class="quarto-sidebar-collapse-item" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item"></div>
+</div>
+</nav><div id="quarto-sidebar-glass" class="quarto-sidebar-collapse-item" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item"></div>
 <!-- margin-sidebar -->
-    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar zindex-bottom">
-        
+    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
+        <nav id="TOC" role="doc-toc" class="toc-active"><h2 id="toc-title">On this page</h2>
+   
+  <ul>
+<li>
+<a href="#general" id="toc-general" class="nav-link active" data-scroll-target="#general">General</a>
+  <ul class="collapse">
+<li><a href="#installation" id="toc-installation" class="nav-link" data-scroll-target="#installation">Installation</a></li>
+  <li><a href="#setting-up-a-project" id="toc-setting-up-a-project" class="nav-link" data-scroll-target="#setting-up-a-project">Setting up a Project</a></li>
+  <li><a href="#overview-of-the-ide" id="toc-overview-of-the-ide" class="nav-link" data-scroll-target="#overview-of-the-ide">Overview of the IDE</a></li>
+  </ul>
+</li>
+  <li>
+<a href="#document-structure" id="toc-document-structure" class="nav-link" data-scroll-target="#document-structure">Document Structure</a>
+  <ul class="collapse">
+<li><a href="#the-yaml-header" id="toc-the-yaml-header" class="nav-link" data-scroll-target="#the-yaml-header">The YAML Header</a></li>
+  <li><a href="#code-chunks" id="toc-code-chunks" class="nav-link" data-scroll-target="#code-chunks">Code chunks</a></li>
+  </ul>
+</li>
+  <li><a href="#workflow" id="toc-workflow" class="nav-link" data-scroll-target="#workflow">Workflow</a></li>
+  <li><a href="#further-resources" id="toc-further-resources" class="nav-link" data-scroll-target="#further-resources">Further Resources</a></li>
+  </ul></nav>
     </div>
 <!-- main -->
-<main class="content" id="quarto-document-content">
-
-<header id="title-block-header" class="quarto-title-block default">
-<div class="quarto-title">
-<div class="quarto-title-block"><div><h1 class="title">General principles</h1><button type="button" class="btn code-tools-button" id="quarto-code-tools-source"><i class="bi"></i> Code</button></div></div>
+<main class="content" id="quarto-document-content"><header id="title-block-header" class="quarto-title-block default"><div class="quarto-title">
+<div class="quarto-title-block"><div><h1 class="title">Integrated Development Environment (IDE)</h1><button type="button" class="btn code-tools-button" id="quarto-code-tools-source"><i class="bi"></i> Code</button></div></div>
 </div>
 
 
@@ -212,41 +212,64 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   
 
 
-</header>
-
-
-<p>To make research results more reproducible, there are the so-called <strong>FAIR principles (Findable, Accessible, Interoperable, Reusable)</strong>. Research projects, including your thesis, should follow these principles wherever possible. In particular for code and software, these principles can be applied as follows:</p>
+</header><p>This page provides a brief introduction to the RStudio IDE. If you are already familiar with RStudio and Quarto, you can safely skip this page. More details about the specific code style will be provided on the following pages.</p>
+<section id="general" class="level2"><h2 class="anchored" data-anchor-id="general">General</h2>
+<section id="installation" class="level3"><h3 class="anchored" data-anchor-id="installation">Installation</h3>
+<p>RStudio is an <strong>Integrated Development Environment (IDE)</strong>. You can think of R or Python as the engine of a car, and RStudio as the dashboard and steering wheel that allows you to drive it efficiently.</p>
+<p>R can be downloaded from <a href="https://cran.r-project.org/" class="uri">https://cran.r-project.org/</a> and RStudio from <a href="https://posit.co/download/rstudio-desktop/" class="uri">https://posit.co/download/rstudio-desktop/</a>.</p>
+<div class="box-python">
+<p>Python can be downloaded from <a href="https://www.python.org/downloads/" class="uri">https://www.python.org/downloads/</a>. Note that for running Python within the RStudio IDE, you will need to additionally install the <code>reticulate</code> package in R.</p>
+</div>
+</section><section id="setting-up-a-project" class="level3"><h3 class="anchored" data-anchor-id="setting-up-a-project">Setting up a Project</h3>
+<p>To follow the suggested project setup, which will be introduced on the next page, and to keep your research project reproducible, you should always start by creating an <strong>RStudio Project</strong> (<code>.Rproj</code>). Whenever you work on a Quarto document, this document should be opened from within the project file. To create a new project, follow these steps:</p>
 <ol type="1">
-<li><p><strong>Findable</strong>: The whole content should be easily locateable. This can be achieved through the use of unique identifiers, metadata, naming conventions, and folder structures which follow guidelines and contain descriptive information about the content.</p>
-<p><em>One example: You set up the folder system in your project to match the psychDS-structure and place your data in the respective subfolder <code>/data/</code> with meaningful and machine readable names like <code>data_merged</code>.</em></p></li>
-<li><p><strong>Accessible</strong>: All the material should be accessible to everyone. This can be achieved by using open access repositories, providing clear instructions for accessing the material, and ensuring that the material is available in a format that can be easily used by others. Further, all applied software should be open source and freely available to everyone.</p>
-<p><em>One example: Instead of a proprietary software you use tools like Python or R which are open-source and you place all your material on openly available plattforms like your public GitHub repository.</em></p></li>
-<li><p><strong>Interoperable</strong>: Software and code should be compatible with other software products and data to facilitate collaboration and the exchange of information. This can be achieved through the use of open standards and interfaces.</p>
-<p><em>One example: You save your data in open formats like <code>.csv</code>, <code>.parquet</code> or <code>.json</code> to ensure compatibility across different programming languages and operating systems.</em></p></li>
-<li><p><strong>Reusable</strong>: Software should be designed so that it can be easily reused by other researchers. This includes ensuring that it is clearly documented, allowing for modifications to be built upon it, or making it integratable into other software.</p>
-<p><em>One example: You include a LICENSE file to legally permit others to use your work and a README to explain the content of your project.</em></p></li>
-</ol>
-<p>The following pages provide practical guidance on implementing the FAIR principles more comprehensively in your work. While this is not an exhaustive list, it serves as a robust starting point for making your research more transparent and reproducible. As you write your thesis, keep the FAIR principles in mind and look for opportunities to align your workflow even more closely to them.</p>
-<div class="callout callout-style-default callout-note callout-titled">
-<div class="callout-header d-flex align-content-center">
-<div class="callout-icon-container">
-<i class="callout-icon"></i>
+<li>Go to <code>File</code> &gt; <code>New Project...</code>
+</li>
+<li>Choose <code>New Directory</code> or <code>Existing Directory</code>.</li>
+<li>If you choose <code>New Directory</code>, select <code>New Project</code> and give your project a name (e.g., <code>thesis-project</code>). If you choose <code>Existing Directory</code>, select the folder where you want to save your project (e.g., <code>thesis-project</code>).</li>
+<li>Click <code>Create Project</code>.</li>
+</ol></section><section id="overview-of-the-ide" class="level3"><h3 class="anchored" data-anchor-id="overview-of-the-ide">Overview of the IDE</h3>
+<p>RStudio has four main panes: The <strong>Source Editor</strong> (top left) where you can write your code, the <strong>Console</strong> (bottom left) where you can run commands interactively, the <strong>Environment/History</strong> pane (top right) where you can inspect defined variables and your command history, and the <strong>Files/Plots/Packages/Help</strong> pane (bottom right) where you can manage files, view plots, install packages, and access help documentation.</p>
+<p>When you open RStudio for the first time, the source editor (top left) might be empty. To create a new Quarto document, make sure you have opened RStudio within your project, go to <code>File</code> &gt; <code>New File</code> &gt; <code>Quarto Document</code>. This will open a new Quarto document in the source editor where you can start writing your code and text. Make sure to save this file with a meaningful name (e.g., <code>analysis.qmd</code>) and at the correct location within your project. The project setup will be explained on the following page.</p>
+</section></section><section id="document-structure" class="level2"><h2 class="anchored" data-anchor-id="document-structure">Document Structure</h2>
+<section id="the-yaml-header" class="level3"><h3 class="anchored" data-anchor-id="the-yaml-header">The YAML Header</h3>
+<p>Every Quarto document starts with a metadata block called the <strong>YAML header</strong>. It is fenced by three dashes (<code>---</code>) at the very top of the file. A simple YAML header looks like this:</p>
+<pre class="text"><code>---
+title: "My Thesis Project"
+---</code></pre>
+<p>Note that YAML headers can become much more complex. More information about the YAML header can be found on the following page.</p>
+</section><section id="code-chunks" class="level3"><h3 class="anchored" data-anchor-id="code-chunks">Code chunks</h3>
+<p>Following the YAML header, you can write your code inside <strong>code chunks</strong>. Code chunks are fenced by three backticks and include a language identifier. For the R programming language, a code chunk looks like this:</p>
+<pre class="text"><code>::: {.cell}
+
+:::</code></pre>
+<div class="box-python">
+<p>For the programming language of Python, the code chunk looks like:</p>
+<pre class="text"><code>::: {.cell}
+
+:::</code></pre>
 </div>
-<div class="callout-title-container flex-fill">
-Note
-</div>
-</div>
-<div class="callout-body-container callout-body">
-<p>If you are interested in a more comprehensive overview of the FAIR-Principles and their application in research, check out the <a href="https://www.go-fair.org/fair-principles/">FAIR Principles website</a>.</p>
-</div>
-</div>
+<p>Inside these code chunks, everything is treated as code and will be executed when you run the chunk. Outside of the code chunks, everything is treated as regular text and will be rendered as such. This allows you to intersperse your code with explanations, interpretations, additional text and other elements like images, making your document significantly more readable and informative.</p>
+</section></section><section id="workflow" class="level2"><h2 class="anchored" data-anchor-id="workflow">Workflow</h2>
+<p>Whenever you are done with the code for a respective chunk, run it. You can do this by clicking the <code>Run</code> button in the toolbar or by using the following shortcuts:</p>
+<ul>
+<li>
+<code>Ctrl + Enter</code> (Windows) or <code>Command + Enter</code> (Mac): Run the current line or selection.</li>
+<li>
+<code>Ctrl + Shift + Enter</code> (Windows) or <code>Command + Shift + Enter</code> (Mac): Run the entire code chunk.</li>
+<li>
+<code>Ctrl + Alt + P</code> (Windows) or <code>Command + Option + P</code> (Mac): Run the previous code region.</li>
+<li>
+<code>Ctrl + Alt + R (Windows)</code> or <code>Command + Option + R</code> (Mac): Run all code chunks in the document.</li>
+</ul>
+<p>When all code chunks are running without errors, you can render the document to see the final output. You can do this by clicking the <code>Render</code> button in the toolbar or by using the shortcut <code>Ctrl + Shift + K</code> (Windows) or <code>Command + Shift + K</code> (Mac). If not specified differently in the YAML-Header, the output format will be <code>html</code>. In your rendered <code>html</code> file you can see the code chunks, the output of the code chunks and plain text separately.</p>
+</section><section id="further-resources" class="level2"><h2 class="anchored" data-anchor-id="further-resources">Further Resources</h2>
+<p>The introduction given here only scratches the surface of what can be done to set up and use RStudio and in particular Quarto. If you want to dive deeper into data processing and visualization before continuing with this guide, feel free to check out the <a href="https://wrangling.tidyver.se/">Reproducible Data Processing and Visualization</a> guide, written by Ian Hussey from our lab <span class="citation" data-cites="hussey2026">[@hussey2026]</span> or feel free to check out the <a href="https://quarto.org/">official Quarto documentation page</a>.</p>
 
 
 <!-- -->
 
-
-</main> <!-- /main -->
-<script id="quarto-html-after-body" type="application/javascript">
+</section></main><!-- /main --><script id="quarto-html-after-body" type="application/javascript">
 window.document.addEventListener("DOMContentLoaded", function (event) {
   const toggleBodyColorMode = (bsSheetEl) => {
     const mode = bsSheetEl.getAttribute("data-mode");
@@ -721,45 +744,97 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
   }
 });
 </script><div class="modal fade" id="quarto-embedded-source-code-modal" tabindex="-1" aria-labelledby="quarto-embedded-source-code-modal-label" aria-hidden="true"><div class="modal-dialog modal-dialog-scrollable"><div class="modal-content"><div class="modal-header"><h5 class="modal-title" id="quarto-embedded-source-code-modal-label">Source Code</h5><button class="btn-close" data-bs-dismiss="modal"></button></div><div class="modal-body"><div class="">
-<div class="sourceCode" id="cb1" data-shortcodes="false"><pre class="sourceCode markdown code-with-copy"><code class="sourceCode markdown"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="co">---</span></span>
-<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a><span class="an">title:</span><span class="co"> "General principles"</span></span>
-<span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a><span class="co">---</span></span>
-<span id="cb1-4"><a href="#cb1-4" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-5"><a href="#cb1-5" aria-hidden="true" tabindex="-1"></a>{{&lt; include ../_hardcoded_values.qmd &gt;}}</span>
-<span id="cb1-6"><a href="#cb1-6" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-7"><a href="#cb1-7" aria-hidden="true" tabindex="-1"></a>To make research results more reproducible, there are the so-called **FAIR principles (Findable, Accessible, Interoperable, Reusable)**. Research projects, including your thesis, should follow these principles wherever possible. In particular for code and software, these principles can be applied as follows:</span>
-<span id="cb1-8"><a href="#cb1-8" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-9"><a href="#cb1-9" aria-hidden="true" tabindex="-1"></a><span class="ss">1.  </span>**Findable**: The whole content should be easily locateable. This can be achieved through the use of unique identifiers, metadata, naming conventions, and folder structures which follow guidelines and contain descriptive information about the content.</span>
-<span id="cb1-10"><a href="#cb1-10" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-11"><a href="#cb1-11" aria-hidden="true" tabindex="-1"></a>    *One example: You set up the folder system in your project to match the psychDS-structure and place your data in the respective subfolder `/data/` with meaningful and machine readable names like `data_merged`.*</span>
-<span id="cb1-12"><a href="#cb1-12" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-13"><a href="#cb1-13" aria-hidden="true" tabindex="-1"></a><span class="ss">2.  </span>**Accessible**: All the material should be accessible to everyone. This can be achieved by using open access repositories, providing clear instructions for accessing the material, and ensuring that the material is available in a format that can be easily used by others. Further, all applied software should be open source and freely available to everyone.</span>
-<span id="cb1-14"><a href="#cb1-14" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-15"><a href="#cb1-15" aria-hidden="true" tabindex="-1"></a>    *One example: Instead of a proprietary software you use tools like Python or R which are open-source and you place all your material on openly available plattforms like your public GitHub repository.*</span>
-<span id="cb1-16"><a href="#cb1-16" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-17"><a href="#cb1-17" aria-hidden="true" tabindex="-1"></a><span class="ss">3.  </span>**Interoperable**: Software and code should be compatible with other software products and data to facilitate collaboration and the exchange of information. This can be achieved through the use of open standards and interfaces.</span>
-<span id="cb1-18"><a href="#cb1-18" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-19"><a href="#cb1-19" aria-hidden="true" tabindex="-1"></a>    *One example: You save your data in open formats like `.csv`, `.parquet` or `.json` to ensure compatibility across different programming languages and operating systems.*</span>
-<span id="cb1-20"><a href="#cb1-20" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-21"><a href="#cb1-21" aria-hidden="true" tabindex="-1"></a><span class="ss">4.  </span>**Reusable**: Software should be designed so that it can be easily reused by other researchers. This includes ensuring that it is clearly documented, allowing for modifications to be built upon it, or making it integratable into other software.</span>
-<span id="cb1-22"><a href="#cb1-22" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-23"><a href="#cb1-23" aria-hidden="true" tabindex="-1"></a>    *One example: You include a LICENSE file to legally permit others to use your work and a README to explain the content of your project.*</span>
-<span id="cb1-24"><a href="#cb1-24" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-25"><a href="#cb1-25" aria-hidden="true" tabindex="-1"></a>The following pages provide practical guidance on implementing the FAIR principles more comprehensively in your work. While this is not an exhaustive list, it serves as a robust starting point for making your research more transparent and reproducible. As you write your thesis, keep the FAIR principles in mind and look for opportunities to align your workflow even more closely to them.</span>
-<span id="cb1-26"><a href="#cb1-26" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-27"><a href="#cb1-27" aria-hidden="true" tabindex="-1"></a>::: callout-note</span>
-<span id="cb1-28"><a href="#cb1-28" aria-hidden="true" tabindex="-1"></a>If you are interested in a more comprehensive overview of the FAIR-Principles and their application in research, check out the <span class="co">[</span><span class="ot">FAIR Principles website</span><span class="co">](https://www.go-fair.org/fair-principles/)</span>.</span>
-<span id="cb1-29"><a href="#cb1-29" aria-hidden="true" tabindex="-1"></a>:::</span></code><button title="Copy to Clipboard" class="code-copy-button" data-in-quarto-modal=""><i class="bi"></i></button></pre></div>
+<div class="sourceCode" id="cb4" data-shortcodes="false"><pre class="sourceCode markdown code-with-copy"><code class="sourceCode markdown"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a><span class="co">---</span></span>
+<span id="cb4-2"><a href="#cb4-2" aria-hidden="true" tabindex="-1"></a><span class="an">title:</span><span class="co"> "Integrated Development Environment (IDE)"</span></span>
+<span id="cb4-3"><a href="#cb4-3" aria-hidden="true" tabindex="-1"></a><span class="co">---</span></span>
+<span id="cb4-4"><a href="#cb4-4" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb4-5"><a href="#cb4-5" aria-hidden="true" tabindex="-1"></a>This page provides a brief introduction to the RStudio IDE. If you are already familiar with RStudio and Quarto, you can safely skip this page. More details about the specific code style will be provided on the following pages.</span>
+<span id="cb4-6"><a href="#cb4-6" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb4-7"><a href="#cb4-7" aria-hidden="true" tabindex="-1"></a><span class="fu">## General</span></span>
+<span id="cb4-8"><a href="#cb4-8" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb4-9"><a href="#cb4-9" aria-hidden="true" tabindex="-1"></a><span class="fu">### Installation</span></span>
+<span id="cb4-10"><a href="#cb4-10" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb4-11"><a href="#cb4-11" aria-hidden="true" tabindex="-1"></a>RStudio is an **Integrated Development Environment (IDE)**. You can think of R or Python as the engine of a car, and RStudio as the dashboard and steering wheel that allows you to drive it efficiently.</span>
+<span id="cb4-12"><a href="#cb4-12" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb4-13"><a href="#cb4-13" aria-hidden="true" tabindex="-1"></a>R can be downloaded from <span class="ot">&lt;https://cran.r-project.org/&gt;</span> and RStudio from <span class="ot">&lt;https://posit.co/download/rstudio-desktop/&gt;</span>.</span>
+<span id="cb4-14"><a href="#cb4-14" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb4-15"><a href="#cb4-15" aria-hidden="true" tabindex="-1"></a>::: box-python</span>
+<span id="cb4-16"><a href="#cb4-16" aria-hidden="true" tabindex="-1"></a>Python can be downloaded from <span class="ot">&lt;https://www.python.org/downloads/&gt;</span>. Note that for running Python within the RStudio IDE, you will need to additionally install the <span class="in">`reticulate`</span> package in R.</span>
+<span id="cb4-17"><a href="#cb4-17" aria-hidden="true" tabindex="-1"></a>:::</span>
+<span id="cb4-18"><a href="#cb4-18" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb4-19"><a href="#cb4-19" aria-hidden="true" tabindex="-1"></a><span class="fu">### Setting up a Project</span></span>
+<span id="cb4-20"><a href="#cb4-20" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb4-21"><a href="#cb4-21" aria-hidden="true" tabindex="-1"></a>To follow the suggested project setup, which will be introduced on the next page, and to keep your research project reproducible, you should always start by creating an **RStudio Project** (<span class="in">`.Rproj`</span>). Whenever you work on a Quarto document, this document should be opened from within the project file. To create a new project, follow these steps:</span>
+<span id="cb4-22"><a href="#cb4-22" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb4-23"><a href="#cb4-23" aria-hidden="true" tabindex="-1"></a><span class="ss">1.  </span>Go to <span class="in">`File`</span> <span class="sc">\&gt;</span> <span class="in">`New Project...`</span></span>
+<span id="cb4-24"><a href="#cb4-24" aria-hidden="true" tabindex="-1"></a><span class="ss">2.  </span>Choose <span class="in">`New Directory`</span> or <span class="in">`Existing Directory`</span>.</span>
+<span id="cb4-25"><a href="#cb4-25" aria-hidden="true" tabindex="-1"></a><span class="ss">3.  </span>If you choose <span class="in">`New Directory`</span>, select <span class="in">`New Project`</span> and give your project a name (e.g., <span class="in">`thesis-project`</span>). If you choose <span class="in">`Existing Directory`</span>, select the folder where you want to save your project (e.g., <span class="in">`thesis-project`</span>).</span>
+<span id="cb4-26"><a href="#cb4-26" aria-hidden="true" tabindex="-1"></a><span class="ss">4.  </span>Click <span class="in">`Create Project`</span>.</span>
+<span id="cb4-27"><a href="#cb4-27" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb4-28"><a href="#cb4-28" aria-hidden="true" tabindex="-1"></a><span class="fu">### Overview of the IDE</span></span>
+<span id="cb4-29"><a href="#cb4-29" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb4-30"><a href="#cb4-30" aria-hidden="true" tabindex="-1"></a>RStudio has four main panes: The **Source Editor** (top left) where you can write your code, the **Console** (bottom left) where you can run commands interactively, the **Environment/History** pane (top right) where you can inspect defined variables and your command history, and the **Files/Plots/Packages/Help** pane (bottom right) where you can manage files, view plots, install packages, and access help documentation.</span>
+<span id="cb4-31"><a href="#cb4-31" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb4-32"><a href="#cb4-32" aria-hidden="true" tabindex="-1"></a>When you open RStudio for the first time, the source editor (top left) might be empty. To create a new Quarto document, make sure you have opened RStudio within your project, go to <span class="in">`File`</span> <span class="sc">\&gt;</span> <span class="in">`New File`</span> <span class="sc">\&gt;</span> <span class="in">`Quarto Document`</span>. This will open a new Quarto document in the source editor where you can start writing your code and text. Make sure to save this file with a meaningful name (e.g., <span class="in">`analysis.qmd`</span>) and at the correct location within your project. The project setup will be explained on the following page.</span>
+<span id="cb4-33"><a href="#cb4-33" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb4-34"><a href="#cb4-34" aria-hidden="true" tabindex="-1"></a><span class="fu">## Document Structure</span></span>
+<span id="cb4-35"><a href="#cb4-35" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb4-36"><a href="#cb4-36" aria-hidden="true" tabindex="-1"></a><span class="fu">### The YAML Header</span></span>
+<span id="cb4-37"><a href="#cb4-37" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb4-38"><a href="#cb4-38" aria-hidden="true" tabindex="-1"></a>Every Quarto document starts with a metadata block called the **YAML header**. It is fenced by three dashes (<span class="in">`---`</span>) at the very top of the file. A simple YAML header looks like this:</span>
+<span id="cb4-39"><a href="#cb4-39" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb4-40"><a href="#cb4-40" aria-hidden="true" tabindex="-1"></a><span class="in">``` text</span></span>
+<span id="cb4-41"><a href="#cb4-41" aria-hidden="true" tabindex="-1"></a><span class="in">---</span></span>
+<span id="cb4-42"><a href="#cb4-42" aria-hidden="true" tabindex="-1"></a><span class="in">title: "My Thesis Project"</span></span>
+<span id="cb4-43"><a href="#cb4-43" aria-hidden="true" tabindex="-1"></a><span class="in">---</span></span>
+<span id="cb4-44"><a href="#cb4-44" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
+<span id="cb4-45"><a href="#cb4-45" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb4-46"><a href="#cb4-46" aria-hidden="true" tabindex="-1"></a>Note that YAML headers can become much more complex. More information about the YAML header can be found on the following page.</span>
+<span id="cb4-47"><a href="#cb4-47" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb4-48"><a href="#cb4-48" aria-hidden="true" tabindex="-1"></a><span class="fu">### Code chunks</span></span>
+<span id="cb4-49"><a href="#cb4-49" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb4-50"><a href="#cb4-50" aria-hidden="true" tabindex="-1"></a>Following the YAML header, you can write your code inside **code chunks**. Code chunks are fenced by three backticks and include a language identifier. For the R programming language, a code chunk looks like this:</span>
+<span id="cb4-51"><a href="#cb4-51" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb4-52"><a href="#cb4-52" aria-hidden="true" tabindex="-1"></a><span class="in">```` text</span></span>
+<span id="cb4-55"><a href="#cb4-55" aria-hidden="true" tabindex="-1"></a><span class="in">```{r}</span></span>
+<span id="cb4-56"><a href="#cb4-56" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
+<span id="cb4-57"><a href="#cb4-57" aria-hidden="true" tabindex="-1"></a><span class="in">````</span></span>
+<span id="cb4-58"><a href="#cb4-58" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb4-59"><a href="#cb4-59" aria-hidden="true" tabindex="-1"></a>::: box-python</span>
+<span id="cb4-60"><a href="#cb4-60" aria-hidden="true" tabindex="-1"></a>For the programming language of Python, the code chunk looks like:</span>
+<span id="cb4-61"><a href="#cb4-61" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb4-62"><a href="#cb4-62" aria-hidden="true" tabindex="-1"></a><span class="in">```` text</span></span>
+<span id="cb4-65"><a href="#cb4-65" aria-hidden="true" tabindex="-1"></a><span class="in">```{python}</span></span>
+<span id="cb4-66"><a href="#cb4-66" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
+<span id="cb4-67"><a href="#cb4-67" aria-hidden="true" tabindex="-1"></a><span class="in">````</span></span>
+<span id="cb4-68"><a href="#cb4-68" aria-hidden="true" tabindex="-1"></a>:::</span>
+<span id="cb4-69"><a href="#cb4-69" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb4-70"><a href="#cb4-70" aria-hidden="true" tabindex="-1"></a>Inside these code chunks, everything is treated as code and will be executed when you run the chunk. Outside of the code chunks, everything is treated as regular text and will be rendered as such. This allows you to intersperse your code with explanations, interpretations, additional text and other elements like images, making your document significantly more readable and informative.</span>
+<span id="cb4-71"><a href="#cb4-71" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb4-72"><a href="#cb4-72" aria-hidden="true" tabindex="-1"></a><span class="fu">## Workflow</span></span>
+<span id="cb4-73"><a href="#cb4-73" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb4-74"><a href="#cb4-74" aria-hidden="true" tabindex="-1"></a>Whenever you are done with the code for a respective chunk, run it. You can do this by clicking the <span class="in">`Run`</span> button in the toolbar or by using the following shortcuts:</span>
+<span id="cb4-75"><a href="#cb4-75" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb4-76"><a href="#cb4-76" aria-hidden="true" tabindex="-1"></a><span class="ss">-   </span><span class="in">`Ctrl + Enter`</span> (Windows) or <span class="in">`Command + Enter`</span> (Mac): Run the current line or selection.</span>
+<span id="cb4-77"><a href="#cb4-77" aria-hidden="true" tabindex="-1"></a><span class="ss">-   </span><span class="in">`Ctrl + Shift + Enter`</span> (Windows) or <span class="in">`Command + Shift + Enter`</span> (Mac): Run the entire code chunk.</span>
+<span id="cb4-78"><a href="#cb4-78" aria-hidden="true" tabindex="-1"></a><span class="ss">-   </span><span class="in">`Ctrl + Alt + P`</span> (Windows) or <span class="in">`Command + Option + P`</span> (Mac): Run the previous code region.</span>
+<span id="cb4-79"><a href="#cb4-79" aria-hidden="true" tabindex="-1"></a><span class="ss">-   </span><span class="in">`Ctrl + Alt + R (Windows)`</span> or <span class="in">`Command + Option + R`</span> (Mac): Run all code chunks in the document.</span>
+<span id="cb4-80"><a href="#cb4-80" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb4-81"><a href="#cb4-81" aria-hidden="true" tabindex="-1"></a>When all code chunks are running without errors, you can render the document to see the final output. You can do this by clicking the <span class="in">`Render`</span> button in the toolbar or by using the shortcut <span class="in">`Ctrl + Shift + K`</span> (Windows) or <span class="in">`Command + Shift + K`</span> (Mac). If not specified differently in the YAML-Header, the output format will be <span class="in">`html`</span>. In your rendered <span class="in">`html`</span> file you can see the code chunks, the output of the code chunks and plain text separately.</span>
+<span id="cb4-82"><a href="#cb4-82" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb4-83"><a href="#cb4-83" aria-hidden="true" tabindex="-1"></a><span class="fu">## Further Resources</span></span>
+<span id="cb4-84"><a href="#cb4-84" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb4-85"><a href="#cb4-85" aria-hidden="true" tabindex="-1"></a>The introduction given here only scratches the surface of what can be done to set up and use RStudio and in particular Quarto. If you want to dive deeper into data processing and visualization before continuing with this guide, feel free to check out the <span class="co">[</span><span class="ot">Reproducible Data Processing and Visualization</span><span class="co">](https://wrangling.tidyver.se/)</span> guide, written by Ian Hussey from our lab <span class="co">[</span><span class="ot">@hussey2026</span><span class="co">]</span> or feel free to check out the <span class="co">[</span><span class="ot">official Quarto documentation page</span><span class="co">](https://quarto.org/)</span>.</span>
+</code><button title="Copy to Clipboard" class="code-copy-button" data-in-quarto-modal=""><i class="bi"></i></button></pre></div>
 </div></div></div></div></div>
 </div> <!-- /content -->
-<footer class="footer">
-  <div class="nav-footer">
+<footer class="footer"><div class="nav-footer">
     <div class="nav-footer-left">
 <p>© 2026 Department Psychology of Digitalisation</p>
 </div>   
     <div class="nav-footer-center">
       <ul class="footer-items list-unstyled">
-    <li class="nav-item">
+<li class="nav-item">
     <a class="nav-link" href="https://github.com/schillinglars/reproducibility_guide">
 <p><i class="bi bi-github"></i> GitHub</p>
 </a>
@@ -770,14 +845,12 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
 </a>
   </li>  
 </ul>
-    </div>
+</div>
     <div class="nav-footer-right">
 <p>Licensed under <a href="https://creativecommons.org/licenses/by-nc/4.0/">CC BY-NC 4.0</a></p>
 </div>
   </div>
 </footer>
-
-
 
 
 </body></html>

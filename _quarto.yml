@@ -23,13 +23,15 @@ website:
         href: index.qmd
       - text: "1. General principles"
         href: source/general_principles.qmd
-      - text: "2. Project setup"
+      - text: "2. RStudio and Quarto"
+        href: source/ide.qmd
+      - text: "3. Project setup"
         href: source/project_setup.qmd
-      - text: "3. Code style"
+      - text: "4. Code style"
         href: source/codestyle.qmd
-      - text: "4. Reproducible workflow"
+      - text: "5. Reproducible workflow"
         href: source/reproducible_workflow.qmd
-      - text: "5. Template"
+      - text: "6. Template"
         href: source/analysis_template.qmd
 
   page-footer:

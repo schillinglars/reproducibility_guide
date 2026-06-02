@@ -4,11 +4,11 @@ title: "Repropducible workflow"
 
 {{< include ../_hardcoded_values.qmd >}}
 
-# Fundamentals
+## Fundamentals
 
 To achieve a maximal reproducible workflow one can use **Version control**. Version control is the systematic process of documenting every change made to your scripts, data, or outputs. It allows you to trace **when**, **why**, and **by whom** specific changes were made. Most importantly, it acts as a safety net, allowing you to restore previous versions of your work if something goes wrong.
 
-# GitHub
+## GitHub
 
 [**GitHub**](https://github.com/) is essentially a specialized cloud provider—similar to Google Drive or OneDrive—but designed specifically for code and version control. In GitHub, projects are organized into **repositories**, which function as project folders containing all your files and their history.
 
@@ -20,7 +20,7 @@ Once you have committed your changes locally, you can 'upload' them to the cloud
 As a student of the University of Bern you are eligible for a free GitHub Pro account, which gives you access to the GitHub Copilot and other benefits. For more information check out [GitHubs information for students](https://github.com/education/students).
 :::
 
-# Git
+## Git
 
 While GitHub Desktop is a great starting point, the true power lies in the underlying software called [**Git**](https://git-scm.com/). Git is the 'engine' that powers both GitHub and the Desktop app. After a one-time setup, you can connect Git directly to your programming environment (like RStudio). This allows you to perform commits, pushes, and pulls directly within the same window where you write your code, removing the need to switch back and forth between different applications. This integration streamlines your workflow and makes versioning a seamless part of your coding habit.
 
@@ -32,7 +32,7 @@ You can find instructions for the one-time setup of Git, GitHub, R, and the conn
 This website itself was build with the open source programming languages of R, Python, the IDE of RStudio, Git and GitHub for version control. You can find the corresponding repository [here][repo-url].
 :::
 
-# .gitignore
+## .gitignore
 
 A `.gitignore` file prevents Git from tracking specific files or folders, ensuring they are never uploaded to GitHub. To use it, create a text file named `.gitignore` in your project root and list any files or patterns (e.g., *.csv, .Rhistory) you wish to exclude. This is a critical security step for protecting sensitive participant data and maintaining a clean repository by excluding unnecessary large files which could break the upload.
 
@@ -40,7 +40,7 @@ A `.gitignore` file prevents Git from tracking specific files or folders, ensuri
 Note that on the [GitHub repository][repo-url] you can find the respective .gitignore-file for this website project. You can use it as a template for your own project and modify it according to your needs.
 :::
 
-# renv
+## renv
 
 **renv** (Reproducible Environments) records the exact versions of all R packages you are using. This ensures that anyone who wants to reproduce your work can simply install the same package versions, preventing issues that arise from updates or changes in package behavior. By using renv, you can create a snapshot of your project's dependencies, making it easier to share and collaborate on your code while maintaining reproducibility.
 
