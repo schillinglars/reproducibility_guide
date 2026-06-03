@@ -242,11 +242,17 @@ title: "My Thesis Project"
 <p>Following the YAML header, you can write your code inside <strong>code chunks</strong>. Code chunks are fenced by three backticks and include a language identifier. For the R programming language, a code chunk looks like this:</p>
 <pre class="text"><code>::: {.cell}
 
+```{.r .cell-code}
+# This is a code chunk for R. You can write your R code here.
+```
 :::</code></pre>
 <div class="box-python">
 <p>For the programming language of Python, the code chunk looks like:</p>
 <pre class="text"><code>::: {.cell}
 
+```{.python .cell-code}
+# This is a code chunk for Python. You can write your Python code here.
+```
 :::</code></pre>
 </div>
 <p>Inside these code chunks, everything is treated as code and will be executed when you run the chunk. Outside of the code chunks, everything is treated as regular text and will be rendered as such. This allows you to intersperse your code with explanations, interpretations, additional text and other elements like images, making your document significantly more readable and informative.</p>
@@ -797,34 +803,36 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
 <span id="cb4-51"><a href="#cb4-51" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb4-52"><a href="#cb4-52" aria-hidden="true" tabindex="-1"></a><span class="in">```` text</span></span>
 <span id="cb4-55"><a href="#cb4-55" aria-hidden="true" tabindex="-1"></a><span class="in">```{r}</span></span>
-<span id="cb4-56"><a href="#cb4-56" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
-<span id="cb4-57"><a href="#cb4-57" aria-hidden="true" tabindex="-1"></a><span class="in">````</span></span>
-<span id="cb4-58"><a href="#cb4-58" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb4-59"><a href="#cb4-59" aria-hidden="true" tabindex="-1"></a>::: box-python</span>
-<span id="cb4-60"><a href="#cb4-60" aria-hidden="true" tabindex="-1"></a>For the programming language of Python, the code chunk looks like:</span>
-<span id="cb4-61"><a href="#cb4-61" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb4-62"><a href="#cb4-62" aria-hidden="true" tabindex="-1"></a><span class="in">```` text</span></span>
-<span id="cb4-65"><a href="#cb4-65" aria-hidden="true" tabindex="-1"></a><span class="in">```{python}</span></span>
-<span id="cb4-66"><a href="#cb4-66" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
-<span id="cb4-67"><a href="#cb4-67" aria-hidden="true" tabindex="-1"></a><span class="in">````</span></span>
-<span id="cb4-68"><a href="#cb4-68" aria-hidden="true" tabindex="-1"></a>:::</span>
-<span id="cb4-69"><a href="#cb4-69" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb4-70"><a href="#cb4-70" aria-hidden="true" tabindex="-1"></a>Inside these code chunks, everything is treated as code and will be executed when you run the chunk. Outside of the code chunks, everything is treated as regular text and will be rendered as such. This allows you to intersperse your code with explanations, interpretations, additional text and other elements like images, making your document significantly more readable and informative.</span>
+<span id="cb4-56"><a href="#cb4-56" aria-hidden="true" tabindex="-1"></a><span class="in"># This is a code chunk for R. You can write your R code here.</span></span>
+<span id="cb4-57"><a href="#cb4-57" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
+<span id="cb4-58"><a href="#cb4-58" aria-hidden="true" tabindex="-1"></a><span class="in">````</span></span>
+<span id="cb4-59"><a href="#cb4-59" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb4-60"><a href="#cb4-60" aria-hidden="true" tabindex="-1"></a>::: box-python</span>
+<span id="cb4-61"><a href="#cb4-61" aria-hidden="true" tabindex="-1"></a>For the programming language of Python, the code chunk looks like:</span>
+<span id="cb4-62"><a href="#cb4-62" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb4-63"><a href="#cb4-63" aria-hidden="true" tabindex="-1"></a><span class="in">```` text</span></span>
+<span id="cb4-66"><a href="#cb4-66" aria-hidden="true" tabindex="-1"></a><span class="in">```{python}</span></span>
+<span id="cb4-67"><a href="#cb4-67" aria-hidden="true" tabindex="-1"></a><span class="in"># This is a code chunk for Python. You can write your Python code here.</span></span>
+<span id="cb4-68"><a href="#cb4-68" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
+<span id="cb4-69"><a href="#cb4-69" aria-hidden="true" tabindex="-1"></a><span class="in">````</span></span>
+<span id="cb4-70"><a href="#cb4-70" aria-hidden="true" tabindex="-1"></a>:::</span>
 <span id="cb4-71"><a href="#cb4-71" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb4-72"><a href="#cb4-72" aria-hidden="true" tabindex="-1"></a><span class="fu">## Workflow</span></span>
+<span id="cb4-72"><a href="#cb4-72" aria-hidden="true" tabindex="-1"></a>Inside these code chunks, everything is treated as code and will be executed when you run the chunk. Outside of the code chunks, everything is treated as regular text and will be rendered as such. This allows you to intersperse your code with explanations, interpretations, additional text and other elements like images, making your document significantly more readable and informative.</span>
 <span id="cb4-73"><a href="#cb4-73" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb4-74"><a href="#cb4-74" aria-hidden="true" tabindex="-1"></a>Whenever you are done with the code for a respective chunk, run it. You can do this by clicking the <span class="in">`Run`</span> button in the toolbar or by using the following shortcuts:</span>
+<span id="cb4-74"><a href="#cb4-74" aria-hidden="true" tabindex="-1"></a><span class="fu">## Workflow</span></span>
 <span id="cb4-75"><a href="#cb4-75" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb4-76"><a href="#cb4-76" aria-hidden="true" tabindex="-1"></a><span class="ss">-   </span><span class="in">`Ctrl + Enter`</span> (Windows) or <span class="in">`Command + Enter`</span> (Mac): Run the current line or selection.</span>
-<span id="cb4-77"><a href="#cb4-77" aria-hidden="true" tabindex="-1"></a><span class="ss">-   </span><span class="in">`Ctrl + Shift + Enter`</span> (Windows) or <span class="in">`Command + Shift + Enter`</span> (Mac): Run the entire code chunk.</span>
-<span id="cb4-78"><a href="#cb4-78" aria-hidden="true" tabindex="-1"></a><span class="ss">-   </span><span class="in">`Ctrl + Alt + P`</span> (Windows) or <span class="in">`Command + Option + P`</span> (Mac): Run the previous code region.</span>
-<span id="cb4-79"><a href="#cb4-79" aria-hidden="true" tabindex="-1"></a><span class="ss">-   </span><span class="in">`Ctrl + Alt + R (Windows)`</span> or <span class="in">`Command + Option + R`</span> (Mac): Run all code chunks in the document.</span>
-<span id="cb4-80"><a href="#cb4-80" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb4-81"><a href="#cb4-81" aria-hidden="true" tabindex="-1"></a>When all code chunks are running without errors, you can render the document to see the final output. You can do this by clicking the <span class="in">`Render`</span> button in the toolbar or by using the shortcut <span class="in">`Ctrl + Shift + K`</span> (Windows) or <span class="in">`Command + Shift + K`</span> (Mac). If not specified differently in the YAML-Header, the output format will be <span class="in">`html`</span>. In your rendered <span class="in">`html`</span> file you can see the code chunks, the output of the code chunks and plain text separately.</span>
+<span id="cb4-76"><a href="#cb4-76" aria-hidden="true" tabindex="-1"></a>Whenever you are done with the code for a respective chunk, run it. You can do this by clicking the <span class="in">`Run`</span> button in the toolbar or by using the following shortcuts:</span>
+<span id="cb4-77"><a href="#cb4-77" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb4-78"><a href="#cb4-78" aria-hidden="true" tabindex="-1"></a><span class="ss">-   </span><span class="in">`Ctrl + Enter`</span> (Windows) or <span class="in">`Command + Enter`</span> (Mac): Run the current line or selection.</span>
+<span id="cb4-79"><a href="#cb4-79" aria-hidden="true" tabindex="-1"></a><span class="ss">-   </span><span class="in">`Ctrl + Shift + Enter`</span> (Windows) or <span class="in">`Command + Shift + Enter`</span> (Mac): Run the entire code chunk.</span>
+<span id="cb4-80"><a href="#cb4-80" aria-hidden="true" tabindex="-1"></a><span class="ss">-   </span><span class="in">`Ctrl + Alt + P`</span> (Windows) or <span class="in">`Command + Option + P`</span> (Mac): Run the previous code region.</span>
+<span id="cb4-81"><a href="#cb4-81" aria-hidden="true" tabindex="-1"></a><span class="ss">-   </span><span class="in">`Ctrl + Alt + R (Windows)`</span> or <span class="in">`Command + Option + R`</span> (Mac): Run all code chunks in the document.</span>
 <span id="cb4-82"><a href="#cb4-82" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb4-83"><a href="#cb4-83" aria-hidden="true" tabindex="-1"></a><span class="fu">## Further Resources</span></span>
+<span id="cb4-83"><a href="#cb4-83" aria-hidden="true" tabindex="-1"></a>When all code chunks are running without errors, you can render the document to see the final output. You can do this by clicking the <span class="in">`Render`</span> button in the toolbar or by using the shortcut <span class="in">`Ctrl + Shift + K`</span> (Windows) or <span class="in">`Command + Shift + K`</span> (Mac). If not specified differently in the YAML-Header, the output format will be <span class="in">`html`</span>. In your rendered <span class="in">`html`</span> file you can see the code chunks, the output of the code chunks and plain text separately.</span>
 <span id="cb4-84"><a href="#cb4-84" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb4-85"><a href="#cb4-85" aria-hidden="true" tabindex="-1"></a>The introduction given here only scratches the surface of what can be done to set up and use RStudio and in particular Quarto. If you want to dive deeper into data processing and visualization before continuing with this guide, feel free to check out the <span class="co">[</span><span class="ot">Reproducible Data Processing and Visualization</span><span class="co">](https://wrangling.tidyver.se/)</span> guide, written by Ian Hussey from our lab <span class="co">[</span><span class="ot">@hussey2026</span><span class="co">]</span> or feel free to check out the <span class="co">[</span><span class="ot">official Quarto documentation page</span><span class="co">](https://quarto.org/)</span>.</span>
+<span id="cb4-85"><a href="#cb4-85" aria-hidden="true" tabindex="-1"></a><span class="fu">## Further Resources</span></span>
+<span id="cb4-86"><a href="#cb4-86" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb4-87"><a href="#cb4-87" aria-hidden="true" tabindex="-1"></a>The introduction given here only scratches the surface of what can be done to set up and use RStudio and in particular Quarto. If you want to dive deeper into data processing and visualization before continuing with this guide, feel free to check out the <span class="co">[</span><span class="ot">Reproducible Data Processing and Visualization</span><span class="co">](https://wrangling.tidyver.se/)</span> guide, written by Ian Hussey from our lab <span class="co">[</span><span class="ot">@hussey2026</span><span class="co">]</span> or feel free to check out the <span class="co">[</span><span class="ot">official Quarto documentation page</span><span class="co">](https://quarto.org/)</span>.</span>
 </code><button title="Copy to Clipboard" class="code-copy-button" data-in-quarto-modal=""><i class="bi"></i></button></pre></div>
 </div></div></div></div></div>
 </div> <!-- /content -->

@@ -51,7 +51,7 @@ Following the YAML header, you can write your code inside **code chunks**. Code 
 
 ```` text
 ```{r}
-
+# This is a code chunk for R. You can write your R code here.
 ```
 ````
 
@@ -60,7 +60,7 @@ For the programming language of Python, the code chunk looks like:
 
 ```` text
 ```{python}
-
+# This is a code chunk for Python. You can write your Python code here.
 ```
 ````
 :::
