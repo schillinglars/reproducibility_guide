@@ -33,7 +33,7 @@ RStudio has four main panes: The **Source Editor** (top left) where you can writ
 
 When you open RStudio for the first time, the source editor (top left) might be empty. To create a new Quarto document, make sure you have opened RStudio within your project, go to `File` \> `New File` \> `Quarto Document`. This will open a new Quarto document in the source editor where you can start writing your code and text. Make sure to save this file with a meaningful name (e.g., `analysis.qmd`) and at the correct location within your project. The project setup will be explained on the following page.
 
-## Source mode vs. visual mode
+### Source mode vs. visual mode
 
 When editing a document in the Source Editor, RStudio offers two different modes to work in: **Source** and **Visual**. You can switch between them instantly at any time. No matter which mode you use, they both edit the exact same file. Making a change in one mode instantly updates the other.
 

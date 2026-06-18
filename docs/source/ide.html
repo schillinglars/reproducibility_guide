@@ -183,9 +183,9 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <li><a href="#installation" id="toc-installation" class="nav-link" data-scroll-target="#installation">Installation</a></li>
   <li><a href="#setting-up-a-project" id="toc-setting-up-a-project" class="nav-link" data-scroll-target="#setting-up-a-project">Setting up a Project</a></li>
   <li><a href="#overview-of-the-ide" id="toc-overview-of-the-ide" class="nav-link" data-scroll-target="#overview-of-the-ide">Overview of the IDE</a></li>
+  <li><a href="#source-mode-vs.-visual-mode" id="toc-source-mode-vs.-visual-mode" class="nav-link" data-scroll-target="#source-mode-vs.-visual-mode">Source mode vs.&nbsp;visual mode</a></li>
   </ul>
 </li>
-  <li><a href="#source-mode-vs.-visual-mode" id="toc-source-mode-vs.-visual-mode" class="nav-link" data-scroll-target="#source-mode-vs.-visual-mode">Source mode vs.&nbsp;visual mode</a></li>
   <li>
 <a href="#document-structure" id="toc-document-structure" class="nav-link" data-scroll-target="#document-structure">Document Structure</a>
   <ul class="collapse">
@@ -233,12 +233,12 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <p>RStudio has four main panes: The <strong>Source Editor</strong> (top left) where you can write your code, the <strong>Console</strong> (bottom left) where you can run commands interactively, the <strong>Environment/History</strong> pane (top right) where you can inspect defined variables and your command history, and the <strong>Files/Plots/Packages/Help</strong> pane (bottom right) where you can manage files, view plots, install packages, and access help documentation.</p>
 <p><img src="..\images/ide_overview.png" class="img-fluid"></p>
 <p>When you open RStudio for the first time, the source editor (top left) might be empty. To create a new Quarto document, make sure you have opened RStudio within your project, go to <code>File</code> &gt; <code>New File</code> &gt; <code>Quarto Document</code>. This will open a new Quarto document in the source editor where you can start writing your code and text. Make sure to save this file with a meaningful name (e.g., <code>analysis.qmd</code>) and at the correct location within your project. The project setup will be explained on the following page.</p>
-</section></section><section id="source-mode-vs.-visual-mode" class="level2"><h2 class="anchored" data-anchor-id="source-mode-vs.-visual-mode">Source mode vs.&nbsp;visual mode</h2>
+</section><section id="source-mode-vs.-visual-mode" class="level3"><h3 class="anchored" data-anchor-id="source-mode-vs.-visual-mode">Source mode vs.&nbsp;visual mode</h3>
 <p>When editing a document in the Source Editor, RStudio offers two different modes to work in: <strong>Source</strong> and <strong>Visual</strong>. You can switch between them instantly at any time. No matter which mode you use, they both edit the exact same file. Making a change in one mode instantly updates the other.</p>
 <ul>
 <li><p><strong>Source mode</strong> displays the raw Markdown code behind your document. To format text, insert images, or add equations, you write the formatting code yourself (for example, typing <code>##</code> at the beginning of a line to create a second level header). It gives you absolute control over the underlying structure of your file.</p></li>
 <li><p><strong>Visual mode</strong> works more like a traditional word processor (such as Microsoft Word). It automatically renders your Markdown code in real-time, allowing you to directly inspect formatted text, live mathematical equations, and embedded images. It also provides a graphical toolbar at the top of the Source Editor where you can format your document with a simple click.</p></li>
-</ul></section><section id="document-structure" class="level2"><h2 class="anchored" data-anchor-id="document-structure">Document Structure</h2>
+</ul></section></section><section id="document-structure" class="level2"><h2 class="anchored" data-anchor-id="document-structure">Document Structure</h2>
 <section id="the-yaml-header" class="level3"><h3 class="anchored" data-anchor-id="the-yaml-header">The YAML Header</h3>
 <p>Every Quarto document starts with a metadata block called the <strong>YAML header</strong>. It is fenced by three dashes (<code>---</code>) at the very top of the file. A simple YAML header looks like this:</p>
 <pre class="text"><code>---
@@ -792,7 +792,7 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
 <span id="cb4-33"><a href="#cb4-33" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb4-34"><a href="#cb4-34" aria-hidden="true" tabindex="-1"></a>When you open RStudio for the first time, the source editor (top left) might be empty. To create a new Quarto document, make sure you have opened RStudio within your project, go to <span class="in">`File`</span> <span class="sc">\&gt;</span> <span class="in">`New File`</span> <span class="sc">\&gt;</span> <span class="in">`Quarto Document`</span>. This will open a new Quarto document in the source editor where you can start writing your code and text. Make sure to save this file with a meaningful name (e.g., <span class="in">`analysis.qmd`</span>) and at the correct location within your project. The project setup will be explained on the following page.</span>
 <span id="cb4-35"><a href="#cb4-35" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb4-36"><a href="#cb4-36" aria-hidden="true" tabindex="-1"></a><span class="fu">## Source mode vs. visual mode</span></span>
+<span id="cb4-36"><a href="#cb4-36" aria-hidden="true" tabindex="-1"></a><span class="fu">### Source mode vs. visual mode</span></span>
 <span id="cb4-37"><a href="#cb4-37" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb4-38"><a href="#cb4-38" aria-hidden="true" tabindex="-1"></a>When editing a document in the Source Editor, RStudio offers two different modes to work in: **Source** and **Visual**. You can switch between them instantly at any time. No matter which mode you use, they both edit the exact same file. Making a change in one mode instantly updates the other.</span>
 <span id="cb4-39"><a href="#cb4-39" aria-hidden="true" tabindex="-1"></a></span>
