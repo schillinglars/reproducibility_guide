@@ -185,6 +185,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   <li><a href="#overview-of-the-ide" id="toc-overview-of-the-ide" class="nav-link" data-scroll-target="#overview-of-the-ide">Overview of the IDE</a></li>
   </ul>
 </li>
+  <li><a href="#source-mode-vs.-visual-mode" id="toc-source-mode-vs.-visual-mode" class="nav-link" data-scroll-target="#source-mode-vs.-visual-mode">Source mode vs.&nbsp;visual mode</a></li>
   <li>
 <a href="#document-structure" id="toc-document-structure" class="nav-link" data-scroll-target="#document-structure">Document Structure</a>
   <ul class="collapse">
@@ -230,8 +231,14 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <li>Click <code>Create Project</code>.</li>
 </ol></section><section id="overview-of-the-ide" class="level3"><h3 class="anchored" data-anchor-id="overview-of-the-ide">Overview of the IDE</h3>
 <p>RStudio has four main panes: The <strong>Source Editor</strong> (top left) where you can write your code, the <strong>Console</strong> (bottom left) where you can run commands interactively, the <strong>Environment/History</strong> pane (top right) where you can inspect defined variables and your command history, and the <strong>Files/Plots/Packages/Help</strong> pane (bottom right) where you can manage files, view plots, install packages, and access help documentation.</p>
+<p><img src="..\images/ide_overview.png" class="img-fluid"></p>
 <p>When you open RStudio for the first time, the source editor (top left) might be empty. To create a new Quarto document, make sure you have opened RStudio within your project, go to <code>File</code> &gt; <code>New File</code> &gt; <code>Quarto Document</code>. This will open a new Quarto document in the source editor where you can start writing your code and text. Make sure to save this file with a meaningful name (e.g., <code>analysis.qmd</code>) and at the correct location within your project. The project setup will be explained on the following page.</p>
-</section></section><section id="document-structure" class="level2"><h2 class="anchored" data-anchor-id="document-structure">Document Structure</h2>
+</section></section><section id="source-mode-vs.-visual-mode" class="level2"><h2 class="anchored" data-anchor-id="source-mode-vs.-visual-mode">Source mode vs.&nbsp;visual mode</h2>
+<p>When editing a document in the Source Editor, RStudio offers two different modes to work in: <strong>Source</strong> and <strong>Visual</strong>. You can switch between them instantly at any time. No matter which mode you use, they both edit the exact same file. Making a change in one mode instantly updates the other.</p>
+<ul>
+<li><p><strong>Source mode</strong> displays the raw Markdown code behind your document. To format text, insert images, or add equations, you write the formatting code yourself (for example, typing <code>##</code> at the beginning of a line to create a second level header). It gives you absolute control over the underlying structure of your file.</p></li>
+<li><p><strong>Visual mode</strong> works more like a traditional word processor (such as Microsoft Word). It automatically renders your Markdown code in real-time, allowing you to directly inspect formatted text, live mathematical equations, and embedded images. It also provides a graphical toolbar at the top of the Source Editor where you can format your document with a simple click.</p></li>
+</ul></section><section id="document-structure" class="level2"><h2 class="anchored" data-anchor-id="document-structure">Document Structure</h2>
 <section id="the-yaml-header" class="level3"><h3 class="anchored" data-anchor-id="the-yaml-header">The YAML Header</h3>
 <p>Every Quarto document starts with a metadata block called the <strong>YAML header</strong>. It is fenced by three dashes (<code>---</code>) at the very top of the file. A simple YAML header looks like this:</p>
 <pre class="text"><code>---
@@ -772,7 +779,7 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
 <span id="cb4-20"><a href="#cb4-20" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb4-21"><a href="#cb4-21" aria-hidden="true" tabindex="-1"></a>To follow the suggested project setup, which will be introduced on the next page, and to keep your research project reproducible, you should always start by creating an **RStudio Project** (<span class="in">`.Rproj`</span>). Whenever you work on a Quarto document, this document should be opened from within the project file. To create a new project, follow these steps:</span>
 <span id="cb4-22"><a href="#cb4-22" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb4-23"><a href="#cb4-23" aria-hidden="true" tabindex="-1"></a><span class="ss">1.  </span>Go to <span class="in">`File`</span> &gt; <span class="in">`New Project...`</span></span>
+<span id="cb4-23"><a href="#cb4-23" aria-hidden="true" tabindex="-1"></a><span class="ss">1.  </span>Go to <span class="in">`File`</span> <span class="sc">\&gt;</span> <span class="in">`New Project...`</span></span>
 <span id="cb4-24"><a href="#cb4-24" aria-hidden="true" tabindex="-1"></a><span class="ss">2.  </span>Choose <span class="in">`New Directory`</span> or <span class="in">`Existing Directory`</span>.</span>
 <span id="cb4-25"><a href="#cb4-25" aria-hidden="true" tabindex="-1"></a><span class="ss">3.  </span>If you choose <span class="in">`New Directory`</span>, select <span class="in">`New Project`</span> and give your project a name (e.g., <span class="in">`thesis-project`</span>). If you choose <span class="in">`Existing Directory`</span>, select the folder where you want to create your project (e.g., <span class="in">`thesis-project`</span>).</span>
 <span id="cb4-26"><a href="#cb4-26" aria-hidden="true" tabindex="-1"></a><span class="ss">4.  </span>Click <span class="in">`Create Project`</span>.</span>
@@ -781,58 +788,68 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
 <span id="cb4-29"><a href="#cb4-29" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb4-30"><a href="#cb4-30" aria-hidden="true" tabindex="-1"></a>RStudio has four main panes: The **Source Editor** (top left) where you can write your code, the **Console** (bottom left) where you can run commands interactively, the **Environment/History** pane (top right) where you can inspect defined variables and your command history, and the **Files/Plots/Packages/Help** pane (bottom right) where you can manage files, view plots, install packages, and access help documentation.</span>
 <span id="cb4-31"><a href="#cb4-31" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb4-32"><a href="#cb4-32" aria-hidden="true" tabindex="-1"></a>When you open RStudio for the first time, the source editor (top left) might be empty. To create a new Quarto document, make sure you have opened RStudio within your project, go to <span class="in">`File`</span> <span class="sc">\&gt;</span> <span class="in">`New File`</span> <span class="sc">\&gt;</span> <span class="in">`Quarto Document`</span>. This will open a new Quarto document in the source editor where you can start writing your code and text. Make sure to save this file with a meaningful name (e.g., <span class="in">`analysis.qmd`</span>) and at the correct location within your project. The project setup will be explained on the following page.</span>
+<span id="cb4-32"><a href="#cb4-32" aria-hidden="true" tabindex="-1"></a><span class="al">![](/images/ide_overview.png)</span></span>
 <span id="cb4-33"><a href="#cb4-33" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb4-34"><a href="#cb4-34" aria-hidden="true" tabindex="-1"></a><span class="fu">## Document Structure</span></span>
+<span id="cb4-34"><a href="#cb4-34" aria-hidden="true" tabindex="-1"></a>When you open RStudio for the first time, the source editor (top left) might be empty. To create a new Quarto document, make sure you have opened RStudio within your project, go to <span class="in">`File`</span> <span class="sc">\&gt;</span> <span class="in">`New File`</span> <span class="sc">\&gt;</span> <span class="in">`Quarto Document`</span>. This will open a new Quarto document in the source editor where you can start writing your code and text. Make sure to save this file with a meaningful name (e.g., <span class="in">`analysis.qmd`</span>) and at the correct location within your project. The project setup will be explained on the following page.</span>
 <span id="cb4-35"><a href="#cb4-35" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb4-36"><a href="#cb4-36" aria-hidden="true" tabindex="-1"></a><span class="fu">### The YAML Header</span></span>
+<span id="cb4-36"><a href="#cb4-36" aria-hidden="true" tabindex="-1"></a><span class="fu">## Source mode vs. visual mode</span></span>
 <span id="cb4-37"><a href="#cb4-37" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb4-38"><a href="#cb4-38" aria-hidden="true" tabindex="-1"></a>Every Quarto document starts with a metadata block called the **YAML header**. It is fenced by three dashes (<span class="in">`---`</span>) at the very top of the file. A simple YAML header looks like this:</span>
+<span id="cb4-38"><a href="#cb4-38" aria-hidden="true" tabindex="-1"></a>When editing a document in the Source Editor, RStudio offers two different modes to work in: **Source** and **Visual**. You can switch between them instantly at any time. No matter which mode you use, they both edit the exact same file. Making a change in one mode instantly updates the other.</span>
 <span id="cb4-39"><a href="#cb4-39" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb4-40"><a href="#cb4-40" aria-hidden="true" tabindex="-1"></a><span class="in">``` text</span></span>
-<span id="cb4-41"><a href="#cb4-41" aria-hidden="true" tabindex="-1"></a><span class="in">---</span></span>
-<span id="cb4-42"><a href="#cb4-42" aria-hidden="true" tabindex="-1"></a><span class="in">title: "My Thesis Project"</span></span>
-<span id="cb4-43"><a href="#cb4-43" aria-hidden="true" tabindex="-1"></a><span class="in">---</span></span>
-<span id="cb4-44"><a href="#cb4-44" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
+<span id="cb4-40"><a href="#cb4-40" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span>**Source mode** displays the raw Markdown code behind your document. To format text, insert images, or add equations, you write the formatting code yourself (for example, typing <span class="in">`##`</span> at the beginning of a line to create a second level header). It gives you absolute control over the underlying structure of your file.</span>
+<span id="cb4-41"><a href="#cb4-41" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb4-42"><a href="#cb4-42" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span>**Visual mode** works more like a traditional word processor (such as Microsoft Word). It automatically renders your Markdown code in real-time, allowing you to directly inspect formatted text, live mathematical equations, and embedded images. It also provides a graphical toolbar at the top of the Source Editor where you can format your document with a simple click.</span>
+<span id="cb4-43"><a href="#cb4-43" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb4-44"><a href="#cb4-44" aria-hidden="true" tabindex="-1"></a><span class="fu">## Document Structure</span></span>
 <span id="cb4-45"><a href="#cb4-45" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb4-46"><a href="#cb4-46" aria-hidden="true" tabindex="-1"></a>Note that YAML headers can become much more complex. More information about the YAML header can be found on the following page.</span>
+<span id="cb4-46"><a href="#cb4-46" aria-hidden="true" tabindex="-1"></a><span class="fu">### The YAML Header</span></span>
 <span id="cb4-47"><a href="#cb4-47" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb4-48"><a href="#cb4-48" aria-hidden="true" tabindex="-1"></a><span class="fu">### Code chunks</span></span>
+<span id="cb4-48"><a href="#cb4-48" aria-hidden="true" tabindex="-1"></a>Every Quarto document starts with a metadata block called the **YAML header**. It is fenced by three dashes (<span class="in">`---`</span>) at the very top of the file. A simple YAML header looks like this:</span>
 <span id="cb4-49"><a href="#cb4-49" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb4-50"><a href="#cb4-50" aria-hidden="true" tabindex="-1"></a>Following the YAML header, you can write your code inside **code chunks**. Code chunks are fenced by three backticks and include a language identifier. For the R programming language, a code chunk looks like this:</span>
-<span id="cb4-51"><a href="#cb4-51" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb4-52"><a href="#cb4-52" aria-hidden="true" tabindex="-1"></a><span class="in">```` text</span></span>
-<span id="cb4-55"><a href="#cb4-55" aria-hidden="true" tabindex="-1"></a><span class="in">```{r}</span></span>
-<span id="cb4-56"><a href="#cb4-56" aria-hidden="true" tabindex="-1"></a><span class="in"># This is a code chunk for R. You can write your R code here.</span></span>
-<span id="cb4-57"><a href="#cb4-57" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
-<span id="cb4-58"><a href="#cb4-58" aria-hidden="true" tabindex="-1"></a><span class="in">````</span></span>
+<span id="cb4-50"><a href="#cb4-50" aria-hidden="true" tabindex="-1"></a><span class="in">``` text</span></span>
+<span id="cb4-51"><a href="#cb4-51" aria-hidden="true" tabindex="-1"></a><span class="in">---</span></span>
+<span id="cb4-52"><a href="#cb4-52" aria-hidden="true" tabindex="-1"></a><span class="in">title: "My Thesis Project"</span></span>
+<span id="cb4-53"><a href="#cb4-53" aria-hidden="true" tabindex="-1"></a><span class="in">---</span></span>
+<span id="cb4-54"><a href="#cb4-54" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
+<span id="cb4-55"><a href="#cb4-55" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb4-56"><a href="#cb4-56" aria-hidden="true" tabindex="-1"></a>Note that YAML headers can become much more complex. More information about the YAML header can be found on the following page.</span>
+<span id="cb4-57"><a href="#cb4-57" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb4-58"><a href="#cb4-58" aria-hidden="true" tabindex="-1"></a><span class="fu">### Code chunks</span></span>
 <span id="cb4-59"><a href="#cb4-59" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb4-60"><a href="#cb4-60" aria-hidden="true" tabindex="-1"></a>::: box-python</span>
-<span id="cb4-61"><a href="#cb4-61" aria-hidden="true" tabindex="-1"></a>For the programming language of Python, the code chunk looks like:</span>
-<span id="cb4-62"><a href="#cb4-62" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb4-63"><a href="#cb4-63" aria-hidden="true" tabindex="-1"></a><span class="in">```` text</span></span>
-<span id="cb4-66"><a href="#cb4-66" aria-hidden="true" tabindex="-1"></a><span class="in">```{python}</span></span>
-<span id="cb4-67"><a href="#cb4-67" aria-hidden="true" tabindex="-1"></a><span class="in"># This is a code chunk for Python. You can write your Python code here.</span></span>
-<span id="cb4-68"><a href="#cb4-68" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
-<span id="cb4-69"><a href="#cb4-69" aria-hidden="true" tabindex="-1"></a><span class="in">````</span></span>
-<span id="cb4-70"><a href="#cb4-70" aria-hidden="true" tabindex="-1"></a>:::</span>
-<span id="cb4-71"><a href="#cb4-71" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb4-72"><a href="#cb4-72" aria-hidden="true" tabindex="-1"></a>Inside these code chunks, everything is treated as code and will be executed when you run the chunk. Outside of the code chunks, everything is treated as regular text and will be rendered as such. This allows you to intersperse your code with explanations, interpretations, additional text and other elements like images, making your document significantly more readable and informative.</span>
-<span id="cb4-73"><a href="#cb4-73" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb4-74"><a href="#cb4-74" aria-hidden="true" tabindex="-1"></a><span class="fu">## Workflow</span></span>
-<span id="cb4-75"><a href="#cb4-75" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb4-76"><a href="#cb4-76" aria-hidden="true" tabindex="-1"></a>Whenever you are done with the code for a respective chunk, run it. You can do this by clicking the <span class="in">`Run`</span> button in the toolbar or by using the following shortcuts:</span>
-<span id="cb4-77"><a href="#cb4-77" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb4-78"><a href="#cb4-78" aria-hidden="true" tabindex="-1"></a><span class="ss">-   </span><span class="in">`Ctrl + Enter`</span> (Windows) or <span class="in">`Command + Enter`</span> (Mac): Run the current line or selection.</span>
-<span id="cb4-79"><a href="#cb4-79" aria-hidden="true" tabindex="-1"></a><span class="ss">-   </span><span class="in">`Ctrl + Shift + Enter`</span> (Windows) or <span class="in">`Command + Shift + Enter`</span> (Mac): Run the entire code chunk.</span>
-<span id="cb4-80"><a href="#cb4-80" aria-hidden="true" tabindex="-1"></a><span class="ss">-   </span><span class="in">`Ctrl + Alt + P`</span> (Windows) or <span class="in">`Command + Option + P`</span> (Mac): Run the previous code region.</span>
-<span id="cb4-81"><a href="#cb4-81" aria-hidden="true" tabindex="-1"></a><span class="ss">-   </span><span class="in">`Ctrl + Alt + R (Windows)`</span> or <span class="in">`Command + Option + R`</span> (Mac): Run all code chunks in the document.</span>
-<span id="cb4-82"><a href="#cb4-82" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb4-83"><a href="#cb4-83" aria-hidden="true" tabindex="-1"></a>When all code chunks are running without errors, you can render the document to see the final output. You can do this by clicking the <span class="in">`Render`</span> button in the toolbar or by using the shortcut <span class="in">`Ctrl + Shift + K`</span> (Windows) or <span class="in">`Command + Shift + K`</span> (Mac). If not specified differently in the YAML-Header, the output format will be <span class="in">`html`</span>. In your rendered <span class="in">`html`</span> file you can see the code chunks, the output of the code chunks and plain text separately.</span>
-<span id="cb4-84"><a href="#cb4-84" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb4-85"><a href="#cb4-85" aria-hidden="true" tabindex="-1"></a><span class="fu">## Further Resources</span></span>
-<span id="cb4-86"><a href="#cb4-86" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb4-87"><a href="#cb4-87" aria-hidden="true" tabindex="-1"></a>The introduction given here only scratches the surface of what can be done to set up and use RStudio and in particular Quarto. If you want to dive deeper into data processing and visualization before continuing with this guide, feel free to check out the <span class="co">[</span><span class="ot">Reproducible Data Processing and Visualization</span><span class="co">](https://wrangling.tidyver.se/)</span> guide, written by Ian Hussey from our lab <span class="co">[</span><span class="ot">@hussey2026</span><span class="co">]</span> or feel free to check out the <span class="co">[</span><span class="ot">official Quarto documentation page</span><span class="co">](https://quarto.org/)</span>.</span>
+<span id="cb4-60"><a href="#cb4-60" aria-hidden="true" tabindex="-1"></a>Following the YAML header, you can write your code inside **code chunks**. Code chunks are fenced by three backticks and include a language identifier. For the R programming language, a code chunk looks like this:</span>
+<span id="cb4-61"><a href="#cb4-61" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb4-62"><a href="#cb4-62" aria-hidden="true" tabindex="-1"></a><span class="in">```` text</span></span>
+<span id="cb4-65"><a href="#cb4-65" aria-hidden="true" tabindex="-1"></a><span class="in">```{r}</span></span>
+<span id="cb4-66"><a href="#cb4-66" aria-hidden="true" tabindex="-1"></a><span class="in"># This is a code chunk for R. You can write your R code here.</span></span>
+<span id="cb4-67"><a href="#cb4-67" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
+<span id="cb4-68"><a href="#cb4-68" aria-hidden="true" tabindex="-1"></a><span class="in">````</span></span>
+<span id="cb4-69"><a href="#cb4-69" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb4-70"><a href="#cb4-70" aria-hidden="true" tabindex="-1"></a>::: box-python</span>
+<span id="cb4-71"><a href="#cb4-71" aria-hidden="true" tabindex="-1"></a>For the programming language of Python, the code chunk looks like:</span>
+<span id="cb4-72"><a href="#cb4-72" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb4-73"><a href="#cb4-73" aria-hidden="true" tabindex="-1"></a><span class="in">```` text</span></span>
+<span id="cb4-76"><a href="#cb4-76" aria-hidden="true" tabindex="-1"></a><span class="in">```{python}</span></span>
+<span id="cb4-77"><a href="#cb4-77" aria-hidden="true" tabindex="-1"></a><span class="in"># This is a code chunk for Python. You can write your Python code here.</span></span>
+<span id="cb4-78"><a href="#cb4-78" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
+<span id="cb4-79"><a href="#cb4-79" aria-hidden="true" tabindex="-1"></a><span class="in">````</span></span>
+<span id="cb4-80"><a href="#cb4-80" aria-hidden="true" tabindex="-1"></a>:::</span>
+<span id="cb4-81"><a href="#cb4-81" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb4-82"><a href="#cb4-82" aria-hidden="true" tabindex="-1"></a>Inside these code chunks, everything is treated as code and will be executed when you run the chunk. Outside of the code chunks, everything is treated as regular text and will be rendered as such. This allows you to intersperse your code with explanations, interpretations, additional text and other elements like images, making your document significantly more readable and informative.</span>
+<span id="cb4-83"><a href="#cb4-83" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb4-84"><a href="#cb4-84" aria-hidden="true" tabindex="-1"></a><span class="fu">## Workflow</span></span>
+<span id="cb4-85"><a href="#cb4-85" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb4-86"><a href="#cb4-86" aria-hidden="true" tabindex="-1"></a>Whenever you are done with the code for a respective chunk, run it. You can do this by clicking the <span class="in">`Run`</span> button in the toolbar or by using the following shortcuts:</span>
+<span id="cb4-87"><a href="#cb4-87" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb4-88"><a href="#cb4-88" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span><span class="in">`Ctrl + Enter`</span> (Windows) or <span class="in">`Command + Enter`</span> (Mac): Run the current line or selection.</span>
+<span id="cb4-89"><a href="#cb4-89" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span><span class="in">`Ctrl + Shift + Enter`</span> (Windows) or <span class="in">`Command + Shift + Enter`</span> (Mac): Run the entire code chunk.</span>
+<span id="cb4-90"><a href="#cb4-90" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span><span class="in">`Ctrl + Alt + P`</span> (Windows) or <span class="in">`Command + Option + P`</span> (Mac): Run the previous code region.</span>
+<span id="cb4-91"><a href="#cb4-91" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span><span class="in">`Ctrl + Alt + R (Windows)`</span> or <span class="in">`Command + Option + R`</span> (Mac): Run all code chunks in the document.</span>
+<span id="cb4-92"><a href="#cb4-92" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb4-93"><a href="#cb4-93" aria-hidden="true" tabindex="-1"></a>When all code chunks are running without errors, you can render the document to see the final output. You can do this by clicking the <span class="in">`Render`</span> button in the toolbar or by using the shortcut <span class="in">`Ctrl + Shift + K`</span> (Windows) or <span class="in">`Command + Shift + K`</span> (Mac). If not specified differently in the YAML-Header, the output format will be <span class="in">`html`</span>. In your rendered <span class="in">`html`</span> file you can see the code chunks, the output of the code chunks and plain text separately.</span>
+<span id="cb4-94"><a href="#cb4-94" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb4-95"><a href="#cb4-95" aria-hidden="true" tabindex="-1"></a><span class="fu">## Further Resources</span></span>
+<span id="cb4-96"><a href="#cb4-96" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb4-97"><a href="#cb4-97" aria-hidden="true" tabindex="-1"></a>The introduction given here only scratches the surface of what can be done to set up and use RStudio and in particular Quarto. If you want to dive deeper into data processing and visualization before continuing with this guide, feel free to check out the <span class="co">[</span><span class="ot">Reproducible Data Processing and Visualization</span><span class="co">](https://wrangling.tidyver.se/)</span> guide, written by Ian Hussey from our lab <span class="co">[</span><span class="ot">@hussey2026</span><span class="co">]</span> or feel free to check out the <span class="co">[</span><span class="ot">official Quarto documentation page</span><span class="co">](https://quarto.org/)</span>.</span>
 </code><button title="Copy to Clipboard" class="code-copy-button" data-in-quarto-modal=""><i class="bi"></i></button></pre></div>
 </div></div></div></div></div>
 </div> <!-- /content -->
